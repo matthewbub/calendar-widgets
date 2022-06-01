@@ -11,7 +11,7 @@ interface getDaysInMonthInterface {
   year: String,
   months: String[],
   current: String
-};
+}
 
 interface formatResponseInterface {
   [x: string]: {
@@ -19,11 +19,11 @@ interface formatResponseInterface {
     formattedMonthName: String,
     dateList: String[]
   };
-};
+}
 
 interface commonKeyValueInterface {
   [x: string]: string | String;
-};
+}
 
 /** Constants */
 const months: String[] = dayjs.months(); // https://day.js.org/docs/en/i18n/listing-months-weekdays
