@@ -6,6 +6,25 @@ const localeData = require('dayjs/plugin/localeData');
 dayjs.extend(localeData);
 dayjs().format();
 
+/** Interfaces */
+interface getDaysInMonthInterface {
+  year: String,
+  months: String[],
+  current: String
+};
+
+interface formatResponseInterface {
+  [x: string]: {
+    daysInMonth: Number,
+    formattedMonthName: String,
+    dateList: String[]
+  };
+};
+
+interface commonKeyValueInterface {
+  [x: string]: string | String;
+};
+
 /** Constants */
 const months: String[] = dayjs.months(); // https://day.js.org/docs/en/i18n/listing-months-weekdays
 
@@ -21,11 +40,7 @@ const formatDate = ({year, months, current, day = '01'} : {
   return `${year}-${month}-${formattedDay}`;
 };
 
-const getDaysInMonth = ({ year, months, current }: {
-  year: String,
-  months: String[],
-  current: String,
-}): Number => (
+const getDaysInMonth = ({ year, months, current }: getDaysInMonthInterface): Number => (
   dayjs(
     formatDate({ year, months, current })
   ).daysInMonth()
@@ -36,19 +51,15 @@ const formatResponse = ({ collector, current, months, year }: {
   current: String,
   months: String[],
   year: String
-}): {[x: string]: {
-  daysInMonth: Number,
-  formattedMonthName: String,
-  dateList: String[]
-}} => {
+}): formatResponseInterface => {
   /** Constants */
   const daysInMonth: Number = getDaysInMonth({ year, months, current });
   const daysOfMonthAsArray: Number[] = [...new Array(daysInMonth).keys()];
 
   const formatInnerResponse = (
-    innerCollector: {} | {[key: string]: string;}, 
+    innerCollector: {} | commonKeyValueInterface, 
     innerCurrent: number
-  ): {[x: string]: string | String;} => {
+  ): commonKeyValueInterface => {
     return {
       [(innerCurrent + 1).toString()]: formatDate({
         year,
@@ -70,14 +81,12 @@ const formatResponse = ({ collector, current, months, year }: {
   };
 };
 
-const getMonthMeta = (year: Number): {} | {
-  [x: string]: string | String;
-} => (
+const getMonthMeta = (year: Number): {} | commonKeyValueInterface => (
   months.reduce(
-    (collector: {} | {[x: string]: string | String;}, current: String) => (
+    (collector: {} | commonKeyValueInterface, current: String) => (
       formatResponse({ year: year.toString(), months, current, collector })
     ), {}
   )
-)
+);
 
 console.log(getMonthMeta(2021));
