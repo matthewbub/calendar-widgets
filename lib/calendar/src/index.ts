@@ -19,9 +19,8 @@ interface commonKeyValueInterface {
 
 interface formatResponseInterface {
   [x: string]: {
-    daysInMonth: number;
-    formattedMonthName: string;
-    dateList: commonKeyValueInterface;
+    count: number;
+    collection: commonKeyValueInterface;
   };
 }
 
@@ -82,19 +81,22 @@ export const getDaysInMonth = ({
 
   return {
     [current.toLowerCase()]: {
-      daysInMonth: daysInMonth,
-      formattedMonthName: current,
-      dateList: daysOfMonthAsArray.reduce(formatInnerReducerCallback, {}),
+      count: daysInMonth,
+      collection: daysOfMonthAsArray.reduce(formatInnerReducerCallback, {})
     },
     ...collector,
   };
 };
 
-export const getMonthMeta = (year: number): formatResponseInterface =>
-  months.reduce(
+export const calendar = (year: number): formatResponseInterface => {
+  const cal = months.reduce(
     (collector: formatResponseInterface, current: string) =>
       formatResponse({ year: String(year), months, current, collector }),
     {}
   );
 
-// console.log(getMonthMeta(2021));
+  return Object.keys(cal).reduce((collector, current) => ({
+    [current.toLowerCase()] : cal[current],
+    ...collector
+  }), {});
+}

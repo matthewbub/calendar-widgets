@@ -1,0 +1,19 @@
+{
+  "name": "tests",
+  "version": "0.0.0",
+  "private": true,
+  "comments": [
+    "mocha & chai test suites for ../calendar/*",
+    "imported as a node_module for end-user testing"
+  ],
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "@whilethiscompiles/calendar": "file:../calendar"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  }
+}
