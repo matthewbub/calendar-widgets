@@ -26,10 +26,10 @@ interface formatResponseInterface {
 }
 
 /** Constants */
-const months: string[] = dayjs.months(); // https://day.js.org/docs/en/i18n/listing-months-weekdays
+export const months: string[] = dayjs.months(); // https://day.js.org/docs/en/i18n/listing-months-weekdays
 
 /** Methods */
-const formatDate = ({
+export const formatDate = ({
   year,
   months,
   current,
@@ -45,14 +45,14 @@ const formatDate = ({
   return `${year}-${month}-${formattedDay}`;
 };
 
-const getDaysInMonth = ({
+export const getDaysInMonth = ({
   year,
   months,
   current,
 }: getDaysInMonthInterface): number =>
   dayjs(formatDate({ year, months, current })).daysInMonth();
 
-const formatResponse = ({
+  export const formatResponse = ({
   collector,
   current,
   months,
@@ -90,11 +90,11 @@ const formatResponse = ({
   };
 };
 
-const getMonthMeta = (year: number): formatResponseInterface =>
+export const getMonthMeta = (year: number): formatResponseInterface =>
   months.reduce(
     (collector: formatResponseInterface, current: string) =>
       formatResponse({ year: String(year), months, current, collector }),
     {}
   );
 
-console.log(getMonthMeta(2021));
+// console.log(getMonthMeta(2021));
