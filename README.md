@@ -26,6 +26,7 @@ https://calendar.whilethiscompiles.com/api/calendar?year=YYYY
 ```
 
 ## Contributing 
+[https://github.com/yeahmat/calendar/projects/1](Planning)
 
 This project was build entirely with GitHub's Codespaces & VSCode. 
 
