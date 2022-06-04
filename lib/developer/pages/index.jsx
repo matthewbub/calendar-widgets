@@ -1,63 +1,24 @@
 import { useEffect, useState } from 'react';
-import { 
-  Stack, 
-  Container, 
-  Title, 
-  JsonInput,
-  NumberInput, 
-  Text,
-  Code,
-  SegmentedControl,
-  Anchor,
-  Center,
-  Button,
-  Group
-} from '@mantine/core';
+import { Stack, Container, Title, JsonInput, NumberInput, Code, SegmentedControl } from '@mantine/core';
 import {calendar} from '@whilethiscompiles/calendar'
-import {BrandGithub,BrandOpenSource} from 'tabler-icons-react';
 import { landingMessages } from '../lib/landing.messages';
+import { ProppedUpHero } from '../lib/hero';
 const Home = () => {
   const [installValue, setInstallValue] = useState(landingMessages.installFlagNPM);
   const [tryItOutValue, setTryItOutValue] = useState(landingMessages.segmentedControlSdkValue);
   const [demoSdkYear, setDemoSdkYear] = useState(1999);
   const [output, setOutput] = useState(calendar(1999));
-
   useEffect(() => {
-    setOutput(calendar(demoSdkYear))
-  }, [demoSdkYear]);
+    if(tryItOutValue === landingMessages.segmentedControlSdkValue) {
+      setOutput(calendar(demoSdkYear))
+    } else {
+     
+    }
+  }, [demoSdkYear, tryItOutValue]);
+
   return (
     <div>
-      <Container size="xs" px="xs" my='xl' style={{height: '500px'}}>
-        <Center style={{height: '100%'}}>
-          <Stack align="center" justify="center">
-            <Title order={1}>{landingMessages.pageTitle}</Title>
-            <Text size="lg" align="center">{landingMessages.pageDescription()}</Text>
-            <Group>
-              <Button 
-                component="a"
-                target="_blank"
-                rel="noopener noreferrer"
-                href={landingMessages.primaryButtonHref}
-                leftIcon={<BrandGithub size={18} />}
-                color="cyan"
-              >
-                {landingMessages.primaryButtonLabel}
-              </Button>
-              <Button               
-                component="a"
-                target="_blank"
-                rel="noopener noreferrer"
-                href={landingMessages.secondaryButtonHref}
-                leftIcon={<BrandOpenSource size={18} />}
-                color="cyan"
-                variant='outline'
-              >
-                {landingMessages.secondaryButtonLabel}
-              </Button>
-            </Group>
-          </Stack>
-        </Center>
-      </Container>
+      <ProppedUpHero />
 
       <Container size="xs" px="xs" mt='xl'>
         <Stack>
@@ -116,7 +77,11 @@ const Home = () => {
               ]}
             />
           </div>
-          <Code block>{landingMessages.outputPreviewSDK(demoSdkYear)}</Code>
+          <Code block>{
+            tryItOutValue === landingMessages.segmentedControlSdkValue 
+            ? landingMessages.outputPreviewSDK(demoSdkYear)
+            : landingMessages.outputPreviewAPI(demoSdkYear)
+          }</Code>
           <JsonInput
             minRows={14}
             onChange={setOutput}

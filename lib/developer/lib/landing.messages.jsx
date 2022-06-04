@@ -1,18 +1,4 @@
-import {Anchor} from '@mantine/core';
-
 export const landingMessages = {
-  pageTitle: '@whilethiscompiles/calendar',
-  pageDescription: () => (
-    <>
-      {'A simple API intended to return a list of calendar dates for a given year. Built with '}
-      <Anchor href="https://day.js.org/" target="_blank">{'day.js'}</Anchor>
-      {' & typescript.'}
-    </>
-  ),
-  primaryButtonLabel: 'GitHub',
-  primaryButtonHref: 'https://github.com/yeahmat/calendar',
-  secondaryButtonLabel: 'Open Source',
-  secondaryButtonHref: 'https://github.com/yeahmat/calendar/issues',
   installHeading: 'Install',
   installFlagNPM: 'npm',
   installFlagYarn: 'yarn',
@@ -29,5 +15,5 @@ export const landingMessages = {
   outputPreviewSDK: (year) => `import {calendar} from '@whilethiscompiles/calendar';
 
 calendar(${year})`,
-
+  outputPreviewAPI: (year) => `https://calendar.whilethiscompiles.com/api/calendar?year=${year}`,
 }
