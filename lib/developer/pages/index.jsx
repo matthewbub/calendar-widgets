@@ -15,9 +15,10 @@ import {
 } from '@mantine/core';
 import {calendar} from '@whilethiscompiles/calendar'
 import {BrandGithub,BrandOpenSource} from 'tabler-icons-react';
+import { landingMessages } from '../lib/landing.messages';
 const Home = () => {
-  const [installValue, setInstallValue] = useState('npm');
-  const [tryItOutValue, setTryItOutValue] = useState('sdk');
+  const [installValue, setInstallValue] = useState(landingMessages.installFlagNPM);
+  const [tryItOutValue, setTryItOutValue] = useState(landingMessages.segmentedControlSdkValue);
   const [demoSdkYear, setDemoSdkYear] = useState(1999);
   const [output, setOutput] = useState(calendar(1999));
 
@@ -29,31 +30,29 @@ const Home = () => {
       <Container size="xs" px="xs" my='xl' style={{height: '500px'}}>
         <Center style={{height: '100%'}}>
           <Stack align="center" justify="center">
-            <Title order={1}>@whilethiscompiles/calendar</Title>
-            <Text size="lg" align="center">
-            A simple API intended to return a list of calendar dates for a given year. Built with <Anchor href="https://day.js.org/" target="_blank">day.js</Anchor> & typescript.
-            </Text>
+            <Title order={1}>{landingMessages.pageTitle}</Title>
+            <Text size="lg" align="center">{landingMessages.pageDescription()}</Text>
             <Group>
               <Button 
                 component="a"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://github.com/yeahmat/calendar"
+                href={landingMessages.primaryButtonHref}
                 leftIcon={<BrandGithub size={18} />}
                 color="cyan"
               >
-                GitHub
+                {landingMessages.primaryButtonLabel}
               </Button>
               <Button               
                 component="a"
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://github.com/yeahmat/calendar/issues"
+                href={landingMessages.secondaryButtonHref}
                 leftIcon={<BrandOpenSource size={18} />}
                 color="cyan"
                 variant='outline'
               >
-                Open Source
+                {landingMessages.secondaryButtonLabel}
               </Button>
             </Group>
           </Stack>
@@ -62,33 +61,39 @@ const Home = () => {
 
       <Container size="xs" px="xs" mt='xl'>
         <Stack>
-          <Title order={3}>Install</Title>
+          <Title order={3}>{landingMessages.installHeading}</Title>
           <div>
             <SegmentedControl 
               value={installValue}
               onChange={setInstallValue}
               data={[
-                {label: 'npm', value: 'npm'},
-                {label: 'yarn', value: 'yarn'}
+                {
+                  label: landingMessages.installFlagNPM,
+                  value: landingMessages.installFlagNPM
+                },
+                {
+                  label: landingMessages.installFlagYarn,
+                  value: landingMessages.installFlagYarn
+                }
               ]}
             />
           </div>
           <div>
-            {installValue === "npm" ? (
-              <Code>npm install @whilethiscompiles/calendar</Code>
+            {installValue === landingMessages.installFlagNPM ? (
+              <Code>{landingMessages.installCommandNPM}</Code>
             ) : (
-              <Code>yarn add @whilethiscompiles/calendar</Code>
+              <Code>{landingMessages.installCommandYarn}</Code>
             )}
           </div>
         </Stack>
       </Container>
       <Container size="xs" px="xs" mt='xl'>
         <Stack>
-          <Title order={3}>Try it out</Title>
+          <Title order={3}>{landingMessages.tryItOutHeading}</Title>
           <div>
             <NumberInput
-              label="Enter Year"
-              description="Get a list of dates for a given year."
+              label={landingMessages.yearInputLabel}
+              description={landingMessages.yearInputSubLabel}
               min={1970}
               max={3000}
               value={demoSdkYear}
@@ -100,15 +105,18 @@ const Home = () => {
               value={tryItOutValue}
               onChange={setTryItOutValue}
               data={[
-                {label: 'SDK', value: 'sdk'},
-                {label: 'REST API', value: 'restapi'}
+                {
+                  label: landingMessages.segmentedControlSdkLabel, 
+                  value: landingMessages.segmentedControlSdkValue
+                },
+                {
+                  label: landingMessages.segmentedControlApiLabel, 
+                  value: landingMessages.segmentedControlApiValue
+                }
               ]}
             />
           </div>
-          <Code block>{`import {calendar} from '@whilethiscompiles/calendar';
-
-calendar(${demoSdkYear})`}
-          </Code>
+          <Code block>{landingMessages.outputPreviewSDK(demoSdkYear)}</Code>
           <JsonInput
             minRows={14}
             onChange={setOutput}
