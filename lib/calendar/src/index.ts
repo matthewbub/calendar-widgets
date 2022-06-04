@@ -24,6 +24,13 @@ interface formatResponseInterface {
   };
 }
 
+interface formatErrorResponseInterface {
+  [x: string]: {
+    title?: string;
+    body: string;
+  };
+}
+
 /** Constants */
 export const months: string[] = dayjs.months(); // https://day.js.org/docs/en/i18n/listing-months-weekdays
 
@@ -88,7 +95,15 @@ export const getDaysInMonth = ({
   };
 };
 
-export const calendar = (year: number): formatResponseInterface => {
+export const calendar = (year: number | string): formatResponseInterface | formatErrorResponseInterface => {
+  if(String(year).length !== 4 || isNaN(parseFloat(String(year)))) {
+    return {
+      "error": {
+        "body": "invalid argument passed to `calendar('YYYY')`"
+      }
+    }
+  }
+  
   const cal = months.reduce(
     (collector: formatResponseInterface, current: string) =>
       formatResponse({ year: String(year), months, current, collector }),
