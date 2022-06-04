@@ -1,9 +1,4 @@
 export const landingMessages = {
-  installHeading: 'Install',
-  installFlagNPM: 'npm',
-  installFlagYarn: 'yarn',
-  installCommandNPM: 'npm install @whilethiscompiles/calendar',
-  installCommandYarn: 'yarn add @whilethiscompiles/calendar',
   tryItOutHeading: 'Try It Out',
   yearInputLabel: 'Enter Year',
   yearInputSubLabel: 'Get a list of dates for a given year.',

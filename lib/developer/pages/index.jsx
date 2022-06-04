@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Stack, Container, Title, JsonInput, NumberInput, Code, SegmentedControl } from '@mantine/core';
+import { Stack, Container, Title, Text, JsonInput, NumberInput, Code, SegmentedControl, Divider, Anchor } from '@mantine/core';
 import {calendar} from '@whilethiscompiles/calendar'
 import { landingMessages } from '../lib/landing.messages';
 import { ProppedUpHero } from '../lib/hero';
+import InstallSection from '../lib/installsection';
+
 const Home = () => {
   const [installValue, setInstallValue] = useState(landingMessages.installFlagNPM);
   const [tryItOutValue, setTryItOutValue] = useState(landingMessages.segmentedControlSdkValue);
@@ -19,35 +21,8 @@ const Home = () => {
   return (
     <div>
       <ProppedUpHero />
-
-      <Container size="xs" px="xs" mt='xl'>
-        <Stack>
-          <Title order={3}>{landingMessages.installHeading}</Title>
-          <div>
-            <SegmentedControl 
-              value={installValue}
-              onChange={setInstallValue}
-              data={[
-                {
-                  label: landingMessages.installFlagNPM,
-                  value: landingMessages.installFlagNPM
-                },
-                {
-                  label: landingMessages.installFlagYarn,
-                  value: landingMessages.installFlagYarn
-                }
-              ]}
-            />
-          </div>
-          <div>
-            {installValue === landingMessages.installFlagNPM ? (
-              <Code>{landingMessages.installCommandNPM}</Code>
-            ) : (
-              <Code>{landingMessages.installCommandYarn}</Code>
-            )}
-          </div>
-        </Stack>
-      </Container>
+      <InstallSection />
+      
       <Container size="xs" px="xs" mt='xl'>
         <Stack>
           <Title order={3}>{landingMessages.tryItOutHeading}</Title>
@@ -63,6 +38,7 @@ const Home = () => {
           </div>
           <div>
             <SegmentedControl 
+              color="cyan" 
               value={tryItOutValue}
               onChange={setTryItOutValue}
               data={[

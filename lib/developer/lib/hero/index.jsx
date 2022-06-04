@@ -12,14 +12,14 @@ import {heroMsgs} from './hero.msg';
 const Hero = ({
   title = '',
   desc = '',
-  primaryButton,
-  secondaryButton
+  primaryButton = '',
+  secondaryButton = ''
 }) => (
   <div>
     <Container size="xs" px="xs" my='xl' style={{height: '500px'}}>
       <Center style={{height: '100%'}}>
         <Stack align="center" justify="center">
-          {!isEmpty(title) && (<Title order={1}>{title}</Title>)}
+          {!isEmpty(title) && (<Title order={1} align="center">{title}</Title>)}
           {!isEmpty(desc) && (<Text size="lg" align="center">{desc}</Text>)}
           <Group>
             {!isEmpty(primaryButton) && primaryButton}
@@ -34,7 +34,7 @@ const Hero = ({
 /** Component w/ Static Props */
 export const ProppedUpHero = () => (
   <Hero 
-    title={heroMsgs.title}
+    title={heroMsgs.title()}
     desc={heroMsgs.desc()}
     primaryButton={(
       <Button 
