@@ -2,7 +2,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A simple API intended to return a list of calendar dates for a given year. Built with [day.js](https://day.js.org/) & typescript.
+A user friendly SDK & API that returns a list of calendar dates for a given year in JSON format. Built with [day.js](https://day.js.org/) & typescript.
+
+> Hey, we're just getting started & are actively seeking contributors & maintainers. If you'd like to get involed feel free to reach out in any open issue, or via email 6matbub@gmail.com. 🙂</br>
+> \- TY, Mat
+
 
 ### On this page
 - [Useage](#usage)
