@@ -32,7 +32,7 @@ interface formatErrorResponseInterface {
 }
 
 /** Constants */
-export const months: string[] = dayjs.months(); // https://day.js.org/docs/en/i18n/listing-months-weekdays
+export const months: string[] = dayjs.months().reverse(); // https://day.js.org/docs/en/i18n/listing-months-weekdays
 
 /** Methods */
 export const formatDate = ({
@@ -97,21 +97,16 @@ export const getDaysInMonth = ({
 
 export const calendar = (year: number | string): formatResponseInterface | formatErrorResponseInterface => {
   if(String(year).length !== 4 || isNaN(parseFloat(String(year)))) {
-    return {
+    return ({
       "error": {
         "body": "invalid argument passed to `calendar('YYYY')`"
       }
-    }
+    })
   }
   
-  const cal = months.reduce(
+  return months.reduce(
     (collector: formatResponseInterface, current: string) =>
       formatResponse({ year: String(year), months, current, collector }),
     {}
   );
-
-  return Object.keys(cal).reduce((collector, current) => ({
-    [current.toLowerCase()] : cal[current],
-    ...collector
-  }), {});
 }
