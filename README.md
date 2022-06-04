@@ -4,6 +4,11 @@
 
 A simple API intended to return a list of calendar dates for a given year. Built with [day.js](https://day.js.org/) & typescript.
 
+### On this page
+- [Useage](#usage)
+- [Contributing](#contributing)
+- [This repo](#this-repo)
+
 ## Usage
 
 ### Via Nodejs
@@ -25,12 +30,14 @@ A public endpoint is available via the GET method & accepts 1 query paramter `ye
 https://calendar.whilethiscompiles.com/api/calendar?year=YYYY
 ```
 
-## Contributing 
-[https://github.com/yeahmat/calendar/projects/1](Planning)
+## Contributing
+- [Open Issues](https://github.com/yeahmat/calendar/issues?q=is%3Aissue+is%3Aopen)
+- [Sprint Planning](https://github.com/yeahmat/calendar/projects/1)
+- [Internal Docs](https://github.com/yeahmat/calendar/wiki)
 
 This project was build entirely with GitHub's Codespaces & VSCode. 
 
-### This repo
+## This repo
 - `/lib/calendar` - NPM Package
 - `/lib/calendar-tests` - Test suites for calendar as a package
 - `/lib/developer` - Landing page, public API, documentation. Built with Next.js
