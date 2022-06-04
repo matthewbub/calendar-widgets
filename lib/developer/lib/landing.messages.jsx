@@ -2,11 +2,13 @@ import {Anchor} from '@mantine/core';
 
 export const landingMessages = {
   pageTitle: '@whilethiscompiles/calendar',
-  pageDescription: () => [
-    'A simple API intended to return a list of calendar dates for a given year. Built with ',
-    <Anchor href="https://day.js.org/" target="_blank">{'day.js'}</Anchor>,
-    ' & typescript.'
-  ],
+  pageDescription: () => (
+    <>
+      {'A simple API intended to return a list of calendar dates for a given year. Built with '}
+      <Anchor href="https://day.js.org/" target="_blank">{'day.js'}</Anchor>
+      {' & typescript.'}
+    </>
+  ),
   primaryButtonLabel: 'GitHub',
   primaryButtonHref: 'https://github.com/yeahmat/calendar',
   secondaryButtonLabel: 'Open Source',
