@@ -3,15 +3,27 @@ import { Stack, Container, Title, JsonInput, NumberInput, Code, SegmentedControl
 import {calendar} from '@whilethiscompiles/calendar'
 import { tryItMsgs } from './tryitsection.msg';
 
+const fetchCalendar = async (year) => {
+  const res = await fetch('https://calendar.whilethiscompiles.com/api/calendar?year=' + year)
+  return await res.json()
+}
 const TryItSection = () => {
   const [tryItOutValue, setTryItOutValue] = useState(tryItMsgs.segmentedControlSdkValue);
   const [demoSdkYear, setDemoSdkYear] = useState(1999);
   const [output, setOutput] = useState(calendar(1999));
+  
+
   useEffect(() => {
+    setOutput({
+      "status": {
+        "message": "loading..."
+      }
+    })
+
     if(tryItOutValue === tryItMsgs.segmentedControlSdkValue) {
       setOutput(calendar(demoSdkYear))
     } else {
-     
+      fetchCalendar(demoSdkYear).then((res) => setOutput(res))
     }
   }, [demoSdkYear, tryItOutValue]);
 
