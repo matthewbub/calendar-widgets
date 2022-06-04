@@ -1,0 +1,8 @@
+# 200
+# GET https://calendar.whilethiscompiles.com/api/calendar?year=1999
+
+# 400 - Invalid length
+# GET https://calendar.whilethiscompiles.com/api/calendar?year=199
+
+# 400 - Invalid query params
+# GET https://calendar.whilethiscompiles.com/api/calendar

@@ -8,16 +8,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mantine/core": "^4.2.7",
+    "@mantine/next": "^4.2.7",
     "@whilethiscompiles/calendar": "^0.0.3",
     "cors": "^2.8.5",
-    "daisyui": "^2.15.2",
     "next": "^12.1.6",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.4.7",
-    "postcss": "^8.4.14",
-    "tailwindcss": "^3.0.24"
+    "react-dom": "^18.1.0",
+    "tabler-icons-react": "^1.48.1"
   }
 }
