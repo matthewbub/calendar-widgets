@@ -1,0 +1,12 @@
+{
+  "name": "root",
+  "version": "0.0.3",
+  "scripts": {
+    "prod:cleaninstall:calendar-tests": "cd ./lib/calendar-tests && npm uninstall @whilethiscompiles/calendar && npm install @whilethiscompiles/calendar",
+    "prod:cleaninstall:developer": "cd ./lib/developer && npm uninstall @whilethiscompiles/calendar && npm install @whilethiscompiles/calendar",
+    "prod:cleaninstall": "npm run prod:cleaninstall:calendar-tests && npm run prod:cleaninstall:developer",
+    "dev:cleaninstall:calendar-tests": "cd ./lib/calendar-tests && npm uninstall @whilethiscompiles/calendar && npm install @whilethiscompiles/calendar@file:../calendar",
+    "dev:cleaninstall:developer": "cd ./lib/developer && npm uninstall @whilethiscompiles/calendar && npm install @whilethiscompiles/calendar@file:../calendar",
+    "dev:cleaninstall": "npm run prod:cleaninstall:calendar-tests && npm run prod:cleaninstall:developer"
+  }
+}
