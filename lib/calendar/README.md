@@ -1,8 +1,8 @@
 # Calendar API
 
-A simple API intended to return a list of calendar dates for a given year. Built with [day.js](https://day.js.org/) & typescript.
+A simple API intended to return a list of calendar dates for a given year. Built with [day.js](https://day.js.org/) & typescript. Website: [https://calendar.whilethiscompiles.com/](https://calendar.whilethiscompiles.com/)
 
-## Install 
+## Install  
 
 ```shell
 npm install @whilethiscompiles/calendar
