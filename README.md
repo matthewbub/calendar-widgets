@@ -4,9 +4,6 @@
 
 A user friendly SDK & API that returns a list of calendar dates for a given year in JSON format. Built with [day.js](https://day.js.org/) & typescript. Website: [https://calendar.whilethiscompiles.com/](https://calendar.whilethiscompiles.com/)
 
-> Hey, we're just getting started & are actively seeking contributors & maintainers. If you'd like to get involed feel free to reach out in any open issue, or via email 6matbub@gmail.com. 🙂</br>
-> \- TY, Mat 
-
 
 ### On this page
 - [Useage](#usage)
@@ -36,10 +33,8 @@ https://calendar.whilethiscompiles.com/api/calendar?year=YYYY
 
 ## Contributing
 - [Open Issues](https://github.com/yeahmat/calendar/issues?q=is%3Aissue+is%3Aopen)
-- [Sprint Planning](https://github.com/yeahmat/calendar/projects/1)
+- [Planning](https://github.com/yeahmat/calendar/projects/1)
 - [Internal Docs](https://github.com/yeahmat/calendar/wiki)
-
-This project was build entirely with GitHub's Codespaces & VSCode. 
 
 ## This repo
 - `/lib/calendar` - NPM Package
