@@ -46,7 +46,7 @@ export const formatDate = ({
   current: string;
   day?: string;
 }): string => {
-  const month = months.indexOf(current) + 1;
+  const month = 12 - months.indexOf(current);
   const formattedDay = String(day).padStart(2, '0');
   return `${year}-${month}-${formattedDay}`;
 };
