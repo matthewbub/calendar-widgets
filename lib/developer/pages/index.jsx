@@ -1,10 +1,11 @@
-import { ProppedUpHero,InstallSection, TryItSection } from '../lib';
+import { ProppedUpHero,InstallSection, TryItSection, Footer } from '../lib';
 
 const Home = () => (
   <div>
     <ProppedUpHero />
     <InstallSection />
     <TryItSection />
+    <Footer />
   </div>
 )
 
