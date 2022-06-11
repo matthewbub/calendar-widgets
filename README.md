@@ -30,7 +30,7 @@ https://calendar.whilethiscompiles.com/api/calendar?year=YYYY
 ```
 
 ## Contributing
-We glady accecpt new proposals 🙂 - if you are looking to pick up and existing issue - we use a ticket based workflow. Just try to let us know if you intend on picking up a ticket so we don't overlap efforts. 
+We glady accecpt new proposals. 🙂 If you are looking to pick up and existing issue, we use a ticket based workflow. Just try to let us know if you intend on picking up a ticket so we don't overlap efforts. 
 
 - [Open Issues](https://github.com/yeahmat/calendar/issues?q=is%3Aissue+is%3Aopen)
 - [Planning](https://github.com/yeahmat/calendar/projects/1)
