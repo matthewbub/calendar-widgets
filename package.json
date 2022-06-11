@@ -2,9 +2,17 @@
   "name": "root",
   "version": "0.0.4",
   "scripts": {
-    "prod:cleaninstall:calendar-tests": "cd ./lib/calendar-tests && npm uninstall @whilethiscompiles/calendar && npm install @whilethiscompiles/calendar",
-    "prod:cleaninstall:developer": "cd ./lib/developer && npm uninstall @whilethiscompiles/calendar && npm install @whilethiscompiles/calendar",
-    "prod:cleaninstall": "npm run prod:cleaninstall:calendar-tests && npm run prod:cleaninstall:developer",
-    "pub:calendar": "cd ./lib/calendar && npm run build && npm publish --access public"    
+    "prod:clean-install:calendar-tests": "cd ./lib/calendar-tests && npm uninstall @whilethiscompiles/calendar && npm install @whilethiscompiles/calendar",
+    "prod:clean-install:developer": "cd ./lib/developer && npm uninstall @whilethiscompiles/calendar && npm install @whilethiscompiles/calendar",
+    "prod:clean-install": "npm run prod:clean-install:calendar-tests && npm run prod:clean-install:developer",
+    "pub:calendar": "cd ./lib/calendar && npm run build && npm publish --access public",
+    "install-npm:calendar-tests": "cd ./lib/calendar-tests && npm install",
+    "install-npm:calendar": "cd ./lib/calendar && npm install",
+    "install-npm:developer": "cd ./lib/developer && npm install",
+    "install-npm": "npm run install-npm:calendar-tests && npm run install-npm:calendar && npm run install-npm:developer",
+    "reinstall-npm:calendar-tests": "cd ./lib/calendar-tests && rm -rf node_modules && npm cache clean --force && npm install",
+    "reinstall-npm:calendar": "cd ./lib/calendar && rm -rf node_modules && npm cache clean --force && npm install",
+    "reinstall-npm:developer": "cd ./lib/developer && rm -rf node_modules && npm cache clean --force && npm install",
+    "reinstall-npm": "npm run reinstall-npm:calendar-tests && npm run reinstall-npm:calendar && npm run reinstall-npm:developer"
   }
 }
