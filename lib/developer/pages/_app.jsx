@@ -1,14 +1,8 @@
-import { MantineProvider } from '@mantine/core';
-
-const myTheme = {  
-  // white: '#F0F0F0',  
-};
+import '../lib/css/base.css';
 
 function App({ Component, pageProps }) {
   return (
-    <MantineProvider theme={myTheme} withGlobalStyles withNormalizeCSS>
-       <Component {...pageProps} />
-    </MantineProvider>
+    <Component {...pageProps} />
   );
 }
 

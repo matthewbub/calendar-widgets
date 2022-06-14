@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Stack, Container, Title, JsonInput, NumberInput, Code, SegmentedControl} from '@mantine/core';
+import { Stack, Container, Title, JsonInput, NumberInput, Code, SegmentedControl, Text} from '@mantine/core';
 import {calendar} from '@whilethiscompiles/calendar'
 import { tryItMsgs } from './tryitsection.msg';
 
@@ -27,10 +27,18 @@ const TryItSection = () => {
     }
   }, [demoSdkYear, tryItOutValue]);
 
+  const handleSetDemoSdkYear = (value) => {
+    if (String(value).length > 5) {
+      return;
+    }
+    return setDemoSdkYear(value)
+  }
+
   return (
     <Container size="xs" px="xs" mt='xl'>
       <Stack>
         <Title order={3}>{tryItMsgs.tryItOutHeading}</Title>
+        <Text size='sm'>{'A quick demo should be all it takes to capture the gist of this method.'}</Text>
         <div>
           <NumberInput
             label={tryItMsgs.yearInputLabel}
@@ -38,7 +46,7 @@ const TryItSection = () => {
             min={1970}
             max={3000}
             value={demoSdkYear}
-            onChange={setDemoSdkYear}
+            onChange={handleSetDemoSdkYear}
           />
         </div>
         <div>
