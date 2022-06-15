@@ -11,7 +11,7 @@ import {
 
 const Home = () => (
   <AppBackground>
-    <Hero />
+    <Hero />   
     {/* <NavBar />
     <Container>
       <CustomComponent className='w-full sm:w-8/12 md:w-6/12 mx-auto prose'>
