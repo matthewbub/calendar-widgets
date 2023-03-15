@@ -8,14 +8,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mantine/core": "^4.2.7",
-    "@mantine/next": "^4.2.7",
+    "@mantine/core": "^6.0.2",
+    "@mantine/next": "^6.0.2",
     "@whilethiscompiles/calendar": "^0.0.3",
     "cors": "^2.8.5",
     "lodash": "^4.17.21",
-    "next": "^12.1.6",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "tabler-icons-react": "^1.48.1"
+    "next": "^13.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tabler-icons-react": "^1.56.0"
   }
 }
