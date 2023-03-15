@@ -32,11 +32,7 @@ https://calendar.whilethiscompiles.com/api/calendar?year=YYYY
 
 ## Contributing
 
-We glady accecpt new proposals. 🙂 If you are looking to pick up and existing issue, we use a ticket based workflow. Just try to let us know if you intend on picking up a ticket so we don't overlap efforts.
-
-- [Open Issues](https://github.com/yeahmat/calendar/issues?q=is%3Aissue+is%3Aopen)
-- [Planning](https://github.com/yeahmat/calendar/projects/1)
-- [Internal Docs](https://github.com/yeahmat/calendar/wiki)
+I'd be appreciative of bug reports/ fixes, and I'd gladly accecpt new proposals. 🙂 If you'd like to contribute to an existing issue, kindly communicate through the designated ticket to avoid overlapping efforts. Check out the [Open Issues](https://github.com/9mbs/calendar/issues?q=is%3Aissue+is%3Aopen) for more information.
 
 ### This repo
 
