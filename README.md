@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A user friendly SDK & API that returns a list of calendar dates for a given year in JSON format. Built with [day.js](https://day.js.org/) & typescript. Website: [https://calendar.whilethiscompiles.com/](https://calendar.whilethiscompiles.com/)
+A user friendly SDK & API that returns a list of calendar dates for a given year in JSON format. Built with [day.js](https://day.js.org/) & typescript. Website: [http://www.calendar-widgets.com/](http://www.calendar-widgets.com/)
 
 ### On this page
 
@@ -27,7 +27,7 @@ calendar(1999); // {january:{count:31,collection:{'1':'1999-1-01','2':'1999-1-02
 A public endpoint is available via the GET method & accepts 1 query parameter `year=YYYY` returns a JSON response
 
 ```
-https://calendar.whilethiscompiles.com/api/calendar?year=YYYY
+http://www.calendar-widgets.com/api/calendar?year=YYYY
 ```
 
 ## Contributing
