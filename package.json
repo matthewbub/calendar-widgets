@@ -2,17 +2,17 @@
   "name": "root",
   "version": "0.0.4",
   "scripts": {
-    "prod:clean-install:calendar-tests": "cd ./lib/calendar-tests && npm uninstall @whilethiscompiles/calendar && npm install @whilethiscompiles/calendar",
-    "prod:clean-install:developer": "cd ./lib/developer && npm uninstall @whilethiscompiles/calendar && npm install @whilethiscompiles/calendar",
-    "prod:clean-install": "npm run prod:clean-install:calendar-tests && npm run prod:clean-install:developer",
-    "pub:calendar": "cd ./lib/calendar && npm run build && npm publish --access public",
-    "install-npm:calendar-tests": "cd ./lib/calendar-tests && npm install",
-    "install-npm:calendar": "cd ./lib/calendar && npm install",
-    "install-npm:developer": "cd ./lib/developer && npm install",
-    "install-npm": "npm run install-npm:calendar-tests && npm run install-npm:calendar && npm run install-npm:developer",
-    "reinstall-npm:calendar-tests": "cd ./lib/calendar-tests && rm -rf node_modules && npm cache clean --force && npm install",
-    "reinstall-npm:calendar": "cd ./lib/calendar && rm -rf node_modules && npm cache clean --force && npm install",
-    "reinstall-npm:developer": "cd ./lib/developer && rm -rf node_modules && npm cache clean --force && npm install",
-    "reinstall-npm": "npm run reinstall-npm:calendar-tests && npm run reinstall-npm:calendar && npm run reinstall-npm:developer"
+    "prod:clean-install:calendar-tests": "cd ./lib/calendar-tests && pnpm uninstall @whilethiscompiles/calendar && pnpm install @whilethiscompiles/calendar",
+    "prod:clean-install:developer": "cd ./lib/developer && pnpm uninstall @whilethiscompiles/calendar && pnpm install @whilethiscompiles/calendar",
+    "prod:clean-install": "pnpm run prod:clean-install:calendar-tests && pnpm run prod:clean-install:developer",
+    "pub:calendar": "cd ./lib/calendar && pnpm run build && pnpm publish --access public",
+    "install-pnpm:calendar-tests": "cd ./lib/calendar-tests && pnpm install",
+    "install-pnpm:calendar": "cd ./lib/calendar && pnpm install",
+    "install-pnpm:developer": "cd ./lib/developer && pnpm install",
+    "install-pnpm": "pnpm run install-pnpm:calendar-tests && pnpm run install-pnpm:calendar && pnpm run install-pnpm:developer",
+    "reinstall-pnpm:calendar-tests": "cd ./lib/calendar-tests && rm -rf node_modules && pnpm cache clean --force && pnpm install",
+    "reinstall-pnpm:calendar": "cd ./lib/calendar && rm -rf node_modules && pnpm cache clean --force && pnpm install",
+    "reinstall-pnpm:developer": "cd ./lib/developer && rm -rf node_modules && pnpm cache clean --force && pnpm install",
+    "reinstall-pnpm": "pnpm run reinstall-pnpm:calendar-tests && pnpm run reinstall-pnpm:calendar && pnpm run reinstall-pnpm:developer"
   }
 }
