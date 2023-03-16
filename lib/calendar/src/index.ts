@@ -58,7 +58,7 @@ export const getDaysInMonth = ({
 }: getDaysInMonthInterface): number =>
   dayjs(formatDate({ year, months, current })).daysInMonth();
 
-  export const formatResponse = ({
+export const formatResponse = ({
   collector,
   current,
   months,
@@ -89,24 +89,26 @@ export const getDaysInMonth = ({
   return {
     [current.toLowerCase()]: {
       count: daysInMonth,
-      collection: daysOfMonthAsArray.reduce(formatInnerReducerCallback, {})
+      collection: daysOfMonthAsArray.reduce(formatInnerReducerCallback, {}),
     },
     ...collector,
   };
 };
 
-export const calendar = (year: number | string): formatResponseInterface | formatErrorResponseInterface => {
-  if(String(year).length !== 4 || isNaN(parseFloat(String(year)))) {
-    return ({
-      "error": {
-        "body": "invalid argument passed to `calendar('YYYY')`"
-      }
-    })
+export const calendar = (
+  year: number | string
+): formatResponseInterface | formatErrorResponseInterface => {
+  if (String(year).length !== 4 || isNaN(parseFloat(String(year)))) {
+    return {
+      error: {
+        body: "invalid argument passed to `calendar('YYYY')`",
+      },
+    };
   }
-  
+
   return months.reduce(
     (collector: formatResponseInterface, current: string) =>
       formatResponse({ year: String(year), months, current, collector }),
     {}
   );
-}
+};
