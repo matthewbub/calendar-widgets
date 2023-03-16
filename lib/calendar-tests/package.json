@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "comments": [
-    "mocha & chai test suites for ../calendar/*",
-    "imported as a node_module for end-user testing"
+    "mocha & chai test suites for ../calendar-widgets/*",
+    "imported as a relative path for local testing"
   ],
   "scripts": {
     "test": "mocha"
@@ -14,6 +14,6 @@
     "mocha": "^10.2.0"
   },
   "dependencies": {
-    "@whilethiscompiles/calendar": "file:../calendar"
+    "calendar-widgets": "file:../calendar-widgets"
   }
 }

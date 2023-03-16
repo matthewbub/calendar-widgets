@@ -2,8 +2,8 @@
   "name": "root",
   "version": "0.0.4",
   "scripts": {
-    "prod:clean-install:calendar-tests": "cd ./lib/calendar-tests && npm uninstall @whilethiscompiles/calendar && npm install @whilethiscompiles/calendar",
-    "prod:clean-install:developer": "cd ./lib/developer && npm uninstall @whilethiscompiles/calendar && npm install @whilethiscompiles/calendar",
+    "prod:clean-install:calendar-tests": "cd ./lib/calendar-tests && npm uninstall calendar-widgets && npm install calendar-widgets",
+    "prod:clean-install:developer": "cd ./lib/developer && npm uninstall calendar-widgets && npm install calendar-widgets",
     "prod:clean-install": "npm run prod:clean-install:calendar-tests && npm run prod:clean-install:developer",
     "pub:calendar": "cd ./lib/calendar && npm run build && npm publish --access public",
     "install-npm:calendar-tests": "cd ./lib/calendar-tests && npm install",
