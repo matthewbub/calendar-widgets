@@ -6,9 +6,9 @@
     "workspaces/calendar-widgets"
   ],
   "scripts": {
-    "install:docs": "cd ./workspaces/docs && rm -rf node_modules && npm cache clean --force && npm install",
-    "install:calendar-widgets-tests": "cd ./workspaces/calendar-widgets-tests && rm -rf node_modules && npm cache clean --force && npm install",
-    "install:calendar-widgets": "cd ./workspaces/calendar-widgets && rm -rf node_modules && npm cache clean --force && npm install",
-    "new": "npm run install:calendar-widgets-tests && npm run install:calendar-widgets && npm run install:docs"
+    "install:docs": "cd ./workspaces/docs && pnpm install",
+    "install:calendar-widgets-tests": "cd ./workspaces/calendar-widgets-tests && pnpm install",
+    "install:calendar-widgets": "cd ./workspaces/calendar-widgets && pnpm install",
+    "new": "pnpm run install:calendar-widgets-tests && pnpm run install:calendar-widgets && pnpm run install:docs"
   }
 }
