@@ -4,10 +4,6 @@
  * work well for content-centric websites.
  */
 
- @font-face {
-  font-family: 'HappyThoughts';
-  src: url('/fonts/HappyThoughts.ttf') format('truetype');
- }
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #2e8555;
