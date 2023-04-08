@@ -1,5 +1,6 @@
 import { formatDate } from './formatDate';
 import {isValidYear} from './isValidYear';
+
 /**
  * Generates an array of formatted date strings representing each day in a given month and year.
  *

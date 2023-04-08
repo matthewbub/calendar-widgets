@@ -17,6 +17,12 @@ const isValidYear = (year) => {
   return true;
 };
 
+/**
+ * Determines whether a given month is a valid month between 1 and 12.
+ *
+ * @param {number} month - The month to validate (1-12).
+ * @returns {boolean} True if the month is valid, false otherwise.
+ */
 const isValidMonth = (month) => {
   if (typeof month === 'number' && !isNaN(month) && month >= 1 && month <= 12) {
     return true;
@@ -42,6 +48,12 @@ const getDaysInMonth = (year, month) => {
   return new Date(year, month, 0).getDate();
 };
 
+/**
+ * Determines whether a given day is a valid day between 1 and 31.
+ *
+ * @param {number} day - The day to validate (1-31).
+ * @returns {boolean} True if the day is valid, false otherwise.
+ */
 const isValidDay = (day) => {
   if (typeof day === 'number' && !isNaN(day) && day >= 1 && day <= 31) {
     return true;
