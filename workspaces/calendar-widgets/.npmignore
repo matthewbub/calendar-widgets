@@ -1,5 +1,1 @@
-src/
 node_modules/
-.prettierrc.yml
-.eslintrc.yml
-tsconfig.json
