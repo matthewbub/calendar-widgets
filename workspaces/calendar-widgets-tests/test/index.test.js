@@ -1,5 +1,5 @@
 /** Dependencies */
-const {calendar} = require('@whilethiscompiles/calendar');
+const {calendar} = require('calendar-widgets');
 const chai = require('chai');
 
 /** Configurations */
