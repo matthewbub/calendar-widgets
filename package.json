@@ -2,9 +2,6 @@
   "name": "root",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "workspaces/calendar-widgets"
-  ],
   "scripts": {
     "install:docs": "cd ./workspaces/docs && pnpm install",
     "install:calendar-widgets-tests": "cd ./workspaces/calendar-widgets-tests && pnpm install",
