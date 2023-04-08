@@ -5,9 +5,13 @@
  * @returns {boolean} True if the year is valid, false otherwise.
  */
 export const isValidYear = (year) => {
-  const date = new Date(year, 1, 1);
-  const y = date.getFullYear();
-  if (isNaN(y) || y.length !== 4) {
+  if (!Number.isFinite(year)) {
+    return false;
+  }
+
+  const yStr = year.toString();
+
+  if (yStr.length !== 4 || year < 1900 || year > 2100) {
     return false;
   }
   return true;

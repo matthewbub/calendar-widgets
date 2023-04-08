@@ -16,9 +16,13 @@ const getDaysInMonth = (year, month) => {
  * @returns {boolean} True if the year is valid, false otherwise.
  */
 const isValidYear = (year) => {
-  const date = new Date(year, 1, 1);
-  const y = date.getFullYear();
-  if (isNaN(y) || y.length !== 4) {
+  if (!Number.isFinite(year)) {
+    return false;
+  }
+
+  const yStr = year.toString();
+
+  if (yStr.length !== 4 || year < 1900 || year > 2100) {
     return false;
   }
   return true;
@@ -58,7 +62,7 @@ const listDaysInMonth = (month, year) => {
   return dates;
 };
 
-const months$2 = [
+const months$1 = [
   'January',
   'February',
   'March',
@@ -73,7 +77,7 @@ const months$2 = [
   'December'
 ];
 
-const months$1 = [
+const months = [
   'enero',
   'febrero',
   'marzo',
@@ -90,10 +94,10 @@ const months$1 = [
 
 const locale = {
   en: {
-    months: months$2
+    months: months$1
   },
   es: {
-    months: months$1
+    months: months
   }
 };
 
@@ -105,7 +109,7 @@ const locale = {
  * @throws {object} An error object with a message if the year is not a valid year between 1900 and 2100.
  */
 const getCalendarYear = (year) => {  
-  if (isValidYear(year)) {
+  if (!isValidYear(year)) {
     return {
       error: {
         body: 'The argument passed to `calendar(\'YYYY\')` must be a valid year between 1900 and 2100. You passed ' + year + '.',
@@ -113,10 +117,10 @@ const getCalendarYear = (year) => {
     };
   }
 
-  return months.reduceRight((collector, current) => ({
+  return locale.en.months.reduceRight((collector, current) => ({
     [current.toLowerCase()]: {
-      count: getDaysInMonth(year, months.indexOf(current) + 1),
-      collection: listDaysInMonth(year, months.indexOf(current) + 1)
+      count: getDaysInMonth(year, locale.en.months.indexOf(current) + 1),
+      collection: listDaysInMonth(year, locale.en.months.indexOf(current) + 1)
     },
     ...collector
   }), {});
