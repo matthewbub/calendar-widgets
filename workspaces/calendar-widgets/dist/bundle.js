@@ -1,15 +1,4 @@
 /**
- * Calculates the number of days in a given month and year.
- *
- * @param {number} year - The year for which to calculate the number of days (e.g. 2023).
- * @param {number} month - The month for which to calculate the number of days (1-12).
- * @returns {number} The number of days in the specified month and year.
- */
-const getDaysInMonth = (year, month) => {
-  return new Date(year, month, 0).getDate();
-};
-
-/**
  * Determines whether a given year is a valid year between 1900 and 2100.
  *
  * @param {number} year - The year to validate (e.g. 2023).
@@ -28,6 +17,38 @@ const isValidYear = (year) => {
   return true;
 };
 
+const isValidMonth = (month) => {
+  if (typeof month === 'number' && !isNaN(month) && month >= 1 && month <= 12) {
+    return true;
+  }
+  return false;
+};
+
+/**
+ * Calculates the number of days in a given month and year.
+ *
+ * @param {number} year - The year for which to calculate the number of days (e.g. 2023).
+ * @param {number} month - The month for which to calculate the number of days (1-12).
+ * @returns {number} The number of days in the specified month and year.
+ */
+const getDaysInMonth = (year, month) => {
+  const validYear = isValidYear(year);
+  const validMonth = isValidMonth(month);
+  
+  if (validYear === false || validMonth === false) {
+    throw new Error('Invalid year or month. Year must be between 1900 and 2100, and month must be between 1 and 12.');
+  }
+
+  return new Date(year, month, 0).getDate();
+};
+
+const isValidDay = (day) => {
+  if (typeof day === 'number' && !isNaN(day) && day >= 1 && day <= 31) {
+    return true;
+  }
+  return false;
+};
+
 /**
  * Formats a date in a locale-specific format.
  *
@@ -38,6 +59,23 @@ const isValidYear = (year) => {
  * @returns {string} A formatted date string in a locale-specific format.
  */
 const formatDate = (month, day, year, locale = undefined) => {
+  const validMonth = isValidMonth(month);
+  const validYear = isValidYear(year);
+  const validDay = isValidDay(day);
+
+  if (validMonth === false) {
+    throw new Error('Invalid month or year. Month must be between 1 and 12, and year must be between 1900 and 2100.');
+  }
+  if (validYear === false) {
+    throw new Error('Invalid month or year. Month must be between 1 and 12, and year must be between 1900 and 2100.');
+  }
+  if (typeof locale !== 'undefined' && typeof locale !== 'string') {
+    throw new Error('Invalid locale. The locale must be a string.');
+  }
+  if (validDay === false) {
+    throw new Error('Invalid day. The day must be between 1 and 31.');
+  }
+
   const date = new Date(year, month - 1, day); // Month index starts from 0
   const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
   return date.toLocaleDateString(locale, options);
@@ -134,4 +172,4 @@ const getCalendarYear = (year) => {
   }), {});
 };
 
-export { formatDate, getCalendarYear, getDaysInMonth, isValidYear, listDaysInMonth, locale };
+export { formatDate, getCalendarYear, getDaysInMonth, isValidDay, isValidMonth, isValidYear, listDaysInMonth, locale };

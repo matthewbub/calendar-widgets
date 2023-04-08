@@ -1,5 +1,14 @@
 /** Dependencies */
-import {formatDate, getCalendarYear, getDaysInMonth, listDaysInMonth, isValidYear, locale} from 'calendar-widgets';
+import {
+  formatDate, 
+  getCalendarYear, 
+  getDaysInMonth, 
+  listDaysInMonth, 
+  isValidYear, 
+  locale, 
+  isValidDay, 
+  isValidMonth
+} from 'calendar-widgets';
 import chai from 'chai';
 
 /** Configurations */
@@ -24,6 +33,35 @@ describe('formatDate', () => {
   it('should format a date in a custom locale (ja-JP)', () => {
     const formattedDate = formatDate(4, 8, 2023, 'ja-JP');
     expect(formattedDate).to.equal('2023/04/08');
+  });
+
+  it('should throw an error for invalid input arguments', () => {
+    const invalidTestCases = [
+      { month: 0, day: 8, year: 2023 },
+      { month: 13, day: 8, year: 2023 },
+      { month: 4, day: 0, year: 2023 },
+      { month: 4, day: 32, year: 2023 },
+      { month: 4, day: 8, year: 1899 },
+      { month: 4, day: 8, year: 2101 },
+      { month: 4, day: 8, year: 2023, locale: 123 },
+      { month: 4, day: 8, year: 2023, locale: '' },
+    ];
+
+    invalidTestCases.forEach(({ month, day, year, locale }) => {
+      const expectedErrorMessage = (() => {
+        if (!isValidMonth(month) || !isValidYear(year)) {
+          return 'Invalid month or year. Month must be between 1 and 12, and year must be between 1900 and 2100.';
+        }
+        if (typeof locale !== 'undefined' && typeof locale !== 'string') {
+          return 'Invalid locale. The locale must be a string.';
+        }
+        if (!isValidDay(day)) {
+          return 'Invalid day. The day must be between 1 and 31.';
+        }
+      })();
+
+      expect(() => formatDate(month, day, year, locale)).to.throw(expectedErrorMessage);
+    });
   });
 });
 
@@ -80,6 +118,27 @@ describe('getDaysInMonth', () => {
       expect(getDaysInMonth(year, month)).to.equal(days);
     });
   });
+
+  it('should throw an error for invalid year or month', () => {
+    const invalidTestCases = [
+      { year: 1899, month: 1 },
+      { year: 2101, month: 1 },
+      { year: 2021, month: 0 },
+      { year: 2021, month: 13 },
+      { year: '2021', month: 1 },
+      { year: 2021, month: '1' },
+      { year: NaN, month: 1 },
+      { year: 2021, month: NaN },
+      { year: null, month: 1 },
+      { year: 2021, month: null },
+      { year: undefined, month: 1 },
+      { year: 2021, month: undefined },
+    ];
+
+    invalidTestCases.forEach(({ year, month }) => {
+      expect(() => getDaysInMonth(year, month)).to.throw('Invalid year or month. Year must be between 1900 and 2100, and month must be between 1 and 12.');
+    });
+  });
 });
 
 describe('isValidYear', () => {
@@ -132,6 +191,66 @@ describe('listDaysInMonth', () => {
 
     invalidTestCases.forEach(({ year, month }) => {
       expect(() => listDaysInMonth(month, year)).to.throw(Error);
+    });
+  });
+});
+
+describe('isValidDay', () => {
+  it('should return true for valid day values', () => {
+    const validDays = [1, 15, 31];
+
+    validDays.forEach((day) => {
+      expect(isValidDay(day)).to.be.true;
+    });
+  });
+
+  it('should return false for invalid day values', () => {
+    const invalidDays = [
+      0,
+      32,
+      -1,
+      0.5,
+      '15',
+      NaN,
+      null,
+      undefined,
+      'a',
+      [],
+      {},
+    ];
+
+    invalidDays.forEach((day) => {
+      expect(isValidDay(day)).to.be.false;
+    });
+  });
+});
+
+describe('isValidDay', () => {
+  it('should return true for valid day values', () => {
+    const validDays = [1, 15, 31];
+
+    validDays.forEach((day) => {
+      expect(isValidDay(day)).to.be.true;
+    });
+  });
+
+  it('should return false for invalid day values', () => {
+    const invalidDays = [
+      0,
+      32,
+      -1,
+      0.5,
+      '15',
+      NaN,
+      null,
+      undefined,
+      'a',
+      [],
+      {},
+    ];
+
+    invalidDays.forEach((day) => {
+      expect(isValidDay(day)).to.be.false;
     });
   });
 });
