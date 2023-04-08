@@ -11,5 +11,5 @@ const isValidYear = (year) => {
     return false;
   }
   return true;
-}
-module.exports = { isValidYear }
+};
+module.exports = { isValidYear };

@@ -12,6 +12,6 @@ const formatDate = (month, day, year) => {
   const yearString = year;
 
   return `${monthString}-${dayString}-${yearString}`;
-}
+};
 
 module.exports = { formatDate };

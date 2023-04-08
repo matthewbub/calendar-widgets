@@ -13,7 +13,7 @@ const getCalendarYear = (year) => {
   if (isValidYear(year)) {
     return {
       error: {
-        body: "The argument passed to `calendar('YYYY')` must be a valid year between 1900 and 2100. You passed " + year + ".",
+        body: 'The argument passed to `calendar(\'YYYY\')` must be a valid year between 1900 and 2100. You passed ' + year + '.',
       },
     };
   }

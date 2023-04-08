@@ -17,6 +17,6 @@ const listDaysInMonth = (month, year) => {
   }
 
   return dates;
-}
+};
 
 module.exports = { listDaysInMonth };
