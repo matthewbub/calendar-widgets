@@ -51,7 +51,6 @@ const formatDate = (month, day, year, locale = undefined) => {
  * @returns {Array} An array of formatted date strings representing each day in the specified month and year.
  */
 const listDaysInMonth = (year, month) => {
-  console.log('listDaysInMonth', month, year, typeof month, typeof year);
   if (!Number.isInteger(month) || month < 1 || month > 12) {
     throw new Error(`Invalid month: ${month}. The month must be an integer between 1 and 12.`);
   }
