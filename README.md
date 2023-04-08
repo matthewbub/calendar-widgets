@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A user friendly SDK & API that returns a list of calendar dates for a given year in JSON format. Built with [day.js](https://day.js.org/) & typescript. Website: [http://www.calendar-widgets.com/](http://www.calendar-widgets.com/)
+Website: [http://www.calendar-widgets.com/](http://www.calendar-widgets.com/)
 
 ### On this page
 
@@ -28,6 +28,6 @@ I'd be appreciative of bug reports/ fixes, and I'd gladly accept new proposals. 
 
 ### This repo
 
-- `/lib/calendar` - NPM Package
-- `/lib/calendar-tests` - Test suites for calendar as a package
+- `/lib/calendar-widgets` - NPM Package
+- `/lib/calendar-widgets-tests` - Test suites for calendar-widgets as a package
 - `/lib/docs` - Documentation

@@ -1,28 +1,20 @@
 {
   "name": "calendar-widgets",
-  "version": "0.0.5",
-  "main": "./dist/index.js",
+  "version": "0.0.6",
+  "main": "./src/index.js",
   "scripts": {
-    "build": "tsc",
+    "start": "node src/index",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
-  "dependencies": {
-    "dayjs": "1.11.7"
-  },
   "devDependencies": {
-    "@types/node": "^18.15.3",
-    "@typescript-eslint/eslint-plugin": "^5.55.0",
-    "@typescript-eslint/parser": "^5.55.0",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "prettier": "^2.8.4",
-    "typescript": "^4.9.5"
+    "prettier": "^2.8.4"
   },
   "keywords": [
     "calendar",
-    "calendar SDK",
-    "calendar API"
+    "calendar SDK"
   ]
 }
