@@ -2,6 +2,7 @@
   "name": "tests",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "comments": [
     "mocha & chai test suites for ../calendar-widgets/*",
     "imported as a relative path for local testing"
