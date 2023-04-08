@@ -1,13 +1,8 @@
-const { locale } = require('./locale');
-const { isValidYear } = require('./utils/isValidYear');
-const {getDaysInMonth} = require('./utils/getDaysInMonth');
-const {listDaysInMonth} = require('./utils/listDaysInMonth');
-const {getCalendarYear} = require('./utils/getCalendarYear');
+import { getDaysInMonth } from './utils/getDaysInMonth.js';
+import { isValidYear } from './utils/isValidYear.js';
+import { listDaysInMonth } from './utils/listDaysInMonth.js';
+import { locale } from './locale/index.js';
+import { getCalendarYear } from './utils/getCalendarYear.js';
+import { formatDate } from './utils/formatDate.js';
 
-module.exports = {
-  getCalendarYear,
-  getDaysInMonth,
-  isValidYear,
-  listDaysInMonth,
-  locale
-};
+export { getDaysInMonth, isValidYear, listDaysInMonth, locale, getCalendarYear, formatDate };

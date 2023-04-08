@@ -1,7 +1,7 @@
-const { months: enMonths } = require('./en');
-const { months: esMonths } = require('./es');
+import { months as enMonths } from './en';
+import { months as esMonths } from './es';
 
-const locale = {
+export const locale = {
   en: {
     months: enMonths
   },
@@ -9,5 +9,3 @@ const locale = {
     months: esMonths
   }
 };
-
-module.exports = { locale };

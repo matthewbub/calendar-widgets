@@ -1,17 +1,23 @@
 {
   "name": "calendar-widgets",
   "version": "0.0.6",
-  "main": "./src/index.js",
+  "main": "./dist/bundle.js",
+  "type": "module",
+  "module": "./src/index.js",
   "scripts": {
     "start": "node src/index",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "build": "rollup -c"
   },
   "keywords": [
     "calendar",
     "calendar SDK"
   ],
   "devDependencies": {
-    "eslint": "8.38.0"
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "eslint": "8.38.0",
+    "rollup": "^3.20.2"
   }
 }

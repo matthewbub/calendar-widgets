@@ -1,4 +1,4 @@
-const { formatDate } = require('./formatDate');
+import { formatDate } from './formatDate';
 
 /**
  * Generates an array of formatted date strings representing each day in a given month and year.
@@ -7,7 +7,7 @@ const { formatDate } = require('./formatDate');
  * @param {number} year - The year for which to generate the list of days (e.g. 2023).
  * @returns {Array} An array of formatted date strings representing each day in the specified month and year.
  */
-const listDaysInMonth = (month, year) => {
+export const listDaysInMonth = (month, year) => {
   const daysInMonth = new Date(year, month, 0).getDate();
   let dates = [];
 
@@ -18,5 +18,3 @@ const listDaysInMonth = (month, year) => {
 
   return dates;
 };
-
-module.exports = { listDaysInMonth };

@@ -1,6 +1,6 @@
-const {getDaysInMonth} = require('./getDaysInMonth');
-const {listDaysInMonth} = require('./listDaysInMonth');
-const {isValidYear} = require('./isValidYear');
+import { getDaysInMonth } from './getDaysInMonth.js';
+import { listDaysInMonth } from './listDaysInMonth.js';
+import { isValidYear } from './isValidYear.js';
 
 /**
  * Generates an object representing a calendar year with the number of days and a list of days for each month.
@@ -9,7 +9,7 @@ const {isValidYear} = require('./isValidYear');
  * @returns {object} An object representing a calendar year with the number of days and a list of days for each month.
  * @throws {object} An error object with a message if the year is not a valid year between 1900 and 2100.
  */
-const getCalendarYear = (year) => {  
+export const getCalendarYear = (year) => {  
   if (isValidYear(year)) {
     return {
       error: {
@@ -26,5 +26,3 @@ const getCalendarYear = (year) => {
     ...collector
   }), {});
 };
-
-module.exports = {getCalendarYear};
