@@ -15,14 +15,30 @@ Calendar Widgets is an SDK that makes working with calendars less shitty, by pro
 
 ## Getting Started
 
+```shell
+npm install calendar-widgets
+```
+
+## Helpers 
+
+- [`formatDate`](https://calendar-widgets.com/helpers/formatDate) function
+- [`getCalendarYear`](https://calendar-widgets.com/helpers/getCalendarYear) function
+- [`getDaysInMonth`](https://calendar-widgets.com/helpers/getDaysInMonth) function
+- [`isValidDay`](https://calendar-widgets.com/helpers/isValidDay) function
+
 :::info
 
-More info coming soon
+This document is actively being working on, more info coming soon!
 
 :::
 
-## Road Map
+## V1 Road Map
 
-- [ ] Simple Calendar Widget
-- [ ] Draggable Calendar Events Widget
-- [ ] ???
+- [ ] Lift helper utilities for use in Production
+  - [ ] Localize calendar-widgets helper utilities
+- [ ] React-based Calendar Widget
+  - [ ] Localize Calendar Widget interface and documentation
+- [ ] React-based Interactive Calendar Widget
+  - [ ] Localize Interactive Calendar Widget interface and documentation
+- [ ] React-based Draggable Timeline Widget
+  - [ ] Localize Draggable Timeline Widget interface and documentation

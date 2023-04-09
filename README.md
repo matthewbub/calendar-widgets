@@ -20,6 +20,7 @@ npm install calendar-widgets
 - [`formatDate`](https://calendar-widgets.com/helpers/formatDate) function
 - [`getCalendarYear`](https://calendar-widgets.com/helpers/getCalendarYear) function
 - [`getDaysInMonth`](https://calendar-widgets.com/helpers/getDaysInMonth) function
+
 ## Contributing
 
 I'd be appreciative of bug reports/ fixes, and I'd gladly accept new proposals. 🙂 If you'd like to contribute to an existing issue, kindly communicate through the designated ticket to avoid overlapping efforts. Check out the [Open Issues](https://github.com/9mbs/calendar/issues?q=is%3Aissue+is%3Aopen) for more information.
