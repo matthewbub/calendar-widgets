@@ -1,0 +1,33 @@
+export const locale = {
+  daysOfWeek: ['Di', 'Hë', 'Ma', 'Më', 'En', 'Pr', 'Sh'],
+  daysOfWeekFull: ['E Diel', 'E Hënë', 'E Martë', 'E Mërkurë', 'E Enjte', 'E Premte', 'E Shtunë'],
+  monthsFull: [
+    'Janar',
+    'Shkurt',
+    'Mars',
+    'Prill',
+    'Maj',
+    'Qershor',
+    'Korrik',
+    'Gusht',
+    'Shtator',
+    'Tetor',
+    'Nëntor',
+    'Dhjetor'
+  ],
+  monthsShort: ['Jan', 'Shk', 'Mar', 'Pri', 'Maj', 'Qer', 'Kor', 'Gus', 'Sht', 'Tet', 'Nën', 'Dhj'],
+  today: 'Sot',
+  clear: 'Pastro',
+  close: 'Mbyll',
+  firstDay: 1,
+  format: 'mm/dd/yyyy',
+  formatSubmit: 'mm/dd/yyyy',
+  labelMonthNext: 'Muaji tjetër',
+  labelMonthPrev: 'Muaji i kaluar',
+  labelMonthSelect: 'Zgjedhni një muaj',
+  labelYearSelect: 'Zgjedhni një vit',
+  selectMonths: true,
+  selectYears: true,
+  min: true,
+  max: true
+};

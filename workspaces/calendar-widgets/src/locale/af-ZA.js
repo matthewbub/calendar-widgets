@@ -1,0 +1,33 @@
+export const locale = {
+  daysOfWeek: ['So', 'Ma', 'Di', 'Wo', 'Do', 'Vr', 'Sa'],
+  daysOfWeekFull: ['Sondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrydag', 'Saterdag'],
+  monthsFull: [
+    'Januarie',
+    'Februarie',
+    'Maart',
+    'April',
+    'Mei',
+    'Junie',
+    'Julie',
+    'Augustus',
+    'September',
+    'Oktober',
+    'November',
+    'Desember'
+  ],
+  monthsShort: ['Jan', 'Feb', 'Mrt', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Des'],
+  today: 'Vandag',
+  clear: 'Maak Skoon',
+  close: 'Maak Toe',
+  firstDay: 0,
+  format: 'dd/mm/yyyy',
+  formatSubmit: 'dd/mm/yyyy',
+  labelMonthNext: 'Volgende maand',
+  labelMonthPrev: 'Vorige maand',
+  labelMonthSelect: 'Kies \'n maand',
+  labelYearSelect: 'Kies \'n jaar',
+  selectMonths: true,
+  selectYears: true,
+  min: true,
+  max: true
+};

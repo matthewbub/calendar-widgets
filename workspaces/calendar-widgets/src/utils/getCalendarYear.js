@@ -21,10 +21,10 @@ export const getCalendarYear = (year, locale = undefined) => {
     };
   }
 
-  return localeConstants[preferredLocale].months.reduceRight((collector, current) => ({
+  return localeConstants[preferredLocale].monthsFull.reduceRight((collector, current) => ({
     [current.toLowerCase()]: {
-      count: getDaysInMonth(year, localeConstants[preferredLocale].months.indexOf(current) + 1),
-      collection: listDaysInMonth(year, localeConstants[preferredLocale].months.indexOf(current) + 1)
+      count: getDaysInMonth(year, localeConstants[preferredLocale].monthsFull.indexOf(current) + 1),
+      collection: listDaysInMonth(year, localeConstants[preferredLocale].monthsFull.indexOf(current) + 1)
     },
     ...collector
   }), {});

@@ -121,43 +121,432 @@ const listDaysInMonth = (year, month) => {
   return dates;
 };
 
-const months$1 = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
-];
+const locale$b = {
+  daysOfWeek: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+  daysOfWeekFull: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+  monthsFull: [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ],
+  monthsShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  today: 'Today',
+  clear: 'Clear',
+  close: 'Close',
+  firstDay: 0,
+  format: 'mm/dd/yyyy',
+  formatSubmit: 'mm/dd/yyyy',
+  labelMonthNext: 'Next month',
+  labelMonthPrev: 'Previous month',
+  labelMonthSelect: 'Select a month',
+  labelYearSelect: 'Select a year',
+  selectMonths: true,
+  selectYears: true,
+  min: true,
+  max: true,
+};
 
-const months = [
-  'enero',
-  'febrero',
-  'marzo',
-  'abril',
-  'mayo',
-  'junio',
-  'julio',
-  'agosto',
-  'septiembre',
-  'octubre',
-  'noviembre',
-  'diciembre'
-];
+const locale$a = {
+  daysOfWeek: ['So', 'Ma', 'Di', 'Wo', 'Do', 'Vr', 'Sa'],
+  daysOfWeekFull: ['Sondag', 'Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrydag', 'Saterdag'],
+  monthsFull: [
+    'Januarie',
+    'Februarie',
+    'Maart',
+    'April',
+    'Mei',
+    'Junie',
+    'Julie',
+    'Augustus',
+    'September',
+    'Oktober',
+    'November',
+    'Desember'
+  ],
+  monthsShort: ['Jan', 'Feb', 'Mrt', 'Apr', 'Mei', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Des'],
+  today: 'Vandag',
+  clear: 'Maak Skoon',
+  close: 'Maak Toe',
+  firstDay: 0,
+  format: 'dd/mm/yyyy',
+  formatSubmit: 'dd/mm/yyyy',
+  labelMonthNext: 'Volgende maand',
+  labelMonthPrev: 'Vorige maand',
+  labelMonthSelect: 'Kies \'n maand',
+  labelYearSelect: 'Kies \'n jaar',
+  selectMonths: true,
+  selectYears: true,
+  min: true,
+  max: true
+};
+
+const locale$9 = {
+  daysOfWeek: ['Di', 'Hë', 'Ma', 'Më', 'En', 'Pr', 'Sh'],
+  daysOfWeekFull: ['E Diel', 'E Hënë', 'E Martë', 'E Mërkurë', 'E Enjte', 'E Premte', 'E Shtunë'],
+  monthsFull: [
+    'Janar',
+    'Shkurt',
+    'Mars',
+    'Prill',
+    'Maj',
+    'Qershor',
+    'Korrik',
+    'Gusht',
+    'Shtator',
+    'Tetor',
+    'Nëntor',
+    'Dhjetor'
+  ],
+  monthsShort: ['Jan', 'Shk', 'Mar', 'Pri', 'Maj', 'Qer', 'Kor', 'Gus', 'Sht', 'Tet', 'Nën', 'Dhj'],
+  today: 'Sot',
+  clear: 'Pastro',
+  close: 'Mbyll',
+  firstDay: 1,
+  format: 'mm/dd/yyyy',
+  formatSubmit: 'mm/dd/yyyy',
+  labelMonthNext: 'Muaji tjetër',
+  labelMonthPrev: 'Muaji i kaluar',
+  labelMonthSelect: 'Zgjedhni një muaj',
+  labelYearSelect: 'Zgjedhni një vit',
+  selectMonths: true,
+  selectYears: true,
+  min: true,
+  max: true
+};
+
+const locale$8 = {
+  daysOfWeek: ['እሁድ', 'ሰኞ', 'ማክሰኞ', 'ረቡዕ', 'ሐሙስ', 'ዓርብ', 'ቅዳሜ'],
+  daysOfWeekFull: ['እሁድ', 'ሰኞ', 'ማክሰኞ', 'ረቡዕ', 'ሐሙስ', 'ዓርብ', 'ቅዳሜ'],
+  monthsFull: [
+    'ጃንዩወሪ',
+    'ፌብሩወሪ',
+    'ማርች',
+    'ኤፕረል',
+    'ሜይ',
+    'ጁን',
+    'ጁላይ',
+    'ኦገስት',
+    'ሴፕቴምበር',
+    'ኦክተውበር',
+    'ኖቬምበር',
+    'ዲሴምበር'
+  ],
+  monthsShort: ['ጃንዩ', 'ፌብሩ', 'ማርች', 'ኤፕረ', 'ሜይ', 'ጁን', 'ጁላይ', 'ኦገስ', 'ሴፕቴ', 'ኦክተ', 'ኖቬም', 'ዲሴም'],
+  today: 'ዛሬ',
+  clear: 'አጥፋ',
+  close: 'ዝጋ',
+  firstDay: 0,
+  format: 'mm/dd/yyyy',
+  formatSubmit: 'mm/dd/yyyy',
+  labelMonthNext: 'የሚቀጥሉበት ወር',
+  labelMonthPrev: 'የሚለው ወር',
+  labelMonthSelect: 'ወርውን ይምረጡ',
+  labelYearSelect: 'ዓመቱን ይምረጡ',
+  selectMonths: true,
+  selectYears: true,
+  min: true,
+  max: true
+};
+
+const locale$7 = {
+  daysOfWeek: ['أحد', 'اثنين', 'ثلاثاء', 'أربعاء', 'خميس', 'جمعة', 'سبت'],
+  daysOfWeekFull: ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
+  monthsFull: [
+    'يناير',
+    'فبراير',
+    'مارس',
+    'أبريل',
+    'مايو',
+    'يونيو',
+    'يوليو',
+    'أغسطس',
+    'سبتمبر',
+    'أكتوبر',
+    'نوفمبر',
+    'ديسمبر'
+  ],
+  monthsShort: ['ينا', 'فبر', 'مار', 'أبر', 'ماي', 'يون', 'يول', 'أغس', 'سبت', 'أكت', 'نوف', 'ديس'],
+  today: 'اليوم',
+  clear: 'مسح',
+  close: 'إغلاق',
+  firstDay: 6,
+  format: 'mm/dd/yyyy',
+  formatSubmit: 'mm/dd/yyyy',
+  labelMonthNext: 'الشهر القادم',
+  labelMonthPrev: 'الشهر السابق',
+  labelMonthSelect: 'اختر شهرًا',
+  labelYearSelect: 'اختر عامًا',
+  selectMonths: true,
+  selectYears: true,
+  min: true,
+  max: true
+};
+
+const locale$6 = {
+  nameActual: 'الإنجليزية (الولايات المتحدة)',
+  daysOfWeek: ['أحد', 'إثنين', 'ثلاثاء', 'أربعاء', 'خميس', 'جمعة', 'سبت'],
+  daysOfWeekFull: ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
+  monthsFull: [
+    'يناير',
+    'فبراير',
+    'مارس',
+    'أبريل',
+    'مايو',
+    'يونيو',
+    'يوليو',
+    'أغسطس',
+    'سبتمبر',
+    'أكتوبر',
+    'نوفمبر',
+    'ديسمبر'
+  ],
+  monthsShort: ['ينا', 'فبر', 'مار', 'أبر', 'ماي', 'يون', 'يول', 'أغس', 'سبت', 'أكت', 'نوف', 'ديس'],
+  today: 'اليوم',
+  clear: 'مسح',
+  close: 'إغلاق',
+  firstDay: 6,
+  format: 'mm/dd/yyyy',
+  formatSubmit: 'mm/dd/yyyy',
+  labelMonthNext: 'الشهر القادم',
+  labelMonthPrev: 'الشهر السابق',
+  labelMonthSelect: 'اختر شهرًا',
+  labelYearSelect: 'اختر عامًا',
+  selectMonths: true,
+  selectYears: true,
+  min: true,
+  max: true
+};
+
+const locale$5 = {
+  nameActual: 'الإنجليزية (الولايات المتحدة)',
+  daysOfWeek: ['أحد', 'إثنين', 'ثلاثاء', 'أربعاء', 'خميس', 'جمعة', 'سبت'],
+  daysOfWeekFull: ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
+  monthsFull: [
+    'يناير',
+    'فبراير',
+    'مارس',
+    'أبريل',
+    'مايو',
+    'يونيو',
+    'يوليو',
+    'أغسطس',
+    'سبتمبر',
+    'أكتوبر',
+    'نوفمبر',
+    'ديسمبر'
+  ],
+  monthsShort: ['ينا', 'فبر', 'مار', 'أبر', 'ماي', 'يون', 'يول', 'أغس', 'سبت', 'أكت', 'نوف', 'ديس'],
+  today: 'اليوم',
+  clear: 'مسح',
+  close: 'إغلاق',
+  firstDay: 6,
+  format: 'mm/dd/yyyy',
+  formatSubmit: 'mm/dd/yyyy',
+  labelMonthNext: 'الشهر القادم',
+  labelMonthPrev: 'الشهر السابق',
+  labelMonthSelect: 'اختر شهرًا',
+  labelYearSelect: 'اختر عامًا',
+  selectMonths: true,
+  selectYears: true,
+  min: true,
+  max: true
+};
+
+const locale$4 = {
+  nameActual: 'الإنجليزية (الولايات المتحدة)',
+  daysOfWeek: ['أحد', 'إثنين', 'ثلاثاء', 'أربعاء', 'خميس', 'جمعة', 'سبت'],
+  daysOfWeekFull: ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
+  monthsFull: [
+    'يناير',
+    'فبراير',
+    'مارس',
+    'أفريل',
+    'ماي',
+    'جوان',
+    'جويلية',
+    'أوت',
+    'سبتمبر',
+    'أكتوبر',
+    'نوفمبر',
+    'ديسمبر'
+  ],
+  monthsShort: ['ينا', 'فبر', 'مار', 'أفر', 'ماي', 'جوا', 'جوي', 'أوت', 'سبت', 'أكت', 'نوف', 'ديس'],
+  today: 'اليوم',
+  clear: 'مسح',
+  close: 'إغلاق',
+  firstDay: 6,
+  format: 'mm/dd/yyyy',
+  formatSubmit: 'mm/dd/yyyy',
+  labelMonthNext: 'الشهر القادم',
+  labelMonthPrev: 'الشهر السابق',
+  labelMonthSelect: 'اختر شهرًا',
+  labelYearSelect: 'اختر عامًا',
+  selectMonths: true,
+  selectYears: true,
+  min: true,
+  max: true
+};
+
+const locale$3 = {
+  nameActual: 'الإنجليزية (الولايات المتحدة)',
+  daysOfWeek: ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
+  daysOfWeekFull: ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
+  monthsFull: [
+    'يناير',
+    'فبراير',
+    'مارس',
+    'أبريل',
+    'مايو',
+    'يونيو',
+    'يوليو',
+    'أغسطس',
+    'سبتمبر',
+    'أكتوبر',
+    'نوفمبر',
+    'ديسمبر'
+  ],
+  monthsShort: ['ينا', 'فبر', 'مار', 'أبر', 'ماي', 'يون', 'يول', 'أغس', 'سبت', 'أكت', 'نوف', 'ديس'],
+  today: 'اليوم',
+  clear: 'مسح',
+  close: 'إغلاق',
+  firstDay: 6,
+  format: 'mm/dd/yyyy',
+  formatSubmit: 'mm/dd/yyyy',
+  labelMonthNext: 'الشهر القادم',
+  labelMonthPrev: 'الشهر السابق',
+  labelMonthSelect: 'اختر شهرًا',
+  labelYearSelect: 'اختر عامًا',
+  selectMonths: true,
+  selectYears: true,
+  min: true,
+  max: true
+};
+
+const locale$2 = {
+  nameActual: 'الإنجليزية (الولايات المتحدة)',
+  daysOfWeek: ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
+  daysOfWeekFull: ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
+  monthsFull: [
+    'يناير',
+    'فبراير',
+    'مارس',
+    'أبريل',
+    'مايو',
+    'يونيو',
+    'يوليو',
+    'أغسطس',
+    'سبتمبر',
+    'أكتوبر',
+    'نوفمبر',
+    'ديسمبر'
+  ],
+  monthsShort: ['ينا', 'فبر', 'مار', 'أبر', 'ماي', 'يون', 'يول', 'أغس', 'سبت', 'أكت', 'نوف', 'ديس'],
+  today: 'اليوم',
+  clear: 'مسح',
+  close: 'إغلاق',
+  firstDay: 0,
+  format: 'mm/dd/yyyy',
+  formatSubmit: 'mm/dd/yyyy',
+  labelMonthNext: 'الشهر القادم',
+  labelMonthPrev: 'الشهر السابق',
+  labelMonthSelect: 'اختر شهرًا',
+  labelYearSelect: 'اختر عامًا',
+  selectMonths: true,
+  selectYears: true,
+  min: true,
+  max: true
+};
+
+const locale$1 = {
+  nameActual: 'العربية (إسرائيل)',
+  daysOfWeek: ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
+  daysOfWeekFull: ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'],
+  monthsFull: [
+    'يناير',
+    'فبراير',
+    'مارس',
+    'أبريل',
+    'مايو',
+    'يونيو',
+    'يوليو',
+    'أغسطس',
+    'سبتمبر',
+    'أكتوبر',
+    'نوفمبر',
+    'ديسمبر'
+  ],
+  monthsShort: ['ينا', 'فبر', 'مار', 'أبر', 'ماي', 'يون', 'يول', 'أغس', 'سبت', 'أكت', 'نوف', 'ديس'],
+  today: 'اليوم',
+  clear: 'مسح',
+  close: 'إغلاق',
+  firstDay: 0,
+  format: 'dd/mm/yyyy',
+  formatSubmit: 'dd/mm/yyyy',
+  labelMonthNext: 'الشهر التالي',
+  labelMonthPrev: 'الشهر السابق',
+  labelMonthSelect: 'اختر شهرًا',
+  labelYearSelect: 'اختر عامًا',
+  selectMonths: true,
+  selectYears: true,
+  min: true,
+  max: true
+};
 
 const locale = {
   'en-US': {
-    months: months$1
+    name: 'English (United States)',
+    ...locale$b
   },
-  es: {
-    months: months
-  }
+  'af-ZA': {
+    name: 'Afrikaans (South Africa)',
+    ...locale$a
+  },
+  'sq-AL': {
+    name: 'Albanian (Albania)',
+    ...locale$9
+  },
+  'am-ET': {
+    name: 'Amharic (Ethiopia)',
+    ...locale$8
+  },
+  'ar-AE': {
+    name: 'Arabic (United Arab Emirates)',
+    ...locale$7
+  },
+  'ar-BH': {
+    name: 'Arabic (Bahrain)',
+    ...locale$6
+  },
+  'ar-DJ': {
+    name: 'Arabic (Djibouti)',
+    ...locale$5
+  },
+  'ar-DZ': {
+    name: 'Arabic (Algeria)',
+    ...locale$4
+  },
+  'ar-EG': {
+    name: 'Arabic (Egypt)',
+    ...locale$3
+  },
+  'ar-ER': {
+    name: 'Arabic (Eritrea)',
+    ...locale$2
+  },
+  'ar-IL': {
+    name: 'Arabic (Israel)',
+    ...locale$1
+  },
+
 };
 
 /**
@@ -178,10 +567,10 @@ const getCalendarYear = (year, locale$1 = undefined) => {
     };
   }
 
-  return locale[preferredLocale].months.reduceRight((collector, current) => ({
+  return locale[preferredLocale].monthsFull.reduceRight((collector, current) => ({
     [current.toLowerCase()]: {
-      count: getDaysInMonth(year, locale[preferredLocale].months.indexOf(current) + 1),
-      collection: listDaysInMonth(year, locale[preferredLocale].months.indexOf(current) + 1)
+      count: getDaysInMonth(year, locale[preferredLocale].monthsFull.indexOf(current) + 1),
+      collection: listDaysInMonth(year, locale[preferredLocale].monthsFull.indexOf(current) + 1)
     },
     ...collector
   }), {});

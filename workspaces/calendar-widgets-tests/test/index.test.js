@@ -119,7 +119,7 @@ describe('getCalendarYear', () => {
     expect(result).to.be.an('object');
 
     for (let month = 1; month <= 12; month++) {
-      const key = locale['en-US'].months[month - 1].toLowerCase();
+      const key = locale['en-US'].monthsFull[month - 1].toLowerCase();
       const count = getDaysInMonth(validYear, month);
       const collection = listDaysInMonth(validYear, month);
 
