@@ -63,7 +63,7 @@ const config = {
         title: 'Calendar Widgets',
         items: [
           {
-            href: 'https://github.com/9mbs/calendar',
+            href: 'https://github.com/9mbs/calendar-widgets',
             label: 'GitHub',
             position: 'right'
           }
@@ -81,7 +81,7 @@ const config = {
               },
               {
                 label: 'Report a bug',
-                href: 'https://github.com/9mbs/calendar/issues'
+                href: 'https://github.com/9mbs/calendar-widgets/issues'
               }
             ]
           }
