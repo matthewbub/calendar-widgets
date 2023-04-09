@@ -2,6 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+Current bundle size: `6.13 kB`
+
 Working with dates sucks, working with calendars sucks even more. Here's an attempt at making things less sucky. Website: [http://www.calendar-widgets.com/](http://www.calendar-widgets.com/)
 
 ### On this page
@@ -11,6 +13,8 @@ Working with dates sucks, working with calendars sucks even more. Here's an atte
 - [This repo](#this-repo)
 
 ### Install Via Nodejs
+
+Under active development 
 
 ```shell
 npm install calendar-widgets
