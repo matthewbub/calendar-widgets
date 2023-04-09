@@ -49,8 +49,12 @@ describe('formatDate', () => {
 
     invalidTestCases.forEach(({ month, day, year, locale }) => {
       const expectedErrorMessage = (() => {
-        if (!isValidMonth(month) || !isValidYear(year)) {
-          return 'Invalid month or year. Month must be between 1 and 12, and year must be between 1900 and 2100.';
+        if (!isValidMonth(month)) {
+          return 'Invalid month. Month must be between 1 and 12.'
+        }
+        
+        if (!isValidYear(year)) {
+          return 'Invalid year. Year must be between 1900 and 2100.';
         }
         if (typeof locale !== 'undefined' && typeof locale !== 'string') {
           return 'Invalid locale. The locale must be a string.';
@@ -62,6 +66,37 @@ describe('formatDate', () => {
 
       expect(() => formatDate(month, day, year, locale)).to.throw(expectedErrorMessage);
     });
+  });
+
+  it('should format a date with custom options (month: "long")', () => {
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    const formattedDate = formatDate(4, 8, 2023, undefined, options);
+    const expectedDate = new Date(2023, 3, 8); // Month index starts from 0
+    
+    const expectedResult = expectedDate.toLocaleDateString(undefined, options);
+    expect(formattedDate).to.equal(expectedResult);
+  });
+
+  it('should format a date with custom options (month: "short")', () => {
+    const options = { month: 'short', year: 'numeric', day: '2-digit' };
+    const formattedDate = formatDate(4, 8, 2023, undefined, options);
+    
+    const expectedDate = new Date(2023, 3, 8);
+    const expectedResult = expectedDate.toLocaleDateString(undefined, options);
+
+    expect(formattedDate).to.equal(expectedResult);
+  });
+
+  it('should format a date with custom options (year: "2-digit")', () => {
+    const options = { month: '2-digit', year: '2-digit', day: '2-digit' };
+    const formattedDate = formatDate(4, 8, 2023, undefined, options);
+    const expectedDate = new Date(2023, 3, 8);
+    const expectedResult = expectedDate.toLocaleDateString(undefined, options);
+    expect(formattedDate).to.equal(expectedResult);
+  });
+
+  it('should throw an error for invalid options', () => {
+    expect(() => formatDate(4, 8, 2023, undefined, { month: 'invalid' })).to.throw(RangeError);
   });
 });
 
@@ -84,7 +119,7 @@ describe('getCalendarYear', () => {
     expect(result).to.be.an('object');
 
     for (let month = 1; month <= 12; month++) {
-      const key = locale.en.months[month - 1].toLowerCase();
+      const key = locale['en-US'].months[month - 1].toLowerCase();
       const count = getDaysInMonth(validYear, month);
       const collection = listDaysInMonth(validYear, month);
 

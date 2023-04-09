@@ -9,27 +9,28 @@ import { isValidDay } from "./isValidDay";
  * @param {number} day - The day of the date (1-31).
  * @param {number} year - The year of the date (e.g. 2023).
  * @param {string} [locale] - The locale to use when formatting the date. Defaults to the user's locale.
+ * @param {Object} [options] - Additional options to pass to the `toLocaleDateString` method. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString for more information.
  * @returns {string} A formatted date string in a locale-specific format.
  */
-export const formatDate = (month, day, year, locale = undefined) => {
+export const formatDate = (month, day, year, locale = undefined, options) => {
   const validMonth = isValidMonth(month);
   const validYear = isValidYear(year);
   const validDay = isValidDay(day);
 
   if (validMonth === false) {
-    throw new Error('Invalid month or year. Month must be between 1 and 12, and year must be between 1900 and 2100.');
+    throw new Error('Invalid month. Month must be between 1 and 12.');
   }
   if (validYear === false) {
-    throw new Error('Invalid month or year. Month must be between 1 and 12, and year must be between 1900 and 2100.');
-  }
-  if (typeof locale !== 'undefined' && typeof locale !== 'string') {
-    throw new Error('Invalid locale. The locale must be a string.');
+    throw new Error('Invalid year. Year must be between 1900 and 2100.');
   }
   if (validDay === false) {
     throw new Error('Invalid day. The day must be between 1 and 31.');
   }
+  if (typeof locale !== 'undefined' && typeof locale !== 'string') {
+    throw new Error('Invalid locale. The locale must be a string.');
+  }
 
   const date = new Date(year, month - 1, day); // Month index starts from 0
-  const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-  return date.toLocaleDateString(locale, options);
+  const localeOptions = options || { year: 'numeric', month: '2-digit', day: '2-digit' };
+  return date.toLocaleDateString(locale, localeOptions);
 }
