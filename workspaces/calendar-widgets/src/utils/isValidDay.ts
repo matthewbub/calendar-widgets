@@ -4,7 +4,7 @@
  * @param {number} day - The day to validate (1-31).
  * @returns {boolean} True if the day is valid, false otherwise.
  */
-export const isValidDay = (day) => {
+export const isValidDay = (day: number) => {
   if (typeof day === 'number' && !isNaN(day) && day >= 1 && day <= 31) {
     return true;
   }

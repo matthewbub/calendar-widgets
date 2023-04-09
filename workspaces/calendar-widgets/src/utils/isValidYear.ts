@@ -4,7 +4,7 @@
  * @param {number} year - The year to validate (e.g. 2023).
  * @returns {boolean} True if the year is valid, false otherwise.
  */
-export const isValidYear = (year) => {
+export const isValidYear = (year: number) => {
   if (!Number.isFinite(year)) {
     return false;
   }
