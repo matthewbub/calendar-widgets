@@ -11,3 +11,4 @@ npm install calendar-widgets
 ## Helpers  
 
 - [`formatDate`](https://calendar-widgets.com/helpers/formatDate) function
+- [`getCalendarYear`](https://calendar-widgets.com/helpers/getCalendarYear) function

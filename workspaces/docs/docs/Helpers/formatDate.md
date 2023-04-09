@@ -3,7 +3,7 @@ title: formatDate
 slug: /helpers/formatDate
 ---
 
-# `formatDate` function
+# `formatDate` 
 The `formatDate` function formats a date in a locale-specific format. Under the hood, it's basically only calling the [`Date.prototype.toLocaleDateString`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString) method with improved user-error handling.
 
 ## Syntax
