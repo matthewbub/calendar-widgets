@@ -25,6 +25,8 @@ npm install calendar-widgets
 - [`getCalendarYear`](https://calendar-widgets.com/helpers/getCalendarYear) function
 - [`getDaysInMonth`](https://calendar-widgets.com/helpers/getDaysInMonth) function
 - [`isValidDay`](https://calendar-widgets.com/helpers/isValidDay) function
+- [`isValidYear`](https://calendar-widgets.com/helpers/isValidYear) function
+
 
 :::info
 
