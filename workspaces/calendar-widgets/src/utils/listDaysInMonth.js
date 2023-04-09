@@ -1,4 +1,5 @@
 import { formatDate } from './formatDate';
+import { isValidMonth } from './isValidMonth';
 import {isValidYear} from './isValidYear';
 
 /**
@@ -9,7 +10,7 @@ import {isValidYear} from './isValidYear';
  * @returns {Array} An array of formatted date strings representing each day in the specified month and year.
  */
 export const listDaysInMonth = (year, month) => {
-  if (!Number.isInteger(month) || month < 1 || month > 12) {
+  if (!isValidMonth(month)) {
     throw new Error(`Invalid month: ${month}. The month must be an integer between 1 and 12.`);
   }
 

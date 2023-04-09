@@ -1,7 +1,7 @@
 import { getDaysInMonth } from './getDaysInMonth.js';
 import { listDaysInMonth } from './listDaysInMonth.js';
 import { isValidYear } from './isValidYear.js';
-import { locale } from '../locale/index.js';
+import { locale as localeConstants } from '../locale/index.js';
 
 /**
  * Generates an object representing a calendar year with the number of days and a list of days for each month.
@@ -10,7 +10,9 @@ import { locale } from '../locale/index.js';
  * @returns {object} An object representing a calendar year with the number of days and a list of days for each month.
  * @throws {object} An error object with a message if the year is not a valid year between 1900 and 2100.
  */
-export const getCalendarYear = (year) => {  
+export const getCalendarYear = (year, locale = undefined) => {  
+  const preferredLocale = locale || 'en-US';
+
   if (!isValidYear(year)) {
     return {
       error: {
@@ -19,10 +21,10 @@ export const getCalendarYear = (year) => {
     };
   }
 
-  return locale.en.months.reduceRight((collector, current) => ({
+  return localeConstants[preferredLocale].months.reduceRight((collector, current) => ({
     [current.toLowerCase()]: {
-      count: getDaysInMonth(year, locale.en.months.indexOf(current) + 1),
-      collection: listDaysInMonth(year, locale.en.months.indexOf(current) + 1)
+      count: getDaysInMonth(year, localeConstants[preferredLocale].months.indexOf(current) + 1),
+      collection: listDaysInMonth(year, localeConstants[preferredLocale].months.indexOf(current) + 1)
     },
     ...collector
   }), {});

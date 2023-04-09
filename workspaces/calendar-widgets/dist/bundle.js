@@ -68,29 +68,30 @@ const isValidDay = (day) => {
  * @param {number} day - The day of the date (1-31).
  * @param {number} year - The year of the date (e.g. 2023).
  * @param {string} [locale] - The locale to use when formatting the date. Defaults to the user's locale.
+ * @param {Object} [options] - Additional options to pass to the `toLocaleDateString` method. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString for more information.
  * @returns {string} A formatted date string in a locale-specific format.
  */
-const formatDate = (month, day, year, locale = undefined) => {
+const formatDate = (month, day, year, locale = undefined, options) => {
   const validMonth = isValidMonth(month);
   const validYear = isValidYear(year);
   const validDay = isValidDay(day);
 
   if (validMonth === false) {
-    throw new Error('Invalid month or year. Month must be between 1 and 12, and year must be between 1900 and 2100.');
+    throw new Error('Invalid month. Month must be between 1 and 12.');
   }
   if (validYear === false) {
-    throw new Error('Invalid month or year. Month must be between 1 and 12, and year must be between 1900 and 2100.');
-  }
-  if (typeof locale !== 'undefined' && typeof locale !== 'string') {
-    throw new Error('Invalid locale. The locale must be a string.');
+    throw new Error('Invalid year. Year must be between 1900 and 2100.');
   }
   if (validDay === false) {
     throw new Error('Invalid day. The day must be between 1 and 31.');
   }
+  if (typeof locale !== 'undefined' && typeof locale !== 'string') {
+    throw new Error('Invalid locale. The locale must be a string.');
+  }
 
   const date = new Date(year, month - 1, day); // Month index starts from 0
-  const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-  return date.toLocaleDateString(locale, options);
+  const localeOptions = options || { year: 'numeric', month: '2-digit', day: '2-digit' };
+  return date.toLocaleDateString(locale, localeOptions);
 };
 
 /**
@@ -101,7 +102,7 @@ const formatDate = (month, day, year, locale = undefined) => {
  * @returns {Array} An array of formatted date strings representing each day in the specified month and year.
  */
 const listDaysInMonth = (year, month) => {
-  if (!Number.isInteger(month) || month < 1 || month > 12) {
+  if (!isValidMonth(month)) {
     throw new Error(`Invalid month: ${month}. The month must be an integer between 1 and 12.`);
   }
 
@@ -151,7 +152,7 @@ const months = [
 ];
 
 const locale = {
-  en: {
+  'en-US': {
     months: months$1
   },
   es: {
@@ -166,7 +167,9 @@ const locale = {
  * @returns {object} An object representing a calendar year with the number of days and a list of days for each month.
  * @throws {object} An error object with a message if the year is not a valid year between 1900 and 2100.
  */
-const getCalendarYear = (year) => {  
+const getCalendarYear = (year, locale$1 = undefined) => {  
+  const preferredLocale = locale$1 || 'en-US';
+
   if (!isValidYear(year)) {
     return {
       error: {
@@ -175,10 +178,10 @@ const getCalendarYear = (year) => {
     };
   }
 
-  return locale.en.months.reduceRight((collector, current) => ({
+  return locale[preferredLocale].months.reduceRight((collector, current) => ({
     [current.toLowerCase()]: {
-      count: getDaysInMonth(year, locale.en.months.indexOf(current) + 1),
-      collection: listDaysInMonth(year, locale.en.months.indexOf(current) + 1)
+      count: getDaysInMonth(year, locale[preferredLocale].months.indexOf(current) + 1),
+      collection: listDaysInMonth(year, locale[preferredLocale].months.indexOf(current) + 1)
     },
     ...collector
   }), {});
