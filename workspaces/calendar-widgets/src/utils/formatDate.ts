@@ -12,7 +12,7 @@ import { isValidDay } from "./isValidDay";
  * @param {Object} [options] - Additional options to pass to the `toLocaleDateString` method. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString for more information.
  * @returns {string} A formatted date string in a locale-specific format.
  */
-export const formatDate = (month, day, year, locale = undefined, options) => {
+export const formatDate = (month: number, day: number, year: number, locale?: string, options?: Intl.DateTimeFormatOptions) => {
   const validMonth = isValidMonth(month);
   const validYear = isValidYear(year);
   const validDay = isValidDay(day);

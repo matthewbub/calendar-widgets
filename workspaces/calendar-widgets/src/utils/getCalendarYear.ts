@@ -10,7 +10,7 @@ import { locale as localeConstants } from '../locale/index.js';
  * @returns {object} An object representing a calendar year with the number of days and a list of days for each month.
  * @throws {object} An error object with a message if the year is not a valid year between 1900 and 2100.
  */
-export const getCalendarYear = (year, locale = undefined) => {  
+export const getCalendarYear = (year: number, locale = undefined) => {
   const preferredLocale = locale || 'en-US';
 
   if (!isValidYear(year)) {

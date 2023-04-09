@@ -8,10 +8,10 @@ import { isValidMonth } from "./isValidMonth";
  * @param {number} month - The month for which to calculate the number of days (1-12).
  * @returns {number} The number of days in the specified month and year.
  */
-export const getDaysInMonth = (year, month) => {
+export const getDaysInMonth = (year: number, month: number) => {
   const validYear = isValidYear(year);
   const validMonth = isValidMonth(month);
-  
+
   if (validYear === false || validMonth === false) {
     throw new Error('Invalid year or month. Year must be between 1900 and 2100, and month must be between 1 and 12.');
   }
