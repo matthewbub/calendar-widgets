@@ -14,12 +14,13 @@ Working with dates sucks, working with calendars sucks even more. Here's an atte
 
 ### Install Via Nodejs
 
-Under active development 
+Under active development
 
 ```shell
 npm install calendar-widgets
 ```
-## Helpers  
+
+## Helpers
 
 - [`formatDate`](https://calendar-widgets.com/helpers/formatDate) function
 - [`getCalendarYear`](https://calendar-widgets.com/helpers/getCalendarYear) function
@@ -35,6 +36,6 @@ I'd be appreciative of bug reports/ fixes, and I'd gladly accept new proposals. 
 
 ### This repo
 
-- `/lib/calendar-widgets` - NPM Package
-- `/lib/calendar-widgets-tests` - Test suites for calendar-widgets as a package
-- `/lib/docs` - Documentation
+- `/workspaces/calendar-widgets` - NPM Package
+- `/workspaces/tests` - Test suites for calendar-widgets as a package
+- `/workspaces/docs` - Documentation
