@@ -37,5 +37,5 @@ I'd be appreciative of bug reports/ fixes, and I'd gladly accept new proposals. 
 ### This repo
 
 - `/workspaces/calendar-widgets` - NPM Package
-- `/workspaces/calendar-widgets-tests` - Test suites for calendar-widgets as a package
+- `/workspaces/tests` - Test suites for calendar-widgets as a package
 - `/workspaces/docs` - Documentation
