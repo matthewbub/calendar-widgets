@@ -3,13 +3,13 @@
 Welcome, and thank you for your interest in contributing to Calendar Widgets, an open source project developed by Ninembs Studio LLC. This guide outlines how you can contribute to this project, from reporting bugs and suggesting new features to making code changes yourself.
 
 ## Table of Contents
-1. Code of Conduct
-2. Prerequisites
-3. Reporting Bugs
-4. Suggesting New Features
-5. Contributing Code
-6. Pull Request Process
-7. Additional Resources
+1. [Code of Conduct](#1-code-of-conduct)
+2. [Prerequisites](#2-prerequisites)
+3. [Reporting Bugs](#3-reporting-bugs)
+4. [Suggesting New Features](#4-suggesting-new-features)
+5. [Contributing Code](#5-contributing-code)
+6. [Pull Request Process](#6-pull-request-process)
+7. [Additional Resources](#7-additional-resources)
 
 ## 1. Code of Conduct
 
@@ -44,7 +44,7 @@ If you come across a bug while using Calendar Widgets, please report it by follo
   - Screenshots or GIFs, if applicable
   - System information (e.g., OS, browser, and version)
 
-## 4.Suggesting New Features
+## 4. Suggesting New Features
 If you have an idea for a new feature or improvement, please follow these steps:
 
 1. Check the [Issues](https://github.com/9mbs/calendar-widgets/issues) to see if a similar suggestion has already been made. If it has, please join the discussion and provide your feedback.
