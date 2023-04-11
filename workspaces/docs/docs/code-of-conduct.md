@@ -29,7 +29,7 @@ The following behaviors are considered unacceptable and will not be tolerated wi
 - Sharing another person's private information without their consent.
 
 ## 4. Reporting Violations
-If you experience or witness any violation of this Code of Conduct, please report the incident to the project maintainers by emailing [6matbub@gmail.com](6matbub@gmail.com). All reports will be handled confidentially, promptly, and with sensitivity.
+If you experience or witness any violation of this Code of Conduct, please report the incident to the project maintainers by emailing [6matbub@gmail.com](mailto:6matbub@gmail.com). All reports will be handled confidentially, promptly, and with sensitivity.
 
 When reporting an incident, please provide as much information as possible, including:
 
