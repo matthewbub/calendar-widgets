@@ -1,6 +1,6 @@
 # calendar-widgets
 
-Current bundle size: `6.13 kB`
+Current bundle size: `36.13 kB`
 
 A simple SDK intended to return a list of calendar dates for a given year. Website: [http://www.calendar-widgets.com/](http://www.calendar-widgets.com/)
 
