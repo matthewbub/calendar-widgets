@@ -1,5 +1,5 @@
 ---
-title: Code Of Conduct
+title: Code of Conduct
 slug: /code-of-conduct
 ---
 

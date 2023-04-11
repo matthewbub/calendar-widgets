@@ -1,4 +1,6 @@
-export const locale = {
+import { Locale } from "./types";
+
+export const locale: Locale = {
   locale: 'Inglês (Estados Unidos)',
   daysOfWeek: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
   daysOfWeekFull: ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'],
