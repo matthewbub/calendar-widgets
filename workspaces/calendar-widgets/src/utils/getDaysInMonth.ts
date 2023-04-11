@@ -1,5 +1,6 @@
-import { isValidYear } from "./isValidYear";
-import { isValidMonth } from "./isValidMonth";
+import {isValidYear} from './isValidYear';
+import {isValidMonth} from './isValidMonth';
+import {ZERO} from '../constants';
 
 /**
  * Calculates the number of days in a given month and year.
@@ -16,5 +17,5 @@ export const getDaysInMonth = (year: number, month: number) => {
     throw new Error('Invalid year or month. Year must be between 1900 and 2100, and month must be between 1 and 12.');
   }
 
-  return new Date(year, month, 0).getDate();
+  return new Date(year, month, ZERO).getDate();
 };

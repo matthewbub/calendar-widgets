@@ -1,4 +1,4 @@
-import { Locale } from "./types";
+import {Locale} from './types';
 
 export const locale: Locale = {
   locale: 'Afrikaans (Ethiopië)',
@@ -19,4 +19,4 @@ export const locale: Locale = {
   errorDay: 'Ongeldige dag. Dag moet tussen 1 en 31 wees.',
   errorLocale: 'Ongeldige taalgebied. Die taalgebied moet \'n string wees. Byvoorbeeld: "af-ET".',
   errorOptions: 'Ongeldige opsies. Die opsies moet \'n voorwerp wees. Sien https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString vir meer inligting.'
-};  
+};

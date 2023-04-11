@@ -1,6 +1,7 @@
-import { isValidMonth } from "./isValidMonth";
-import { isValidYear } from "./isValidYear";
-import { isValidDay } from "./isValidDay";
+import {isValidMonth} from './isValidMonth';
+import {isValidYear} from './isValidYear';
+import {isValidDay} from './isValidDay';
+import {ONE} from '../constants';
 
 /**
  * Formats a date in a locale-specific format.
@@ -30,7 +31,7 @@ export const formatDate = (month: number, day: number, year: number, locale?: st
     throw new Error('Invalid locale. The locale must be a string.');
   }
 
-  const date = new Date(year, month - 1, day); // Month index starts from 0
-  const localeOptions = options || { year: 'numeric', month: '2-digit', day: '2-digit' };
+  const date = new Date(year, month - ONE, day);
+  const localeOptions = options || {year: 'numeric', month: '2-digit', day: '2-digit'};
   return date.toLocaleDateString(locale, localeOptions);
-}
+};
