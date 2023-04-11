@@ -1,12 +1,12 @@
 # calendar-widgets
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Current bundle size: 36.13 kB](https://img.shields.io/badge/Bundle_Size-36.13_kB-green.svg)
 
-Current bundle size: `36.13 kB`
-
-A simple SDK intended to return a list of calendar dates for a given year. Website: [http://www.calendar-widgets.com/](http://www.calendar-widgets.com/)
+Working with dates sucks, working with calendars sucks even more. Here's an attempt at making things less sucky. Website: [http://www.calendar-widgets.com/](http://www.calendar-widgets.com/)
 
 ## Install  
 
-Under active development. 
+Heads up! We're under active development. Interested in contributing? Learn more [here](https://github.com/9mbs/calendar-widgets)!
 
 ```shell
 npm install calendar-widgets
