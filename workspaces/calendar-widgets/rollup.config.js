@@ -1,6 +1,7 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
+import summary from "rollup-plugin-summary";
 
 export default {
   input: 'src/index.ts', // Your entry point file
@@ -13,6 +14,7 @@ export default {
   plugins: [
     resolve(), // Helps Rollup locate external modules
     commonjs(), // Converts CommonJS modules to ES modules
-    typescript() // Converts TypeScript to JavaScript
+    typescript(), // Converts TypeScript to JavaScript
+    summary(), // Prints a summary of the bundle
   ]
 };
