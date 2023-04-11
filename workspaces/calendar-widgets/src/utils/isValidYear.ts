@@ -1,3 +1,5 @@
+import {FOUR, NINETEEN_HUNDRED, TWO_THOUSAND_AND_ONE_HUNDRED} from '../constants';
+
 /**
  * Determines whether a given year is a valid year between 1900 and 2100.
  *
@@ -11,7 +13,7 @@ export const isValidYear = (year: number) => {
 
   const yStr = year.toString();
 
-  if (yStr.length !== 4 || year < 1900 || year > 2100) {
+  if (yStr.length !== FOUR || year < NINETEEN_HUNDRED || year > TWO_THOUSAND_AND_ONE_HUNDRED) {
     return false;
   }
   return true;

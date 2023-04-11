@@ -1,6 +1,7 @@
-import { formatDate } from './formatDate';
-import { isValidMonth } from './isValidMonth';
-import { isValidYear } from './isValidYear';
+import {ONE, ZERO} from '../constants';
+import {formatDate} from './formatDate';
+import {isValidMonth} from './isValidMonth';
+import {isValidYear} from './isValidYear';
 
 /**
  * Generates an array of formatted date strings representing each day in a given month and year.
@@ -18,10 +19,10 @@ export const listDaysInMonth = (year: number, month: number) => {
     throw new Error(`Invalid year: ${year}. The year must be a valid year between 1900 and 2100.`);
   }
 
-  const daysInMonth = new Date(year, month, 0).getDate();
-  let dates = [];
+  const daysInMonth = new Date(year, month, ZERO).getDate();
+  const dates = [];
 
-  for (let day = 1; day <= daysInMonth; day++) {
+  for (let day = ONE;day <= daysInMonth;day += ONE) {
     const formattedDate = formatDate(month, day, year);
     dates.push(formattedDate);
   }

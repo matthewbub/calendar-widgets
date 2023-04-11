@@ -1,4 +1,4 @@
-import { Locale } from "./types";
+import {Locale} from './types';
 
 export const locale: Locale = {
   locale: 'Anglais (États-Unis)',
@@ -6,7 +6,7 @@ export const locale: Locale = {
   daysOfWeekFull: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
   monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
   monthsShort: ['Jan', 'Fév', 'Mar', 'Avr', 'Mai', 'Juin', 'Juil', 'Août', 'Sept', 'Oct', 'Nov', 'Déc'],
-  today: "Aujourd'hui",
+  today: 'Aujourd\'hui',
   clear: 'Effacer',
   close: 'Fermer',
   firstDay: 0,
