@@ -19,15 +19,15 @@ Calendar Widgets is an SDK that makes working with calendars less shitty, by pro
 npm install calendar-widgets
 ```
 
-## Helpers 
+## Helpers
 
-- [`formatDate`](https://calendar-widgets.com/helpers/formatDate) function
-- [`getCalendarYear`](https://calendar-widgets.com/helpers/getCalendarYear) function
-- [`getDaysInMonth`](https://calendar-widgets.com/helpers/getDaysInMonth) function
-- [`isValidDay`](https://calendar-widgets.com/helpers/isValidDay) function
-- [`isValidYear`](https://calendar-widgets.com/helpers/isValidYear) function
-- [`isValidMonth`](https://calendar-widgets.com/helpers/isValidMonth) function
-- [`listDaysInMonth`](https://calendar-widgets.com/helpers/listDaysInMonth) function
+- [`formatDate`](helpers/formatDate) function
+- [`getCalendarYear`](helpers/getCalendarYear) function
+- [`getDaysInMonth`](helpers/getDaysInMonth) function
+- [`isValidDay`](helpers/isValidDay) function
+- [`isValidYear`](helpers/isValidYear) function
+- [`isValidMonth`](helpers/isValidMonth) function
+- [`listDaysInMonth`](helpers/listDaysInMonth) function
 
 :::info
 
