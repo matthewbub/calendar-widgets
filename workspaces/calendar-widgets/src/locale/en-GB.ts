@@ -1,4 +1,5 @@
 export const locale = {
+  locale: 'English (United Kingdom)',
   daysOfWeek: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
   daysOfWeekFull: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
   monthsFull: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -14,6 +15,6 @@ export const locale = {
   errorMonth: 'Invalid month. Month must be between 1 and 12.',
   errorYear: 'Invalid year. Year must be between 1900 and 2100.',
   errorDay: 'Invalid day. Day must be between 1 and 31.',
-  errorLocale: 'Invalid locale. The locale must be a string. For example: "en-US".',
+  errorLocale: 'Invalid locale. The locale must be a string. For example: "en-GB".',
   errorOptions: 'Invalid options. The options must be an object. See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString for more information.'
 };

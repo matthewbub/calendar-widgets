@@ -9,6 +9,15 @@ import { locale as arDZLocale } from './ar-DZ';
 import { locale as arEGLocale } from './ar-EG';
 import { locale as arERLocale } from './ar-ER';
 import { locale as arILLocale } from './ar-IL';
+import { locale as esESLocale } from './es-ES';
+import { locale as zhCNLocale } from './zh-CN';
+import { locale as enGBLocale } from './en-GB';
+import { locale as arSALocale } from './ar-SA';
+import { locale as ruRULocale } from './ru-RU';
+import { locale as ptBRLocale } from './pt-BR';
+import { locale as frFRLocale } from './fr-FR';
+import { locale as jaJPLocale } from './ja-JP';
+import { locale as deDELocale } from './de-DE';
 
 export const locale = {
   'en-US': {
@@ -55,6 +64,42 @@ export const locale = {
     name: 'Arabic (Israel)',
     ...arILLocale
   },
+  'es-ES': {
+    name: 'Spanish (Spain)',
+    ...esESLocale
+  },
+  'zh-CN': {
+    name: 'Chinese (China)',
+    ...zhCNLocale
+  },
+  'en-GB': {
+    name: 'English (United Kingdom)',
+    ...enGBLocale
+  },
+  'ar-SA': {
+    name: 'Arabic (Saudi Arabia)',
+    ...arSALocale
+  },
+  'ru-RU': {
+    name: 'Russian (Russia)',
+    ...ruRULocale
+  },
+  'pt-BR': {
+    name: 'Portuguese (Brazil)',
+    ...ptBRLocale
+  },
+  'fr-FR': {
+    name: 'French (France)',
+    ...frFRLocale
+  },
+  'ja-JP': {
+    name: 'Japanese (Japan)',
+    ...jaJPLocale
+  },
+  'de-DE': {
+    name: 'German (Germany)',
+    ...deDELocale
+  }
 
 };
 
@@ -109,7 +154,6 @@ const roadmap = {
   'ce-RU': 'Chechen (Russia)',
   'chr-US': 'Cherokee (United States)',
   'ny-MW': 'Chichewa (Malawi)',
-  'zh-CN': 'Chinese (Simplified, China)',
   'zh-HK': 'Chinese (Traditional, Hong Kong SAR)',
   'zh-MO': 'Chinese (Traditional, Macao SAR)',
   'zh-TW': 'Chinese (Traditional, Taiwan)',
@@ -135,8 +179,6 @@ const roadmap = {
   'en-SG': 'English (Singapore)',
   'en-ZA': 'English (South Africa)',
   'en-TT': 'English (Trinidad & Tobago)',
-  'en-GB': 'English (United Kingdom)',
-  'en-US': 'English (United States)',
   'eo': 'Esperanto (world)',
   'et-EE': 'Estonian (Estonia)',
   'ee-GH': 'Ewe (Ghana)',
@@ -321,7 +363,6 @@ const roadmap = {
   "es-CR": "Spanish (Costa Rica)",
   "es-DO": "Spanish (Dominican Republic)",
   "es-EC": "Spanish (Ecuador)",
-  "es-ES": "Spanish (Spain)",
   "es-GQ": "Spanish (Equatorial Guinea)",
   "es-GT": "Spanish (Guatemala)",
   "es-HN": "Spanish (Honduras)",
