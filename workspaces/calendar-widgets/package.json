@@ -5,7 +5,6 @@
   "type": "module",
   "module": "./src/index.js",
   "scripts": {
-    "start": "node src/index",
     "lint": "eslint ./src --ext .ts",
     "lint:fix": "eslint ./src --ext .ts --fix",
     "build": "rollup -c"
