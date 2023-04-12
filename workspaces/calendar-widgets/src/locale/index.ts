@@ -1,23 +1,24 @@
-import {locale as enUSLocale} from './en-US';
-import {locale as afZALocale} from './af-ZA';
-import {locale as sqALLocale} from './sq-AL';
-import {locale as amETLocale} from './am-ET';
-import {locale as arAELocale} from './ar-AE';
-import {locale as arBHLocale} from './ar-BH';
-import {locale as arDJLocale} from './ar-DJ';
-import {locale as arDZLocale} from './ar-DZ';
-import {locale as arEGLocale} from './ar-EG';
-import {locale as arERLocale} from './ar-ER';
-import {locale as arILLocale} from './ar-IL';
-import {locale as esESLocale} from './es-ES';
-import {locale as zhCNLocale} from './zh-CN';
-import {locale as enGBLocale} from './en-GB';
-import {locale as arSALocale} from './ar-SA';
-import {locale as ruRULocale} from './ru-RU';
-import {locale as ptBRLocale} from './pt-BR';
-import {locale as frFRLocale} from './fr-FR';
-import {locale as jaJPLocale} from './ja-JP';
-import {locale as deDELocale} from './de-DE';
+import { locale as enUSLocale } from './en-US';
+import { locale as afZALocale } from './af-ZA';
+import { locale as sqALLocale } from './sq-AL';
+import { locale as amETLocale } from './am-ET';
+import { locale as arAELocale } from './ar-AE';
+import { locale as arBHLocale } from './ar-BH';
+import { locale as arDJLocale } from './ar-DJ';
+import { locale as arDZLocale } from './ar-DZ';
+import { locale as arEGLocale } from './ar-EG';
+import { locale as arERLocale } from './ar-ER';
+import { locale as arILLocale } from './ar-IL';
+import { locale as esESLocale } from './es-ES';
+import { locale as zhCNLocale } from './zh-CN';
+import { locale as enGBLocale } from './en-GB';
+import { locale as arSALocale } from './ar-SA';
+import { locale as ruRULocale } from './ru-RU';
+import { locale as ptBRLocale } from './pt-BR';
+import { locale as frFRLocale } from './fr-FR';
+import { locale as jaJPLocale } from './ja-JP';
+import { locale as deDELocale } from './de-DE';
+import { locale as bnINLocale } from './bn-IN';
 
 export const locale = {
   'en-US': {
@@ -99,6 +100,10 @@ export const locale = {
   'de-DE': {
     name: 'German (Germany)',
     ...deDELocale
+  },
+  'bn-IN': {
+    name: 'Bengali (India)',
+    ...bnINLocale
   }
 };
 
@@ -136,7 +141,6 @@ const roadmap = {
   'bm-ML': 'Bambara (Mali)',
   'be-BY': 'Belarusian (Belarus)',
   'bn-BD': 'Bengali (Bangladesh)',
-  'bn-IN': 'Bengali (India)',
   'bh-IN': 'Bihari (India)',
   'bi-VU': 'Bislama (Vanuatu)',
   'bs-BA': 'Bosnian (Bosnia & Herzegovina)',
