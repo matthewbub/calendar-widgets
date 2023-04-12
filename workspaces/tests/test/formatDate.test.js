@@ -11,6 +11,16 @@ import chai from 'chai';
 const expect = chai.expect;
 
 describe('formatDate', () => {
+  before(() => {
+    global.navigator = {
+      language: 'en-US'
+    };
+  });
+
+  after(() => {
+    global.navigator = undefined;
+  });
+
   it('should format a date in the default locale', () => {
     const formattedDate = formatDate(4, 8, 2023);
     expect(formattedDate).to.equal('04/08/2023');

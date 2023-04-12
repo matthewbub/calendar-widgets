@@ -3,7 +3,7 @@ import {
   getCalendarYear,
   getDaysInMonth,
   listDaysInMonth,
-  locale
+  listLocalizedMonths,
 } from 'calendar-widgets';
 import chai from 'chai';
 
@@ -11,6 +11,16 @@ import chai from 'chai';
 const expect = chai.expect;
 
 describe('getCalendarYear', () => {
+  before(() => {
+    global.navigator = {
+      language: 'en-US'
+    };
+  });
+
+  after(() => {
+    global.navigator = undefined;
+  });
+
   it('should return an error object if the year is not valid', () => {
     const invalidYear = 1850;
     const result = getCalendarYear(invalidYear);
@@ -27,9 +37,10 @@ describe('getCalendarYear', () => {
     const validYear = 2022;
     const result = getCalendarYear(validYear);
     expect(result).to.be.an('object');
+    const months = listLocalizedMonths();
 
     for (let month = 1; month <= 12; month++) {
-      const key = locale['en-US'].monthsFull[month - 1].toLowerCase();
+      const key = months[month - 1].toLowerCase();
       const count = getDaysInMonth(validYear, month);
       const collection = listDaysInMonth(validYear, month);
 

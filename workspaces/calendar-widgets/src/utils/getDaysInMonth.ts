@@ -1,6 +1,12 @@
-import {isValidYear} from './isValidYear';
-import {isValidMonth} from './isValidMonth';
-import {ZERO} from '../constants';
+/** Types */
+import { NumberOrNullUndefined } from '../commonTypes';
+
+/** Utilities */
+import { isValidYear } from './isValidYear';
+import { isValidMonth } from './isValidMonth';
+
+/** Constants */
+import { ZERO } from '../constants';
 
 /**
  * Calculates the number of days in a given month and year.
@@ -9,13 +15,12 @@ import {ZERO} from '../constants';
  * @param {number} month - The month for which to calculate the number of days (1-12).
  * @returns {number} The number of days in the specified month and year.
  */
-export const getDaysInMonth = (year: number, month: number) => {
-  const validYear = isValidYear(year);
-  const validMonth = isValidMonth(month);
+export const getDaysInMonth = (
+  year: NumberOrNullUndefined = undefined,
+  month: NumberOrNullUndefined = undefined
+) => {
+  const yearToUse: number = isValidYear(year) ? year as number : new Date().getFullYear();
+  const monthToUse: number = isValidMonth(month) ? month as number : new Date().getMonth() + 1;
 
-  if (validYear === false || validMonth === false) {
-    throw new Error('Invalid year or month. Year must be between 1900 and 2100, and month must be between 1 and 12.');
-  }
-
-  return new Date(year, month, ZERO).getDate();
+  return new Date(yearToUse, monthToUse, ZERO).getDate();
 };
