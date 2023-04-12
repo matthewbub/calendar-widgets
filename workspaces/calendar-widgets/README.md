@@ -13,7 +13,7 @@ npm install calendar-widgets
 ```
 
 ## Helpers
-- [`getCalendarYear`](https://calendar-widgets.com/helpers/getCalendarYear) function
+- [`listCalendarYear`](https://calendar-widgets.com/helpers/listCalendarYear) function
 - [`listDaysInMonth`](https://calendar-widgets.com/helpers/listDaysInMonth) function
 - `listLocalizedMonths` function
 - `listDaysInMonth` function

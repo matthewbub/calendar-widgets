@@ -1,6 +1,6 @@
 /** Dependencies */
 import {
-  getCalendarYear,
+  listCalendarYear,
   getDaysInMonth,
   listDaysInMonth,
   listLocalizedMonths,
@@ -10,7 +10,7 @@ import chai from 'chai';
 /** Configurations */
 const expect = chai.expect;
 
-describe('getCalendarYear', () => {
+describe('listCalendarYear', () => {
   before(() => {
     global.navigator = {
       language: 'en-US'
@@ -23,7 +23,7 @@ describe('getCalendarYear', () => {
 
   it('should return an error object if the year is not valid', () => {
     const invalidYear = 1850;
-    const result = getCalendarYear(invalidYear);
+    const result = listCalendarYear(invalidYear);
     expect(result).to.have.property('error');
     expect(result.error).to.have.property('body');
     expect(result.error.body).to.equal(
@@ -35,7 +35,7 @@ describe('getCalendarYear', () => {
 
   it('should return a calendar object for a valid year', () => {
     const validYear = 2022;
-    const result = getCalendarYear(validYear);
+    const result = listCalendarYear(validYear);
     expect(result).to.be.an('object');
     const months = listLocalizedMonths();
 

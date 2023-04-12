@@ -23,7 +23,7 @@ import { listLocalizedMonths } from './listLocalizedMonths.js';
  * @throws {TypeError} If the provided year value is not of type number, or if the provided locale value is not a string or null.
  * @throws {Error} If the provided year value is invalid.
  */
-export const getCalendarYear = (
+export const listCalendarYear = (
   year: NumberOrNullUndefined = undefined,
   locale: StringOrNullUndefined = undefined,
   monthOptions: IntlMonthOptions = 'long'

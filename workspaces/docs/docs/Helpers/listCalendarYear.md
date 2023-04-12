@@ -1,16 +1,16 @@
 ---
-title: getCalendarYear
-slug: /helpers/getCalendarYear
+title: listCalendarYear
+slug: /helpers/listCalendarYear
 ---
 
-# `getCalendarYear`  
+# `listCalendarYear`  
 
-The getCalendarYear function generates an object representing a calendar year with the number of days and a list of days for each month.
+The listCalendarYear function generates an object representing a calendar year with the number of days and a list of days for each month.
 
 ## Syntax
 
 ```ts
-getCalendarYear(year: number, locale?: string)
+listCalendarYear(year: number, locale?: string)
 ```
 
 ## Parameters
@@ -225,9 +225,9 @@ The function throws an error if the `year` parameter is not a valid year between
 
 ## Usage Example
 ```js
-import { getCalendarYear } from 'calendar-widgets';
+import { listCalendarYear } from 'calendar-widgets';
 
-const calendar = getCalendarYear(2023);
+const calendar = listCalendarYear(2023);
 console.log(calendar);
 /*
 Output:

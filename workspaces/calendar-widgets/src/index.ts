@@ -1,6 +1,6 @@
 /** Calendar Helpers */
 import { listDaysInMonth } from './helpers/listDaysInMonth';
-import { getCalendarYear } from './helpers/getCalendarYear';
+import { listCalendarYear } from './helpers/listCalendarYear';
 import { listLocalizedMonths } from './helpers/listLocalizedMonths';
 import { listLocalizedWeekDays } from './helpers/listLocalizedWeekDays';
 
@@ -18,7 +18,7 @@ export {
   listDaysInMonth,
   listLocalizedMonths,
   listLocalizedWeekDays,
-  getCalendarYear,
+  listCalendarYear,
   formatDate,
   isValidYear,
   isValidDay,
