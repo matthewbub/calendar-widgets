@@ -11,7 +11,7 @@ import { formatDate } from './utils/formatDate';
 import { isValidDay } from './utils/isValidDay';
 import { isValidMonth } from './utils/isValidMonth';
 import { getDefaultLocale } from './utils/getDefaultLocale';
-import { isLocaleValid } from './utils/isLocaleValid';
+import { isValidLocale } from './utils/isValidLocale';
 
 export {
   getDaysInMonth,
@@ -24,5 +24,5 @@ export {
   isValidDay,
   isValidMonth,
   getDefaultLocale,
-  isLocaleValid
+  isValidLocale
 };

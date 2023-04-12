@@ -8,7 +8,7 @@ import { StringOrNullUndefined } from "../commonTypes";
  * @throws {TypeError} If the provided locale value is not a string, null, or undefined.
  * @returns {boolean} Returns `true` if the provided locale is valid, otherwise throws a `TypeError`.
  */
-export const isLocaleValid = (locale: StringOrNullUndefined) => {
+export const isValidLocale = (locale: StringOrNullUndefined) => {
   if (typeof locale !== 'undefined' && typeof locale !== 'string' && locale !== null) {
     throw new TypeError('Invalid locale. The locale must be a string, null or undefined.');
   }

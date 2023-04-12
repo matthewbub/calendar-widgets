@@ -6,7 +6,7 @@ import { isValidMonth } from './isValidMonth';
 import { isValidYear } from './isValidYear';
 import { isValidDay } from './isValidDay';
 import { getDefaultLocale } from './getDefaultLocale';
-import { isLocaleValid } from './isLocaleValid';
+import { isValidLocale } from './isValidLocale';
 
 /** Constants */
 import { ONE } from '../constants';
@@ -32,7 +32,7 @@ export const formatDate = (
   const monthToUse = isValidMonth(month) && month as number - ONE;
   const yearToUse = isValidYear(year) && year as number;
   const dayToUse = isValidDay(day) && day as number;
-  const localeToUse = isLocaleValid(locale) && getDefaultLocale(locale);
+  const localeToUse = isValidLocale(locale) && getDefaultLocale(locale);
   const localeOptionsToUse = options || {};
 
   const date: Date = new Date(

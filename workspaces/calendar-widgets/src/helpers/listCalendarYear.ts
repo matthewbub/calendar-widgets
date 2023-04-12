@@ -4,7 +4,7 @@ import { NumberOrNullUndefined, StringOrNullUndefined, IntlMonthOptions } from '
 /** Utilities */
 import { isValidYear } from '../utils/isValidYear.js';
 import { getDefaultLocale } from '../utils/getDefaultLocale.js';
-import { isLocaleValid } from '../utils/isLocaleValid.js';
+import { isValidLocale } from '../utils/isValidLocale.js';
 
 /** Constants */
 import { ONE } from '../constants.js';
@@ -29,7 +29,7 @@ export const listCalendarYear = (
   monthOptions: IntlMonthOptions = 'long'
 ) => {
   const yearToUse: number = isValidYear(year) ? year as number : new Date().getFullYear();
-  const preferredLocale = isLocaleValid(locale) && getDefaultLocale(locale);
+  const preferredLocale = isValidLocale(locale) && getDefaultLocale(locale);
   const months = listLocalizedMonths(yearToUse, preferredLocale as string, monthOptions);
 
   return months.reduceRight((collector, current) => ({

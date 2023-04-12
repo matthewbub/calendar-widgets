@@ -6,7 +6,7 @@ import { formatDate } from '../utils/formatDate';
 import { isValidMonth } from '../utils/isValidMonth';
 import { isValidYear } from '../utils/isValidYear';
 import { getDefaultLocale } from '../utils/getDefaultLocale';
-import { isLocaleValid } from '../utils/isLocaleValid';
+import { isValidLocale } from '../utils/isValidLocale';
 
 /** Constants */
 import { ONE, ZERO } from '../constants';
@@ -30,7 +30,7 @@ export const listDaysInMonth = (
 ) => {
   const yearToUse: number = isValidYear(year) ? year as number : new Date().getFullYear();
   const monthToUse: number = isValidMonth(month) ? month as number : new Date().getMonth() + ONE;
-  const preferredLocale = isLocaleValid(locale) && getDefaultLocale(locale);
+  const preferredLocale = isValidLocale(locale) && getDefaultLocale(locale);
 
   const daysInMonth: number = new Date(yearToUse, monthToUse, ZERO).getDate();
   const dates = [];
