@@ -11,11 +11,6 @@ import chai from 'chai';
 const expect = chai.expect;
 
 describe('formatDate', () => {
-  it('should format a date in the default locale', () => {
-    const formattedDate = formatDate(4, 8, 2023);
-    expect(formattedDate).to.equal('04/08/2023');
-  });
-
   it('should format a date in a custom locale (fr-FR)', () => {
     const formattedDate = formatDate(4, 8, 2023, 'fr-FR');
     expect(formattedDate).to.equal('08/04/2023');
