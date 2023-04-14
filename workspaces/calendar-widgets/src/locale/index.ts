@@ -19,8 +19,9 @@ import { locale as frFRLocale } from './fr-FR';
 import { locale as jaJPLocale } from './ja-JP';
 import { locale as deDELocale } from './de-DE';
 import { locale as bnINLocale } from './bn-IN';
+import { LocaleConstants } from './types';
 
-export const locale = {
+export const locale: LocaleConstants = {
   'en-US': {
     name: 'English (United States)',
     ...enUSLocale
