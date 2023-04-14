@@ -19,6 +19,7 @@ import { locale as frFRLocale } from './fr-FR';
 import { locale as jaJPLocale } from './ja-JP';
 import { locale as deDELocale } from './de-DE';
 import { locale as bnINLocale } from './bn-IN';
+import { locale as guINLocale } from './gu-IN';
 
 export const locale = {
   'en-US': {
@@ -104,6 +105,10 @@ export const locale = {
   'bn-IN': {
     name: 'Bengali (India)',
     ...bnINLocale
+  },
+  'gu-IN': {
+    name: 'Gujarati (India)',
+    ...guINLocale
   }
 };
 
@@ -210,7 +215,6 @@ const roadmap = {
   'el-CY': 'Greek (Cyprus)',
   'el-GR': 'Greek (Greece)',
   'gn-PY': 'Guarani (Paraguay)',
-  'gu-IN': 'Gujarati (India)',
   'ht-HT': 'Haitian Creole (Haiti)',
   'ha-GH': 'Hausa (Ghana)',
   'ha-NE': 'Hausa (Niger)',
