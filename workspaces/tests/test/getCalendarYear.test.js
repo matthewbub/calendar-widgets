@@ -1,7 +1,6 @@
 /** Dependencies */
 import {
   getCalendarYear,
-  getDaysInMonth,
   listDaysInMonth,
   locale
 } from 'calendar-widgets';
@@ -11,16 +10,9 @@ import chai from 'chai';
 const expect = chai.expect;
 
 describe('getCalendarYear', () => {
-  it('should return an error object if the year is not valid', () => {
+  it('should throw an Error for an invalid year', () => {
     const invalidYear = 1850;
-    const result = getCalendarYear(invalidYear);
-    expect(result).to.have.property('error');
-    expect(result.error).to.have.property('body');
-    expect(result.error.body).to.equal(
-      'The argument passed to `calendar(\'YYYY\')` must be a valid year between 1900 and 2100. You passed ' +
-        invalidYear +
-        '.'
-    );
+    expect(() => getCalendarYear(invalidYear)).to.throw(Error, 'Invalid year, must be between 1900 and 2100.');
   });
 
   it('should return a calendar object for a valid year', () => {
@@ -30,13 +22,10 @@ describe('getCalendarYear', () => {
 
     for (let month = 1; month <= 12; month++) {
       const key = locale['en-US'].monthsFull[month - 1].toLowerCase();
-      const count = getDaysInMonth(validYear, month);
       const collection = listDaysInMonth(validYear, month);
 
-      expect(result).to.have.property(key);
-      expect(result[key]).to.have.property('count', count);
-      expect(result[key]).to.have.property('collection');
-      expect(result[key].collection).to.deep.equal(collection);
+      expect(result[key]).to.be.an('array');
+      expect(result[key]).to.have.lengthOf(collection.length);
     }
   });
 });

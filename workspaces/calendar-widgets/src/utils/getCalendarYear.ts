@@ -1,32 +1,21 @@
-import {getDaysInMonth} from './getDaysInMonth.js';
-import {listDaysInMonth} from './listDaysInMonth.js';
-import {isValidYear} from './isValidYear.js';
-import {locale as localeConstants} from '../locale/index.js';
-import {ONE} from '../constants.js';
+import { listDaysInMonth } from './listDaysInMonth.js';
+import { isValidYear } from './isValidYear.js';
+import { locale as localeConstants } from '../locale/index.js';
+import { ONE } from '../constants.js';
 
 /**
- * Generates an object representing a calendar year with the number of days and a list of days for each month.
+ * Generates an object representing a calendar year with a list of days for each month.
  *
  * @param {number} year - The year for which to generate the calendar (e.g. 2023).
- * @returns {object} An object representing a calendar year with the number of days and a list of days for each month.
- * @throws {object} An error object with a message if the year is not a valid year between 1900 and 2100.
+ * @returns {object} An object representing a calendar year with a list of days for each month.
  */
-export const getCalendarYear = (year: number, locale = undefined) => {
-  const preferredLocale = locale || 'en-US';
-
+export const getCalendarYear = (year: number, locale: string = 'en-US') => {
   if (!isValidYear(year)) {
-    return {
-      error: {
-        body: 'The argument passed to `calendar(\'YYYY\')` must be a valid year between 1900 and 2100. You passed ' + year + '.'
-      }
-    };
+    throw new Error('Invalid year, must be between 1900 and 2100.');
   }
 
-  return localeConstants[preferredLocale].monthsFull.reduceRight((collector, current) => ({
-    [current.toLowerCase()]: {
-      count: getDaysInMonth(year, localeConstants[preferredLocale].monthsFull.indexOf(current) + ONE),
-      collection: listDaysInMonth(year, localeConstants[preferredLocale].monthsFull.indexOf(current) + ONE)
-    },
+  return localeConstants[locale].monthsFull.reduceRight((collector, current) => ({
+    [current.toLowerCase()]: listDaysInMonth(year, localeConstants[locale].monthsFull.indexOf(current) + ONE),
     ...collector
   }), {});
 };
