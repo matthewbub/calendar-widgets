@@ -1,3 +1,4 @@
+/** Messages */
 import { locale as enUSLocale } from './en-US';
 import { locale as afZALocale } from './af-ZA';
 import { locale as sqALLocale } from './sq-AL';
@@ -21,7 +22,10 @@ import { locale as deDELocale } from './de-DE';
 import { locale as bnINLocale } from './bn-IN';
 import { locale as guINLocale } from './gu-IN';
 
-export const locale = {
+/** Constants */
+import { LocaleConstants } from './types';
+
+export const locale: LocaleConstants = {
   'en-US': {
     name: 'English (United States)',
     ...enUSLocale

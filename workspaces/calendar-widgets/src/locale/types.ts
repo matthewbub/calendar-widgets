@@ -18,3 +18,11 @@ export interface Locale {
   errorLocale: string;
   errorOptions: string;
 }
+
+interface LocaleConstant extends Locale {
+  name: string;
+}
+
+export interface LocaleConstants {
+  [key: string]: LocaleConstant;
+}
