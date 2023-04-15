@@ -1,6 +1,6 @@
 # calendar-widgets
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![Current bundle size: 36.13 kB](https://img.shields.io/badge/Bundle_Size-36.13_kB-green.svg)
+![Current bundle size: 32.11 kB](https://img.shields.io/badge/Bundle_Size-32.11_kB-green.svg)
 
 Working with dates sucks, working with calendars sucks even more. Here's an attempt at making things less sucky. Website: [http://www.calendar-widgets.com/](http://www.calendar-widgets.com/)
 
