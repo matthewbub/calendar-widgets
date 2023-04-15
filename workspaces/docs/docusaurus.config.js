@@ -7,9 +7,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'calendar-widgets',
-  tagline:
-    'A collection of calendar widgets and utilities to make working with calendars less shitty',
-  favicon: 'img/favicon.ico',
+  tagline: 'Working with dates sucks, working with calendars sucks even more. Here\'s an attempt at making things less sucky.',
+  // favicon: 'img/favicon.ico',
   url: 'https://calendar-widgets.com',
   baseUrl: '/',
 
@@ -37,14 +36,6 @@ const config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/9mbs/calendar-widgets'
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl: 'https://github.com/9mbs/calendar-widgets'
         },
         theme: {
@@ -75,10 +66,6 @@ const config = {
           {
             title: 'Community',
             items: [
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/4qArE7Z4mC'
-              },
               {
                 label: 'Report a bug',
                 href: 'https://github.com/9mbs/calendar-widgets/issues'

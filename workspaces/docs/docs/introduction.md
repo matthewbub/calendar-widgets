@@ -20,14 +20,16 @@ npm install calendar-widgets
 ```
 
 ## Helpers
-
-- [`formatDate`](helpers/formatDate) function
 - [`getCalendarYear`](helpers/getCalendarYear) function
-- [`getDaysInMonth`](helpers/getDaysInMonth) function
-- [`isValidDay`](helpers/isValidDay) function
-- [`isValidYear`](helpers/isValidYear) function
-- [`isValidMonth`](helpers/isValidMonth) function
 - [`listDaysInMonth`](helpers/listDaysInMonth) function
+
+## Utilities
+- [`formatDate`](utilities/formatDate) function
+- [`getDaysInMonth`](utilities/getDaysInMonth) function
+- [`isValidDay`](utilities/isValidDay) function
+- [`isValidYear`](utilities/isValidYear) function
+- [`isValidMonth`](utilities/isValidMonth) function
+
 
 :::info
 
