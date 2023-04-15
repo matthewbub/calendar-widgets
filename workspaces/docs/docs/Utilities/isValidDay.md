@@ -1,6 +1,6 @@
 ---
 title: isValidDay
-slug: /helpers/isValidDay
+slug: /utilities/isValidDay
 ---
 
 # `isValidDay`

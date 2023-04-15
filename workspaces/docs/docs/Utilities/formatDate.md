@@ -1,6 +1,6 @@
 ---
 title: formatDate
-slug: /helpers/formatDate
+slug: /utilities/formatDate
 ---
 
 # `formatDate` 

@@ -1,6 +1,6 @@
 ---
 title: getDaysInMonth
-slug: /helpers/getDaysInMonth
+slug: /utilities/getDaysInMonth
 ---
 
 # `getDaysInMonth`
