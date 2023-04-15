@@ -5,30 +5,44 @@
 
 Working with dates sucks, working with calendars sucks even more. Here's an attempt at making things less sucky. Website: [http://www.calendar-widgets.com/](http://www.calendar-widgets.com/)
 
-### On this page
+## On this page
 
-- [Install Via Nodejs](#install-via-nodejs)
+- [Getting Started](#getting-started)
 - [Helpers](#helpers)
+- [Utilities](#utilities)
 - [Contributing](#contributing)
+- [Local Setup](#local-setup)
 - [This repo](#this-repo)
 
-### Install Via Nodejs
+## Getting Started
 
-Under active development
+**Under active development**
+
+To begin, install the [`calendar-widgets`](https://www.npmjs.com/package/calendar-widgets) package from the NPM Registry.
 
 ```shell
+# npm
 npm install calendar-widgets
+
+# yarn
+yarn add calendar-widgets
+
+# pnpm
+pnpm install calendar-widgets
 ```
 
-## Helpers
+Once the package is installed, you'll have access to an array of helpers and utilities that do a lot of the heavy lifting when it comes to dates and calendars. 
 
-- [`formatDate`](https://calendar-widgets.com/helpers/formatDate) function
+### Helpers
 - [`getCalendarYear`](https://calendar-widgets.com/helpers/getCalendarYear) function
-- [`getDaysInMonth`](https://calendar-widgets.com/helpers/getDaysInMonth) function
-- [`isValidDay`](https://calendar-widgets.com/helpers/isValidDay) function
-- [`isValidYear`](https://calendar-widgets.com/helpers/isValidYear) function
-- [`isValidMonth`](https://calendar-widgets.com/helpers/isValidMonth) function
 - [`listDaysInMonth`](https://calendar-widgets.com/helpers/listDaysInMonth) function
+
+### Utilities
+- [`formatDate`](https://calendar-widgets.com/utilities/formatDate) function
+- [`getDaysInMonth`](https://calendar-widgets.com/utilities/getDaysInMonth) function
+- [`isValidDay`](https://calendar-widgets.com/utilities/isValidDay) function
+- [`isValidYear`](https://calendar-widgets.com/utilities/isValidYear) function
+- [`isValidMonth`](https://calendar-widgets.com/utilities/isValidMonth) function
 
 ## Contributing
 
@@ -49,7 +63,7 @@ pnpm run new
 
 From there, you may want to refer to the [this repo](#this-repo) section for further navigation. If you're looking to contribute to the actual `calendar-widgets` code, you'll likely want to run your build commands from the [`/workspaces/tests`](./workspaces/tests/README.md) directory to ensure nothing is breaking. 
 
-### This repo
+## This repo
 
 - [`/workspaces/calendar-widgets`](./workspaces/calendar-widgets/README.md) - NPM Package
 - [`/workspaces/tests`](./workspaces/tests/README.md) - Test suites for calendar-widgets as a package

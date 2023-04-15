@@ -1,6 +1,6 @@
 ---
 title: isValidMonth
-slug: /helpers/isValidMonth
+slug: /utilities/isValidMonth
 ---
 
 # `isValidMonth`

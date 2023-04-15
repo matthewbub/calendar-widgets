@@ -1,6 +1,6 @@
 ---
 title: isValidYear
-slug: /helpers/isValidYear
+slug: /utilities/isValidYear
 ---
 
 # `isValidYear`
