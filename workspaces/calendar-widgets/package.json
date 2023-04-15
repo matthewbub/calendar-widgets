@@ -7,7 +7,8 @@
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "lint:fix": "eslint ./src --ext .ts --fix",
-    "build": "rollup -c"
+    "build": "rollup -c ./rollup.config.prod.js",
+    "dev": "rollup -c ./rollup.config.dev.js"
   },
   "keywords": [
     "calendar",
@@ -16,6 +17,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.1",
     "@rollup/plugin-typescript": "^11.1.0",
     "@typescript-eslint/eslint-plugin": "^5.58.0",
     "@typescript-eslint/parser": "^5.58.0",
