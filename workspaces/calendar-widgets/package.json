@@ -1,6 +1,6 @@
 {
   "name": "calendar-widgets",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "main": "./dist/bundle.js",
   "type": "module",
   "module": "./src/index.js",
