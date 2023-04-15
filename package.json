@@ -2,6 +2,12 @@
   "name": "root",
   "version": "0.0.0",
   "private": true,
+  "comments": [
+    "you're probably looking for the `calendar-widgets` source code",
+    "it's in the `workspaces/calendar-widgets` directory",
+    "if you want to run the tests to make sure everything is working",
+    "they're in the `workspaces/tests` directory"
+  ],
   "scripts": {
     "install:docs": "cd ./workspaces/docs && pnpm install",
     "install:tests": "cd ./workspaces/tests && pnpm install",
