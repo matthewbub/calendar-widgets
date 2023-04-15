@@ -11,37 +11,41 @@ This SDK is actively being worked on and improved. It's in the alpha stages of d
 
 :::
 
-Calendar Widgets is an SDK that makes working with calendars less shitty, by providing out-of-the-box functionality for interactive dates and times.
+Working with dates sucks, working with calendars sucks even more. Here's an attempt at making things less sucky. 
+
+Calendar Widgets is an extremely light-weight React library that does not depend on 3rd party packages, instead we use native JavaScript objects [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) and [`Intl`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) both of which are hardly "cutting edge". 
 
 ## Getting Started
 
+To begin, install the [`calendar-widgets`](https://www.npmjs.com/package/calendar-widgets) package from the NPM Registry.
+
 ```shell
+# npm
 npm install calendar-widgets
+
+# yarn
+yarn add calendar-widgets
+
+# pnpm
+pnpm install calendar-widgets
 ```
 
-## Helpers
+Once the package is installed, you'll have access to an array of helpers and utilities that do a lot of the heavy lifting when it comes to dates and calendars. 
 
+## Helpers
 - [`formatDate`](helpers/formatDate) function
-- [`getCalendarYear`](helpers/getCalendarYear) function
 - [`getDaysInMonth`](helpers/getDaysInMonth) function
 - [`isValidDay`](helpers/isValidDay) function
 - [`isValidYear`](helpers/isValidYear) function
 - [`isValidMonth`](helpers/isValidMonth) function
+
+## Utilities
+- [`getCalendarYear`](helpers/getCalendarYear) function
 - [`listDaysInMonth`](helpers/listDaysInMonth) function
+
 
 :::info
 
 This document is actively being working on, more info coming soon!
 
 :::
-
-## V1 Road Map
-
-- [ ] Lift helper utilities for use in Production
-  - [ ] Localize calendar-widgets helper utilities
-- [ ] React-based Calendar Widget
-  - [ ] Localize Calendar Widget interface and documentation
-- [ ] React-based Interactive Calendar Widget
-  - [ ] Localize Interactive Calendar Widget interface and documentation
-- [ ] React-based Draggable Timeline Widget
-  - [ ] Localize Draggable Timeline Widget interface and documentation
