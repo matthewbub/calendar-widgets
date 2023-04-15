@@ -1,7 +1,7 @@
-import {isValidMonth} from './isValidMonth';
-import {isValidYear} from './isValidYear';
-import {isValidDay} from './isValidDay';
-import {ONE} from '../constants';
+import { isValidMonth } from './isValidMonth';
+import { isValidYear } from './isValidYear';
+import { isValidDay } from './isValidDay';
+import { ONE } from '../constants';
 
 /**
  * Formats a date in a locale-specific format.
@@ -32,6 +32,6 @@ export const formatDate = (month: number, day: number, year: number, locale?: st
   }
 
   const date = new Date(year, month - ONE, day);
-  const localeOptions = options || {year: 'numeric', month: '2-digit', day: '2-digit'};
+  const localeOptions = options || { year: 'numeric', month: '2-digit', day: '2-digit' };
   return date.toLocaleDateString(locale, localeOptions);
 };

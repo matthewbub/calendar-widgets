@@ -1,4 +1,4 @@
-import {FOUR, NINETEEN_HUNDRED, TWO_THOUSAND_AND_ONE_HUNDRED} from '../constants';
+import { FOUR, NINETEEN_HUNDRED, TWO_THOUSAND_AND_ONE_HUNDRED } from '../constants';
 
 /**
  * Determines whether a given year is a valid year between 1900 and 2100.

@@ -1,4 +1,4 @@
-import {ONE, TWELVE} from '../constants';
+import { ONE, TWELVE } from '../constants';
 
 /**
  * Determines whether a given month is a valid month between 1 and 12.

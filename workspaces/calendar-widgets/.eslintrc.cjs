@@ -84,7 +84,7 @@ module.exports = {
       "max-len": ["error", { "code": 340 }],
       "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }],
       "no-trailing-spaces": ["error"],
-      "object-curly-spacing": ["error", "never"],
+      "object-curly-spacing": ["error", "always"],
       "no-extra-parens": ["error"],
       "no-mixed-spaces-and-tabs": ["error"],
       "no-tabs": ["error"],

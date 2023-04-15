@@ -1,4 +1,4 @@
-import {ONE, THIRTY_ONE} from '../constants';
+import { ONE, THIRTY_ONE } from '../constants';
 
 /**
  * Determines whether a given day is a valid day between 1 and 31.

@@ -1,4 +1,4 @@
-import {Locale} from './types';
+import { Locale } from './types';
 
 export const locale: Locale = {
   locale: 'Inglês (Estados Unidos)',
