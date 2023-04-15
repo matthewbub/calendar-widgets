@@ -2,7 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Current bundle size: 32.11 kB](https://img.shields.io/badge/Bundle_Size-32.11_kB-green.svg)
 
-Working with dates sucks, working with calendars sucks even more. Here's an attempt at making things less sucky. Website: [http://www.calendar-widgets.com/](http://www.calendar-widgets.com/)
+Working with dates sucks, working with calendars sucks even more. Here's an attempt at making things less sucky. Website: [http://www.calendar-widgets.com/](http://www.calendar-widgets.com/) 
 
 Heads up! We're under active development. Interested in contributing? Learn more [here](https://github.com/9mbs/calendar-widgets)!
 
@@ -33,3 +33,7 @@ Once the package is installed, you'll have access to an array of helpers and uti
 - [`isValidDay`](https://calendar-widgets.com/utilities/isValidDay) function
 - [`isValidYear`](https://calendar-widgets.com/utilities/isValidYear) function
 - [`isValidMonth`](https://calendar-widgets.com/utilities/isValidMonth) function
+
+### Changelog
+
+We're actively maintaining a changelog at https://calendar-widgets.com/changelog 🙂

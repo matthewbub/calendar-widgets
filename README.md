@@ -13,6 +13,7 @@ Working with dates sucks, working with calendars sucks even more. Here's an atte
 - [Contributing](#contributing)
 - [Local Setup](#local-setup)
 - [This repo](#this-repo)
+- [Changelog](#changelog)
 
 ## Getting Started
 
@@ -68,3 +69,7 @@ From there, you may want to refer to the [this repo](#this-repo) section for fur
 - [`/workspaces/calendar-widgets`](./workspaces/calendar-widgets/README.md) - NPM Package
 - [`/workspaces/tests`](./workspaces/tests/README.md) - Test suites for calendar-widgets as a package
 - [`/workspaces/docs`](./workspaces/docs/README.md) - Documentation
+
+## Changelog
+
+We're actively maintaining a changelog at https://calendar-widgets.com/changelog 🙂
