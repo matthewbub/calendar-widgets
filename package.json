@@ -2,6 +2,9 @@
   "name": "root",
   "version": "0.0.0",
   "private": true,
+  "workspaces": [
+    "workspaces/*"
+  ],
   "comments": [
     "you're probably looking for the `calendar-widgets` source code",
     "it's in the `workspaces/calendar-widgets` directory",

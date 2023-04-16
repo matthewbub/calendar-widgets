@@ -15,7 +15,7 @@ jobs:
           version: 6.0.2
 
       - name: Install dependencies
-        run: pnpm install --recursive --filter '!workspaces/tests'
+        run: pnpm install --recursive --filter '.../!tests'
 
       - name: Build and lint calendar-widgets
         working-directory: ./workspaces/calendar-widgets
