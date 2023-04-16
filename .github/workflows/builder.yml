@@ -20,5 +20,5 @@ jobs:
       - name: Build and lint calendar-widgets
         working-directory: ./workspaces/calendar-widgets
         run: |
-          pnpm run build
+          pnpx rollup -c ./rollup.config.js
           pnpm run lint
