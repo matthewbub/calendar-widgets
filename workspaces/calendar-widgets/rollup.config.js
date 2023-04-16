@@ -25,7 +25,5 @@ export default {
       presets: ['@babel/preset-react']
     }), // Transpile JSX and other React-specific syntax using Babel
     summary() // Prints a summary of the bundle
-  ],
-  amd: null, // Do not generate an AMD module
-  commonjs: null // Do not generate a CommonJS module
+  ]
 };

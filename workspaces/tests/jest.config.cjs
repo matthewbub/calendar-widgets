@@ -5,12 +5,6 @@ module.exports = {
   // The glob patterns Jest uses to detect test files
   testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)+(spec|test).js?(x)'],
 
-  // The paths to modules that run some code to configure or set up the testing environment before each test
-  // setupFilesAfterEnv: ['./setupTests.js'],
-
-  // A list of paths to snapshot serializer modules Jest should use for snapshot testing
-  // snapshotSerializers: ['jest-serializer-html'],
-
   // A list of paths to directories that Jest should use to search for files in
   roots: ['<rootDir>/tests/'],
 
@@ -45,5 +39,6 @@ module.exports = {
   // When Jest runs the tests, it processes each file that matches the specified pattern and transpiles them using Babel.
   transform: {
     "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
-  }
+  },
+  testEnvironment: "jsdom"
 };

@@ -6,6 +6,7 @@ import { getCalendarYear } from './utils/getCalendarYear';
 import { formatDate } from './utils/formatDate';
 import { isValidDay } from './utils/isValidDay';
 import { isValidMonth } from './utils/isValidMonth';
+import { Hello } from './components/Hello';
 
 export {
   getDaysInMonth,
@@ -15,5 +16,6 @@ export {
   formatDate,
   isValidYear,
   isValidDay,
-  isValidMonth
+  isValidMonth,
+  Hello
 };

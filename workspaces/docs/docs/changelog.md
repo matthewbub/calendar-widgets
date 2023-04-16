@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+- [Changed build output from `es` to `umd` for better support](https://github.com/9mbs/calendar-widgets/issues/120)
 - [Added React to Rollup configuration for module bundling](https://github.com/9mbs/calendar-widgets/issues/121)
 - [Added new method `listLocalizedMonths`](https://github.com/9mbs/calendar-widgets/issues/121)
 
