@@ -7,8 +7,7 @@
   "scripts": {
     "lint": "eslint ./src --ext .ts",
     "lint:fix": "eslint ./src --ext .ts --fix",
-    "build": "rollup -c ./rollup.config.prod.js",
-    "dev": "rollup -c ./rollup.config.dev.js"
+    "build": "rollup -c ./rollup.config.js"
   },
   "keywords": [
     "calendar",

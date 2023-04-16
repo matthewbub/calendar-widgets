@@ -23,7 +23,7 @@ To run the tests, use the following command:
 pnpm run tests
 ```
 
-This will execute the test suites using the Mocha and Chai libraries.
+This will execute the test suites using Jest.
 
 ## Scripts
 This package includes the following scripts:
@@ -32,10 +32,3 @@ This package includes the following scripts:
 - `build:calendar-widgets`: Changes the directory to the `calendar-widgets` package and runs the `build` script using pnpm.
 - `clean`: Removes the `node_modules` directory and `pnpm-lock.yaml` file, then runs `pnpm install`.
 - `build:tests`: Runs the `build:calendar-widgets`, `clean`, and `test` scripts in order. Probably the safest option to use during development of the `calendar-widgets` package.
-
-## Dependencies
-- [calendar-widgets](../calendar-widgets/README.md) What we're testing 😀
-
-## Dev Dependencies
-- [chai](https://www.chaijs.com/): A BDD / TDD assertion library for Node.js and the browser.
-- [mocha](https://mochajs.org/): A feature-rich JavaScript test framework running on Node.js and in the browser.

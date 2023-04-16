@@ -1,9 +1,5 @@
 /** Dependencies */
 import {getDaysInMonth} from 'calendar-widgets';
-import chai from 'chai';
-
-/** Configurations */
-const expect = chai.expect;
 
 describe('getDaysInMonth', () => {
   it('should return the correct number of days for each month', () => {
@@ -24,7 +20,7 @@ describe('getDaysInMonth', () => {
     ];
 
     testCases.forEach(({ year, month, days }) => {
-      expect(getDaysInMonth(year, month)).to.equal(days);
+      expect(getDaysInMonth(year, month)).toBe(days);
     });
   });
 
@@ -45,7 +41,7 @@ describe('getDaysInMonth', () => {
     ];
 
     invalidTestCases.forEach(({ year, month }) => {
-      expect(() => getDaysInMonth(year, month)).to.throw('Invalid year or month. Year must be between 1900 and 2100, and month must be between 1 and 12.');
+      expect(() => getDaysInMonth(year, month)).toThrow('Invalid year or month. Year must be between 1900 and 2100, and month must be between 1 and 12.');
     });
   });
 });
