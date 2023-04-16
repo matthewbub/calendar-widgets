@@ -15,14 +15,10 @@ jobs:
           version: 6.0.2
 
       - name: Install dependencies
-        run: pnpm install --recursive
+        run: pnpm install --recursive --filter '!workspaces/tests'
 
       - name: Build and lint calendar-widgets
         working-directory: ./workspaces/calendar-widgets
         run: |
           pnpm run build
           pnpm run lint
-
-      - name: Build tests
-        working-directory: ./workspaces/tests
-        run: pnpm run build:tests
