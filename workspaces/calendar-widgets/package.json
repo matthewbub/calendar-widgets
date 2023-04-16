@@ -5,8 +5,8 @@
   "type": "module",
   "module": "./src/index.js",
   "scripts": {
-    "lint": "eslint ./src --ext .ts",
-    "lint:fix": "eslint ./src --ext .ts --fix",
+    "lint": "eslint ./src --ext .ts,.tsx",
+    "lint:fix": "eslint ./src --ext .ts,.tsx --fix",
     "build": "rollup -c ./rollup.config.js"
   },
   "keywords": [

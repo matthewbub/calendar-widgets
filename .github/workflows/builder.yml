@@ -21,4 +21,4 @@ jobs:
         working-directory: ./workspaces/calendar-widgets
         run: |
           pnpx rollup -c ./rollup.config.js
-          pnpm run lint
+          eslint ./src --ext .ts,.tsx
