@@ -33,5 +33,6 @@
     "rollup-plugin-summary": "^2.0.0",
     "tslib": "^2.5.0",
     "typescript": "^5.0.4"
-  }
+  },
+  "license": "MIT"
 }
