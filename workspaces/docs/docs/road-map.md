@@ -10,7 +10,7 @@ slug: /road-map
 **Goal:** Launch the `calendar-widgets` SDK for production use. Develop three slightly opinionated React-based widgets, including the Calendar Widget, Interactive Calendar Widget, and Draggable Timeline Widget, while localizing the interfaces and documentation for each widget.
 
 - [ ] Lift helpers and utilities for use in Production
-  - [ ] [`getCalendarYear`](helpers/getCalendarYear) function
+  - [ ] [`listCalendarYear`](helpers/listCalendarYear) function
   - [ ] [`listDaysInMonth`](helpers/listDaysInMonth) function
   - [ ] [`formatDate`](utilities/formatDate) function
   - [ ] [`getDaysInMonth`](utilities/getDaysInMonth) function

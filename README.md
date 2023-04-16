@@ -1,7 +1,7 @@
 # calendar-widgets
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![Current bundle size: 32.11 kB](https://img.shields.io/badge/Bundle_Size-32.11_kB-green.svg)
+![Current bundle size: 171.23 kB](https://img.shields.io/badge/Bundle_Size-171.23_kB-green.svg)
 
 Working with dates sucks, working with calendars sucks even more. Here's an attempt at making things less sucky. Website: [http://www.calendar-widgets.com/](http://www.calendar-widgets.com/)
 
@@ -35,8 +35,9 @@ pnpm install calendar-widgets
 Once the package is installed, you'll have access to an array of helpers and utilities that do a lot of the heavy lifting when it comes to dates and calendars. 
 
 ### Helpers
-- [`getCalendarYear`](https://calendar-widgets.com/helpers/getCalendarYear) function
+- [`listCalendarYear`](https://calendar-widgets.com/helpers/listCalendarYear) function
 - [`listDaysInMonth`](https://calendar-widgets.com/helpers/listDaysInMonth) function
+- `listLocalizedMonths` function
 
 ### Utilities
 - [`formatDate`](https://calendar-widgets.com/utilities/formatDate) function

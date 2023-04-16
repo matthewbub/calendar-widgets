@@ -33,8 +33,9 @@ pnpm install calendar-widgets
 Once the package is installed, you'll have access to an array of helpers and utilities that do a lot of the heavy lifting when it comes to dates and calendars. 
 
 ## Helpers
-- [`getCalendarYear`](helpers/getCalendarYear) function
+- [`listCalendarYear`](helpers/listCalendarYear) function
 - [`listDaysInMonth`](helpers/listDaysInMonth) function
+- `listLocalizedMonths` function
 
 ## Utilities
 - [`formatDate`](utilities/formatDate) function
