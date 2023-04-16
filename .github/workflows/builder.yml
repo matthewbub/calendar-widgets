@@ -27,6 +27,5 @@ jobs:
         run: pnpx rollup -c ./rollup.config.js
 
       - name: Lint calendar-widgets
-        uses: stefanoeb/eslint-action@1.0.2
-        with:
-          files: 'workspaces/calendar-widgets/src/**/*.{ts,tsx}'
+        working-directory: ./workspaces/calendar-widgets
+        run: pnpx eslint './src/**/*.{ts,tsx}' -c .eslintrc.cjs
