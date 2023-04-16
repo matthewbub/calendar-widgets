@@ -1,0 +1,21 @@
+.arg-description--name {
+  width: fit-content;
+}
+
+.arg-description--code {
+  padding: 1px 6px;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 3px;
+}
+
+.arg-description--types {
+  width: 85%;
+  padding-left: 20px;
+  color: var(--secondary-text-color);
+}
+
+.arg-description--type,
+.arg-description--required {
+  font-size: 14px;
+  color: var(--secondary-text-color);
+}
