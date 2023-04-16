@@ -28,4 +28,4 @@ jobs:
 
       - name: Lint calendar-widgets
         working-directory: ./workspaces/calendar-widgets
-        run: pnpx eslint './src/**/*.{ts,tsx}' -c .eslintrc.cjs
+        run: pnpx eslint --debug './src/**/*.{ts,tsx}' -c .eslintrc.cjs
