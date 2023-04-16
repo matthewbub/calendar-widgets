@@ -8,7 +8,7 @@
     "imported as a relative path for local testing"
   ],
   "scripts": {
-    "test": "mocha",
+    "test": "mocha tests/**/*.test.js",
     "build:calendar-widgets": "cd ../calendar-widgets && pnpm run build",
     "clean": "rm -rf node_modules pnpm-lock.yaml && pnpm install",
     "build:tests": "pnpm run build:calendar-widgets && pnpm run clean && pnpm run test"
