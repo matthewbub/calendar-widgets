@@ -9,7 +9,7 @@ import { ONE } from '../constants.js';
  * @param {number} year - The year for which to generate the calendar (e.g. 2023).
  * @returns {object} An object representing a calendar year with a list of days for each month.
  */
-export const getCalendarYear = (year: number, locale: string = 'en-US') => {
+export const getCalendarYear = (year: number, locale = 'en-US') => {
   if (!isValidYear(year)) {
     throw new Error('Invalid year, must be between 1900 and 2100.');
   }
