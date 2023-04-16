@@ -14,7 +14,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 16
-
+          
       - uses: pnpm/action-setup@v2
         with:
           version: 6.0.2
@@ -22,8 +22,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install --recursive --filter '.../!tests'
 
-      - name: Build and lint calendar-widgets
+      - name: Build calendar-widgets
         working-directory: ./workspaces/calendar-widgets
-        run: |
-          pnpx rollup -c ./rollup.config.js
-          eslint -c .eslintrc.cjs ./src --ext .ts,.tsx
+        run: pnpx rollup -c ./rollup.config.js
+
+      - name: Lint calendar-widgets
+        uses: stefanoeb/eslint-action@1.0.2
+        with:
+          src: './workspaces/calendar-widgets/src'
+          configFile: './workspaces/calendar-widgets/.eslintrc.cjs'
+          extensions: '.ts,.tsx'
