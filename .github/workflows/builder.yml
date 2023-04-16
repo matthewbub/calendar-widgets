@@ -29,5 +29,4 @@ jobs:
       - name: Lint calendar-widgets
         uses: stefanoeb/eslint-action@1.0.2
         with:
-          files: workspaces/calendar-widgets/src 
-          
+          src: 'workspaces/calendar-widgets/src/**/*.{ts,tsx}'
