@@ -13,5 +13,6 @@
     "install:tests": "cd ./workspaces/tests && pnpm install",
     "install:calendar-widgets": "cd ./workspaces/calendar-widgets && pnpm install",
     "new": "pnpm run install:tests && pnpm run install:calendar-widgets && pnpm run install:docs"
-  }
+  },
+  "license": "MIT"
 }
