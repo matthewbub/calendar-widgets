@@ -20,7 +20,9 @@ jobs:
           version: 6.0.2
 
       - name: Install dependencies
-        run: pnpm install --recursive --filter '.../!tests'
+        run: |
+          pnpm install --recursive --filter '.../!tests'
+          pnpm install -w --save-dev eslint
 
       - name: Build calendar-widgets
         working-directory: ./workspaces/calendar-widgets

@@ -6,6 +6,7 @@
   "module": "./src/index.js",
   "scripts": {
     "lint": "eslint -c .eslintrc.cjs ./src --ext .ts,.tsx",
+    "lint:debug": "eslint -c .eslintrc.cjs ./src --ext .ts,.tsx --debug",
     "lint:fix": "eslint ./src --ext .ts --fix",
     "build": "rollup -c ./rollup.config.js"
   },
