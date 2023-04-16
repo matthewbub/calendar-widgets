@@ -29,6 +29,5 @@ jobs:
       - name: Lint calendar-widgets
         uses: stefanoeb/eslint-action@1.0.2
         with:
-          src: './workspaces/calendar-widgets/src'
-          configFile: './workspaces/calendar-widgets/.eslintrc.cjs'
-          extensions: '.ts,.tsx'
+          files: workspaces/calendar-widgets/src 
+          
