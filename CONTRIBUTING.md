@@ -87,8 +87,7 @@ Please be patient, as PR reviews can take time. Once your PR is approved and all
 To help you get started and become more familiar with the project, you can check the following resources:
 
 - [Documentation](https://www.calendar-widgets.com/)
-- [Project Roadmap](https://www.calendar-widgets.com/#v1-road-map)
-- [Discord](discord.gg/4qArE7Z4mC)
+- [Project Road map](https://www.calendar-widgets.com/road-map)
 - [Discussions Board](https://github.com/9mbs/calendar-widgets/discussions)
 
 If you have any questions or need assistance, feel free to reach out to the community on the project's [Discussion board](https://github.com/9mbs/calendar-widgets/discussions).
