@@ -10,6 +10,6 @@ export type MonthFormat = 'long' | 'short' | 'narrow' | 'numeric' | '2-digit';
  * @returns {string[]} An array of localized month names.
  */
 export const listLocalizedMonths = (locale: string, monthFormat: MonthFormat): Array<string> =>
-  Array.from({ length: TWELVE }, (_, i) =>
+  Array.from({ length: 12 }, (_, i) =>
     new Date(Date.UTC(TWO_THOUSAND, i, ONE)).toLocaleString(locale, { month: monthFormat })
   );
