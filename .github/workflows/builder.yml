@@ -1,0 +1,34 @@
+name: calendar-widgets-builder
+
+on: [push]
+
+jobs:
+  build_and_lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 6.0.2
+
+      - name: Install dependencies
+        run: |
+          pnpm install --recursive --filter '.../!tests'
+          cd workspaces/calendar-widgets
+          pnpm install --save-dev eslint
+
+      - name: Build calendar-widgets
+        working-directory: ./workspaces/calendar-widgets
+        run: pnpx rollup -c ./rollup.config.js
+
+      - name: Lint calendar-widgets
+        working-directory: ./workspaces/calendar-widgets
+        run: pnpx eslint --debug './src/**/*.{ts,tsx}' -c .eslintrc.cjs
