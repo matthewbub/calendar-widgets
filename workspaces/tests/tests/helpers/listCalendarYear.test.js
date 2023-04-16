@@ -1,19 +1,19 @@
 /** Dependencies */
 import {
-  getCalendarYear,
+  listCalendarYear,
   listDaysInMonth,
   locale
 } from 'calendar-widgets';
 
-describe('getCalendarYear', () => {
+describe('listCalendarYear', () => {
   it('should throw an Error for an invalid year', () => {
     const invalidYear = 1850;
-    expect(() => getCalendarYear(invalidYear)).toThrow(Error, 'Invalid year, must be between 1900 and 2100.');
+    expect(() => listCalendarYear(invalidYear)).toThrow(Error, 'Invalid year, must be between 1900 and 2100.');
   });
 
   it('should return a calendar object for a valid year', () => {
     const validYear = 2022;
-    const result = getCalendarYear(validYear);
+    const result = listCalendarYear(validYear);
     expect(result).toBeInstanceOf(Object);
 
     for (let month = 1; month <= 12; month++) {

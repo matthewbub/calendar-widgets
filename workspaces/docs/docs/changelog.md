@@ -11,11 +11,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
-- [Changed build output from `es` to `umd` for better support](https://github.com/9mbs/calendar-widgets/issues/120)
-- [Added React to Rollup configuration for module bundling](https://github.com/9mbs/calendar-widgets/issues/121)
-- [Added new method `listLocalizedMonths`](https://github.com/9mbs/calendar-widgets/issues/121)
+## 0.0.10
 
-## 0.0.8
+### Changed
+- [Changed `getCalendarYear` to `listCalendarYear`](https://github.com/9mbs/calendar-widgets/issues/130)
+- [Changed build output from `es` to `umd` for better support](https://github.com/9mbs/calendar-widgets/issues/120)
+- [Changed ESLint Rules](https://github.com/9mbs/calendar-widgets/issues/97). Thanks, [@giri-madhan](https://github.com/giri-madhan)
+
+### Added
+- [Added new method `listLocalizedMonths`](https://github.com/9mbs/calendar-widgets/issues/121)
+- [Added MIT License to NPM package](https://github.com/9mbs/calendar-widgets/issues/125). Thanks, [@bajibpathan](https://github.com/bajibpathan)!
+- [Added React to Rollup configuration for module bundling](https://github.com/9mbs/calendar-widgets/issues/121)
+
+## 0.0.8 & 0.0.9
 
 ### Added 
 

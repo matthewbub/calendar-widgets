@@ -1,9 +1,10 @@
 {
   "name": "calendar-widgets",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "./dist/bundle.js",
   "type": "module",
   "module": "./src/index.js",
+  "types": "@types/calendar-widgets/index.d.ts",
   "scripts": {
     "lint": "eslint -c .eslintrc.cjs ./src --ext .ts,.tsx",
     "lint:debug": "eslint -c .eslintrc.cjs ./src --ext .ts,.tsx --debug",
@@ -12,7 +13,8 @@
   },
   "keywords": [
     "calendar",
-    "calendar SDK"
+    "calendar SDK",
+    "calendar widgets"
   ],
   "dependencies": {
     "react": "18.2.0",
@@ -36,5 +38,13 @@
     "tslib": "^2.5.0",
     "typescript": "^5.0.4"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/9mbs/calendar-widgets"
+  },
+  "bugs": {
+    "url": "https://github.com/9mbs/calendar-widgets/issues"
+  },
+  "homepage": "https://www.calendar-widgets.com/"
 }

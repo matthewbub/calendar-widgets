@@ -1,5 +1,5 @@
 import { listDaysInMonth } from './listDaysInMonth.js';
-import { isValidYear } from './isValidYear.js';
+import { isValidYear } from '../utils/isValidYear.js';
 import { locale as localeConstants } from '../locale/index.js';
 import { ONE } from '../constants.js';
 
@@ -9,7 +9,7 @@ import { ONE } from '../constants.js';
  * @param {number} year - The year for which to generate the calendar (e.g. 2023).
  * @returns {object} An object representing a calendar year with a list of days for each month.
  */
-export const getCalendarYear = (year: number, locale = 'en-US') => {
+export const listCalendarYear = (year: number, locale = 'en-US'): { [key: string]: string[] } => {
   if (!isValidYear(year)) {
     throw new Error('Invalid year, must be between 1900 and 2100.');
   }
