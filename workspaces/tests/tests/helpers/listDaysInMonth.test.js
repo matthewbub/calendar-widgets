@@ -1,25 +1,24 @@
 /** Dependencies */
 import {formatDate, listDaysInMonth} from 'calendar-widgets';
-import chai from 'chai';
-
-/** Configurations */
-const expect = chai.expect;
 
 describe('listDaysInMonth', () => {
-  it('should return an array of formatted date strings for each day in a given month and year', () => {
-    const testCases = [
-      { year: 2022, month: 1, days: 31 },
-      { year: 2022, month: 2, days: 28 },
-      { year: 2022, month: 3, days: 31 },
-      { year: 2022, month: 4, days: 30 },
-    ];
+  it(
+    'should return an array of formatted date strings for each day in a given month and year',
+    () => {
+      const testCases = [
+        { year: 2022, month: 1, days: 31 },
+        { year: 2022, month: 2, days: 28 },
+        { year: 2022, month: 3, days: 31 },
+        { year: 2022, month: 4, days: 30 },
+      ];
 
-    testCases.forEach(({ year, month, days }) => {
-      const expectedResult = Array.from({ length: days }, (_, index) => formatDate(month, index + 1, year));
-      const result = listDaysInMonth(year, month);
-      expect(result).to.deep.equal(expectedResult);
-    });
-  });
+      testCases.forEach(({ year, month, days }) => {
+        const expectedResult = Array.from({ length: days }, (_, index) => formatDate(month, index + 1, year));
+        const result = listDaysInMonth(year, month);
+        expect(result).toEqual(expectedResult);
+      });
+    }
+  );
 
   it('should throw an error for invalid months or years', () => {
     const invalidTestCases = [
@@ -35,7 +34,7 @@ describe('listDaysInMonth', () => {
     ];
 
     invalidTestCases.forEach(({ year, month }) => {
-      expect(() => listDaysInMonth(month, year)).to.throw(Error);
+      expect(() => listDaysInMonth(month, year)).toThrow(Error);
     });
   });
 });

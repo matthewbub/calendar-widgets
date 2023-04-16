@@ -6,11 +6,10 @@ import babel from '@rollup/plugin-babel';
 
 export default {
   input: 'src/index.ts', // Entry point file
-  external: ['react', 'react-dom'], // Mark React and ReactDOM as external dependencies
   output: {
     sourcemap: true, // Generates a sourcemap file
     file: 'dist/bundle.js', // The bundled output file
-    format: 'es', // Supports multiple module formats: CommonJS, AMD, and global variable
+    format: 'umd', // Supports multiple module formats: CommonJS, AMD, and global variable
     name: 'calendar-widgets', // The global variable name for your library, if not using a module system
     globals: {
       react: 'React',
@@ -26,5 +25,7 @@ export default {
       presets: ['@babel/preset-react']
     }), // Transpile JSX and other React-specific syntax using Babel
     summary() // Prints a summary of the bundle
-  ]
+  ],
+  amd: null, // Do not generate an AMD module
+  commonjs: null // Do not generate a CommonJS module
 };
