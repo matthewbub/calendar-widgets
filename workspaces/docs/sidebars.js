@@ -14,25 +14,19 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   docs: [
+    'introduction',
     {
       type: 'category',
-      label: 'Docs',
-      items: [
-        'introduction',
-        {
-          type: 'category',
-          label: 'Helpers',
-          items: ['Helpers/getCalendarYear', 'Helpers/listDaysInMonths'],
-        },
-        {
-          type: 'category',
-          label: 'Utilities',
-          items: ['Utilities/formatDate', 'Utilities/getDaysInMonth', 'Utilities/isValidDay', 'Utilities/isValidMonth', 'Utilities/isValidYear'],
-        },
-        'road-map',
-        'code-of-conduct',
-      ],
+      label: 'Helpers',
+      items: ['Helpers/getCalendarYear', 'Helpers/listDaysInMonths'],
     },
+    {
+      type: 'category',
+      label: 'Utilities',
+      items: ['Utilities/formatDate', 'Utilities/getDaysInMonth', 'Utilities/isValidDay', 'Utilities/isValidMonth', 'Utilities/isValidYear'],
+    },
+    'road-map',
+    'code-of-conduct',
   ],
 };
 
