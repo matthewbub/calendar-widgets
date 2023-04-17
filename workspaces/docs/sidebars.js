@@ -18,7 +18,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Helpers',
-      items: ['Helpers/getCalendarYear', 'Helpers/listDaysInMonths'],
+      items: ['Helpers/listCalendarYear', 'Helpers/listDaysInMonths'],
     },
     {
       type: 'category',
