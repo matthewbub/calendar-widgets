@@ -11,6 +11,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## 0.0.11
+
+## Removed
+- `react` and `react-dom` from build to reduce build size and avoid conflicts with library users
+
+## Added
+- `react` and `react-dom` as peer dependencies 
+
+## Changed
+- Changed build output from `umd` to both `es` and `cjs` for React Component Development
+- Changed production build to utilize `terser` to minify code
+
 ## 0.0.10
 
 ### Changed
