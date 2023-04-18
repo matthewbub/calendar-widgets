@@ -1,29 +1,35 @@
 import resolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import summary from 'rollup-plugin-summary';
 import babel from '@rollup/plugin-babel';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import postcss from 'rollup-plugin-postcss';
 
 export default {
-  input: 'src/index.ts', // Entry point file
-  output: {
-    sourcemap: true, // Generates a sourcemap file
-    file: 'dist/bundle.js', // The bundled output file
-    format: 'umd', // Supports multiple module formats: CommonJS, AMD, and global variable
-    name: 'calendar-widgets', // The global variable name for your library, if not using a module system
-    globals: {
-      react: 'React',
-      'react-dom': 'ReactDOM',
+  input: 'src/index.ts',
+  output: [
+    {
+      file: 'dist/bundle.js',
+      format: 'cjs', 
     },
-  },
+    {
+      file: 'dist/bundle.es.js',
+      format: 'es', 
+      exports: 'named'
+    },
+  ],
   plugins: [
-    resolve(), // Helps Rollup locate external modules
-    commonjs(), // Converts CommonJS modules to ES modules
-    typescript(), // Converts TypeScript to JavaScript
+    postcss({
+      plugins: [],
+      minimize: true,
+    }),
+    typescript(),
     babel({
-      babelHelpers: 'bundled',
+      exclude: 'node_modules/**',
       presets: ['@babel/preset-react']
-    }), // Transpile JSX and other React-specific syntax using Babel
-    summary() // Prints a summary of the bundle
+    }),
+    peerDepsExternal(),
+    resolve(),
+    summary()
   ]
 };
