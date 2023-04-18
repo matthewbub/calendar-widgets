@@ -27,29 +27,31 @@ const Draggable: FC<{ dynamicRows: number }> = ({ dynamicRows }) => {
   };
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    const containerRect = containerRef.current!.getBoundingClientRect();
+    const rowHeight = containerRect.height / dynamicRows;
+
     if (dragging) {
-      const containerRect = containerRef.current!.getBoundingClientRect();
-      const rowHeight = containerRect.height / dynamicRows;
       const posY = Math.round((e.clientY - containerRect.top) / rowHeight) * rowHeight;
       const row = Math.floor((posY + rowHeight / 2) / rowHeight);
 
-      setCurrentPos({ x: 0, y: row * rowHeight });
+      if (row * rowHeight + draggableHeight * rowHeight <= containerRect.height) {
+        setCurrentPos({ x: 0, y: row * rowHeight });
+      }
     } else if (draggingBottom) {
-      const containerRect = containerRef.current!.getBoundingClientRect();
-      const rowHeight = containerRect.height / dynamicRows;
-      const posY = Math.round((e.clientY - containerRect.top) / rowHeight) * rowHeight;
+      const posY = e.clientY - containerRect.top;
       const row = Math.floor((posY + rowHeight / 2) / rowHeight);
+      const remainingHeight = containerRect.height - currentPos.y;
 
-      if (row >= 1 && row * rowHeight <= containerRect.height - currentPos.y) {
-        setDraggableHeight(row);
+      // Calculate the nearest 1/4 value
+      const quarterRow = rowHeight / 4;
+      const newRowHeight = Math.round((posY - currentPos.y) / quarterRow) * quarterRow;
+
+      if (newRowHeight >= quarterRow && newRowHeight <= remainingHeight) {
+        setDraggableHeight(newRowHeight / rowHeight);
       }
     }
-
-    // Ensure the Drag Me div doesn't get smaller than 1 row minus border
-    if (draggableHeight < 1) {
-      setDraggableHeight(1);
-    }
   };
+
 
   useEffect(() => {
     window.addEventListener('mousemove', handleMouseMove as unknown as EventListener);
