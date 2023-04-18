@@ -27,13 +27,17 @@ const Draggable: FC<{ dynamicRows: number }> = ({ dynamicRows }) => {
   };
 
   const handleDragging = (e: MouseEvent<HTMLDivElement>, containerRect: DOMRect, rowHeight: number) => {
-    const posY = Math.round((e.clientY - containerRect.top) / rowHeight) * rowHeight;
-    const row = Math.floor((posY + rowHeight / 2) / rowHeight);
+    const quarterRow = rowHeight / 4;
+    const posY = Math.round((e.clientY - containerRect.top) / quarterRow) * quarterRow;
 
-    if (row * rowHeight + draggableHeight * rowHeight <= containerRect.height) {
-      setCurrentPos({ x: 0, y: row * rowHeight });
+    const maxY = containerRect.height - draggableHeight * rowHeight;
+    if (posY <= maxY) {
+      setCurrentPos({ x: 0, y: posY });
+    } else {
+      setCurrentPos({ x: 0, y: maxY });
     }
   };
+
 
   const handleDraggingBottom = (e: MouseEvent<HTMLDivElement>, containerRect: DOMRect, rowHeight: number) => {
     const posY = e.clientY - containerRect.top;
