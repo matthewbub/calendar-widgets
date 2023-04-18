@@ -4,12 +4,6 @@ dependencies:
   calendar-widgets:
     specifier: file:../calendar-widgets
     version: file:../calendar-widgets(react-dom@18.2.0)(react@18.2.0)
-  react:
-    specifier: ^18.2.0
-    version: 18.2.0
-  react-dom:
-    specifier: ^18.2.0
-    version: 18.2.0(react@18.2.0)
 
 devDependencies:
   '@babel/core':
@@ -42,6 +36,12 @@ devDependencies:
   jsdom:
     specifier: ^21.1.1
     version: 21.1.1
+  react:
+    specifier: ^18.2.0
+    version: 18.2.0
+  react-dom:
+    specifier: ^18.2.0
+    version: 18.2.0(react@18.2.0)
 
 packages:
 

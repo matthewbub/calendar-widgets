@@ -4,22 +4,14 @@ module.exports = {
     'es2021': true,
     'node': true
   },
-  'extends': [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended'
-  ],
-  'overrides': [
-  ],
+  'extends': ["eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended", "plugin:storybook/recommended"],
+  'overrides': [],
   'parser': '@typescript-eslint/parser',
   'parserOptions': {
     'ecmaVersion': 'latest',
     'sourceType': 'module'
   },
-  'plugins': [
-    'react',
-    '@typescript-eslint'
-  ],
+  'plugins': ['react', '@typescript-eslint'],
   "rules": {
     "no-console": ["error"],
     "no-unused-vars": ["error"],
@@ -77,14 +69,25 @@ module.exports = {
     "array-bracket-newline": ["error", "never"],
     "array-bracket-spacing": ["error", "never"],
     "arrow-parens": ["error", "always"],
-    "arrow-spacing": ["error", { "before": true, "after": true }],
+    "arrow-spacing": ["error", {
+      "before": true,
+      "after": true
+    }],
     "brace-style": ["error", "1tbs"],
     "comma-dangle": ["error", "never"],
-    "comma-spacing": ["error", { "before": false, "after": true }],
+    "comma-spacing": ["error", {
+      "before": false,
+      "after": true
+    }],
     "eol-last": ["error", "always"],
     "indent": ["error", 2],
-    "max-len": ["error", { "code": 340 }],
-    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }],
+    "max-len": ["error", {
+      "code": 340
+    }],
+    "no-multiple-empty-lines": ["error", {
+      "max": 1,
+      "maxEOF": 1
+    }],
     "no-trailing-spaces": ["error"],
     "object-curly-spacing": ["error", "always"],
     "no-extra-parens": ["error"],
@@ -92,7 +95,11 @@ module.exports = {
     "no-tabs": ["error"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
-    "semi-spacing": ["error", { "before": false, "after": false }],
-    "space-in-parens": ["error", "never"]
+    "semi-spacing": ["error", {
+      "before": false,
+      "after": false
+    }],
+    "space-in-parens": ["error", "never"],
+    "react/no-unescaped-entities": ["off"],
   }
 };

@@ -7,7 +7,7 @@ import { formatDate } from './utils/formatDate';
 import { isValidDay } from './utils/isValidDay';
 import { isValidMonth } from './utils/isValidMonth';
 import { listLocalizedMonths } from './helpers/listLocalizedMonths';
-import { Hello } from './components/Hello';
+import Hello from './components/Hello';
 
 export {
   listDaysInMonth,
