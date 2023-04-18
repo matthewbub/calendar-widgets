@@ -26,32 +26,40 @@ const Draggable: FC<{ dynamicRows: number }> = ({ dynamicRows }) => {
     setDraggingBottom(false);
   };
 
+  const handleDragging = (e: MouseEvent<HTMLDivElement>, containerRect: DOMRect, rowHeight: number) => {
+    const posY = Math.round((e.clientY - containerRect.top) / rowHeight) * rowHeight;
+    const row = Math.floor((posY + rowHeight / 2) / rowHeight);
+
+    if (row * rowHeight + draggableHeight * rowHeight <= containerRect.height) {
+      setCurrentPos({ x: 0, y: row * rowHeight });
+    }
+  };
+
+  const handleDraggingBottom = (e: MouseEvent<HTMLDivElement>, containerRect: DOMRect, rowHeight: number) => {
+    const posY = e.clientY - containerRect.top;
+    const row = Math.floor((posY + rowHeight / 2) / rowHeight);
+    const remainingHeight = containerRect.height - currentPos.y;
+
+    // Calculate the nearest 1/4 value
+    const quarterRow = rowHeight / 4;
+    const newRowHeight = Math.round((posY - currentPos.y) / quarterRow) * quarterRow;
+
+    if (newRowHeight >= quarterRow && newRowHeight <= remainingHeight) {
+      setDraggableHeight(newRowHeight / rowHeight);
+    }
+  };
+
+
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     const containerRect = containerRef.current!.getBoundingClientRect();
     const rowHeight = containerRect.height / dynamicRows;
 
     if (dragging) {
-      const posY = Math.round((e.clientY - containerRect.top) / rowHeight) * rowHeight;
-      const row = Math.floor((posY + rowHeight / 2) / rowHeight);
-
-      if (row * rowHeight + draggableHeight * rowHeight <= containerRect.height) {
-        setCurrentPos({ x: 0, y: row * rowHeight });
-      }
+      handleDragging(e, containerRect, rowHeight);
     } else if (draggingBottom) {
-      const posY = e.clientY - containerRect.top;
-      const row = Math.floor((posY + rowHeight / 2) / rowHeight);
-      const remainingHeight = containerRect.height - currentPos.y;
-
-      // Calculate the nearest 1/4 value
-      const quarterRow = rowHeight / 4;
-      const newRowHeight = Math.round((posY - currentPos.y) / quarterRow) * quarterRow;
-
-      if (newRowHeight >= quarterRow && newRowHeight <= remainingHeight) {
-        setDraggableHeight(newRowHeight / rowHeight);
-      }
+      handleDraggingBottom(e, containerRect, rowHeight);
     }
   };
-
 
   useEffect(() => {
     window.addEventListener('mousemove', handleMouseMove as unknown as EventListener);
