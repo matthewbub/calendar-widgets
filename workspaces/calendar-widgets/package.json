@@ -9,14 +9,15 @@
     "lint": "eslint -c .eslintrc.cjs ./src --ext .ts,.tsx",
     "lint:debug": "eslint -c .eslintrc.cjs ./src --ext .ts,.tsx --debug",
     "lint:fix": "eslint ./src --ext .ts --fix",
-    "build": "rollup -c ./rollup.config.js"
+    "build": "rollup -c ./rollup.config.prod.js",
+    "dev": "rollup -c ./rollup.config.dev.js -w"
   },
   "keywords": [
     "calendar",
     "calendar SDK",
     "calendar widgets"
   ],
-  "dependencies": {
+  "peerDependencies": {
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
@@ -34,6 +35,8 @@
     "eslint": "8.38.0",
     "eslint-plugin-react": "^7.32.2",
     "rollup": "^3.20.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-summary": "^2.0.0",
     "tslib": "^2.5.0",
     "typescript": "^5.0.4"
