@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { FC, useState, useEffect, useRef, MouseEvent } from 'react';
 import './Draggable.styles.css';
 
-const Draggable = ({ dynamicRows }) => {
-  const [dragging, setDragging] = useState(false);
-  const [currentPos, setCurrentPos] = useState({ x: 0, y: 0 });
-  const draggableRef = useRef(null);
-  const containerRef = useRef(null);
+const Draggable: FC<{ dynamicRows: number }> = ({ dynamicRows }) => {
+  const [dragging, setDragging] = useState<boolean>(false);
+  const [currentPos, setCurrentPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
+  const draggableRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseDown = (e) => {
+  const handleMouseDown = (e: MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
     setDragging(true);
   };
@@ -16,24 +16,24 @@ const Draggable = ({ dynamicRows }) => {
     setDragging(false);
   };
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     if (dragging) {
-      const containerRect = containerRef.current.getBoundingClientRect();
+      const containerRect = containerRef.current!.getBoundingClientRect();
       const rowHeight = containerRect.height / dynamicRows;
       const posY = Math.round((e.clientY - containerRect.top) / rowHeight) * rowHeight;
 
-      if (posY >= 0 && posY <= containerRect.height - draggableRef.current.offsetHeight) {
+      if (posY >= 0 && posY <= containerRect.height - draggableRef.current!.offsetHeight) {
         setCurrentPos({ x: 0, y: posY });
       }
     }
   };
 
   useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove as unknown as EventListener);
     window.addEventListener('mouseup', handleMouseUp);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mousemove', handleMouseMove as unknown as EventListener);
       window.removeEventListener('mouseup', handleMouseUp);
     };
   }, [dragging, currentPos]);
@@ -41,7 +41,7 @@ const Draggable = ({ dynamicRows }) => {
   return (
     <div className="container" ref={containerRef}>
       {Array(dynamicRows)
-        .fill()
+        .fill(undefined)
         .map((_, i) => (
           <div
             key={i}
