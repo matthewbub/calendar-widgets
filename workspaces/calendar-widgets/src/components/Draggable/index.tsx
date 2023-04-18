@@ -28,7 +28,7 @@ const Draggable: FC<{ dynamicRows: number }> = ({ dynamicRows }) => {
 
   const handleDragging = (e: MouseEvent<HTMLDivElement>, containerRect: DOMRect, rowHeight: number) => {
     const quarterRow = rowHeight / 4;
-    const posY = Math.round((e.clientY - containerRect.top) / quarterRow) * quarterRow;
+    const posY = Math.max(0, Math.round((e.clientY - containerRect.top) / quarterRow) * quarterRow);
 
     const maxY = containerRect.height - draggableHeight * rowHeight;
     if (posY <= maxY) {
