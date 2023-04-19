@@ -11,17 +11,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## 0.0.12
+
+## Changed
+- [Changed `"module"` field in package.json to include `"./dist/bundle.es.js"`](https://github.com/9mbs/calendar-widgets/issues/140)
+
 ## 0.0.11
 
 ## Removed
-- `react` and `react-dom` from build to reduce build size and avoid conflicts with library users
+- [`react` and `react-dom` from build to reduce build size and avoid conflicts with library users](https://github.com/9mbs/calendar-widgets/issues/124)
 
 ## Added
-- `react` and `react-dom` as peer dependencies 
+- [`react` and `react-dom` as peer dependencies](https://github.com/9mbs/calendar-widgets/issues/124)
 
 ## Changed
-- Changed build output from `umd` to both `es` and `cjs` for React Component Development
-- Changed production build to utilize `terser` to minify code
+- [Changed build output from `umd` to both `es` and `cjs` for React Component Development](https://github.com/9mbs/calendar-widgets/issues/121)
+- [Changed production build to utilize `terser` to minify code](https://github.com/9mbs/calendar-widgets/issues/121)
 
 ## 0.0.10
 
