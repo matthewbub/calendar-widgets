@@ -1,0 +1,19 @@
+{
+  "name": "@calendar-widgets/eslint-config",
+  "version": "0.0.14",
+  "description": "Common set of ESLint rules used throughout the workspaces in this project",
+  "main": "index.js",
+  "scripts": {
+    "publish": "npm publish --access public",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix"
+  },
+  "author": "NineMbs Studio LLC",
+  "license": "MIT",
+  "peerDependencies": {
+    "eslint": "^8.38.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.38.0"
+  }
+}

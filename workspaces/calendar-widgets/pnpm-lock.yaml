@@ -13,6 +13,9 @@ devDependencies:
   '@babel/preset-typescript':
     specifier: ^7.21.4
     version: 7.21.4(@babel/core@7.21.4)
+  '@calendar-widgets/eslint-config':
+    specifier: ^0.0.13
+    version: 0.0.13(eslint@8.38.0)
   '@rollup/plugin-babel':
     specifier: ^6.0.3
     version: 6.0.3(@babel/core@7.21.4)(rollup@3.20.2)
@@ -1425,6 +1428,14 @@ packages:
 
   /@bcoe/v8-coverage@0.2.3:
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
+    dev: true
+
+  /@calendar-widgets/eslint-config@0.0.13(eslint@8.38.0):
+    resolution: {integrity: sha512-AE6vD7us6WtPJOzUeYBFH7Wqy4RhME19uqGG0vwfSdbKG6ISrdSZTcI6ZjuNYO2BUM3U0r98K/qybhnTUCkSXQ==}
+    peerDependencies:
+      eslint: ^8.38.0
+    dependencies:
+      eslint: 8.38.0
     dev: true
 
   /@colors/colors@1.5.0:
