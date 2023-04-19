@@ -1,4 +1,4 @@
-import { ONE, SEVEN, TWO_THOUSAND } from '../constants';
+import { ONE, SEVEN, TWO_THOUSAND, ZERO } from '../constants';
 
 export type DayFormat = 'long' | 'short' | 'narrow';
 
@@ -11,5 +11,5 @@ export type DayFormat = 'long' | 'short' | 'narrow';
  */
 export const listLocalizedWeekDays = (locale: string, dayFormat: DayFormat): Array<string> =>
   Array.from({ length: SEVEN }, (_, i) =>
-    new Date(Date.UTC(TWO_THOUSAND, 0, i + 1)).toLocaleString(locale, { weekday: dayFormat })
+    new Date(Date.UTC(TWO_THOUSAND, ZERO, i + ONE)).toLocaleString(locale, { weekday: dayFormat })
   );

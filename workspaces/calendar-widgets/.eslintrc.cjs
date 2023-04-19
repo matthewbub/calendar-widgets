@@ -27,7 +27,7 @@ module.exports = {
     "no-template-curly-in-string": ["error"],
     "no-unexpected-multiline": ["error"],
     "no-unreachable": ["error"],
-    "no-unused-vars": ["error"],
+    "no-unused-vars": ["error", { "args": "none" }],
     "no-use-before-define": ["error"],
     "use-isnan": ["error"],
     "consistent-return": ["error"],
@@ -101,5 +101,6 @@ module.exports = {
     }],
     "space-in-parens": ["error", "never"],
     "react/no-unescaped-entities": ["off"],
+    "no-undef": ["off"],
   }
 };

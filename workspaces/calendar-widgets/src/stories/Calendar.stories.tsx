@@ -8,7 +8,7 @@ const meta = {
   args: {
     year: 2021,
     month: 1,
-    day: 1,
+    day: 1
   }
 } satisfies Meta<typeof Calendar>;
 
@@ -20,11 +20,11 @@ Basic.args = {
   year: 2021,
   month: 1,
   day: 1,
-  dayComponent: ({ date }) => (
+  dayComponent: ({ date }) =>
     <div onClick={() => {
-      console.log(date)
+      // console.log(date);
     }}>
       {date.getDate()}
     </div>
-  ),
+
 };

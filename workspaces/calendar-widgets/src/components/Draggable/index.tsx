@@ -1,10 +1,11 @@
 import React, { FC, useState, useEffect, useRef, MouseEvent } from 'react';
 import './Draggable.styles.css';
+import { FOUR, ONE, ONE_HUNDRED, ZERO } from '../../constants';
 
 const Draggable: FC<{ dynamicRows: number }> = ({ dynamicRows }) => {
   const [dragging, setDragging] = useState<boolean>(false);
-  const [currentPos, setCurrentPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
-  const [draggableHeight, setDraggableHeight] = useState<number>(1);
+  const [currentPos, setCurrentPos] = useState<{ x: number; y: number }>({ x: ZERO, y: ZERO });
+  const [draggableHeight, setDraggableHeight] = useState<number>(ONE);
   const [draggingBottom, setDraggingBottom] = useState<boolean>(false);
   const draggableRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -12,7 +13,7 @@ const Draggable: FC<{ dynamicRows: number }> = ({ dynamicRows }) => {
 
   /**
    * Handles the mouse down event on the draggable component.
-   * 
+   *
    * @param {MouseEvent<HTMLDivElement>} e - The mouse down event.
    * @returns {void}
    */
@@ -45,14 +46,14 @@ const Draggable: FC<{ dynamicRows: number }> = ({ dynamicRows }) => {
    * @returns {void}
    */
   const handleDragging = (e: MouseEvent<HTMLDivElement>, containerRect: DOMRect, rowHeight: number) => {
-    const quarterRow = rowHeight / 4;
-    const posY = Math.max(0, Math.round((e.clientY - containerRect.top) / quarterRow) * quarterRow);
+    const quarterRow = rowHeight / FOUR;
+    const posY = Math.max(ZERO, Math.round((e.clientY - containerRect.top) / quarterRow) * quarterRow);
 
     const maxY = containerRect.height - draggableHeight * rowHeight;
     if (posY <= maxY) {
-      setCurrentPos({ x: 0, y: posY });
+      setCurrentPos({ x: ZERO, y: posY });
     } else {
-      setCurrentPos({ x: 0, y: maxY });
+      setCurrentPos({ x: ZERO, y: maxY });
     }
   };
 
@@ -66,11 +67,10 @@ const Draggable: FC<{ dynamicRows: number }> = ({ dynamicRows }) => {
    */
   const handleDraggingBottom = (e: MouseEvent<HTMLDivElement>, containerRect: DOMRect, rowHeight: number) => {
     const posY = e.clientY - containerRect.top;
-    const row = Math.floor((posY + rowHeight / 2) / rowHeight);
     const remainingHeight = containerRect.height - currentPos.y;
 
     // Calculate the nearest 1/4 value
-    const quarterRow = rowHeight / 4;
+    const quarterRow = rowHeight / FOUR;
     const newRowHeight = Math.round((posY - currentPos.y) / quarterRow) * quarterRow;
 
     if (newRowHeight >= quarterRow && newRowHeight <= remainingHeight) {
@@ -85,8 +85,12 @@ const Draggable: FC<{ dynamicRows: number }> = ({ dynamicRows }) => {
    * @returns {void}
    */
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    const containerRect = containerRef.current!.getBoundingClientRect();
-    const rowHeight = containerRect.height / dynamicRows;
+    const containerRect = containerRef.current && containerRef.current.getBoundingClientRect();
+    const rowHeight = containerRect && containerRect.height / dynamicRows;
+
+    if (containerRect === null || rowHeight === null) {
+      return;
+    }
 
     if (dragging) {
       handleDragging(e, containerRect, rowHeight);
@@ -109,26 +113,26 @@ const Draggable: FC<{ dynamicRows: number }> = ({ dynamicRows }) => {
     <div className="container" ref={containerRef}>
       {Array(dynamicRows)
         .fill(undefined)
-        .map((_, i) => (
+        .map((_, i) =>
           <div
             key={i}
             className="row"
             style={{
               height: `calc(100% / ${dynamicRows})`,
-              top: `${(i * 100) / dynamicRows}%`,
-              borderBottom: i !== dynamicRows - 1 ? '1px solid #000' : 'none',
+              top: `${i * ONE_HUNDRED / dynamicRows}%`,
+              borderBottom: i !== dynamicRows - ONE ? '1px solid #000' : 'none'
             }}
           >
             {/* row */}
           </div>
-        ))}
+        )}
       <div
         className="draggable"
         ref={draggableRef}
         onMouseDown={handleMouseDown}
         style={{
           transform: `translate3d(${currentPos.x}px, ${currentPos.y}px, 0)`,
-          height: `calc(100% / ${dynamicRows} * ${draggableHeight} - 5px)`,
+          height: `calc(100% / ${dynamicRows} * ${draggableHeight} - 5px)`
         }}
       >
         Drag Me
