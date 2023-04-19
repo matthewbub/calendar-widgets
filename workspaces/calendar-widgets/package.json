@@ -1,9 +1,9 @@
 {
   "name": "calendar-widgets",
-  "version": "0.0.10",
+  "version": "0.0.12",
   "main": "./dist/bundle.js",
   "type": "module",
-  "module": "./src/index.js",
+  "module": "./dist/bundle.es.js",
   "types": "@types/calendar-widgets/index.d.ts",
   "scripts": {
     "lint": "eslint -c .eslintrc.cjs ./src --ext .ts,.tsx",
