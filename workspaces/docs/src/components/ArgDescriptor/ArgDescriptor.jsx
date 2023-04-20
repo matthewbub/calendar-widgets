@@ -25,7 +25,7 @@ const ArgDescriptor = ({ name, type, description, required = false }) => {
       <dd className={styles['arg-description--description']}>
         {description && description.length > 0 && (
           <div
-            className="description"
+            className='arg-description--description'
             dangerouslySetInnerHTML={{ __html: description }}
           />
         )}

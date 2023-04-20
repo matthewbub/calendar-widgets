@@ -25,7 +25,7 @@
   margin-bottom: 10px;
 }
 
-.description {
+.arg-description--description {
   margin-bottom: 10px;
   border-bottom: 1px solid var(--ifm-toc-border-color);
   padding-bottom: 40px;
