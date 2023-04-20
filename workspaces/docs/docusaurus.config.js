@@ -9,7 +9,6 @@ const config = {
   title: "calendar-widgets",
   tagline:
     "A collection of calendar widgets and utilities to make working with calendars less shitty",
-  favicon: "",
   url: "https://calendar-widgets.com",
   baseUrl: "/",
 
