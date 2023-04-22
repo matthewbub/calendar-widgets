@@ -1,5 +1,6 @@
 .arg-description--name {
   width: fit-content;
+  margin-bottom: 10px;
 }
 
 .arg-description--code {
@@ -18,4 +19,14 @@
 .arg-description--required {
   font-size: 14px;
   color: var(--secondary-text-color);
+}
+
+.arg-description--type {
+  margin-bottom: 10px;
+}
+
+.arg-description--description {
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+  padding-bottom: 40px;
 }
