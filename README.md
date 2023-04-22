@@ -1,6 +1,8 @@
 # calendar-widgets
 
-Easy-to-use, un-styled React components that provide the out-of-the-box behavior you might see in popular Calendar applications.
+> We're in the alpha stages of development. Documentation and components are actively being updated regularly. 
+
+Easy-to-use, un-styled React-based components that provide the out-of-the-box behavior you might see in popular Calendar applications.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Current bundle size: 32.32 kB](https://img.shields.io/badge/Bundle_Size-32.32_kB-green.svg)
@@ -9,7 +11,14 @@ Website: [http://www.calendar-widgets.com/](http://www.calendar-widgets.com/)
 
 ## On this page
 
+**Introduction**
 - [Getting Started](#getting-started)
+
+**Library Users**
+- [Components](#components)
+- [Context](#context)
+
+**Contributors**
 - [Contributing](#contributing)
 - [Local Setup](#local-setup)
 - [Changelog](#changelog)
@@ -30,6 +39,8 @@ yarn add calendar-widgets
 # pnpm
 pnpm install calendar-widgets
 ```
+
+## Components 
 
 ### Calendar
 Just a simple calendar. You can style the the day component as you'd prefer. 
@@ -56,6 +67,7 @@ The DraggableDay component is a React-based calendar interface that allows users
 ```jsx
 import {DraggableDay} from 'calendar-widgets';
 
+// ...
 <DraggableDay
   startRow={"7am"}
   endRow={"5pm"}
@@ -104,7 +116,6 @@ If this isn't setup properly, you'll see this error message:
 ```sh
 useCalendarWidgetsContext must be used within a CalendarWidgetsProvider
 ```
-
 
 ### useCalendarWidgetsContext
 
