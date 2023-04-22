@@ -22,13 +22,10 @@ jobs:
       - name: Install dependencies
         run: |
           pnpm install --recursive --filter '.../!tests'
-          cd workspaces/calendar-widgets
           pnpm install --save-dev eslint
 
       - name: Build calendar-widgets
-        working-directory: ./workspaces/calendar-widgets
         run: pnpx rollup -c ./rollup.config.js
 
       - name: Lint calendar-widgets
-        working-directory: ./workspaces/calendar-widgets
         run: pnpx eslint --debug './src/**/*.{ts,tsx}' -c .eslintrc.cjs

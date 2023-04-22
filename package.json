@@ -1,24 +1,70 @@
 {
-  "name": "root",
-  "version": "0.0.0",
-  "private": true,
-  "workspaces": [
-    "workspaces/*"
-  ],
-  "comments": [
-    "you're probably looking for the `calendar-widgets` source code",
-    "it's in the `workspaces/calendar-widgets` directory",
-    "if you want to run the tests to make sure everything is working",
-    "they're in the `workspaces/tests` directory"
-  ],
+  "name": "calendar-widgets",
+  "version": "0.0.13",
+  "main": "./dist/bundle.js",
+  "type": "module",
+  "module": "./dist/bundle.es.js",
+  "types": "@types/calendar-widgets/index.d.ts",
   "scripts": {
-    "install:docs": "cd ./workspaces/docs && pnpm install",
-    "install:tests": "cd ./workspaces/tests && pnpm install",
-    "install:calendar-widgets": "cd ./workspaces/calendar-widgets && pnpm install",
-    "new": "pnpm run install:tests && pnpm run install:calendar-widgets && pnpm run install:docs",
-    "lint:calendar-widgets": "cd ./workspaces/calendar-widgets && pnpm run lint",
-    "lint:fix:calendar-widgets": "cd ./workspaces/calendar-widgets && pnpm run lint:fix",
-    "build:tests": "cd ./workspaces/tests && pnpm run build:tests",
-    "build:prepublish": "pnpm run build:tests && pnpm run lint:calendar-widgets"
-  }
+    "lint": "eslint -c .eslintrc.cjs ./src --ext .ts,.tsx",
+    "lint:debug": "eslint -c .eslintrc.cjs ./src --ext .ts,.tsx --debug",
+    "lint:fix": "eslint ./src --ext .ts,.tsx --fix",
+    "build": "rollup -c ./rollup.config.prod.js",
+    "dev": "rollup -c ./rollup.config.dev.js -w",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [
+    "calendar",
+    "calendar SDK",
+    "calendar widgets"
+  ],
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.21.4",
+    "@calendar-widgets/eslint-config": "^0.0.13",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "@rollup/plugin-terser": "^0.4.1",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@storybook/addon-essentials": "^7.0.5",
+    "@storybook/addon-interactions": "^7.0.5",
+    "@storybook/addon-links": "^7.0.5",
+    "@storybook/blocks": "^7.0.5",
+    "@storybook/react": "^7.0.5",
+    "@storybook/react-webpack5": "^7.0.5",
+    "@storybook/testing-library": "^0.0.14-next.2",
+    "@types/react": "^18.0.35",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "eslint": "8.38.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-storybook": "^0.6.11",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rollup": "^3.20.2",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-summary": "^2.0.0",
+    "storybook": "^7.0.5",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.4"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/9mbs/calendar-widgets"
+  },
+  "bugs": {
+    "url": "https://github.com/9mbs/calendar-widgets/issues"
+  },
+  "homepage": "https://www.calendar-widgets.com/"
 }
