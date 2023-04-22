@@ -57,8 +57,8 @@ The DraggableDay component is a React-based calendar interface that allows users
 import {DraggableDay} from 'calendar-widgets';
 
 <DraggableDay
-  startRow={startRow}
-  endRow={endRow}
+  startRow={"7am"}
+  endRow={"5pm"}
   initialDraggables={[
     {
       id: 1,
