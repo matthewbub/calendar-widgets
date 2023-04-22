@@ -10,5 +10,8 @@
     "noviembre",
     "octubre",
     "septiembre"
-  ]
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
