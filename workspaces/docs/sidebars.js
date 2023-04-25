@@ -17,6 +17,11 @@ const sidebars = {
     'introduction',
     {
       type: 'category',
+      label: 'Components',
+      items: ['Components/Calendar'],
+    },
+    {
+      type: 'category',
       label: 'Helpers',
       items: ['Helpers/listCalendarYear', 'Helpers/listDaysInMonths'],
     },

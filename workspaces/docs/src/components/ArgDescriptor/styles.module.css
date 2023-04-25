@@ -10,7 +10,6 @@
 }
 
 .arg-description--types {
-  width: 85%;
   padding-left: 20px;
   color: var(--secondary-text-color);
 }
@@ -23,6 +22,7 @@
 
 .arg-description--type {
   margin-bottom: 10px;
+  width: fit-content;
 }
 
 .arg-description--description {

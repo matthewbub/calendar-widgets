@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { CalendarProps } from './Calendar.types';
-import { locale } from '../../locale';
 import { ONE, SEVEN, SIX, ZERO } from '../../constants';
 
 interface DayComponentProps {
@@ -13,16 +12,17 @@ const Calendar: FC<CalendarProps> = ({
   month,
   day,
   dayComponent,
-  showAdjacentDays = false
+  showAdjacentDays = true,
+  dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
 }) => {
-  let DayComponent: FC<DayComponentProps> = ({ date, isCurrentDay }) =>
+  let DayComponent: FC<DayComponentProps> = ({ date, isCurrentDay }) => (
     <div style={{ textAlign: 'center' }}>
       <span>
         {isCurrentDay ? <span style={{ color: 'red' }}>*</span> : null}
         {date.getDate()}
       </span>
     </div>
-  ;
+  );
 
   if (dayComponent !== undefined) {
     DayComponent = dayComponent;
@@ -44,7 +44,7 @@ const Calendar: FC<CalendarProps> = ({
     });
 
     days.push(
-      <div key={i} style={{ display: 'inline-block', width: '14.28%' }}>
+      <div key={i} style={{ display: 'inline-block', width: '14.28%', textAlign: 'center' }}>
         {showAdjacentDays || i > ZERO && i <= totalDays ? dayCell : null}
       </div>
     );
@@ -62,7 +62,7 @@ const Calendar: FC<CalendarProps> = ({
   return (
     <div style={{ width: '250px' }}>
       <div style={{ display: 'flex' }}>
-        {locale['en-US'].daysOfWeek.map((dayName, idx) =>
+        {dayNames.map((dayName, idx) =>
           <div key={idx} style={{ display: 'inline-block', width: '14.28%', textAlign: 'center' }}>
             {dayName}
           </div>

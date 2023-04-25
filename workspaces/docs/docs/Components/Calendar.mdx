@@ -1,0 +1,32 @@
+---
+title: Calendar
+slug: /components/Calendar
+---
+
+import {ArgDescriptor} from '../../src/components/ArgDescriptor';
+
+# Calendar
+
+A simple calendar component with liftable day cells.
+
+## Props
+<ArgDescriptor 
+  name="dayComponent"
+  type="JSX.Element" 
+>
+  A component to render for each day cell. Defaults to a basic <code>div</code>
+</ArgDescriptor>
+
+<ArgDescriptor 
+  name="showAdjacentDays"
+  type="boolean" 
+>
+  Whether to show adjacent days before and after the selected month in the calendar. Defaults to <code>true</code>
+</ArgDescriptor>
+
+<ArgDescriptor 
+  name="dayNames" 
+  type="array"  
+>
+  An array of strings to use as day names. Defaults to <code>['S', 'M', 'T', 'W', 'T', 'F', 'S']</code>
+</ArgDescriptor>

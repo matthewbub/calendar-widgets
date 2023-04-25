@@ -1,5 +1,4 @@
 import React from 'react';
-import { MonthFormat } from '../../helpers/listLocalizedMonths';
 
 export interface CalendarProps {
   year: number;
@@ -10,9 +9,5 @@ export interface CalendarProps {
     date: Date;
   }) => React.ReactElement;
   showAdjacentDays?: boolean;
-  options: {
-    dayNamesLocale: string;
-    dayNamesDisplay: MonthFormat;
-    dayNames: string[];
-  }
+  dayNames: string[];
 }

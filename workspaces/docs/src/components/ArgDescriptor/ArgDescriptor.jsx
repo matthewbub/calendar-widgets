@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-const ArgDescriptor = ({ name, type, description, required = false }) => {
+const ArgDescriptor = ({ name, type, children, required = false }) => {
   return (
     <dl className='flex-wrap'>
       <dt className='sr-only'>Name</dt>
@@ -23,12 +23,7 @@ const ArgDescriptor = ({ name, type, description, required = false }) => {
       </dd>
       <dt className='sr-only'>Description</dt>
       <dd className={styles['arg-description--description']}>
-        {description && description.length > 0 && (
-          <div
-            className='arg-description--description'
-            dangerouslySetInnerHTML={{ __html: description }}
-          />
-        )}
+        {children}
       </dd>
     </dl>
   )
