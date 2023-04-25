@@ -23,6 +23,27 @@ A simple calendar component with liftable day cells making it easy to build cust
   type="JSX.Element" 
 >
   A component to render for each day cell. Defaults to a basic <code>div</code>. The <code>dayComponent</code> will default to a width of <code>14.28%</code>, but can be overridden with a custom component.
+
+  <h3 style={{marginLeft: '40px', marginTop: '20px'}}>Props</h3>
+
+  <ArgDescriptor 
+    name="date"
+    type="Date"
+    style={{marginLeft: '40px'}}
+    noBorderBottom
+    required
+  >
+    The date for the current day cell.
+  </ArgDescriptor>
+  <ArgDescriptor 
+    name="isCurrentDay"
+    type="boolean"
+    style={{marginLeft: '40px'}}
+    noBorderBottom
+    required
+  >
+    Whether the current day cell is the current day.
+  </ArgDescriptor>
 </ArgDescriptor>
 
 <ArgDescriptor 
@@ -39,6 +60,71 @@ A simple calendar component with liftable day cells making it easy to build cust
   An array of strings to use as day names. Defaults to <code>['S', 'M', 'T', 'W', 'T', 'F', 'S']</code>
 </ArgDescriptor>
 
+<ArgDescriptor 
+  name="nextMonthButton" 
+  type="JSX.Element"  
+>
+  A component to render as the next month button. Defaults to <code>undefined.</code>. When you define this component, you'll also receive a few props to help you manage the state of the calendar. See below for more details.
+
+  <h3 style={{marginLeft: '40px', marginTop: '20px'}}>Props</h3>
+
+  <ArgDescriptor 
+    name="handleNextMonth"
+    type="() => void"  
+    style={{marginLeft: '40px'}}
+    noBorderBottom
+    required
+  >
+    A stateful function to handle the next month button click.
+  </ArgDescriptor>
+  <ArgDescriptor 
+    name="nextMonth"
+    type="number"  
+    style={{marginLeft: '40px'}}
+    noBorderBottom
+    required
+  >
+    The next month number.
+  </ArgDescriptor>
+</ArgDescriptor>
+
+<ArgDescriptor 
+  name="prevMonthButton"
+  type="JSX.Element"  
+>
+  A component to render as the next month button. Defaults to <code>undefined.</code>. When you define this component, you'll also receive a few props to help you manage the state of the calendar. See below for more details.
+
+  <h3 style={{marginLeft: '40px', marginTop: '20px'}}>Props</h3>
+
+  <ArgDescriptor 
+    name="handlePrevMonth"
+    type="() => void"  
+    style={{marginLeft: '40px'}}
+    noBorderBottom
+    required
+  >
+    A stateful function to handle the previous month button click.
+  </ArgDescriptor>
+  <ArgDescriptor 
+    name="prevMonth"
+    type="number"  
+    style={{marginLeft: '40px'}}
+    noBorderBottom
+    required
+  >
+    The previous month number.
+  </ArgDescriptor>
+  
+</ArgDescriptor>
+
 ## Styling
 
 Given a width of `100%` to the `<Calendar />` component, each day cell should fit comfortably at around `14.28%` of the width. 
+
+## Example
+
+```jsx
+import { Calendar } from 'calendar-widgets';
+
+<Calendar date={new Date()} />
+```

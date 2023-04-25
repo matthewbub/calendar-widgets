@@ -30,3 +30,7 @@
   border-bottom: 1px solid var(--ifm-toc-border-color);
   padding-bottom: 40px;
 }
+
+.arg-description--base {
+  width: 100%;
+}

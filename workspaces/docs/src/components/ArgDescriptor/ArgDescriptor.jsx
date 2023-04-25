@@ -1,9 +1,14 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-const ArgDescriptor = ({ name, type, children, required = false }) => {
+const ArgDescriptor = ({ name, type, children, required = false, style = {}, noBorderBottom }) => {
+  let className = `${styles['arg-description--base']} ${styles['arg-description--description']}`;
+  if (noBorderBottom) {
+    className = `${styles['arg-description--base']} ${styles['arg-description--no-border-bottom']}`;
+  }
+
   return (
-    <dl className='flex-wrap'>
+    <dl className='flex-wrap' style={style}>
       <dt className='sr-only'>Name</dt>
       <dd className={styles['arg-description--name']}>
         {name && name.length > 0 && (<code className={styles['arg-description--code']}>{name}</code>)}
@@ -22,7 +27,7 @@ const ArgDescriptor = ({ name, type, children, required = false }) => {
         )}
       </dd>
       <dt className='sr-only'>Description</dt>
-      <dd className={styles['arg-description--description']}>
+      <dd className={className}>
         {children}
       </dd>
     </dl>

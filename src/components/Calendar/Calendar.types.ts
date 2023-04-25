@@ -11,5 +11,13 @@ export interface CalendarProps {
     date: Date;
   }) => React.ReactElement;
   showAdjacentDays?: boolean;
-  dayNames: string[];
+  dayNames?: string[];
+  nextMonthButton?: ({ handleNextMonth, nextMonth }: {
+    handleNextMonth: () => void;
+    nextMonth: number;
+  }) => React.ReactElement;
+  prevMonthButton?: ({ handlePrevMonth, prevMonth }: {
+    handlePrevMonth: () => void;
+    prevMonth: number;
+  }) => React.ReactElement;
 }

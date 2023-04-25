@@ -1,8 +1,7 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { CalendarProps } from './Calendar.types';
 import { ONE, SEVEN, SIX, ZERO } from '../../constants';
 import { magicNumber } from '../../helpers/magicNumber';
-
 interface DayComponentProps {
   date: Date;
   isCurrentDay: boolean;
@@ -12,17 +11,21 @@ const Calendar: FC<CalendarProps> = ({
   date,
   dayComponent,
   showAdjacentDays = true,
-  dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
+  dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+  nextMonthButton,
+  prevMonthButton
 }) => {
-  let year, month, day;
-  if (date instanceof Date) {
-    year = date.getFullYear();
-    month = date.getMonth() + magicNumber('1');
-    day = date.getDate();
+  const [currentDate, setCurrentDate] = useState(date);
+
+  let year: number, month: number, day: number;
+  if (currentDate instanceof Date) {
+    year = currentDate.getFullYear();
+    month = currentDate.getMonth() + magicNumber('1');
+    day = currentDate.getDate();
   } else {
-    year = date.year;
-    month = date.month;
-    day = date.day;
+    year = currentDate.year;
+    month = currentDate.month;
+    day = currentDate.day;
   }
 
   let DayComponent: FC<DayComponentProps> = ({ date, isCurrentDay }) => (
@@ -33,6 +36,14 @@ const Calendar: FC<CalendarProps> = ({
       </span>
     </div>
   );
+
+  const handleNextMonth = () => {
+    setCurrentDate(new Date(year, month, day));
+  };
+
+  const handlePrevMonth = () => {
+    setCurrentDate(new Date(year, month - magicNumber('2'), day));
+  };
 
   if (dayComponent !== undefined) {
     DayComponent = dayComponent;
@@ -71,6 +82,9 @@ const Calendar: FC<CalendarProps> = ({
 
   return (
     <div style={{ width: '250px' }}>
+      {prevMonthButton && prevMonthButton({ handlePrevMonth: handlePrevMonth, prevMonth: month - magicNumber('1') })}
+      {nextMonthButton && nextMonthButton({ handleNextMonth: handleNextMonth, nextMonth: month + magicNumber('1') })}
+
       <div style={{ display: 'flex' }}>
         {dayNames.map((dayName, idx) =>
           <div key={idx} style={{ display: 'inline-block', width: '14.28%', textAlign: 'center' }}>
