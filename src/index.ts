@@ -9,8 +9,6 @@ import {
   calculateHoursBetween,
   convertTimeToHours,
   listHoursBetween,
-  listCalendarYear,
-  listDaysInMonth,
 } from './helpers';
 
 export {
@@ -21,6 +19,4 @@ export {
   calculateHoursBetween,
   convertTimeToHours,
   listHoursBetween,
-  listDaysInMonth,
-  listCalendarYear,
 };
