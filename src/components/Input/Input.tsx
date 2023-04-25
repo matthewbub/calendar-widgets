@@ -1,5 +1,5 @@
-import React, { FC } from "react";
-import "./Input.styles.css";
+import React, { FC } from 'react';
+import './Input.styles.css';
 
 interface InputProps {
   type: string;
@@ -36,7 +36,7 @@ const Input: FC<InputProps> = ({
       value={value}
       onChange={onChange}
       placeholder={placeholder}
-      className={className + " ent--input"}
+      className={className + ' ent--input'}
       name={name}
       id={id}
       required={required}

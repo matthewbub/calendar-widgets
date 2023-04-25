@@ -10,4 +10,4 @@ export interface CalendarWidgetsState {
 
 export interface CalendarWidgetsProviderProps {
   children: React.ReactElement;
-};
+}

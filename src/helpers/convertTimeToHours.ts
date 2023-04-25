@@ -1,23 +1,36 @@
+import { magicNumber } from './magicNumber';
+
 export function convertTimeToHours(timeStr: string) {
-  const pattern = /^(\d+)(h|m)$/; // regex pattern to match hours and minutes
-  const match = pattern.exec(timeStr); // try to match the input string
+  // regex pattern to match hours and minutes
+  const pattern = /^(\d+)(h|m)$/;
+
+  // try to match the input string
+  const match = pattern.exec(timeStr);
 
   if (match) {
-    const value = parseInt(match[1]); // extract the numeric value from the match
-    const unit = match[2]; // extract the unit (h or m) from the match
+    // extract the numeric value from the match
+    const value = parseInt(match[magicNumber('1')]);
+
+    // extract the unit (h or m) from the match
+    // eslint-disable-next-line prefer-destructuring
+    const unit = match[magicNumber('2')];
 
     let result;
     if (unit === 'h') {
-      result = value; // if it's hours, return the value as is
+      // if it's hours, return the value as is
+      result = value;
     } else {
-      result = value / 60; // if it's minutes, convert to hours (by dividing by 60)
+      // if it's minutes, convert to hours (by dividing by 60)
+      result = value / magicNumber('60');
     }
 
     // round the result to the nearest quarter
-    result = Math.round(result * 4) / 4;
+    result = Math.round(result * magicNumber('4')) / magicNumber('4');
 
     return result;
-  } else {
-    throw new TypeError(`Invalid time string: ${timeStr}, Time string should match pattern /^(\d+)(h|m)$/`); // if no match, throw an error
   }
+  // if no match, throw an error
+  // eslint-disable-next-line no-useless-escape
+  throw new TypeError(`Invalid time string: ${timeStr}, Time string should match pattern /^(\d+)(h|m)$/`);
+
 }
