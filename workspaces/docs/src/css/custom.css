@@ -63,3 +63,9 @@ h1>code {
   border: 1px solid var(--ifm-toc-border-color);
   border-radius: 3px;
 }
+
+code {
+  padding: 1px 6px;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 3px;
+}

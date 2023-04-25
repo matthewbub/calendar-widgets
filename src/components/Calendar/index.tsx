@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { CalendarProps } from './Calendar.types';
 import { ONE, SEVEN, SIX, ZERO } from '../../constants';
+import { magicNumber } from '../../helpers/magicNumber';
 
 interface DayComponentProps {
   date: Date;
@@ -8,13 +9,22 @@ interface DayComponentProps {
 }
 
 const Calendar: FC<CalendarProps> = ({
-  year,
-  month,
-  day,
+  date,
   dayComponent,
   showAdjacentDays = true,
   dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S']
 }) => {
+  let year, month, day;
+  if (date instanceof Date) {
+    year = date.getFullYear();
+    month = date.getMonth() + magicNumber('1');
+    day = date.getDate();
+  } else {
+    year = date.year;
+    month = date.month;
+    day = date.day;
+  }
+
   let DayComponent: FC<DayComponentProps> = ({ date, isCurrentDay }) => (
     <div style={{ textAlign: 'center' }}>
       <span>

@@ -15,5 +15,7 @@ module.exports = {
   'rules': {
     '@typescript-eslint/no-unused-vars': 'off',
     'no-extra-parens': 'off',
+    'no-shadow': 'off',
+    'prefer-destructuring': 'off',
   }
 };

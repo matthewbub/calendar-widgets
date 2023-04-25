@@ -7,14 +7,22 @@ import {ArgDescriptor} from '../../src/components/ArgDescriptor';
 
 # Calendar
 
-A simple calendar component with liftable day cells.
+A simple calendar component with liftable day cells making it easy to build custom interfaces.
 
 ## Props
+<ArgDescriptor 
+  name="date"
+  type="Date | { month: number; year: number; day: number }" 
+  required
+>
+  The date to use as the selected date. Defaults to today, but can be any date.
+</ArgDescriptor>
+
 <ArgDescriptor 
   name="dayComponent"
   type="JSX.Element" 
 >
-  A component to render for each day cell. Defaults to a basic <code>div</code>
+  A component to render for each day cell. Defaults to a basic <code>div</code>. The <code>dayComponent</code> will default to a width of <code>14.28%</code>, but can be overridden with a custom component.
 </ArgDescriptor>
 
 <ArgDescriptor 
@@ -30,3 +38,7 @@ A simple calendar component with liftable day cells.
 >
   An array of strings to use as day names. Defaults to <code>['S', 'M', 'T', 'W', 'T', 'F', 'S']</code>
 </ArgDescriptor>
+
+## Styling
+
+Given a width of `100%` to the `<Calendar />` component, each day cell should fit comfortably at around `14.28%` of the width. 
