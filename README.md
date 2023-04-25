@@ -1,8 +1,6 @@
 # calendar-widgets
 
-> We're in the alpha stages of development. Documentation and components are actively being updated regularly. 
-
-Easy-to-use, un-styled React-based components that provide the out-of-the-box behavior you might see in popular Calendar applications.
+Easy-to-use, _slightly_ un-styled React-based components that provide the out-of-the-box behavior you might see in popular Calendar applications.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Current bundle size: 32.32 kB](https://img.shields.io/badge/Bundle_Size-32.32_kB-green.svg)
@@ -11,10 +9,6 @@ Easy-to-use, un-styled React-based components that provide the out-of-the-box be
 
 **Introduction**
 - [Getting Started](#getting-started)
-
-**Library Users**
-- [Components](#components)
-- [Context](#context)
 
 **Contributors**
 - [Contributing](#contributing)
