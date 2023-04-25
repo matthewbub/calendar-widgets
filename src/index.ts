@@ -8,7 +8,7 @@ import {
 import {
   calculateHoursBetween,
   convertTimeToHours,
-  listHoursBetween,
+  listHoursBetween
 } from './helpers';
 
 export {
@@ -18,5 +18,5 @@ export {
   DraggableDay,
   calculateHoursBetween,
   convertTimeToHours,
-  listHoursBetween,
+  listHoursBetween
 };

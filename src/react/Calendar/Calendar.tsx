@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { CalendarProps } from './Calendar.types';
 import { ONE, SEVEN, SIX, ZERO } from '../../constants';
-import { magicNumber } from '../../helpers/magicNumber';
+import { magicNumber } from '../../helpers';
 interface DayComponentProps {
   date: Date;
   isCurrentDay: boolean;

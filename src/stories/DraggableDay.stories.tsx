@@ -1,38 +1,10 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import DraggableDay from '../components/DraggableDay';
-import { Input } from '../components/Input';
+import { DraggableDay } from '../react';
 
 const Demo: FC<{ startRow: string; endRow: string; }> = ({ startRow, endRow }) => {
-  const [value, setValue] = useState('');
-  const [error, setError] = useState('');
-
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-
-    const regex = new RegExp(/^(\d+)(h|m)$/);
-
-    if (!regex.test(value)) {
-      setError('Please enter a valid value (e.g. 10h or 30m)');
-      return;
-    }
-
-  }
-
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <Input
-          type="text"
-          // value={startRow}
-          onChange={(event) => setValue(event.target.value)}
-          placeholder="Enter time here"
-          pattern="^(\d+)(h|m)$"
-        />
-        {error && <div className="error-message">{error}</div>}
-        <button type="submit">Submit</button>
-      </form>
-
       <DraggableDay
         startRow={startRow}
         endRow={endRow}

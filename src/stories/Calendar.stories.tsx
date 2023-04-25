@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import Calendar from '../react/Calendar/Calendar';
+import { Calendar } from '../react';
 
 const Demo = () => {
   return (
