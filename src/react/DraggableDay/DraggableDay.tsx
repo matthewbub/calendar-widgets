@@ -3,7 +3,7 @@ import './Draggables.styles.css';
 import { ONE, ONE_HUNDRED, ZERO } from '../../constants';
 import { listHoursBetween, calculateHoursBetween } from '../../helpers';
 import { SingleDraggableProps, DraggableContentProps, RowProps, DraggablesProps } from './DraggableDay.types';
-import { CalendarWidgetsProvider, useCalendarWidgetsContext } from '../../CalendarWidgetsContext/CalendarWidgetsContext';
+import { CalendarWidgetsProvider, useCalendarWidgetsContext } from '../CalendarWidgetsContext/CalendarWidgetsContext';
 import { magicNumber } from '../../helpers/magicNumber';
 
 const useDraggable = (resizeRef: React.RefObject<HTMLDivElement>) => {
@@ -100,7 +100,7 @@ const DraggableContent: FC<DraggableContentProps> = ({
   >
     Drag Me
     <button onClick={(e) => {
-      e.stopPropagation();onDelete();
+      e.stopPropagation(); onDelete();
     }} className="delete-draggable-btn">Delete</button>
     <div ref={resizeRef} className="resize-handle" onMouseDown={handleMouseDown} />
   </div>
@@ -218,7 +218,7 @@ const DraggableDayComponent: FC<DraggablesProps> = ({ startRow, endRow, initialD
 
   const addDraggable = () => {
     setDraggableDays([...draggableDays,
-      { id: nextId, position: { x: ZERO, y: ZERO }, height: defaultHeight }]);
+    { id: nextId, position: { x: ZERO, y: ZERO }, height: defaultHeight }]);
     setNextId(nextId + magicNumber('1'));
   };
 
