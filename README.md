@@ -7,8 +7,6 @@ Easy-to-use, un-styled React-based components that provide the out-of-the-box be
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Current bundle size: 32.32 kB](https://img.shields.io/badge/Bundle_Size-32.32_kB-green.svg)
 
-Website: [http://www.calendar-widgets.com/](http://www.calendar-widgets.com/)
-
 ## On this page
 
 **Introduction**
@@ -25,101 +23,7 @@ Website: [http://www.calendar-widgets.com/](http://www.calendar-widgets.com/)
 
 ## Getting Started
 
-**⚠️ Under active development ⚠️**
-
-To begin, install the [`calendar-widgets`](https://www.npmjs.com/package/calendar-widgets) package from the NPM Registry. **You'll also need to ensure you have React setup in your development environment.**
-
-```shell
-# npm
-npm install calendar-widgets
-
-# yarn
-yarn add calendar-widgets
-
-# pnpm
-pnpm install calendar-widgets
-```
-
-## Components 
-
-### Calendar
-Just a simple calendar. You can style the the day component as you'd prefer. 
-
-```jsx
-import {Calendar} from 'calendar-widgets';
-
-// ...
-<Calendar 
-  year={2021}
-  month={1}
-  day={1}
-  dayComponent={({ date }) => (
-    <div>
-      {date.getDate()}
-    </div>
-  )}}
-/>
-```
-
-### DraggableDay
-The DraggableDay component is a React-based calendar interface that allows users to drag and drop events between different days in the calendar. It uses native HTML5 drag and drop functionality and custom React event handlers for a smooth and responsive user experience.
-
-```jsx
-import {DraggableDay} from 'calendar-widgets';
-
-// ...
-<DraggableDay
-  startRow={"7am"}
-  endRow={"5pm"}
-  initialDraggables={[
-    {
-      id: 1,
-      position: { x: 0, y: 0 },
-      height: 1,
-    },
-    {
-      id: 2,
-      position: { x: 0, y: 50 },
-      height: 1,
-    },
-  ]}
-/>
-```
-
-## Context
-
-**Setup**
-
-Before you're able to use the hooks within the `useCalendarWidgetsContext` api, you'll want to wrap your app in the `CalendarWidgetsProvider` context provider. 
-
-_Parent.jsx_
-```jsx
-import {CalendarWidgetsProvider} from 'calendar-widgets';
-import MyCustomCalendarComponent from './MyCustomCalendarComponent';
-
-// ...
-<CalendarWidgetsProvider>
-  <MyCustomCalendarComponent />
-</CalendarWidgetsProvider>
-```
-
-_MyCustomCalendarComponent.jsx_
-```jsx
-import {useCalendarWidgetsContext} from 'calendar-widgets'
-
-//..
-const {draggableDay, setDraggableDay} = useCalendarWidgetsContext();
-```
-
-If this isn't setup properly, you'll see this error message:
-
-```sh
-useCalendarWidgetsContext must be used within a CalendarWidgetsProvider
-```
-
-### useCalendarWidgetsContext
-
-Under active development
+> ⚠️ Under active development ⚠️
 
 ## Contributing
 
