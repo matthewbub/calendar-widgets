@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react';
 import { CalendarProps } from './Calendar.types';
 import { ONE, SEVEN, SIX, ZERO } from '../../constants';
 import { magicNumber } from '../../helpers';
+import { getNextMonth, getPreviousMonth } from './Calendar.utilities';
 interface DayComponentProps {
   date: Date;
   isCurrentDay: boolean;
@@ -82,8 +83,8 @@ const Calendar: FC<CalendarProps> = ({
 
   return (
     <div style={{ width: '250px' }}>
-      {prevMonthButton && prevMonthButton({ handlePrevMonth: handlePrevMonth, prevMonth: month - magicNumber('1') })}
-      {nextMonthButton && nextMonthButton({ handleNextMonth: handleNextMonth, nextMonth: month + magicNumber('1') })}
+      {prevMonthButton && prevMonthButton({ handlePrevMonth, prevMonth: getPreviousMonth(month) })}
+      {nextMonthButton && nextMonthButton({ handleNextMonth, nextMonth: getNextMonth(month) })}
 
       <div style={{ display: 'flex' }}>
         {dayNames.map((dayName, idx) =>
