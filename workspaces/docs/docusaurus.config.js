@@ -47,7 +47,10 @@ const config = {
           editUrl: "https://github.com/9mbs/calendar-widgets",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: [
+            require.resolve("./src/css/fonts.css"),
+            require.resolve("./src/css/custom.css"),
+          ]
         },
       }),
     ],
