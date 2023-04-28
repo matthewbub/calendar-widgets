@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styles from './styles.module.css';
 
-const ArgDescriptor = ({ name, type, children, required = false, style = {}, noBorderBottom }) => {
+interface ArgDescriptorProps {
+  name: string;
+  type: string;
+  required?: boolean;
+  style?: React.CSSProperties;
+  noBorderBottom?: boolean;
+  children?: any;
+}
+
+const ArgDescriptor: FC<ArgDescriptorProps> = ({ name, type, children, required = false, style = {}, noBorderBottom }) => {
   let className = `${styles['arg-description--base']} ${styles['arg-description--description']}`;
   if (noBorderBottom) {
     className = `${styles['arg-description--base']} ${styles['arg-description--no-border-bottom']}`;
