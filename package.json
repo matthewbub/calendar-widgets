@@ -4,7 +4,7 @@
   "main": "./dist/bundle.js",
   "type": "module",
   "module": "./dist/bundle.es.js",
-  "types": "@types/calendar-widgets/index.d.ts",
+  "types": "/dist/index.d.ts",
   "scripts": {
     "lint": "eslint -c .eslintrc.cjs ./src --ext .ts,.tsx",
     "lint:debug": "eslint -c .eslintrc.cjs ./src --ext .ts,.tsx --debug",
