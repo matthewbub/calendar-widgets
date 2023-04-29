@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect, useRef, MouseEvent, useCallback } from 'react';
-import './Draggables.styles.css';
+// import './Draggables.styles.css';
 import { ONE, ONE_HUNDRED, ZERO } from '../../constants';
 import { listHoursBetween, calculateHoursBetween } from '../../helpers';
 import { SingleDraggableProps, DraggableContentProps, RowProps, DraggablesProps } from './DraggableDay.types';
@@ -100,7 +100,7 @@ const DraggableContent: FC<DraggableContentProps> = ({
   >
     Drag Me
     <button onClick={(e) => {
-      e.stopPropagation();onDelete();
+      e.stopPropagation(); onDelete();
     }} className="delete-draggable-btn">Delete</button>
     <div ref={resizeRef} className="resize-handle" onMouseDown={handleMouseDown} />
   </div>
@@ -218,7 +218,7 @@ const DraggableDayComponent: FC<DraggablesProps> = ({ startRow, endRow, initialD
 
   const addDraggable = () => {
     setDraggableDays([...draggableDays,
-      { id: nextId, position: { x: ZERO, y: ZERO }, height: defaultHeight }]);
+    { id: nextId, position: { x: ZERO, y: ZERO }, height: defaultHeight }]);
     setNextId(nextId + magicNumber('1'));
   };
 
@@ -260,7 +260,7 @@ const DraggableDayComponent: FC<DraggablesProps> = ({ startRow, endRow, initialD
         Add Draggable
       </button>
 
-      <div className="container" ref={containerRef}>
+      <div className="draggable-container" ref={containerRef}>
         {rows.length > ZERO && rows.map((_, i) =>
           <Row
             key={i}

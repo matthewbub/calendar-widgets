@@ -20,4 +20,5 @@ export interface CalendarProps {
     handlePrevMonth: () => void;
     prevMonth: number;
   }) => React.ReactElement;
+  className?: string;
 }
