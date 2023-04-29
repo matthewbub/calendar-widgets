@@ -3,6 +3,7 @@ import { CalendarProps } from './Calendar.types';
 import { ONE, SEVEN, SIX, ZERO } from '../../constants';
 import { magicNumber } from '../../helpers';
 import { getNextMonth, getPreviousMonth } from './Calendar.utilities';
+import { dateToNumbers } from '../../helpers/dateToNumbers';
 interface DayComponentProps {
   date: Date;
   isCurrentDay: boolean;
@@ -19,16 +20,7 @@ const Calendar: FC<CalendarProps> = ({
 }) => {
   const [currentDate, setCurrentDate] = useState(date);
 
-  let year: number, month: number, day: number;
-  if (currentDate instanceof Date) {
-    year = currentDate.getFullYear();
-    month = currentDate.getMonth() + magicNumber('1');
-    day = currentDate.getDate();
-  } else {
-    year = currentDate.year;
-    month = currentDate.month;
-    day = currentDate.day;
-  }
+  const { year, month, day } = dateToNumbers(currentDate);
 
   let DayComponent: FC<DayComponentProps> = ({ date, isCurrentDay }) => (
     <div style={{ textAlign: 'center' }}>
@@ -57,7 +49,7 @@ const Calendar: FC<CalendarProps> = ({
   const totalDays = endDate.getDate();
 
   const days = [];
-  for (let i = ONE - startWeekday; i <= totalDays + SIX - endDate.getDay(); i += ONE) {
+  for (let i = ONE - startWeekday;i <= totalDays + SIX - endDate.getDay();i += ONE) {
     const currentDate = new Date(year, month - ONE, i);
     const isCurrentDay = i === day;
 
@@ -74,7 +66,7 @@ const Calendar: FC<CalendarProps> = ({
   }
 
   const weeks = [];
-  for (let i = ZERO; i < days.length; i += SEVEN) {
+  for (let i = ZERO;i < days.length;i += SEVEN) {
     weeks.push(
       <div key={i} style={{ display: 'flex' }}>
         {days.slice(i, i + SEVEN)}
