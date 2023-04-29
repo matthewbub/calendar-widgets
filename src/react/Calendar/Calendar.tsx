@@ -10,7 +10,7 @@ interface DayComponentProps {
 }
 
 const Calendar: FC<CalendarProps> = ({
-  date,
+  date = new Date(),
   dayComponent,
   showAdjacentDays = true,
   dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'],

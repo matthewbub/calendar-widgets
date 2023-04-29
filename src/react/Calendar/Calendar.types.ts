@@ -1,7 +1,7 @@
 import React from 'react';
 
 export interface CalendarProps {
-  date: Date | {
+  date?: Date | {
     year: number;
     month: number;
     day: number;
