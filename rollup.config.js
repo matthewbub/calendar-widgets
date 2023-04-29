@@ -31,7 +31,12 @@ export default {
       minimize: true,
     }),
     typescript({
-      exclude: excluded
+      exclude: excluded,
+      
+      tsconfig: './tsconfig.json',
+      declaration: true,
+      declarationDir: 'dist',
+      
     }),
     babel({
       exclude: excluded,
