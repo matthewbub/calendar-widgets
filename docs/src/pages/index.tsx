@@ -7,7 +7,7 @@ export default function HomePage() {
   return (
     <div className='container mx-auto max-w-7xl'>
       <div>
-        <Calendar date={new Date()} className='w-[400px] w-full' />
+        <Calendar className='w-[400px]' />
       </div>
 
       <EndlessCards cards={landingNav} />
