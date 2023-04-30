@@ -6,7 +6,7 @@
 
 ## Motivation
 
-_<Briefly describe the problems you code is solving.>_
+_< Briefly describe the problems you code is solving. >_
 
 ## Related
 
