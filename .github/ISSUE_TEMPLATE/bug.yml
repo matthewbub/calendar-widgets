@@ -1,15 +1,15 @@
-name: "Bug Report"
-description: Submit a bug report to help us improve the library.
-labels: [bug, discussion]
+name: 🐛 Bug Report
+description: Submit a bug report to help us improve
+labels: [bug, 'status: needs triage']
 body:
   - type: markdown
-    attributes: 
+    attributes:
       value: |
         ## Thank you for taking the time to create a Bug Report!
 
         Before you submit your report, please review the following checklist
 
- - type: checkboxes
+  - type: checkboxes
     attributes:
       label: Pre-Bug Report Checklist
       description: Have you completed these steps?
@@ -17,8 +17,9 @@ body:
         - label: I've reviewed the documentation and examples
         - label: I've tried uninstalling and reinstalling `node_modules`, (`package-lock.json`, `yarn-lock.json`, `pnpm-lock.yml`)
         - label: I've reviewed existing [Bug Reports](https://github.com/9mbs/calendar-widgets/labels/bug) and have verified my issue is new
+  
   - type: markdown
-    attributes: 
+    attributes:
       value: |
         ### Please include as many of the following details in your bug report as possible
         This information will help us triage your issue as quickly as possible. If you're unsure of how to answer some of these questions, don't worry! Just provide as much detail as you can.
