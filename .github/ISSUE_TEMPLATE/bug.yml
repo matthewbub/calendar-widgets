@@ -1,0 +1,32 @@
+name: 🐛 Bug Report
+description: Submit a bug report to help us improve the library.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Thank you for taking the time to create a Bug Report!
+
+        Before you submit your report, please review the following checklist
+
+  - type: checkboxes
+    attributes:
+      label: Pre-Bug Report Checklist
+      description: Have you completed these steps?
+      options:
+        - label: I've reviewed the documentation and examples
+        - label: I've tried uninstalling and reinstalling `node_modules`, (`package-lock.json`, `yarn-lock.json`, `pnpm-lock.yml`)
+        - label: I've reviewed existing [Bug Reports](https://github.com/9mbs/calendar-widgets/labels/bug) and have verified my issue is new
+  
+  - type: markdown
+    attributes:
+      value: |
+        ### Please include as many of the following details in your bug report as possible
+        This information will help us triage your issue as quickly as possible. If you're unsure of how to answer some of these questions, don't worry! Just provide as much detail as you can.
+
+        - `calendar-widgets` version number in your project
+        - Screenshot of error(s)
+        - What platforms are you seeing this error on? (e.g. desktop, mobile, native, etc)
+        - If using a browser, what browsers are you seeing this error on? (Please list all)
+        - Do you have a way for us to recreate your environment? (e.g a public repo we can clone and test?)
+        - Please list any additional details in your report that might help us narrow down the root cause of the issue you're experiencing.
