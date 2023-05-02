@@ -29,5 +29,3 @@ body:
         - If using a browser, what browsers are you seeing this error on? (Please list all)
         - Do you have a way for us to recreate your environment? (e.g a public repo we can clone and test?)
         - Please list any additional details in your report that might help us narrow down the root cause of the issue you're experiencing.
-
-# https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository
