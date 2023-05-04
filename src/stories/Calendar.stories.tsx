@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Calendar } from '../react';
+import BasicCalendar from '../examples/BasicCalendar';
 
 const Demo = () => {
   return (
@@ -28,7 +29,7 @@ const Demo = () => {
 
 const meta = {
   title: 'calendar-widgets/Calendar',
-  component: Demo,
+  component: BasicCalendar,
   args: {
     date: new Date()
   }

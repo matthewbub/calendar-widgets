@@ -16,6 +16,7 @@ const Calendar: FC<CalendarProps> = ({
   dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
   nextMonthButton,
   prevMonthButton,
+  currentMonthButton,
   className
 }) => {
   const [currentDate, setCurrentDate] = useState(date);
@@ -49,7 +50,7 @@ const Calendar: FC<CalendarProps> = ({
   const totalDays = endDate.getDate();
 
   const days = [];
-  for (let i = ONE - startWeekday;i <= totalDays + SIX - endDate.getDay();i += ONE) {
+  for (let i = ONE - startWeekday; i <= totalDays + SIX - endDate.getDay(); i += ONE) {
     const currentDate = new Date(year, month - ONE, i);
     const isCurrentDay = i === day;
 
@@ -66,7 +67,7 @@ const Calendar: FC<CalendarProps> = ({
   }
 
   const weeks = [];
-  for (let i = ZERO;i < days.length;i += SEVEN) {
+  for (let i = ZERO; i < days.length; i += SEVEN) {
     weeks.push(
       <div key={i} style={{ display: 'flex' }}>
         {days.slice(i, i + SEVEN)}
@@ -77,6 +78,7 @@ const Calendar: FC<CalendarProps> = ({
   return (
     <div className={className}>
       {prevMonthButton && prevMonthButton({ handlePrevMonth, prevMonth: getPreviousMonth(month) })}
+      {currentMonthButton && currentMonthButton({ currentMonth: month })}
       {nextMonthButton && nextMonthButton({ handleNextMonth, nextMonth: getNextMonth(month) })}
 
       <div style={{ display: 'flex' }}>

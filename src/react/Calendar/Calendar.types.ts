@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export interface CalendarProps {
   date?: Date | {
     year: number;
@@ -19,6 +20,9 @@ export interface CalendarProps {
   prevMonthButton?: ({ handlePrevMonth, prevMonth }: {
     handlePrevMonth: () => void;
     prevMonth: number;
+  }) => React.ReactElement;
+  currentMonthButton?: ({ currentMonth }: {
+    currentMonth: number;
   }) => React.ReactElement;
   className?: string;
 }
