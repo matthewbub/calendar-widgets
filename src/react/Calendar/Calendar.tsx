@@ -17,7 +17,9 @@ const Calendar: FC<CalendarProps> = ({
   nextMonthButton,
   prevMonthButton,
   currentMonthButton,
-  className
+  className,
+  customHeader,
+  customFooter
 }) => {
   const [currentDate, setCurrentDate] = useState(date);
 
@@ -75,12 +77,25 @@ const Calendar: FC<CalendarProps> = ({
     );
   }
 
+  const customHeaderFooterProps = {
+    currentMonth: month,
+    handleNextMonth,
+    nextMonth: getNextMonth(month),
+    handlePrevMonth,
+    prevMonth: getPreviousMonth(month),
+  };
+
   return (
     <div className={className}>
-      {prevMonthButton && prevMonthButton({ handlePrevMonth, prevMonth: getPreviousMonth(month) })}
-      {currentMonthButton && currentMonthButton({ currentMonth: month })}
-      {nextMonthButton && nextMonthButton({ handleNextMonth, nextMonth: getNextMonth(month) })}
-
+      {customHeader ? (
+        customHeader(customHeaderFooterProps)
+      ) : (
+        <>
+          {prevMonthButton && prevMonthButton({ handlePrevMonth, prevMonth: getPreviousMonth(month) })}
+          {currentMonthButton && currentMonthButton({ currentMonth: month })}
+          {nextMonthButton && nextMonthButton({ handleNextMonth, nextMonth: getNextMonth(month) })}
+        </>
+      )}
       <div style={{ display: 'flex' }}>
         {dayNames.map((dayName, idx) =>
           <div key={idx} style={{ display: 'inline-block', width: '14.28%', textAlign: 'center' }}>
@@ -89,6 +104,8 @@ const Calendar: FC<CalendarProps> = ({
         )}
       </div>
       {weeks}
+
+      {customFooter && customFooter(customHeaderFooterProps)}
     </div>
   );
 };
