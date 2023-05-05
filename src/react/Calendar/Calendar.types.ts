@@ -22,17 +22,6 @@ export interface CalendarProps {
   }) => React.ReactElement;
   showAdjacentDays?: boolean;
   dayNames?: string[];
-  nextMonthButton?: ({ handleNextMonth, nextMonth }: {
-    handleNextMonth: () => void;
-    nextMonth: number;
-  }) => React.ReactElement;
-  prevMonthButton?: ({ handlePrevMonth, prevMonth }: {
-    handlePrevMonth: () => void;
-    prevMonth: number;
-  }) => React.ReactElement;
-  currentMonthButton?: ({ currentMonth }: {
-    currentMonth: number;
-  }) => React.ReactElement;
   className?: string;
   customHeader?: CustomHeaderAndFooterRenderer;
   customFooter?: CustomHeaderAndFooterRenderer;
