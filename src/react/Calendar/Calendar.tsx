@@ -16,7 +16,11 @@ const Calendar: FC<CalendarProps> = ({
   dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
   nextMonthButton,
   prevMonthButton,
-  className
+  currentMonthButton,
+  className,
+  customHeader,
+  customFooter,
+  style
 }) => {
   const [currentDate, setCurrentDate] = useState(date);
 
@@ -58,35 +62,46 @@ const Calendar: FC<CalendarProps> = ({
       date: currentDate
     });
 
-    days.push(
-      <div key={i} style={{ display: 'inline-block', width: '14.28%', textAlign: 'center' }}>
-        {showAdjacentDays || i > ZERO && i <= totalDays ? dayCell : null}
-      </div>
-    );
+    days.push(showAdjacentDays || i > ZERO && i <= totalDays ? dayCell : null);
   }
 
   const weeks = [];
   for (let i = ZERO;i < days.length;i += SEVEN) {
-    weeks.push(
-      <div key={i} style={{ display: 'flex' }}>
-        {days.slice(i, i + SEVEN)}
-      </div>
-    );
+    weeks.push(days.slice(i, i + SEVEN));
   }
 
-  return (
-    <div className={className}>
-      {prevMonthButton && prevMonthButton({ handlePrevMonth, prevMonth: getPreviousMonth(month) })}
-      {nextMonthButton && nextMonthButton({ handleNextMonth, nextMonth: getNextMonth(month) })}
+  const customHeaderFooterProps = {
+    currentMonth: month,
+    handleNextMonth,
+    nextMonth: getNextMonth(month),
+    handlePrevMonth,
+    prevMonth: getPreviousMonth(month)
+  };
 
-      <div style={{ display: 'flex' }}>
-        {dayNames.map((dayName, idx) =>
-          <div key={idx} style={{ display: 'inline-block', width: '14.28%', textAlign: 'center' }}>
-            {dayName}
-          </div>
-        )}
-      </div>
+  return (
+    <div
+      className={className}
+      style={style ? style : { display: 'flex', flexWrap: 'wrap', width: '100%' }}
+    >
+      {customHeader ? (
+        customHeader(customHeaderFooterProps)
+      ) : (
+        <>
+          {prevMonthButton && prevMonthButton({ handlePrevMonth, prevMonth: getPreviousMonth(month) })}
+          {currentMonthButton && currentMonthButton({ currentMonth: month })}
+          {nextMonthButton && nextMonthButton({ handleNextMonth, nextMonth: getNextMonth(month) })}
+        </>
+      )}
+
+      {dayNames.map((dayName, idx) =>
+        <div key={idx} style={{ display: 'inline-block', width: '14.28%', textAlign: 'center' }}>
+          {dayName}
+        </div>
+      )}
+
       {weeks}
+
+      {customFooter && customFooter(customHeaderFooterProps)}
     </div>
   );
 };

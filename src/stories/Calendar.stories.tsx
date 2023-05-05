@@ -1,34 +1,11 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { Calendar } from '../react';
-
-const Demo = () => {
-  return (
-    <div>
-      <Calendar
-        date={new Date()}
-        dayComponent={({ date }) => (
-          <div onClick={() => {
-            // eslint-disable-next-line no-alert
-            alert(date);
-          }}>
-            {date.getDate()}
-          </div>
-        )}
-        prevMonthButton={({ handlePrevMonth, prevMonth }) => (
-          <button onClick={handlePrevMonth}>Prev ({prevMonth})</button>
-        )}
-        nextMonthButton={({ handleNextMonth, nextMonth }) => (
-          <button onClick={handleNextMonth}>Next ({nextMonth})</button>
-        )}
-      />
-    </div>
-  );
-};
+import BasicCalendarV2 from '../examples/BasicCalendarV2';
 
 const meta = {
   title: 'calendar-widgets/Calendar',
-  component: Demo,
+  component: BasicCalendarV2,
   args: {
     date: new Date()
   }
