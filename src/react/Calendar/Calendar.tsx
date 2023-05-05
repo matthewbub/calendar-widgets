@@ -19,7 +19,8 @@ const Calendar: FC<CalendarProps> = ({
   currentMonthButton,
   className,
   customHeader,
-  customFooter
+  customFooter,
+  style
 }) => {
   const [currentDate, setCurrentDate] = useState(date);
 
@@ -52,7 +53,7 @@ const Calendar: FC<CalendarProps> = ({
   const totalDays = endDate.getDate();
 
   const days = [];
-  for (let i = ONE - startWeekday; i <= totalDays + SIX - endDate.getDay(); i += ONE) {
+  for (let i = ONE - startWeekday;i <= totalDays + SIX - endDate.getDay();i += ONE) {
     const currentDate = new Date(year, month - ONE, i);
     const isCurrentDay = i === day;
 
@@ -61,20 +62,12 @@ const Calendar: FC<CalendarProps> = ({
       date: currentDate
     });
 
-    days.push(
-      <div key={i} style={{ display: 'inline-block', width: '14.28%', textAlign: 'center' }}>
-        {showAdjacentDays || i > ZERO && i <= totalDays ? dayCell : null}
-      </div>
-    );
+    days.push(showAdjacentDays || i > ZERO && i <= totalDays ? dayCell : null);
   }
 
   const weeks = [];
-  for (let i = ZERO; i < days.length; i += SEVEN) {
-    weeks.push(
-      <div key={i} style={{ display: 'flex' }}>
-        {days.slice(i, i + SEVEN)}
-      </div>
-    );
+  for (let i = ZERO;i < days.length;i += SEVEN) {
+    weeks.push(days.slice(i, i + SEVEN));
   }
 
   const customHeaderFooterProps = {
@@ -82,11 +75,14 @@ const Calendar: FC<CalendarProps> = ({
     handleNextMonth,
     nextMonth: getNextMonth(month),
     handlePrevMonth,
-    prevMonth: getPreviousMonth(month),
+    prevMonth: getPreviousMonth(month)
   };
 
   return (
-    <div className={className}>
+    <div
+      className={className}
+      style={style ? style : { display: 'flex', flexWrap: 'wrap', width: '100%' }}
+    >
       {customHeader ? (
         customHeader(customHeaderFooterProps)
       ) : (
@@ -96,13 +92,13 @@ const Calendar: FC<CalendarProps> = ({
           {nextMonthButton && nextMonthButton({ handleNextMonth, nextMonth: getNextMonth(month) })}
         </>
       )}
-      <div style={{ display: 'flex' }}>
-        {dayNames.map((dayName, idx) =>
-          <div key={idx} style={{ display: 'inline-block', width: '14.28%', textAlign: 'center' }}>
-            {dayName}
-          </div>
-        )}
-      </div>
+
+      {dayNames.map((dayName, idx) =>
+        <div key={idx} style={{ display: 'inline-block', width: '14.28%', textAlign: 'center' }}>
+          {dayName}
+        </div>
+      )}
+
       {weeks}
 
       {customFooter && customFooter(customHeaderFooterProps)}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface CustomHeaderAndFooterProps {
+export interface CustomHeaderFooterRendererProps {
   currentMonth: number;
   handleNextMonth: () => void;
   nextMonth: number;
@@ -8,7 +8,8 @@ interface CustomHeaderAndFooterProps {
   prevMonth: number;
 }
 
-type CustomHeaderAndFooter = ({ currentMonth, handleNextMonth, nextMonth, handlePrevMonth, prevMonth }: CustomHeaderAndFooterProps) => React.ReactElement;
+export type CustomHeaderAndFooterRenderer = ({ currentMonth, handleNextMonth, nextMonth, handlePrevMonth, prevMonth }: CustomHeaderFooterRendererProps) => React.ReactElement;
+
 export interface CalendarProps {
   date?: Date | {
     year: number;
@@ -33,6 +34,7 @@ export interface CalendarProps {
     currentMonth: number;
   }) => React.ReactElement;
   className?: string;
-  customHeader?: CustomHeaderAndFooter;
-  customFooter?: CustomHeaderAndFooter;
+  customHeader?: CustomHeaderAndFooterRenderer;
+  customFooter?: CustomHeaderAndFooterRenderer;
+  style?: React.CSSProperties;
 }

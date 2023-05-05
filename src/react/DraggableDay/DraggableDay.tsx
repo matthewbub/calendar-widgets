@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect, useRef, MouseEvent, useCallback } from 'react';
-// import './Draggables.styles.css';
+import './Draggables.styles.css';
 import { ONE, ONE_HUNDRED, ZERO } from '../../constants';
 import { listHoursBetween, calculateHoursBetween } from '../../helpers';
 import { SingleDraggableProps, DraggableContentProps, RowProps, DraggablesProps } from './DraggableDay.types';
