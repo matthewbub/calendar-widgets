@@ -14,9 +14,6 @@ const Calendar: FC<CalendarProps> = ({
   dayComponent,
   showAdjacentDays = true,
   dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
-  nextMonthButton,
-  prevMonthButton,
-  currentMonthButton,
   className,
   customHeader,
   customFooter,
@@ -83,15 +80,7 @@ const Calendar: FC<CalendarProps> = ({
       className={className}
       style={style ? style : { display: 'flex', flexWrap: 'wrap', width: '100%' }}
     >
-      {customHeader ? (
-        customHeader(customHeaderFooterProps)
-      ) : (
-        <>
-          {prevMonthButton && prevMonthButton({ handlePrevMonth, prevMonth: getPreviousMonth(month) })}
-          {currentMonthButton && currentMonthButton({ currentMonth: month })}
-          {nextMonthButton && nextMonthButton({ handleNextMonth, nextMonth: getNextMonth(month) })}
-        </>
-      )}
+      {customHeader && customHeader(customHeaderFooterProps)}
 
       {dayNames.map((dayName, idx) =>
         <div key={idx} style={{ display: 'inline-block', width: '14.28%', textAlign: 'center' }}>

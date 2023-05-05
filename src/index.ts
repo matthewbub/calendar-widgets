@@ -20,3 +20,9 @@ export {
   convertTimeToHours,
   listHoursBetween
 };
+
+export type {
+  CustomHeaderFooterRendererProps,
+  CustomHeaderAndFooterRenderer,
+  CalendarProps
+} from './react';
