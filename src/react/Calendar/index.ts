@@ -7,6 +7,7 @@ export {
   CustomHeaderAndFooterRenderer,
   CalendarProps
 } from './Calendar.types';
+export { BaseDayNameComponentProps, BaseDayComponentProps } from './components';
 
 /** Helpers */
 export {

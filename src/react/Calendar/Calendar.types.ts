@@ -1,6 +1,8 @@
 /** Dependencies */
 import React from 'react';
 
+/** Types */
+import { BaseDayComponentProps, BaseDayNameComponentProps } from './components';
 export interface CustomHeaderFooterRendererProps {
   handleNextMonth: () => void;
   handlePrevMonth: () => void;
@@ -27,11 +29,9 @@ export interface CalendarProps {
     month: number;
     day: number;
   };
-  dayComponent?: ({ isCurrentDay, date }: {
-    isCurrentDay: boolean;
-    date: Date;
-    inSelectedMonth: boolean;
-  }) => React.ReactElement;
+  dayComponent?: (props: BaseDayComponentProps) => React.ReactElement;
+  dayNameComponent?: (props: BaseDayNameComponentProps) => React.ReactElement;
+
   showAdjacentDays?: boolean;
   dayNames?: string[];
   className?: string;

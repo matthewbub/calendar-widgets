@@ -9,7 +9,10 @@ import { magicNumber as mN, dateToNumbers } from '../../helpers';
 import { getNextMonth, getPreviousMonth, createCalendarWeeks } from './Calendar.helpers';
 
 /** Components */
-import { BaseDayComponent } from './components';
+import {
+  BaseDayComponent,
+  BaseDayNameComponent
+} from './components';
 
 /** Constants */
 import { classNames } from './Calendar.constants';
@@ -20,6 +23,7 @@ import './styles/Calendar-grid.css';
 const Calendar: FC<CalendarProps> = ({
   date = new Date(),
   dayComponent = BaseDayComponent,
+  dayNameComponent = BaseDayNameComponent,
   showAdjacentDays = true,
   dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
   className,
@@ -31,6 +35,7 @@ const Calendar: FC<CalendarProps> = ({
   const [currentDate, setCurrentDate] = useState(date);
   const { year, month, day } = dateToNumbers(currentDate);
   const DayComponent = dayComponent;
+  const DayNameComponent = dayNameComponent;
 
   const handleNextMonth = (stop?: null) => {
     if (stop === null) {
@@ -54,11 +59,10 @@ const Calendar: FC<CalendarProps> = ({
     const startWeekday = start.getDay();
     const totalDays = end.getDate();
 
-    for (let i = mN('1') - startWeekday; i <= totalDays + mN('6') - end.getDay(); i += mN('1')) {
+    for (let i = mN('1') - startWeekday;i <= totalDays + mN('6') - end.getDay();i += mN('1')) {
       const currentDate = new Date(year, month, i);
       const isCurrentDay = i === day;
       const inSelectedMonth = currentDate.getFullYear() === year && currentDate.getMonth() === month;
-
 
       const dayComponent = showAdjacentDays || (i > mN('0') && i <= totalDays)
         ? (
@@ -100,14 +104,13 @@ const Calendar: FC<CalendarProps> = ({
       )}
 
       <div className={customClassNames.component}>
-        {dayNames.map((dayName, idx) =>
-          <div
+        {dayNames.map((dayName, idx) => (
+          <DayNameComponent
             key={idx}
             className={customClassNames.dayName}
-          >
-            {dayName}
-          </div>
-        )}
+            label={dayName}
+          />
+        ))}
 
         <Fragment>
           {weeks}

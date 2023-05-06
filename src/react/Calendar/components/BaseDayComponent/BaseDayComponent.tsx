@@ -7,9 +7,9 @@ import { BaseDayComponentProps } from './BaseDayComponent.types';
 /** Constants */
 import { classNames } from './BaseDayComponent.constants';
 
-import { cl } from "../../../../helpers";
+import { cl } from '../../../../helpers';
 
-const BaseDayComponent = ({ date, inSelectedMonth }: BaseDayComponentProps) => {
+const BaseDayComponent: React.FC<BaseDayComponentProps> = ({ date, inSelectedMonth }) => {
   return (
     <div className={cl(
       classNames.baseDay,
