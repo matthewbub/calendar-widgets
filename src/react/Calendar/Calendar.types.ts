@@ -30,6 +30,7 @@ export interface CalendarProps {
   dayComponent?: ({ isCurrentDay, date }: {
     isCurrentDay: boolean;
     date: Date;
+    inSelectedMonth: boolean;
   }) => React.ReactElement;
   showAdjacentDays?: boolean;
   dayNames?: string[];

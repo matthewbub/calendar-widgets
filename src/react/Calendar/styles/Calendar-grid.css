@@ -7,3 +7,7 @@
 .calendar-widgets__Calendar__custom-footer {
   width: 100%;
 }
+
+.calendar-widgets__Calendar__BaseDayComponent__outside-current-month {
+  color: #ccc;
+}

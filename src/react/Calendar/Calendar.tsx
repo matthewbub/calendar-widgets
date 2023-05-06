@@ -55,12 +55,19 @@ const Calendar: FC<CalendarProps> = ({
     const totalDays = end.getDate();
 
     for (let i = mN('1') - startWeekday; i <= totalDays + mN('6') - end.getDay(); i += mN('1')) {
-      const currentDate = new Date(year, month - mN('1'), i);
+      const currentDate = new Date(year, month, i);
       const isCurrentDay = i === day;
+      const inSelectedMonth = currentDate.getFullYear() === year && currentDate.getMonth() === month;
+
 
       const dayComponent = showAdjacentDays || (i > mN('0') && i <= totalDays)
-        ? <DayComponent isCurrentDay={isCurrentDay} date={currentDate} />
-        : <div className={classNames.emptyCell} />;
+        ? (
+          <DayComponent
+            isCurrentDay={isCurrentDay}
+            date={currentDate}
+            inSelectedMonth={inSelectedMonth}
+          />
+        ) : <div className={classNames.emptyCell} />;
 
       days.push(dayComponent);
     }
