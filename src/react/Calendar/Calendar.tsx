@@ -20,6 +20,29 @@ import { classNames } from './Calendar.constants';
 /** Styles */
 import './styles/Calendar-grid.css';
 
+/**
+ * A customizable calendar component that displays the days of a month in a grid format.
+ *
+ * @param {Date | {year: number, month: number, day: number}} [date=new Date()] - The date to display in the calendar. If an object is passed, it should have year, month, and day properties.
+ * @param {BaseDayComponentProps | ((props: BaseDayComponentProps) => React.ReactElement)} [dayComponent=BaseDayComponent] - The component used to display each day in the calendar.
+ * @param {BaseDayNameComponentProps} [dayNameComponent=BaseDayNameComponent] - The component used to display each day name in the calendar.
+ * @param {boolean} [showAdjacentDays=true] - Whether to display days from the previous and next months that are adjacent to the displayed month.
+ * @param {string[]} [dayNames=['S', 'M', 'T', 'W', 'T', 'F', 'S']] - An array of strings that represent the names of the days of the week. The first element represents Sunday, the second represents Monday, and so on.
+ * @param {string[]} [dayNameToolTips] - An optional array of strings that represent the tooltips to display for each day name. If provided, it should have 7 elements in the same order as dayNames.
+ * @param {string} [className] - The CSS class name to apply to the top-level element of the calendar.
+ * @param {CustomHeaderAndFooterRenderer} [customHeader] - A function that returns the custom header element for the calendar. It receives an object with the following properties: handleNextMonth, handlePrevMonth, nextMonth, prevMonth, selectedMonth, selectedYear, and today.
+ * @param {CustomHeaderAndFooterRenderer} [customFooter] - A function that returns the custom footer element for the calendar. It receives an object with the following properties: handleNextMonth, handlePrevMonth, nextMonth, prevMonth, selectedMonth, selectedYear, and today.
+ * @param {React.CSSProperties} [style] - An object containing the inline style of the top-level element of the calendar.
+ * @param {{
+*   componentInterface?: string;
+*   customHeader?: string;
+*   component?: string;
+*   dayName?: string;
+*   customFooter?: string;
+*   emptyCell?: string;
+* }} [customClassNames=classNames] - An object containing CSS class names to override the default class names used by the component.
+* @returns {React.ReactElement} A calendar component that displays the days of a month in a grid format.
+*/
 const Calendar: FC<CalendarProps> = ({
   date = new Date(),
   dayComponent = BaseDayComponent,
@@ -60,7 +83,7 @@ const Calendar: FC<CalendarProps> = ({
     const startWeekday = start.getDay();
     const totalDays = end.getDate();
 
-    for (let i = mN('1') - startWeekday;i <= totalDays + mN('6') - end.getDay();i += mN('1')) {
+    for (let i = mN('1') - startWeekday; i <= totalDays + mN('6') - end.getDay(); i += mN('1')) {
       const currentDate = new Date(year, month, i);
       const isCurrentDay = i === day;
       const inSelectedMonth = currentDate.getFullYear() === year && currentDate.getMonth() === month;
