@@ -12,12 +12,10 @@ import { getNextMonth, getPreviousMonth, createCalendarWeeks } from './Calendar.
 import { BaseDayComponent } from './components';
 
 /** Constants */
-import { BASE_CLASSNAME } from '../../constants';
+import { classNames } from './Calendar.constants';
 
 /** Styles */
 import './Calendar-grid.css';
-
-const baseClassName = BASE_CLASSNAME + 'Calendar__';
 
 const Calendar: FC<CalendarProps> = ({
   date = new Date(),
@@ -27,7 +25,8 @@ const Calendar: FC<CalendarProps> = ({
   className,
   customHeader,
   customFooter,
-  style
+  style,
+  customClassNames = classNames
 }) => {
   const [currentDate, setCurrentDate] = useState(date);
   const { year, month, day } = dateToNumbers(currentDate);
@@ -61,7 +60,7 @@ const Calendar: FC<CalendarProps> = ({
 
       const dayComponent = showAdjacentDays || (i > mN('0') && i <= totalDays)
         ? <DayComponent isCurrentDay={isCurrentDay} date={currentDate} />
-        : <div className={baseClassName + 'empty-cell'} />;
+        : <div className={classNames.emptyCell} />;
 
       days.push(dayComponent);
     }
@@ -83,18 +82,21 @@ const Calendar: FC<CalendarProps> = ({
   };
 
   return (
-    <div className={className ? className : baseClassName + 'component-interface'}>
+    <div
+      className={className ? className : customClassNames.componentInterface}
+      style={style}
+    >
       {customHeader && (
-        <div className={baseClassName + 'custom-header'}>
+        <div className={customClassNames.customHeader}>
           {customHeader(customHeaderFooterProps)}
         </div>
       )}
 
-      <div className={className ? className : baseClassName + 'component'}>
+      <div className={customClassNames.component}>
         {dayNames.map((dayName, idx) =>
           <div
             key={idx}
-            className={baseClassName + 'day-name'}
+            className={customClassNames.dayName}
           >
             {dayName}
           </div>
@@ -106,7 +108,7 @@ const Calendar: FC<CalendarProps> = ({
       </div>
 
       {customFooter && (
-        <div className={baseClassName + 'custom-footer'}>
+        <div className={customClassNames.customFooter}>
           {customFooter(customHeaderFooterProps)}
         </div>
       )}
