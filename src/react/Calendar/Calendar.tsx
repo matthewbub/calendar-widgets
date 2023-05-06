@@ -60,6 +60,8 @@ const Calendar: FC<CalendarProps> = ({
   const { year, month, day } = dateToNumbers(currentDate);
   const DayComponent = dayComponent;
   const DayNameComponent = dayNameComponent;
+  const CustomHeader = customHeader || null;
+  const CustomFooter = customFooter || null;
 
   const handleNextMonth = (stop?: null) => {
     if (stop === null) {
@@ -83,10 +85,10 @@ const Calendar: FC<CalendarProps> = ({
     const startWeekday = start.getDay();
     const totalDays = end.getDate();
 
-    for (let i = mN('1') - startWeekday; i <= totalDays + mN('6') - end.getDay(); i += mN('1')) {
-      const currentDate = new Date(year, month, i);
+    for (let i = mN('1') - startWeekday;i <= totalDays + mN('6') - end.getDay();i += mN('1')) {
+      const currentDate = new Date(year, start.getMonth(), i);
       const isCurrentDay = i === day;
-      const inSelectedMonth = currentDate.getFullYear() === year && currentDate.getMonth() === month;
+      const inSelectedMonth = currentDate.getFullYear() === year && currentDate.getMonth() === month - mN('1');
 
       const dayComponent = showAdjacentDays || (i > mN('0') && i <= totalDays)
         ? (
@@ -116,16 +118,17 @@ const Calendar: FC<CalendarProps> = ({
     prevMonth: getPreviousMonth(month)
   };
 
-  const tooltips = dayNameToolTips && dayNameToolTips.length === mN('7') ? dayNameToolTips : dayNames;
+  const validTooltips = dayNameToolTips && dayNameToolTips.length === mN('7');
+  const tooltips = validTooltips ? dayNameToolTips : dayNames;
 
   return (
     <div
       className={className ? className : customClassNames.componentInterface}
       style={style}
     >
-      {customHeader && (
+      {CustomHeader && (
         <div className={customClassNames.customHeader}>
-          {customHeader(customHeaderFooterProps)}
+          <CustomHeader {...customHeaderFooterProps} />
         </div>
       )}
 
@@ -144,9 +147,9 @@ const Calendar: FC<CalendarProps> = ({
         </Fragment>
       </div>
 
-      {customFooter && (
+      {CustomFooter && (
         <div className={customClassNames.customFooter}>
-          {customFooter(customHeaderFooterProps)}
+          <CustomFooter {...customHeaderFooterProps} />
         </div>
       )}
     </div>
