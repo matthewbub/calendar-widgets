@@ -31,9 +31,9 @@ export interface CalendarProps {
   };
   dayComponent?: (props: BaseDayComponentProps) => React.ReactElement;
   dayNameComponent?: (props: BaseDayNameComponentProps) => React.ReactElement;
-
   showAdjacentDays?: boolean;
   dayNames?: string[];
+  dayNameToolTips?: string[];
   className?: string;
   customHeader?: CustomHeaderAndFooterRenderer;
   customFooter?: CustomHeaderAndFooterRenderer;

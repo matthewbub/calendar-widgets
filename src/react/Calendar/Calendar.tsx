@@ -26,6 +26,7 @@ const Calendar: FC<CalendarProps> = ({
   dayNameComponent = BaseDayNameComponent,
   showAdjacentDays = true,
   dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+  dayNameToolTips,
   className,
   customHeader,
   customFooter,
@@ -92,6 +93,8 @@ const Calendar: FC<CalendarProps> = ({
     prevMonth: getPreviousMonth(month)
   };
 
+  const tooltips = dayNameToolTips && dayNameToolTips.length === mN('7') ? dayNameToolTips : dayNames;
+
   return (
     <div
       className={className ? className : customClassNames.componentInterface}
@@ -109,6 +112,7 @@ const Calendar: FC<CalendarProps> = ({
             key={idx}
             className={customClassNames.dayName}
             label={dayName}
+            tooltip={tooltips[idx]}
           />
         ))}
 
