@@ -1,5 +1,7 @@
 {
-  "cSpell.words": [],
+  "cSpell.words": [
+    "CLASSNAME"
+  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   }

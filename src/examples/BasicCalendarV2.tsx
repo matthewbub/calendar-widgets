@@ -3,10 +3,8 @@ import { Calendar } from '../react';
 import { CustomHeaderFooterRendererProps } from '../react/Calendar/Calendar.types';
 
 const CustomDay = ({ date }: { date: Date }) => (
-  <div style={{ height: '34px', width: '14.28%', textAlign: 'center' }}>
-    <button>
-      {date.getDate()}
-    </button>
+  <div style={{ height: '34px', textAlign: 'center' }}>
+    {date.getDate()}
   </div>
 );
 
@@ -16,10 +14,14 @@ const BasicCalendarV2 = () => {
       date={new Date()}
       dayComponent={CustomDay}
       customHeader={(props: CustomHeaderFooterRendererProps) => (
-        <div style={{ width: '100%' }}>
-          <button onClick={props.handlePrevMonth}>{props.prevMonth}</button>
-          <div>{props.currentMonth}</div>
-          <button onClick={props.handleNextMonth}>{props.nextMonth}</button>
+        <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', boxSizing: 'border-box' }}>
+          <button onClick={props.handlePrevMonth}>
+            Prev month ({props.prevMonth})
+          </button>
+          {/* <div>{props.currentDate.toLocaleDateString('en-US')}</div> */}
+          <button onClick={props.handleNextMonth}>
+            Next month ({props.nextMonth})
+          </button>
         </div>
       )}
     />
