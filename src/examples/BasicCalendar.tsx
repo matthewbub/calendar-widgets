@@ -11,17 +11,17 @@ const BasicCalendar = () => {
           {isCurrentDay && <span style={{ color: 'red' }}>*</span>}
         </div>
       )}
-      customHeader={({ currentMonth, handleNextMonth, handlePrevMonth, prevMonth, nextMonth }) => (
+      customHeader={({ selectedMonth, handleNextMonth, handlePrevMonth, prevMonth, nextMonth }) => (
         <div style={{ width: '100%' }}>
           <button onClick={handlePrevMonth}>Prev ({prevMonth})</button>
-          <span>{currentMonth}</span>
+          <span>{selectedMonth}</span>
           <button onClick={handleNextMonth}>Next ({nextMonth})</button>
         </div>
       )}
-      customFooter={({ currentMonth, handleNextMonth, handlePrevMonth, prevMonth, nextMonth }) => (
+      customFooter={({ selectedMonth, handleNextMonth, handlePrevMonth, prevMonth, nextMonth }) => (
         <div style={{ width: '100%' }}>
           <button onClick={handlePrevMonth}>Prev ({prevMonth})</button>
-          <span>{currentMonth}</span>
+          <span>{selectedMonth}</span>
           <button onClick={handleNextMonth}>Next ({nextMonth})</button>
         </div>
       )}

@@ -15,7 +15,7 @@ import { BaseDayComponent } from './components';
 import { classNames } from './Calendar.constants';
 
 /** Styles */
-import './Calendar-grid.css';
+import './styles/Calendar-grid.css';
 
 const Calendar: FC<CalendarProps> = ({
   date = new Date(),
@@ -54,7 +54,7 @@ const Calendar: FC<CalendarProps> = ({
     const startWeekday = start.getDay();
     const totalDays = end.getDate();
 
-    for (let i = mN('1') - startWeekday;i <= totalDays + mN('6') - end.getDay();i += mN('1')) {
+    for (let i = mN('1') - startWeekday; i <= totalDays + mN('6') - end.getDay(); i += mN('1')) {
       const currentDate = new Date(year, month - mN('1'), i);
       const isCurrentDay = i === day;
 
