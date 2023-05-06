@@ -10,4 +10,4 @@ _< Briefly describe the problems you code is solving. >_
 
 ## Related
 
-_<Include PRs, Issues, and any additional resources realted to your code change here.>_
+_<Include PRs, Issues, and any additional resources related to your code change here.>_
