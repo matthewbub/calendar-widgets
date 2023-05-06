@@ -1,0 +1,18 @@
+.calendar-widgets__Calendar__component {
+  box-sizing: border-box;
+}
+
+.calendar-widgets__Calendar__component {
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.calendar-widgets__Calendar__day-name {
+  width: 14%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 34px;
+}

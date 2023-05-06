@@ -10,3 +10,4 @@ export const ONE_HUNDRED = 100;
 export const NINETEEN_HUNDRED = 1900;
 export const TWO_THOUSAND = 2000;
 export const TWO_THOUSAND_AND_ONE_HUNDRED = 2100;
+export const BASE_CLASSNAME = 'calendar-widgets__';

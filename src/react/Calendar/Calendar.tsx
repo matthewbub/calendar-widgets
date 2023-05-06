@@ -1,17 +1,27 @@
-import React, { FC, useState } from 'react';
+/** Dependencies */
+import React, { FC, Fragment, useState } from 'react';
+
+/** Types */
 import { CalendarProps } from './Calendar.types';
-import { ONE, SEVEN, SIX, ZERO } from '../../constants';
-import { magicNumber } from '../../helpers';
-import { getNextMonth, getPreviousMonth } from './Calendar.utilities';
-import { dateToNumbers } from '../../helpers/dateToNumbers';
-interface DayComponentProps {
-  date: Date;
-  isCurrentDay: boolean;
-}
+
+/** Helpers */
+import { magicNumber as mN, dateToNumbers } from '../../helpers';
+import { getNextMonth, getPreviousMonth, createCalendarWeeks } from './Calendar.helpers';
+
+/** Components */
+import { BaseDayComponent } from './components';
+
+/** Constants */
+import { BASE_CLASSNAME } from '../../constants';
+
+/** Styles */
+import './Calendar-grid.css';
+
+const baseClassName = BASE_CLASSNAME + 'Calendar__';
 
 const Calendar: FC<CalendarProps> = ({
   date = new Date(),
-  dayComponent,
+  dayComponent = BaseDayComponent,
   showAdjacentDays = true,
   dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
   className,
@@ -20,55 +30,52 @@ const Calendar: FC<CalendarProps> = ({
   style
 }) => {
   const [currentDate, setCurrentDate] = useState(date);
-
   const { year, month, day } = dateToNumbers(currentDate);
+  const DayComponent = dayComponent;
 
-  let DayComponent: FC<DayComponentProps> = ({ date, isCurrentDay }) => (
-    <div style={{ textAlign: 'center' }}>
-      <span>
-        {isCurrentDay ? <span style={{ color: 'red' }}>*</span> : null}
-        {date.getDate()}
-      </span>
-    </div>
-  );
-
-  const handleNextMonth = () => {
+  const handleNextMonth = (stop?: null) => {
+    if (stop === null) {
+      return;
+    }
     setCurrentDate(new Date(year, month, day));
   };
 
-  const handlePrevMonth = () => {
-    setCurrentDate(new Date(year, month - magicNumber('2'), day));
+  const handlePrevMonth = (stop?: null) => {
+    if (stop === null) {
+      return;
+    }
+    setCurrentDate(new Date(year, month - mN('2'), day));
   };
 
-  if (dayComponent !== undefined) {
-    DayComponent = dayComponent;
-  }
+  const startDate = new Date(year, month - mN('1'), mN('1'));
+  const endDate = new Date(year, month, mN('0'));
 
-  const startDate = new Date(year, month - ONE, ONE);
-  const endDate = new Date(year, month, ZERO);
-  const startWeekday = startDate.getDay();
-  const totalDays = endDate.getDate();
+  const createCalendarDays = (start: Date, end: Date) => {
+    const days = [];
+    const startWeekday = start.getDay();
+    const totalDays = end.getDate();
 
-  const days = [];
-  for (let i = ONE - startWeekday;i <= totalDays + SIX - endDate.getDay();i += ONE) {
-    const currentDate = new Date(year, month - ONE, i);
-    const isCurrentDay = i === day;
+    for (let i = mN('1') - startWeekday;i <= totalDays + mN('6') - end.getDay();i += mN('1')) {
+      const currentDate = new Date(year, month - mN('1'), i);
+      const isCurrentDay = i === day;
 
-    const dayCell = DayComponent({
-      isCurrentDay,
-      date: currentDate
-    });
+      const dayComponent = showAdjacentDays || (i > mN('0') && i <= totalDays)
+        ? <DayComponent isCurrentDay={isCurrentDay} date={currentDate} />
+        : <div className={baseClassName + 'empty-cell'} />;
 
-    days.push(showAdjacentDays || i > ZERO && i <= totalDays ? dayCell : null);
-  }
+      days.push(dayComponent);
+    }
 
-  const weeks = [];
-  for (let i = ZERO;i < days.length;i += SEVEN) {
-    weeks.push(days.slice(i, i + SEVEN));
-  }
+    return days;
+  };
+
+  const days = createCalendarDays(startDate, endDate);
+  const weeks = createCalendarWeeks(days);
 
   const customHeaderFooterProps = {
-    currentMonth: month,
+    selectedMonth: month,
+    selectedYear: year,
+    today: new Date(),
     handleNextMonth,
     nextMonth: getNextMonth(month),
     handlePrevMonth,
@@ -76,21 +83,33 @@ const Calendar: FC<CalendarProps> = ({
   };
 
   return (
-    <div
-      className={className}
-      style={style ? style : { display: 'flex', flexWrap: 'wrap', width: '100%' }}
-    >
-      {customHeader && customHeader(customHeaderFooterProps)}
-
-      {dayNames.map((dayName, idx) =>
-        <div key={idx} style={{ display: 'inline-block', width: '14.28%', textAlign: 'center' }}>
-          {dayName}
+    <div className={className ? className : baseClassName + 'component-interface'}>
+      {customHeader && (
+        <div className={baseClassName + 'custom-header'}>
+          {customHeader(customHeaderFooterProps)}
         </div>
       )}
 
-      {weeks}
+      <div className={className ? className : baseClassName + 'component'}>
+        {dayNames.map((dayName, idx) =>
+          <div
+            key={idx}
+            className={baseClassName + 'day-name'}
+          >
+            {dayName}
+          </div>
+        )}
 
-      {customFooter && customFooter(customHeaderFooterProps)}
+        <Fragment>
+          {weeks}
+        </Fragment>
+      </div>
+
+      {customFooter && (
+        <div className={baseClassName + 'custom-footer'}>
+          {customFooter(customHeaderFooterProps)}
+        </div>
+      )}
     </div>
   );
 };
