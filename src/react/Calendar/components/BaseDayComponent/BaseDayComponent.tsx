@@ -5,13 +5,11 @@ import React from 'react';
 import { BaseDayComponentProps } from './BaseDayComponent.types';
 
 /** Constants */
-import { BASE_CLASSNAME } from '../../../../constants';
-
-const baseClassName = BASE_CLASSNAME + 'Calendar__BaseDayComponent__';
+import { classNames } from './BaseDayComponent.constants';
 
 const BaseDayComponent = ({ date }: BaseDayComponentProps) => {
   return (
-    <div className={baseClassName + 'base-day'}>
+    <div className={classNames.baseDay}>
       {date.getTime()}
     </div>
   );
