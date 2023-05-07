@@ -34,6 +34,7 @@ export default function DocItemLayout({children}) {
   const docTOC = useDocTOC();
   return (
     <div className="row">
+      {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
       <div className={clsx('col', !docTOC.hidden && styles.docItemCol)}>
         <DocVersionBanner />
         <div className={styles.docItemContainer}>
@@ -47,7 +48,7 @@ export default function DocItemLayout({children}) {
           <DocItemPaginator />
         </div>
       </div>
-      {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
+      {/* {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>} */}
     </div>
   );
 }
