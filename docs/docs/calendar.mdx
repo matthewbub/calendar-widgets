@@ -1,0 +1,173 @@
+---
+title: Calendar
+slug: /calendar
+---
+
+import {ArgDescriptor} from '../src/components/ArgDescriptor';
+
+# Calendar
+
+A simple calendar component with liftable day cells making it easy to build custom interfaces.
+
+
+## Usage
+
+```jsx
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+
+const App = () => {
+  return <Calendar />
+}
+
+```
+
+## Props
+
+### `date` (optional)
+
+The date to display in the calendar. If an object is passed, it should have `year`, `month`, and `day` properties. 
+
+Default value: `new Date()`. 
+
+```ts
+type date = Date | {year: number, month: number, day: number};
+```
+
+### `onChange` (optional) ⚠️
+
+> Coming soon. This prop is not yet implemented, but will be in a future release. For now, you can define your own onChange handler by using the `dayComponent` prop.
+
+### `dayComponent` (optional)
+
+The component used to display each day in the calendar. 
+
+Default value: `BaseDayComponent`.
+
+```ts
+interface BaseDayComponentProps {
+  date: Date;
+  isCurrentDay: boolean;
+  inSelectedMonth: boolean;
+}
+
+type dayComponent = BaseDayComponentProps | ((props: BaseDayComponentProps) => React.ReactElement)
+```
+
+### `dayNameComponent` (optional)
+
+The component used to display each day name in the calendar. 
+
+Default value: `BaseDayNameComponent`
+
+```ts
+export interface BaseDayNameComponentProps {
+  label: string;
+  className?: string;
+  tooltip?: string;
+}
+
+type dayNameComponent = (props: BaseDayNameComponentProps) => React.ReactElement
+```
+
+### `showAdjacentDays` (optional)
+
+Whether to display days from the previous and next months that are adjacent to the displayed month. 
+
+Default value: `true`
+
+```ts
+type showAdjacentDays = boolean;
+```
+
+### `dayNames` (optional)
+
+An array of strings that represent the names of the days of the week. The first element represents Sunday, the second represents Monday, and so on. 
+
+Default value: `['S', 'M', 'T', 'W', 'T', 'F', 'S']`
+
+```ts
+type dayNames = string[];
+```
+
+### `dayNameToolTips` (optional)
+
+An optional array of strings that represent the tooltips to display for each day name. If provided, it should have 7 elements in the same order as dayNames.
+
+Default value: `undefined`
+
+```ts
+type dayNameToolTips = string[] | undefined;
+```
+
+### `className` (optional)
+
+The CSS class name to apply to the top-level element of the calendar.
+
+Default value: `undefined`
+
+```ts
+type className = string | undefined;
+```
+
+### `customClassNames` (optional)
+An object containing CSS class names to override the default class names used by the component. 
+
+Default value: `classNames`
+
+```ts
+type className = {
+  componentInterface?: string; 
+  customHeader?: string; 
+  component?: string; 
+  dayName?: string; 
+  customFooter?: string; 
+  emptyCell?: string;
+};
+```
+
+### `customHeader` (optional)
+
+A function that returns the custom header element for the calendar. It receives an object with the following properties:  `handleNextMonth`, `handlePrevMonth`, `nextMonth`, `prevMonth`, `selectedMonth`, `selectedYear` and `today`.
+
+Default value: `undefined`
+
+```ts
+type customHeader = (props: {
+  handleNextMonth: () => void;
+  handlePrevMonth: () => void;
+  nextMonth: () => void;
+  prevMonth: () => void;
+  selectedMonth: number;
+  selectedYear: number;
+  today: Date;
+}) => React.ReactElement;
+```
+
+### `customFooter` (optional)
+
+A function that returns the custom footer element for the calendar. It receives an object with the following properties: `handleNextMonth`, `handlePrevMonth`, `nextMonth`, `prevMonth`, `selectedMonth`, `selectedYear`, and `today`.
+
+Default value: `undefined`
+
+```ts
+type customFooter = (props: {
+  handleNextMonth: () => void;
+  handlePrevMonth: () => void;
+  nextMonth: () => void;
+  prevMonth: () => void;
+  selectedMonth: number;
+  selectedYear: number;
+  today: Date;
+}) => React.ReactElement;
+```
+
+### `style` (optional)
+
+An object containing the inline style of the top-level element of the calendar.
+
+Default value: `undefined`
+
+```ts
+type style = React.CSSProperties | undefined;
+```
