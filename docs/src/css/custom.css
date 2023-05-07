@@ -16,27 +16,31 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
-  /* custom fields */
-  --primary-text-color: #141414;
-  --secondary-text-color: #525252;
+  /* fonts */
   --ifm-font-family-base: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --ifm-font-family-monospace: 'IBM Plex Mono', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* custom fields */
+  --doc-sidebar-bg-color: #F3F3F2;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
+  /* --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
   --ifm-color-primary-darkest: #1a8870;
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3); */
 
   /* custom fields */
-  --primary-text-color: #F5F5F5;
-  --secondary-text-color: #7A7A7A;
+  --doc-sidebar-bg-color: #231C1F;
+}
+
+#__docusaurus {
+  background: var(--doc-sidebar-bg-color);
 }
 
 .sr-only {
@@ -106,9 +110,15 @@ pre {
   padding: 0;
 }
 
-.menu__link {
+.table-of-contents>li {
+  margin: 0;
+}
+
+.menu__link,
+.table-of-contents>li {
   font-size: 0.8rem;
   padding: 0.5rem;
+  font-weight: normal;
 }
 
 li.theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-1.menu__list-item {
@@ -117,4 +127,19 @@ li.theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-1.menu__list-it
 
 .menu__list-item:not(:first-child) {
   margin-top: 0;
+}
+
+.col {
+  padding: 0;
+}
+
+.menu__list:first-child {
+  margin-top: 10px;
+}
+
+.menu__link--active {
+  background: hsla(0, 0%, 100%, .95);
+  border: 0.5px solid rgba(0, 0, 0, .065);
+  box-shadow: 0 3px 3px rgba(0, 0, 0, .05);
+  color: rgba(0, 0, 0, .91);
 }
