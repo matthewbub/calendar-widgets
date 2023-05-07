@@ -101,3 +101,20 @@ pre {
   line-height: 1.45;
   padding: 16px;
 }
+
+.table-of-contents {
+  padding: 0;
+}
+
+.menu__link {
+  font-size: 0.8rem;
+  padding: 0.5rem;
+}
+
+li.theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-1.menu__list-item {
+  padding: 0;
+}
+
+.menu__list-item:not(:first-child) {
+  margin-top: 0;
+}
