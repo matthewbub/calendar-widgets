@@ -3,6 +3,8 @@ import React from 'react';
 
 /** Types */
 import { BaseDayComponentProps, BaseDayNameComponentProps } from './components';
+
+/** Custom Header & Footer */
 export interface CustomHeaderFooterRendererProps {
   handleNextMonth: () => void;
   handlePrevMonth: () => void;
@@ -23,6 +25,20 @@ export type CustomHeaderAndFooterRenderer = ({
   today
 }: CustomHeaderFooterRendererProps) => React.ReactElement;
 
+/** Custom Dates */
+export interface CustomDate {
+  name: string;
+  date: Date;
+  className?: string;
+  tooltip?: string;
+  meta?: {
+    [key: string]: unknown;
+  }
+}
+
+export type CustomDates = CustomDate[];
+
+/** Calendar Component */
 export interface CalendarProps {
   date?: Date | {
     year: number;
@@ -45,5 +61,6 @@ export interface CalendarProps {
     dayName?: string;
     customFooter?: string;
     emptyCell?: string;
-  }
+  },
+  customDates?: CustomDates;
 }

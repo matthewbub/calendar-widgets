@@ -1,4 +1,4 @@
-import { magicNumber as mN } from '../../helpers';
+import { dateToNumbers, magicNumber as mN } from '../../helpers';
 
 /**
  * Returns the next month given a current month.
@@ -34,4 +34,28 @@ export const createCalendarWeeks = (days: (JSX.Element | null)[]) => {
   }
 
   return weeks;
+};
+
+/**
+ * Determines whether two dates represent the same day, regardless of the time of day.
+ *
+ * @param {Date} a - The first date to compare.
+ * @param {Date} b - The second date to compare.
+ * @returns {boolean} Returns true if the two dates represent the same day, false otherwise.
+ * @example
+ *  const customDate = customDates.find(cd => isSameDay(cd.date, currentDate));
+ */
+export const isSameDay = (a: Date, b: Date): boolean => {
+  const aN = dateToNumbers(a);
+  const bN = dateToNumbers(b);
+
+  const isSameYear = aN.year === bN.year;
+  const isSameMonth = aN.month === bN.month;
+  const isSameDate = aN.day === bN.day;
+
+  if (isSameYear && isSameMonth && isSameDate) {
+    return true;
+  }
+
+  return false;
 };

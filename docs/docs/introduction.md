@@ -43,11 +43,12 @@ To begin, you'll want to add the `calendar-widgets` package to a new or existing
 
 ## Design Principles
 
-- **Small learning curve.** If you're already familiar with basic React concepts such as the passing of props, you'll do great.
+- **Tiny learning curve.** If you're already familiar with basic React concepts such as the passing of props, you'll do great.
 - **Intuitive.** Library users won't feel restricted in capability or design. 
-- **Component driven architecture.** All components are designed using a component driven architecture for ease-of maintainability. 
+- **Component driven architecture.** All components are designed using a component driven architecture for ease-of-maintainability.
 - **No vendor lock-in.** Utilize your own state management libraries, CSS Frameworks, localization managers. We're only using React and React-DOM as peer dependencies here allowing your team to choose their preferred tools.
 - **Sensible default behavior** Components do what you expect them to do, out-of-the box. 
+- **Liftable.** All components, helpers and type declarations utilize JSDocs and are safe and accessible for you to use in your application. 
 
 
 ## Is this the right solution for me?

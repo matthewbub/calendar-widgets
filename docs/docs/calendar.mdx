@@ -171,3 +171,22 @@ Default value: `undefined`
 ```ts
 type style = React.CSSProperties | undefined;
 ```
+
+### `customDates` (optional)
+An array of custom dates to be displayed on the calendar. Each object in the array should have a `name`, `date`, and optionally a `className` and `tooltip` property. The date property should be a Date object. If there is a match, the user-defined custom date will be accesible it's corresponding day component via the `customDate` prop.
+
+Default value: `undefined`
+
+```ts
+export interface CustomDate {
+  name: string;
+  date: Date;
+  className?: string;
+  tooltip?: string;
+  meta?: {
+    [key: string]: unknown;
+  }
+}
+
+export type CustomDates = CustomDate[];
+```

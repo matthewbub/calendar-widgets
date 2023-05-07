@@ -6,7 +6,12 @@ import { CalendarProps } from './Calendar.types';
 
 /** Helpers */
 import { magicNumber as mN, dateToNumbers } from '../../helpers';
-import { getNextMonth, getPreviousMonth, createCalendarWeeks } from './Calendar.helpers';
+import {
+  getNextMonth,
+  getPreviousMonth,
+  createCalendarWeeks,
+  isSameDay
+} from './Calendar.helpers';
 
 /** Components */
 import {
@@ -41,6 +46,7 @@ import './styles/Calendar-grid.css';
 *   customFooter?: string;
 *   emptyCell?: string;
 * }} [customClassNames=classNames] - An object containing CSS class names to override the default class names used by the component.
+* @param {CustomDates} [customDates] - An array of custom dates to be displayed on the calendar. Each object in the array should have a `name`, `date`, and optionally a `className` and `tooltip` property. The `date` property should be a `Date` object.
 * @returns {React.ReactElement} A calendar component that displays the days of a month in a grid format.
 */
 const Calendar: FC<CalendarProps> = ({
@@ -54,7 +60,8 @@ const Calendar: FC<CalendarProps> = ({
   customHeader,
   customFooter,
   style,
-  customClassNames = classNames
+  customClassNames = classNames,
+  customDates
 }) => {
   const [currentDate, setCurrentDate] = useState(date);
   const { year, month, day } = dateToNumbers(currentDate);
@@ -90,12 +97,16 @@ const Calendar: FC<CalendarProps> = ({
       const isCurrentDay = i === day;
       const inSelectedMonth = currentDate.getFullYear() === year && currentDate.getMonth() === month - mN('1');
 
+      const safeCustomDates = customDates || [];
+      const customDate = safeCustomDates.find(({ date }) => isSameDay(date, currentDate));
+
       const dayComponent = showAdjacentDays || (i > mN('0') && i <= totalDays)
         ? (
           <DayComponent
             isCurrentDay={isCurrentDay}
             date={currentDate}
             inSelectedMonth={inSelectedMonth}
+            customDate={customDate}
           />
         ) : <div className={classNames.emptyCell} />;
 

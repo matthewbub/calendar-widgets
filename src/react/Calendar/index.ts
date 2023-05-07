@@ -5,7 +5,9 @@ export { default as Calendar } from './Calendar';
 export {
   CustomHeaderFooterRendererProps,
   CustomHeaderAndFooterRenderer,
-  CalendarProps
+  CalendarProps,
+  CustomDate,
+  CustomDates
 } from './Calendar.types';
 export { BaseDayNameComponentProps, BaseDayComponentProps } from './components';
 
@@ -13,5 +15,6 @@ export { BaseDayNameComponentProps, BaseDayComponentProps } from './components';
 export {
   getNextMonth,
   getPreviousMonth,
-  createCalendarWeeks
+  createCalendarWeeks,
+  isSameDay
 } from './Calendar.helpers';
