@@ -11,7 +11,7 @@ const BasicCalendar = () => {
   return (
     <Calendar
       date={new Date()}
-      dayComponent={DayComponent}
+      customDay={DayComponent}
     />
   );
 };

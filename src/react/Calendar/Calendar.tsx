@@ -29,7 +29,7 @@ import './styles/Calendar-grid.css';
  * A customizable calendar component that displays the days of a month in a grid format.
  *
  * @param {Date | {year: number, month: number, day: number}} [date=new Date()] - The date to display in the calendar. If an object is passed, it should have year, month, and day properties.
- * @param {BaseDayComponentProps | ((props: BaseDayComponentProps) => React.ReactElement)} [dayComponent=BaseDayComponent] - The component used to display each day in the calendar.
+ * @param {BaseDayComponentProps | ((props: BaseDayComponentProps) => React.ReactElement)} [customDay=BaseDayComponent] - The component used to display each day in the calendar.
  * @param {BaseDayNameComponentProps} [dayNameComponent=BaseDayNameComponent] - The component used to display each day name in the calendar.
  * @param {boolean} [showAdjacentDays=true] - Whether to display days from the previous and next months that are adjacent to the displayed month.
  * @param {string[]} [dayNames=['S', 'M', 'T', 'W', 'T', 'F', 'S']] - An array of strings that represent the names of the days of the week. The first element represents Sunday, the second represents Monday, and so on.
@@ -51,7 +51,7 @@ import './styles/Calendar-grid.css';
 */
 const Calendar: FC<CalendarProps> = ({
   date = new Date(),
-  dayComponent = BaseDayComponent,
+  customDay = BaseDayComponent,
   dayNameComponent = BaseDayNameComponent,
   showAdjacentDays = true,
   dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
@@ -65,7 +65,7 @@ const Calendar: FC<CalendarProps> = ({
 }) => {
   const [currentDate, setCurrentDate] = useState(date);
   const { year, month, day } = dateToNumbers(currentDate);
-  const DayComponent = dayComponent;
+  const DayComponent = customDay;
   const DayNameComponent = dayNameComponent;
   const CustomHeader = customHeader || null;
   const CustomFooter = customFooter || null;
@@ -92,7 +92,7 @@ const Calendar: FC<CalendarProps> = ({
     const startWeekday = start.getDay();
     const totalDays = end.getDate();
 
-    for (let i = mN('1') - startWeekday;i <= totalDays + mN('6') - end.getDay();i += mN('1')) {
+    for (let i = mN('1') - startWeekday; i <= totalDays + mN('6') - end.getDay(); i += mN('1')) {
       const currentDate = new Date(year, start.getMonth(), i);
       const isCurrentDay = i === day;
       const inSelectedMonth = currentDate.getFullYear() === year && currentDate.getMonth() === month - mN('1');

@@ -35,9 +35,9 @@ type date = Date | {year: number, month: number, day: number};
 
 ### `onChange` (optional) ⚠️
 
-> Coming soon. This prop is not yet implemented, but will be in a future release. For now, you can define your own onChange handler by using the `dayComponent` prop.
+> Coming soon. This prop is not yet implemented, but will be in a future release. For now, you can define your own onChange handler by using the `customDay` prop.
 
-### `dayComponent` (optional)
+### `customDay` (optional)
 
 The component used to display each day in the calendar. 
 
@@ -50,7 +50,7 @@ interface BaseDayComponentProps {
   inSelectedMonth: boolean;
 }
 
-type dayComponent = BaseDayComponentProps | ((props: BaseDayComponentProps) => React.ReactElement)
+type customDay = BaseDayComponentProps | ((props: BaseDayComponentProps) => React.ReactElement)
 ```
 
 ### `dayNameComponent` (optional)
