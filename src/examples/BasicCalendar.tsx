@@ -5,7 +5,7 @@ const BasicCalendar = () => {
   return (
     <Calendar
       date={new Date()}
-      dayComponent={({ date, isCurrentDay }: { date: Date, isCurrentDay: boolean }) => (
+      customDay={({ date, isCurrentDay }: { date: Date, isCurrentDay: boolean }) => (
         <div style={{ height: '34px', width: '14.28%', textAlign: 'center' }}>
           {date.getDate()}
           {isCurrentDay && <span style={{ color: 'red' }}>*</span>}

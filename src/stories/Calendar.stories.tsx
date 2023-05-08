@@ -14,7 +14,7 @@ const meta = {
 export const Basic: StoryObj<typeof Calendar> = {
   args: {
     date: new Date(),
-    dayComponent: ({ date }) =>
+    customDay: ({ date }) =>
       <div>
         {date.getDate()}
       </div>

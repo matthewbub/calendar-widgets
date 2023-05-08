@@ -29,8 +29,8 @@ import './styles/Calendar-grid.css';
  * A customizable calendar component that displays the days of a month in a grid format.
  *
  * @param {Date | {year: number, month: number, day: number}} [date=new Date()] - The date to display in the calendar. If an object is passed, it should have year, month, and day properties.
- * @param {BaseDayComponentProps | ((props: BaseDayComponentProps) => React.ReactElement)} [dayComponent=BaseDayComponent] - The component used to display each day in the calendar.
- * @param {BaseDayNameComponentProps} [dayNameComponent=BaseDayNameComponent] - The component used to display each day name in the calendar.
+ * @param {BaseDayComponentProps | ((props: BaseDayComponentProps) => React.ReactElement)} [customDay=BaseDayComponent] - The component used to display each day in the calendar.
+ * @param {BaseDayNameComponentProps} [customDayName=BaseDayNameComponent] - The component used to display each day name in the calendar.
  * @param {boolean} [showAdjacentDays=true] - Whether to display days from the previous and next months that are adjacent to the displayed month.
  * @param {string[]} [dayNames=['S', 'M', 'T', 'W', 'T', 'F', 'S']] - An array of strings that represent the names of the days of the week. The first element represents Sunday, the second represents Monday, and so on.
  * @param {string[]} [dayNameToolTips] - An optional array of strings that represent the tooltips to display for each day name. If provided, it should have 7 elements in the same order as dayNames.
@@ -51,8 +51,8 @@ import './styles/Calendar-grid.css';
 */
 const Calendar: FC<CalendarProps> = ({
   date = new Date(),
-  dayComponent = BaseDayComponent,
-  dayNameComponent = BaseDayNameComponent,
+  customDay = BaseDayComponent,
+  customDayName = BaseDayNameComponent,
   showAdjacentDays = true,
   dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
   dayNameToolTips,
@@ -65,8 +65,8 @@ const Calendar: FC<CalendarProps> = ({
 }) => {
   const [currentDate, setCurrentDate] = useState(date);
   const { year, month, day } = dateToNumbers(currentDate);
-  const DayComponent = dayComponent;
-  const DayNameComponent = dayNameComponent;
+  const DayComponent = customDay;
+  const DayNameComponent = customDayName;
   const CustomHeader = customHeader || null;
   const CustomFooter = customFooter || null;
 

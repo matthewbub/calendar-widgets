@@ -3,7 +3,7 @@
 Easy-to-use, _slightly_ un-styled React-based components that provide the out-of-the-box behavior you might see in popular Calendar applications.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/9mbs/calendar-widgets/blob/v0.0.13/LICENSE)
-![Current bundle size: 8.01 kB](https://img.shields.io/badge/Bundle_Size-8.01_kB-blue.svg)
+![Current bundle size: 9.29 kB](https://img.shields.io/badge/Bundle_Size-9.29_kB-blue.svg)
 
 
 - [Documentation](https://calendar-widgets.com)
