@@ -1,6 +1,6 @@
 # calendar-widgets
 
-Easy-to-use, _slightly_ un-styled React-based components that provide the out-of-the-box behavior you might see in popular Calendar applications.
+Craft beautifully robust **date** components in React.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/9mbs/calendar-widgets/blob/v0.0.13/LICENSE)
 ![Current bundle size: 9.29 kB](https://img.shields.io/badge/Bundle_Size-9.29_kB-blue.svg)
@@ -15,7 +15,51 @@ Easy-to-use, _slightly_ un-styled React-based components that provide the out-of
 
 ## Getting Started
 
-> ⚠️ Under active development ⚠️
+To begin, you'll want to add the `calendar-widgets` package to a new or existing React project. 
+
+```sh
+# npm
+npm install calendar-widgets
+
+# yarn
+yarn add calendar-widgets
+
+# pnpm
+pnpm add calendar-widgets
+```
+
+## Examples
+To help you get started, take a look at this simple implementation of a Calendar. Here we're overriding the default component used to display a particular date with our custom variation. 
+
+We're also passing an array of custom dates. When the custom date's `date` aligns with the `date` in our `CustomDay` component, we'll have access to that custom date. 
+
+```jsx
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+
+/* defining an optional custom day component */
+const CustomDay = ({date, customDate}) => (
+  <div>
+    <b>{date.getDate()}</b>
+    {customDate?.name && <small>{customDate?.name}</small>}
+  </div>
+);
+
+const App = () => {
+  return (
+    <Calendar 
+      customDay={CustomDay}
+      customDates={[
+        {
+          name: 'Lisa\'s Birthday',
+          date: new Date(2023, 4, 10)
+        }
+        // ...
+      ]}
+    />
+  )
+};
+```
 
 ## Contributing
 
