@@ -13,9 +13,6 @@ dependencies:
   '@mdx-js/react':
     specifier: ^1.6.22
     version: 1.6.22(react@17.0.2)
-  calender-widgets:
-    specifier: file:../
-    version: file:..(react-dom@17.0.2)(react@17.0.2)
   clsx:
     specifier: ^1.2.1
     version: 1.2.1
@@ -8560,17 +8557,4 @@ packages:
 
   /zwitch@1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
-    dev: false
-
-  file:..(react-dom@17.0.2)(react@17.0.2):
-    resolution: {directory: .., type: directory}
-    id: file:..
-    name: calendar-widgets
-    version: 0.0.13
-    peerDependencies:
-      react: 18.2.0
-      react-dom: 18.2.0
-    dependencies:
-      react: 17.0.2
-      react-dom: 17.0.2(react@17.0.2)
     dev: false
