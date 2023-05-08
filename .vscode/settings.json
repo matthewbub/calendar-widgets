@@ -1,15 +1,6 @@
 {
   "cSpell.words": [
-    "abril",
-    "agosto",
-    "diciembre",
-    "enero",
-    "febrero",
-    "junio",
-    "marzo",
-    "noviembre",
-    "octubre",
-    "septiembre"
+    "CLASSNAME"
   ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true

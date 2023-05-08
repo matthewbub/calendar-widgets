@@ -11,5 +11,11 @@ module.exports = {
     'ecmaVersion': 'latest',
     'sourceType': 'module'
   },
-  'plugins': ['react', '@typescript-eslint']
+  'plugins': ['react', '@typescript-eslint'],
+  'rules': {
+    '@typescript-eslint/no-unused-vars': 'off',
+    'no-extra-parens': 'off',
+    'no-shadow': 'off',
+    'prefer-destructuring': 'off',
+  }
 };

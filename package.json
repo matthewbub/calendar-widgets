@@ -4,15 +4,17 @@
   "main": "./dist/bundle.js",
   "type": "module",
   "module": "./dist/bundle.es.js",
-  "types": "@types/calendar-widgets/index.d.ts",
+  "types": "/dist/index.d.ts",
   "scripts": {
     "lint": "eslint -c .eslintrc.cjs ./src --ext .ts,.tsx",
     "lint:debug": "eslint -c .eslintrc.cjs ./src --ext .ts,.tsx --debug",
     "lint:fix": "eslint ./src --ext .ts,.tsx --fix",
-    "build": "rollup -c ./rollup.config.prod.js",
-    "dev": "rollup -c ./rollup.config.dev.js -w",
+    "build": "rimraf ./dist && rollup -c ./rollup.config.prod.js",
+    "dev": "rimraf ./dist && rollup -c ./rollup.config.dev.js",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "clean:docs": "cd docs && rimraf .docusaurus node_modules pnpm-lock.yaml build && pnpm install",
+    "dev:docs": "pnpm run dev && pnpm run clean:docs && cd docs && pnpm run start"
   },
   "keywords": [
     "calendar",
@@ -50,6 +52,7 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "rimraf": "^5.0.0",
     "rollup": "^3.20.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",

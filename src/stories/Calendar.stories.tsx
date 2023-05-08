@@ -1,26 +1,21 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import Calendar from '../components/Calendar';
+import { Calendar } from '../react';
+import BasicCalendarV2 from '../examples/BasicCalendarV2';
 
 const meta = {
   title: 'calendar-widgets/Calendar',
-  component: Calendar,
+  component: BasicCalendarV2,
   args: {
-    year: 2021,
-    month: 1,
-    day: 1
+    date: new Date()
   }
 } satisfies Meta<typeof Calendar>;
 
 export const Basic: StoryObj<typeof Calendar> = {
   args: {
-    year: 2021,
-    month: 1,
-    day: 1,
-    dayComponent: ({ date }) =>
-      <div onClick={() => {
-        // console.log(date);
-      }}>
+    date: new Date(),
+    customDay: ({ date }) =>
+      <div>
         {date.getDate()}
       </div>
   }
