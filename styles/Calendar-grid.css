@@ -1,0 +1,37 @@
+.calendar-widgets__Calendar__component-interface {
+  width: 250px;
+  border: 1px solid rgb(0, 0, 0, 0.1);
+  padding: 0.5em;
+  border-radius: 0.25em;
+}
+
+.calendar-widgets__Calendar__component {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-widgets__Calendar__custom-header,
+.calendar-widgets__Calendar__custom-footer {
+  width: 100%;
+  min-height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-widgets__Calendar__BaseDayComponent__outside-current-month {
+  color: rgb(0, 0, 0, 0.5);
+}
+
+.calendar-widgets__Calendar__day-name,
+.calendar-widgets__Calendar__BaseDayComponent__base-day {
+  text-align: center;
+  font-size: .7em;
+  padding: 0.5em;
+}
+
+.calendar-widgets__Calendar__day-name {
+  background: #5189EC;
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}

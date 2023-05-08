@@ -4,6 +4,9 @@ import { Calendar } from '../react';
 import { CustomHeaderFooterRendererProps } from '../react/Calendar/Calendar.types';
 import { newDate } from '../helpers/newDate';
 
+/** Styles */
+import '../../styles/Calendar-grid.css';
+
 const ButtonStyles = {
   backgroundColor: 'transparent',
   border: '1px solid #ccc',

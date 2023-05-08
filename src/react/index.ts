@@ -3,7 +3,16 @@ export { Calendar } from './Calendar';
 export { DraggableDay } from './DraggableDay';
 
 /** Context */
-export { CalendarWidgetsProvider, useCalendarWidgetsContext } from './CalendarWidgetsContext';
+export {
+  CalendarWidgetsProvider,
+  useCalendarWidgetsContext
+} from './CalendarWidgetsContext';
 
 /** Types */
-export type { CustomHeaderFooterRendererProps, CustomHeaderAndFooterRenderer, CalendarProps } from './Calendar';
+export type {
+  CustomHeaderFooterRendererProps,
+  CustomHeaderAndFooterRenderer,
+  CalendarProps,
+  CustomDayNameProps,
+  CustomDayProps
+} from './Calendar';

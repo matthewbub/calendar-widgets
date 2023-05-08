@@ -1,5 +1,9 @@
 /** Components */
 export { default as Calendar } from './Calendar';
+export {
+  BaseDayComponent,
+  BaseDayNameComponent
+} from './components';
 
 /** Types */
 export {
@@ -9,7 +13,11 @@ export {
   CustomDate,
   CustomDates
 } from './Calendar.types';
-export { BaseDayNameComponentProps, BaseDayComponentProps } from './components';
+
+export {
+  BaseDayNameComponentProps as CustomDayNameProps,
+  BaseDayComponentProps as CustomDayProps
+} from './components';
 
 /** Helpers */
 export {

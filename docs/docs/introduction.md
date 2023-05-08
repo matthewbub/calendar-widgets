@@ -9,9 +9,7 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Introduction
 
-A completely open source React component library that aims to ease the pain of Calendar and time management related development. An extremely light-weight, simplification of the calendar and time-management development experience. 
-
-Calendar Widget does not depend on 3rd party packages beyond React and React-DOM, but those are just peer dependencies. 
+Craft beautifully robust **date** components in React. 
 
 ## Getting Started
 
@@ -41,17 +39,88 @@ To begin, you'll want to add the `calendar-widgets` package to a new or existing
   </TabItem>
 </Tabs>
 
-## Examples
-To help you get started, take a look at this simple implementation of a Calendar. 
+To help you get started, take a look at this simple implementation of a Calendar. Here we're overriding the default component used to display a particular date with our custom variation. 
+
+We're also passing an array of custom dates. When the custom date's `date` aligns with the `date` in our `CustomDay` component, we'll have access to that custom date. 
+
+
+<Tabs defaultValue="typescript">
+  <TabItem value="javascript" label="jsx">
+
+
+
 
 ```jsx
 import React from 'react';
 import { Calendar } from 'calendar-widgets';
 
+/* defining an optional custom day component */
+const CustomDay = ({date, customDate}) => (
+  <div>
+    <b>{date.getDate()}</b>
+    {customDate?.name && <small>{customDate?.name}</small>}
+  </div>
+);
+
 const App = () => {
-  return <Calendar />
-}
+  return (
+    <Calendar 
+      customDay={CustomDay}
+      customDates={[
+        {
+          name: 'Lisa\'s Birthday',
+          date: new Date(2023, 4, 10)
+        }
+        // ...
+      ]}
+    />
+  )
+};
 ```
+
+
+  </TabItem>
+  <TabItem value="typescript" label="tsx">
+
+
+
+
+```tsx
+import React, { FC } from 'react';
+import { Calendar, CustomDayProps } from 'calendar-widgets';
+
+/* defining an optional custom day component */
+const CustomDay: FC<CustomDayProps> = ({date, customDate}) => (
+  <div>
+    <b>{date.getDate()}</b>
+    
+    {customDate?.name && (
+      <small>{customDate?.name}</small>
+    )}
+  </div>
+);
+
+const App = () => {
+  return (
+    <Calendar 
+      customDay={CustomDay}
+      customDates={[
+        {
+          name: 'Lisa\'s Birthday',
+          date: new Date(2023, 4, 10)
+        }
+        // ...
+      ]}
+    />
+  )
+};
+```
+
+
+
+  </TabItem>
+  
+</Tabs>
 
 ## Design Principles
 
