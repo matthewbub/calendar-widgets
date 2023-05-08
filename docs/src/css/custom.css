@@ -4,39 +4,31 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-
   /* fonts */
   --ifm-font-family-base: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --ifm-font-family-monospace: 'IBM Plex Mono', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   /* custom fields */
   --doc-sidebar-bg-color: #F3F3F2;
+  --cw-secondary-bg: rgba(255, 255, 255, 0.95);
+  --cw-secondary-border: rgba(0, 0, 0, .065);
+  --cw-secondary-box-shadow: rgba(0, 0, 0, .05);
+  --cw-secondary-color: rgba(0, 0, 0, .9);
+  --cw-secondary-hover-bg: rgba(0, 0, 0, .06);
+  --cw-secondary-active-bg: rgba(255, 255, 255, 0.95);
+  --cw-article: #FFF;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  /* --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3); */
-
-  /* custom fields */
-  --doc-sidebar-bg-color: #231C1F;
+  --doc-sidebar-bg-color: #242224;
+  --cw-secondary-bg: rgb(60, 56, 58);
+  --cw-secondary-border: rgba(0, 0, 0, .065);
+  --cw-secondary-box-shadow: rgba(0, 0, 0, .05);
+  --cw-secondary-color: rgba(255, 255, 255, 0.8);
+  --cw-secondary-hover-bg: rgba(255, 255, 255, 0.05);
+  --cw-secondary-active-bg: rgb(60, 56, 58);
+  --cw-article: rgba(5, 5, 5, .55);
 }
 
 #__docusaurus {
@@ -95,7 +87,8 @@ h3 {
 }
 
 p,
-p>a {
+p>a,
+li {
   font-size: 14px;
   line-height: 1.5;
 }
@@ -106,18 +99,22 @@ pre {
   padding: 16px;
 }
 
-.table-of-contents {
-  padding: 0;
+.menu__link {
+  padding: 0.5rem;
 }
 
-.table-of-contents>li {
-  margin: 0;
+.navbar {
+  background: var(--doc-sidebar-bg-color);
+  box-shadow: none;
+}
+
+.theme-doc-sidebar-container {
+  border-right: none;
 }
 
 .menu__link,
 .table-of-contents>li {
   font-size: 0.8rem;
-  padding: 0.5rem;
   font-weight: normal;
 }
 
@@ -133,13 +130,73 @@ li.theme-doc-sidebar-item-link.theme-doc-sidebar-item-link-level-1.menu__list-it
   padding: 0;
 }
 
-.menu__list:first-child {
-  margin-top: 10px;
+/* Nav Links */
+.menu__link,
+.table-of-contents__link {
+  color: var(--cw-secondary-color);
+  font-size: 0.8rem;
+  padding: 0.5rem;
+  font-weight: normal;
+  border-radius: 0.25rem;
+  line-height: 1.25;
 }
 
+.menu__link--active,
+.table-of-contents__link--active {
+  background: var(--cw-secondary-bg);
+  border: 0.5px solid var(--cw-secondary-border);
+  box-shadow: 0 3px 3px var(--cw-secondary-box-shadow);
+  color: var(--cw-secondary-color);
+}
+
+.menu__link:hover,
+.table-of-contents__link:hover {
+  background: var(--cw-secondary-hover-bg);
+  color: var(--cw-secondary-color);
+}
+
+.table-of-contents__link--active code,
+.table-of-contents__link:hover code {
+  color: var(--cw-secondary-color);
+}
+
+.breadcrumbs__link {
+  border-radius: 6px;
+}
+
+.menu__list-item-collapsible .menu__link--active,
 .menu__link--active {
-  background: hsla(0, 0%, 100%, .95);
-  border: 0.5px solid rgba(0, 0, 0, .065);
-  box-shadow: 0 3px 3px rgba(0, 0, 0, .05);
-  color: rgba(0, 0, 0, .91);
+  /* override docusaurus !important in styles */
+  background: var(--cw-secondary-active-bg) !important;
+}
+
+.menu__link--sublist-caret::after {
+  display: none;
+}
+
+/* Docs - Table of contents (Secondary desktop side nav) */
+.table-of-contents li {
+  margin: 0;
+}
+
+.table-of-contents__link {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+ul.table-of-contents ul {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+ul.table-of-contents li {
+  margin-left: 0;
+}
+
+@media (min-width: 997px) {
+  .table-of-contents {
+    padding: 0 1rem 0.5rem 0.5rem;
+    width: 260px;
+  }
 }

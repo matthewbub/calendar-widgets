@@ -1,12 +1,6 @@
 :root {
   --doc-sidebar-width: 300px;
   --doc-sidebar-hidden-width: 30px;
-  --doc-sidebar-bg-color: #F3F3F2;
-}
-
-
-[data-theme='dark'] {
-  --doc-sidebar-bg-color: #231C1F;
 }
 
 .docSidebarContainer {
@@ -17,8 +11,10 @@
   .docSidebarContainer {
     display: block;
     width: 180px;
-    margin-top: calc(-1 * var(--ifm-navbar-height));
-    border-right: 1px solid var(--ifm-toc-border-color);
+    max-height: calc(100vh - (var(--ifm-navbar-height) + 2rem));
+    overflow-y: auto;
+    position: sticky;
+    top: calc(var(--ifm-navbar-height) + 1rem);
     will-change: width;
     transition: width var(--ifm-transition-fast) ease;
     clip-path: inset(0);
