@@ -7,12 +7,12 @@ dependencies:
   '@docusaurus/preset-classic':
     specifier: 2.4.0
     version: 2.4.0(@algolia/client-search@4.17.0)(react-dom@17.0.2)(react@17.0.2)(typescript@5.0.4)
+  '@docusaurus/theme-common':
+    specifier: ^2.4.0
+    version: 2.4.0(@docusaurus/types@2.4.0)(react-dom@17.0.2)(react@17.0.2)(typescript@5.0.4)
   '@mdx-js/react':
     specifier: ^1.6.22
     version: 1.6.22(react@17.0.2)
-  calender-widgets:
-    specifier: file:../
-    version: file:..(react-dom@17.0.2)(react@17.0.2)
   clsx:
     specifier: ^1.2.1
     version: 1.2.1
@@ -634,7 +634,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.21.5
       '@babel/plugin-syntax-object-rest-spread': 7.8.3(@babel/core@7.12.9)
       '@babel/plugin-transform-parameters': 7.21.3(@babel/core@7.12.9)
     dev: false
@@ -8557,17 +8557,4 @@ packages:
 
   /zwitch@1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
-    dev: false
-
-  file:..(react-dom@17.0.2)(react@17.0.2):
-    resolution: {directory: .., type: directory}
-    id: file:..
-    name: calendar-widgets
-    version: 0.0.13
-    peerDependencies:
-      react: 18.2.0
-      react-dom: 18.2.0
-    dependencies:
-      react: 17.0.2
-      react-dom: 17.0.2(react@17.0.2)
     dev: false

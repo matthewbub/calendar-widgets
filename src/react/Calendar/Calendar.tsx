@@ -6,31 +6,69 @@ import { CalendarProps } from './Calendar.types';
 
 /** Helpers */
 import { magicNumber as mN, dateToNumbers } from '../../helpers';
-import { getNextMonth, getPreviousMonth, createCalendarWeeks } from './Calendar.helpers';
+import {
+  getNextMonth,
+  getPreviousMonth,
+  createCalendarWeeks,
+  isSameDay
+} from './Calendar.helpers';
 
 /** Components */
-import { BaseDayComponent } from './components';
+import {
+  BaseDayComponent,
+  BaseDayNameComponent
+} from './components';
 
 /** Constants */
 import { classNames } from './Calendar.constants';
 
 /** Styles */
-import './Calendar-grid.css';
+import './styles/Calendar-grid.css';
 
+/**
+ * A customizable calendar component that displays the days of a month in a grid format.
+ *
+ * @param {Date | {year: number, month: number, day: number}} [date=new Date()] - The date to display in the calendar. If an object is passed, it should have year, month, and day properties.
+ * @param {BaseDayComponentProps | ((props: BaseDayComponentProps) => React.ReactElement)} [dayComponent=BaseDayComponent] - The component used to display each day in the calendar.
+ * @param {BaseDayNameComponentProps} [dayNameComponent=BaseDayNameComponent] - The component used to display each day name in the calendar.
+ * @param {boolean} [showAdjacentDays=true] - Whether to display days from the previous and next months that are adjacent to the displayed month.
+ * @param {string[]} [dayNames=['S', 'M', 'T', 'W', 'T', 'F', 'S']] - An array of strings that represent the names of the days of the week. The first element represents Sunday, the second represents Monday, and so on.
+ * @param {string[]} [dayNameToolTips] - An optional array of strings that represent the tooltips to display for each day name. If provided, it should have 7 elements in the same order as dayNames.
+ * @param {string} [className] - The CSS class name to apply to the top-level element of the calendar.
+ * @param {CustomHeaderAndFooterRenderer} [customHeader] - A function that returns the custom header element for the calendar. It receives an object with the following properties: handleNextMonth, handlePrevMonth, nextMonth, prevMonth, selectedMonth, selectedYear, and today.
+ * @param {CustomHeaderAndFooterRenderer} [customFooter] - A function that returns the custom footer element for the calendar. It receives an object with the following properties: handleNextMonth, handlePrevMonth, nextMonth, prevMonth, selectedMonth, selectedYear, and today.
+ * @param {React.CSSProperties} [style] - An object containing the inline style of the top-level element of the calendar.
+ * @param {{
+*   componentInterface?: string;
+*   customHeader?: string;
+*   component?: string;
+*   dayName?: string;
+*   customFooter?: string;
+*   emptyCell?: string;
+* }} [customClassNames=classNames] - An object containing CSS class names to override the default class names used by the component.
+* @param {CustomDates} [customDates] - An array of custom dates to be displayed on the calendar. Each object in the array should have a `name`, `date`, and optionally a `className` and `tooltip` property. The `date` property should be a `Date` object.
+* @returns {React.ReactElement} A calendar component that displays the days of a month in a grid format.
+*/
 const Calendar: FC<CalendarProps> = ({
   date = new Date(),
   dayComponent = BaseDayComponent,
+  dayNameComponent = BaseDayNameComponent,
   showAdjacentDays = true,
   dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
+  dayNameToolTips,
   className,
   customHeader,
   customFooter,
   style,
-  customClassNames = classNames
+  customClassNames = classNames,
+  customDates
 }) => {
   const [currentDate, setCurrentDate] = useState(date);
   const { year, month, day } = dateToNumbers(currentDate);
   const DayComponent = dayComponent;
+  const DayNameComponent = dayNameComponent;
+  const CustomHeader = customHeader || null;
+  const CustomFooter = customFooter || null;
 
   const handleNextMonth = (stop?: null) => {
     if (stop === null) {
@@ -55,12 +93,22 @@ const Calendar: FC<CalendarProps> = ({
     const totalDays = end.getDate();
 
     for (let i = mN('1') - startWeekday;i <= totalDays + mN('6') - end.getDay();i += mN('1')) {
-      const currentDate = new Date(year, month - mN('1'), i);
+      const currentDate = new Date(year, start.getMonth(), i);
       const isCurrentDay = i === day;
+      const inSelectedMonth = currentDate.getFullYear() === year && currentDate.getMonth() === month - mN('1');
+
+      const safeCustomDates = customDates || [];
+      const customDate = safeCustomDates.find(({ date }) => isSameDay(date, currentDate));
 
       const dayComponent = showAdjacentDays || (i > mN('0') && i <= totalDays)
-        ? <DayComponent isCurrentDay={isCurrentDay} date={currentDate} />
-        : <div className={classNames.emptyCell} />;
+        ? (
+          <DayComponent
+            isCurrentDay={isCurrentDay}
+            date={currentDate}
+            inSelectedMonth={inSelectedMonth}
+            customDate={customDate}
+          />
+        ) : <div className={classNames.emptyCell} />;
 
       days.push(dayComponent);
     }
@@ -81,35 +129,38 @@ const Calendar: FC<CalendarProps> = ({
     prevMonth: getPreviousMonth(month)
   };
 
+  const validTooltips = dayNameToolTips && dayNameToolTips.length === mN('7');
+  const tooltips = validTooltips ? dayNameToolTips : dayNames;
+
   return (
     <div
       className={className ? className : customClassNames.componentInterface}
       style={style}
     >
-      {customHeader && (
+      {CustomHeader && (
         <div className={customClassNames.customHeader}>
-          {customHeader(customHeaderFooterProps)}
+          <CustomHeader {...customHeaderFooterProps} />
         </div>
       )}
 
       <div className={customClassNames.component}>
-        {dayNames.map((dayName, idx) =>
-          <div
+        {dayNames.map((dayName, idx) => (
+          <DayNameComponent
             key={idx}
             className={customClassNames.dayName}
-          >
-            {dayName}
-          </div>
-        )}
+            label={dayName}
+            tooltip={tooltips[idx]}
+          />
+        ))}
 
         <Fragment>
           {weeks}
         </Fragment>
       </div>
 
-      {customFooter && (
+      {CustomFooter && (
         <div className={customClassNames.customFooter}>
-          {customFooter(customHeaderFooterProps)}
+          <CustomFooter {...customHeaderFooterProps} />
         </div>
       )}
     </div>

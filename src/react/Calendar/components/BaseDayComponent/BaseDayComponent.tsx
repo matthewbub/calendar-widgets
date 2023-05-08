@@ -7,10 +7,19 @@ import { BaseDayComponentProps } from './BaseDayComponent.types';
 /** Constants */
 import { classNames } from './BaseDayComponent.constants';
 
-const BaseDayComponent = ({ date }: BaseDayComponentProps) => {
+import { cl } from '../../../../helpers';
+
+const BaseDayComponent: React.FC<BaseDayComponentProps> = ({ date, inSelectedMonth, customDate }) => {
   return (
-    <div className={classNames.baseDay}>
-      {date.getTime()}
+    <div
+      className={cl(
+        classNames.baseDay,
+        !inSelectedMonth && classNames.outsideCurrentMonth,
+        customDate?.className
+      )}
+      title={customDate?.tooltip}
+    >
+      {date.getDate()}
     </div>
   );
 };

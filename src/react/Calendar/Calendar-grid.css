@@ -1,9 +1,0 @@
-.calendar-widgets__Calendar__component {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-}
-
-.calendar-widgets__Calendar__custom-header,
-.calendar-widgets__Calendar__custom-footer {
-  width: 100%;
-}

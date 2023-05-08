@@ -79,8 +79,8 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Discord",
-                href: "https://discord.gg/4qArE7Z4mC",
+                label: "Code of Conduct",
+                href: "code-of-conduct",
               },
               {
                 label: "Report a bug",

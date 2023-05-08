@@ -5,12 +5,16 @@ export { default as Calendar } from './Calendar';
 export {
   CustomHeaderFooterRendererProps,
   CustomHeaderAndFooterRenderer,
-  CalendarProps
+  CalendarProps,
+  CustomDate,
+  CustomDates
 } from './Calendar.types';
+export { BaseDayNameComponentProps, BaseDayComponentProps } from './components';
 
 /** Helpers */
 export {
   getNextMonth,
   getPreviousMonth,
-  createCalendarWeeks
+  createCalendarWeeks,
+  isSameDay
 } from './Calendar.helpers';

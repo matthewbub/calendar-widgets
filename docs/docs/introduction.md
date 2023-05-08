@@ -1,9 +1,19 @@
 ---
 sidebar_position: 1
-slug: /introduction
+slug: /
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
 # Introduction
+
+A completely open source React component library that aims to ease the pain of Calendar and time management related development. An extremely light-weight, simplification of the calendar and time-management development experience. 
+
+Calendar Widget does not depend on 3rd party packages beyond React and React-DOM, but those are just peer dependencies. 
+
+## Getting Started
 
 :::caution
 
@@ -11,42 +21,41 @@ This SDK is actively being worked on and improved. It's in the alpha stages of d
 
 :::
 
-Working with dates sucks, working with calendars sucks even more. Here's an attempt at making things less sucky. 
+To begin, you'll want to add the `calendar-widgets` package to a new or existing React project. 
 
-Calendar Widgets is an extremely light-weight React library that does not depend on 3rd party packages, instead we use native JavaScript objects [`Date`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) and [`Intl`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) both of which are hardly "cutting edge". 
+<Tabs defaultValue="pnpm">
+  <TabItem value="npm" label="npm" default>
+    <CodeBlock language="sh">
+      {`npm install calendar-widgets`}
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="yarn" label="yarn">
+     <CodeBlock language="sh">
+      {`yarn add calendar-widgets`}
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="pnpm" label="pnpm">
+     <CodeBlock language="sh">
+      {`pnpm add calendar-widgets`}
+    </CodeBlock>
+  </TabItem>
+</Tabs>
 
-## Getting Started
+## Design Principles
 
-To begin, install the [`calendar-widgets`](https://www.npmjs.com/package/calendar-widgets) package from the NPM Registry.
-
-```shell
-# npm
-npm install calendar-widgets
-
-# yarn
-yarn add calendar-widgets
-
-# pnpm
-pnpm install calendar-widgets
-```
-
-Once the package is installed, you'll have access to an array of helpers and utilities that do a lot of the heavy lifting when it comes to dates and calendars. 
-
-## Helpers
-- [`listCalendarYear`](helpers/listCalendarYear) function
-- [`listDaysInMonth`](helpers/listDaysInMonth) function
-- `listLocalizedMonths` function
-
-## Utilities
-- [`formatDate`](utilities/formatDate) function
-- [`getDaysInMonth`](utilities/getDaysInMonth) function
-- [`isValidDay`](utilities/isValidDay) function
-- [`isValidYear`](utilities/isValidYear) function
-- [`isValidMonth`](utilities/isValidMonth) function
+- **Tiny learning curve.** If you're already familiar with basic React concepts such as the passing of props, you'll do great.
+- **Intuitive.** Library users won't feel restricted in capability or design. 
+- **Component driven architecture.** All components are designed using a component driven architecture for ease-of-maintainability.
+- **No vendor lock-in.** Utilize your own state management libraries, CSS Frameworks, localization managers. We're only using React and React-DOM as peer dependencies here allowing your team to choose their preferred tools.
+- **Sensible default behavior** Components do what you expect them to do, out-of-the box. 
+- **Liftable.** All components, helpers and type declarations utilize JSDocs and are safe and accessible for you to use in your application. 
 
 
-:::info
+## Is this the right solution for me?
 
-This document is actively being working on, more info coming soon!
+Our focus here is to provide library-users with the bare-bones functionality needed to develop calendar and date related interfaces. With an approach like this, there is less room for us to press our opinions on your team and more room for your team to focus on what matters - _extending the components to meet a products needs._
 
-:::
+You might also consider similar services in the open source community. These libraries tend to have more bells and whistles packed into them, which of course comes at a higher learning curve.
+
+- [FullCalendar](https://fullcalendar.io/)
+- [react-big-calendar](http://jquense.github.io/react-big-calendar/)
