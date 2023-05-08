@@ -37,38 +37,6 @@ type date = Date | {year: number, month: number, day: number};
 
 > Coming soon. This prop is not yet implemented, but will be in a future release. For now, you can define your own onChange handler by using the `customDay` prop.
 
-### `customDay` (optional)
-
-The component used to display each day in the calendar. 
-
-Default value: `BaseDayComponent`.
-
-```ts
-interface BaseDayComponentProps {
-  date: Date;
-  isCurrentDay: boolean;
-  inSelectedMonth: boolean;
-}
-
-type customDay = BaseDayComponentProps | ((props: BaseDayComponentProps) => React.ReactElement)
-```
-
-### `dayNameComponent` (optional)
-
-The component used to display each day name in the calendar. 
-
-Default value: `BaseDayNameComponent`
-
-```ts
-export interface BaseDayNameComponentProps {
-  label: string;
-  className?: string;
-  tooltip?: string;
-}
-
-type dayNameComponent = (props: BaseDayNameComponentProps) => React.ReactElement
-```
-
 ### `showAdjacentDays` (optional)
 
 Whether to display days from the previous and next months that are adjacent to the displayed month. 
@@ -97,6 +65,16 @@ Default value: `undefined`
 
 ```ts
 type dayNameToolTips = string[] | undefined;
+```
+
+### `style` (optional)
+
+An object containing the inline style of the top-level element of the calendar.
+
+Default value: `undefined`
+
+```ts
+type style = React.CSSProperties | undefined;
 ```
 
 ### `className` (optional)
@@ -161,14 +139,36 @@ type customFooter = (props: {
 }) => React.ReactElement;
 ```
 
-### `style` (optional)
+### `customDay` (optional)
 
-An object containing the inline style of the top-level element of the calendar.
+The component used to display each day in the calendar. 
 
-Default value: `undefined`
+Default value: `BaseDayComponent`.
 
 ```ts
-type style = React.CSSProperties | undefined;
+interface BaseDayComponentProps {
+  date: Date;
+  isCurrentDay: boolean;
+  inSelectedMonth: boolean;
+}
+
+type customDay = BaseDayComponentProps | ((props: BaseDayComponentProps) => React.ReactElement)
+```
+
+### `customDayName` (optional)
+
+The component used to display each day name in the calendar. 
+
+Default value: `BaseDayNameComponent`
+
+```ts
+export interface BaseDayNameComponentProps {
+  label: string;
+  className?: string;
+  tooltip?: string;
+}
+
+type customDayName = (props: BaseDayNameComponentProps) => React.ReactElement
 ```
 
 ### `customDates` (optional)

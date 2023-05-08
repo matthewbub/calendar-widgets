@@ -41,6 +41,18 @@ To begin, you'll want to add the `calendar-widgets` package to a new or existing
   </TabItem>
 </Tabs>
 
+## Examples
+To help you get started, take a look at this simple implementation of a Calendar. 
+
+```jsx
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+
+const App = () => {
+  return <Calendar />
+}
+```
+
 ## Design Principles
 
 - **Tiny learning curve.** If you're already familiar with basic React concepts such as the passing of props, you'll do great.
@@ -55,7 +67,7 @@ To begin, you'll want to add the `calendar-widgets` package to a new or existing
 
 Our focus here is to provide library-users with the bare-bones functionality needed to develop calendar and date related interfaces. With an approach like this, there is less room for us to press our opinions on your team and more room for your team to focus on what matters - _extending the components to meet a products needs._
 
-You might also consider similar services in the open source community. These libraries tend to have more bells and whistles packed into them, which of course comes at a higher learning curve.
+You could also explore comparable tools within the open source community. These libraries usually come with additional features and functionalities, though they may require a steeper learning curve.
 
 - [FullCalendar](https://fullcalendar.io/)
 - [react-big-calendar](http://jquense.github.io/react-big-calendar/)

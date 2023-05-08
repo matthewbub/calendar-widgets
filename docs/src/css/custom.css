@@ -200,3 +200,7 @@ ul.table-of-contents li {
     width: 260px;
   }
 }
+
+footer.theme-doc-footer.docusaurus-mt-lg {
+  padding: 0.5rem 0.75rem;
+}
