@@ -42,7 +42,10 @@ export default {
     }),
     babel({
       exclude: excluded,
-      presets: ['@babel/preset-react']
+      presets: ['@babel/preset-react'],
+      plugins: ['@babel/plugin-transform-runtime'],
+      babelHelpers: 'runtime',
+      extensions: ['.js', '.jsx', '.ts', '.tsx'],
     }),
     peerDepsExternal(),
     resolve(),
