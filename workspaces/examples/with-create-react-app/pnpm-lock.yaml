@@ -11,8 +11,8 @@ dependencies:
     specifier: ^13.5.0
     version: 13.5.0(@testing-library/dom@9.2.0)
   calendar-widgets:
-    specifier: 0.0.13-alpha.0
-    version: 0.0.13-alpha.0(react-dom@18.2.0)(react@18.2.0)
+    specifier: file:../../../
+    version: file:../../..(react-dom@18.2.0)(react@18.2.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -3407,7 +3407,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001486
-      electron-to-chromium: 1.4.386
+      electron-to-chromium: 1.4.387
       node-releases: 2.0.10
       update-browserslist-db: 1.0.11(browserslist@4.21.5)
     dev: false
@@ -3435,16 +3435,6 @@ packages:
   /bytes@3.1.2:
     resolution: {integrity: sha512-/Nf7TyzTx6S3yRJObOAV7956r8cr2+Oj8AC5dt8wSP3BQAoeX58NoHyCU8P8zGkNXStjTSi6fzO6F0pBdcYbEg==}
     engines: {node: '>= 0.8'}
-    dev: false
-
-  /calendar-widgets@0.0.13-alpha.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-YBYHH4gpuBiLs1NJHfTXBwNVC5St37zYSl5L6zx7N04PEwrvXAbfb3RJlqbJk47V6BWGzAnj1bbvqnLL9ql8fg==}
-    peerDependencies:
-      react: 18.2.0
-      react-dom: 18.2.0
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /call-bind@1.0.2:
@@ -4309,8 +4299,8 @@ packages:
       jake: 10.8.5
     dev: false
 
-  /electron-to-chromium@1.4.386:
-    resolution: {integrity: sha512-w0VD4WR225nuNsz6FokDaqugxzue6iUVBo8QfUrl2Y6nWHxtBUhjWDnUaG/1v5oWeFPLMJAQk3zKHTHW/P8+Og==}
+  /electron-to-chromium@1.4.387:
+    resolution: {integrity: sha512-tutLf+alr1/0YqJwKPdstVvDLmxmLb5xNyDLNS0RZmenHcEYk9qKfpKDCVZEKJ00JVbnayJm1MZAbYhYDFpcOw==}
     dev: false
 
   /emittery@0.10.2:
@@ -10286,4 +10276,17 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
+    dev: false
+
+  file:../../..(react-dom@18.2.0)(react@18.2.0):
+    resolution: {directory: ../../.., type: directory}
+    id: file:../../..
+    name: calendar-widgets
+    version: 0.0.13-alpha.1
+    peerDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
