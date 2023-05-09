@@ -53,6 +53,7 @@ We're also passing an array of custom dates. When the custom date's `date` align
 ```jsx
 import React from 'react';
 import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
 
 /* defining an optional custom day component */
 const CustomDay = ({date, customDate}) => (
@@ -88,6 +89,7 @@ const App = () => {
 ```tsx
 import React, { FC } from 'react';
 import { Calendar, CustomDayProps } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
 
 /* defining an optional custom day component */
 const CustomDay: FC<CustomDayProps> = ({date, customDate}) => (
