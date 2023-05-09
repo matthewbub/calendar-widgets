@@ -1,12 +1,13 @@
 {
   "name": "calendar-widgets",
-  "version": "0.0.13",
+  "version": "0.0.13-alpha.0",
   "main": "./dist/bundle.js",
   "type": "module",
   "module": "./dist/bundle.es.js",
   "types": "/dist/index.d.ts",
   "files": [
     "dist",
+    "src",
     "styles",
     "LICENSE"
   ],
