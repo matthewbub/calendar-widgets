@@ -11,8 +11,8 @@ dependencies:
     specifier: ^13.5.0
     version: 13.5.0(@testing-library/dom@9.2.0)
   calendar-widgets:
-    specifier: 0.0.13
-    version: 0.0.13(react-dom@18.2.0)(react@18.2.0)
+    specifier: 0.0.13-alpha.0
+    version: 0.0.13-alpha.0(react-dom@18.2.0)(react@18.2.0)
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -3437,8 +3437,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: false
 
-  /calendar-widgets@0.0.13(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-IayY/x4h7qRoN3mU7HN7Vph3B908SwkqP2P9Pmt7y9v5NwKEGQUM0ZFG/+4b0eS8Oewf/JLiZtxQ0afKbZ+vSQ==}
+  /calendar-widgets@0.0.13-alpha.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-YBYHH4gpuBiLs1NJHfTXBwNVC5St37zYSl5L6zx7N04PEwrvXAbfb3RJlqbJk47V6BWGzAnj1bbvqnLL9ql8fg==}
     peerDependencies:
       react: 18.2.0
       react-dom: 18.2.0
