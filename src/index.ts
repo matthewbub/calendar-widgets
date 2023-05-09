@@ -24,5 +24,7 @@ export {
 export type {
   CustomHeaderFooterRendererProps,
   CustomHeaderAndFooterRenderer,
-  CalendarProps
+  CalendarProps,
+  CustomDayNameProps,
+  CustomDayProps
 } from './react';

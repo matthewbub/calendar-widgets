@@ -17,12 +17,14 @@ export default {
   output: [
     {
       file: 'dist/bundle.js',
-      format: 'cjs', 
+      format: 'cjs',
+      sourcemap: true, 
     },
     {
       file: 'dist/bundle.es.js',
       format: 'es', 
-      exports: 'named'
+      exports: 'named',
+      sourcemap: true,
     },
   ],
   plugins: [

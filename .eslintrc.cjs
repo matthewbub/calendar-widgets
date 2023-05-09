@@ -4,14 +4,14 @@ module.exports = {
     'es2021': true,
     'node': true
   },
-  'extends': ["eslint:recommended", "plugin:react/recommended", "plugin:@typescript-eslint/recommended", "plugin:storybook/recommended", "@calendar-widgets/eslint-config"],
+  'extends': ["eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:storybook/recommended", "@calendar-widgets/eslint-config"],
   'overrides': [],
   'parser': '@typescript-eslint/parser',
   'parserOptions': {
     'ecmaVersion': 'latest',
     'sourceType': 'module'
   },
-  'plugins': ['react', '@typescript-eslint'],
+  'plugins': ['@typescript-eslint'],
   'rules': {
     '@typescript-eslint/no-unused-vars': 'off',
     'no-extra-parens': 'off',

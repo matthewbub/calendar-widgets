@@ -27,7 +27,7 @@ export const getPreviousMonth = (month: number) => {
  * const weeks = createCalendarWeeks(days);
 */
 export const createCalendarWeeks = (days: (JSX.Element | null)[]) => {
-  const weeks = [];
+  const weeks: (JSX.Element | null)[][] = [];
 
   for (let i = mN('0');i < days.length;i += mN('7')) {
     weeks.push(days.slice(i, i + mN('7')));

@@ -22,9 +22,6 @@ import {
 /** Constants */
 import { classNames } from './Calendar.constants';
 
-/** Styles */
-import './styles/Calendar-grid.css';
-
 /**
  * A customizable calendar component that displays the days of a month in a grid format.
  *
@@ -88,7 +85,7 @@ const Calendar: FC<CalendarProps> = ({
   const endDate = new Date(year, month, mN('0'));
 
   const createCalendarDays = (start: Date, end: Date) => {
-    const days = [];
+    const days: (JSX.Element | null)[] = [];
     const startWeekday = start.getDay();
     const totalDays = end.getDate();
 
@@ -100,7 +97,7 @@ const Calendar: FC<CalendarProps> = ({
       const safeCustomDates = customDates || [];
       const customDate = safeCustomDates.find(({ date }) => isSameDay(date, currentDate));
 
-      const dayComponent = showAdjacentDays || (i > mN('0') && i <= totalDays)
+      const dayComponent: JSX.Element | null = showAdjacentDays || (i > mN('0') && i <= totalDays)
         ? (
           <DayComponent
             isCurrentDay={isCurrentDay}
