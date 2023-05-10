@@ -39,6 +39,6 @@
 
 article {
   background: var(--cw-article);
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem 1rem;
   border-radius: 0.5rem;
 }

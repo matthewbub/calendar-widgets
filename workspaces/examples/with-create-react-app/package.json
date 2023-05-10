@@ -10,7 +10,7 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
-    "calendar-widgets": "0.0.13-alpha.0"
+    "calendar-widgets": "file:../../../"
   },
   "scripts": {
     "start": "react-scripts start",

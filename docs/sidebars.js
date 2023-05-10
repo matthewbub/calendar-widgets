@@ -16,6 +16,7 @@ const sidebars = {
       label: 'Utilities',
       items: ['Utilities/formatDate', 'Utilities/getDaysInMonth', 'Utilities/isValidDay', 'Utilities/isValidMonth', 'Utilities/isValidYear'],
     },
+
   ],
 };
 
