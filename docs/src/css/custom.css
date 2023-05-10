@@ -246,9 +246,32 @@ a[target="_blank"].footer__link-item svg {
   display: none;
 }
 
+article {
+  background: var(--cw-article);
+  padding: 0.75rem 1rem;
+}
+
+.pagination-nav,
+.footer {
+  padding: 0 1rem 1rem 1rem;
+}
+
+nav.thin-scrollbar {
+  padding-top: 0;
+}
+
 @media (min-width: 997px) {
   .table-of-contents {
     padding: 0 1rem 0.5rem 0.5rem;
     width: 260px;
+  }
+
+  article {
+    border-radius: 0.5rem;
+  }
+
+  .pagination-nav,
+  .footer {
+    padding: 0;
   }
 }
