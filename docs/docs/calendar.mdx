@@ -3,6 +3,9 @@ title: Calendar
 slug: /calendar
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
 import {ArgDescriptor} from '../src/components/ArgDescriptor';
 
 # Calendar
@@ -11,6 +14,11 @@ A simple calendar component with liftable day cells making it easy to build cust
 
 
 ## Usage
+
+<Tabs defaultValue="react">
+  <TabItem value="react" label="With React.js" default>
+
+Get up and running quickly with React.
 
 ```jsx
 import React from 'react';
@@ -21,6 +29,30 @@ const App = () => {
   return <Calendar />
 }
 ```
+
+
+  </TabItem>
+  <TabItem value="next" label="With Next.js">
+
+Get up and running quickly with Next.js. Most components are stateful, so you'll need to use dynamic imports to prevent server-side rendering errors.
+
+```jsx
+import dynamic from 'next/dynamic';
+import 'calendar-widgets/styles/Calendar-grid.css';
+
+const DynamicCalendar = dynamic(() => import('calendar-widgets').then((mod) => mod.Calendar), {
+  ssr: false
+});
+
+
+const App = () => {
+  return <DynamicCalendar />
+}
+```
+
+  </TabItem>
+</Tabs>
+
 
 ## Props
 
