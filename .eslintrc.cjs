@@ -17,5 +17,6 @@ module.exports = {
     'no-extra-parens': 'off',
     'no-shadow': 'off',
     'prefer-destructuring': 'off',
+    'no-magic-numbers': 'off',
   }
 };
