@@ -3,7 +3,7 @@ import React, { FC, useState } from 'react';
 interface YearSelectorProps {
   startYear: number;
   endYear: number;
-};
+}
 
 const YearSelector: FC<YearSelectorProps> = ({ startYear = 1900, endYear = 2100 }) => {
   const yearsPerPage = 9;
@@ -21,7 +21,6 @@ const YearSelector: FC<YearSelectorProps> = ({ startYear = 1900, endYear = 2100 
 
   const getPageYears = () => {
     const startIndex = (currentPage - 1) * yearsPerPage;
-    const endIndex = startIndex + yearsPerPage - 1;
     return Array.from({ length: yearsPerPage }, (_, index) => startYear + startIndex + index);
   };
 

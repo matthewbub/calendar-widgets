@@ -32,7 +32,7 @@ const MonthSelector: FC<MonthSelectorProps> = ({
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
 export default MonthSelector;

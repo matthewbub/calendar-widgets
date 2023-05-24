@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { MonthSelector } from '../react';
 
-const Example = () => {
+const Example: FC = () => {
   const [month, setMonth] = useState(1);
   const userPreferredLang = 'en';
   return (
@@ -18,7 +18,7 @@ const Example = () => {
               width: '100%',
               marginBottom: '12px',
               padding: '12px',
-              boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
+              boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)'
             }}
           >
             {new Date(2000, monthIndex - 1).toLocaleDateString(userPreferredLang, { month: 'long' })}
@@ -30,12 +30,12 @@ const Example = () => {
           paddingBottom: '0',
           boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)',
           maxHeight: '300px',
-          overflowY: 'auto',
+          overflowY: 'auto'
         }}
       />
     </div>
-  )
-}
+  );
+};
 
 const meta = {
   title: 'calendar-widgets/MonthSelector',
