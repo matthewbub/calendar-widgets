@@ -1,6 +1,8 @@
 /** Components */
 export { Calendar } from './Calendar';
 export { DraggableDay } from './DraggableDay';
+export { MonthSelector } from './MonthSelector';
+
 
 /** Context */
 export {

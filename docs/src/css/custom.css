@@ -29,7 +29,7 @@
   --cw-secondary-color: rgba(255, 255, 255, 0.8);
   --cw-secondary-hover-bg: rgba(255, 255, 255, 0.05);
   --cw-secondary-active-bg: rgb(60, 56, 58);
-  --cw-article: rgba(5, 5, 5, .55);
+  --cw-article: #1B1A1D;
   --ifm-link-color: #009DDC;
 }
 

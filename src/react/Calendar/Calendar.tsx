@@ -84,12 +84,19 @@ const Calendar: FC<CalendarProps> = ({
   const startDate = new Date(year, month - mN('1'), mN('1'));
   const endDate = new Date(year, month, mN('0'));
 
+  /**
+   * Creates an array of JSX elements representing the days in the calendar grid.
+   *
+   * @param {Date} start - The start date of the calendar.
+   * @param {Date} end - The end date of the calendar.
+   * @returns {JSX.Element[]} An array of JSX elements representing the days in the calendar.
+   */
   const createCalendarDays = (start: Date, end: Date) => {
     const days: (JSX.Element | null)[] = [];
     const startWeekday = start.getDay();
     const totalDays = end.getDate();
 
-    for (let i = mN('1') - startWeekday;i <= totalDays + mN('6') - end.getDay();i += mN('1')) {
+    for (let i = mN('1') - startWeekday; i <= totalDays + mN('6') - end.getDay(); i += mN('1')) {
       const currentDate = new Date(year, start.getMonth(), i);
       const isCurrentDay = i === day;
       const inSelectedMonth = currentDate.getFullYear() === year && currentDate.getMonth() === month - mN('1');
