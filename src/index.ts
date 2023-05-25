@@ -1,8 +1,8 @@
 import {
   Calendar,
-  CalendarWidgetsProvider,
-  useCalendarWidgetsContext,
-  DraggableDay
+  DraggableDay,
+  MonthSelector,
+  YearSelector
 } from './react';
 
 import {
@@ -13,12 +13,12 @@ import {
 
 export {
   Calendar,
-  CalendarWidgetsProvider,
-  useCalendarWidgetsContext,
   DraggableDay,
   calculateHoursBetween,
   convertTimeToHours,
-  listHoursBetween
+  listHoursBetween,
+  MonthSelector,
+  YearSelector
 };
 
 export type {

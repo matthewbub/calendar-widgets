@@ -1,3 +1,4 @@
+/* Dependencies */
 import React, { MouseEvent } from 'react';
 
 export interface SingleDraggableProps {
@@ -35,3 +36,5 @@ export interface DraggablesProps {
   endRow: string;
   initialDraggables?: Array<{ id: number; position: { x: number; y: number }; height: number }>;
 }
+
+export type DraggableDays = Array<{ id: number; position: { x: number; y: number }; height: number }>;
