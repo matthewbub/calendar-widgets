@@ -1,8 +1,14 @@
+// TODO
+//  - refactor
+//  - jsdoc
+
+
 import React, { FC, useState, useEffect, useRef, MouseEvent, useCallback } from 'react';
 import './Draggables.styles.css';
 import { listHoursBetween, calculateHoursBetween } from '../../helpers';
-import { SingleDraggableProps, DraggableContentProps, RowProps, DraggablesProps } from './DraggableDay.types';
+import { SingleDraggableProps, RowProps, DraggablesProps } from './DraggableDay.types';
 import { CalendarWidgetsProvider, useCalendarWidgetsContext } from '../CalendarWidgetsContext/CalendarWidgetsContext';
+import { DraggableContent } from './components';
 
 const useDraggable = (resizeRef: React.RefObject<HTMLDivElement>) => {
   const [dragging, setDragging] = useState(false);
@@ -76,33 +82,6 @@ const useMouseMove = (
   );
 };
 
-const DraggableContent: FC<DraggableContentProps> = ({
-  currentPos,
-  draggableHeight,
-  handleMouseDown,
-  resizeRef,
-  dynamicRows,
-  draggableRef,
-  zIndex,
-  onDelete
-}) =>
-  <div
-    className="draggable"
-    ref={draggableRef}
-    onMouseDown={handleMouseDown}
-    style={{
-      transform: `translate3d(${currentPos.x}px, ${currentPos.y}px, 0)`,
-      height: `calc(100% / ${dynamicRows} * ${draggableHeight} - 5px)`,
-      zIndex: zIndex
-    }}
-  >
-    Drag Me
-    <button onClick={(e) => {
-      e.stopPropagation(); onDelete();
-    }} className="delete-draggable-btn">Delete</button>
-    <div ref={resizeRef} className="resize-handle" onMouseDown={handleMouseDown} />
-  </div>
-  ;
 
 const SingleDraggable: FC<SingleDraggableProps> = ({
   draggable,
