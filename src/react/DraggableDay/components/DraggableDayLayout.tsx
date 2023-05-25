@@ -5,10 +5,7 @@ import React, { FC, useState, useEffect, useRef } from 'react';
 import { listHoursBetween, calculateHoursBetween } from '../../../helpers';
 
 /* Types */
-import { DraggablesProps } from '../DraggableDay.types';
-
-/* Context */
-import { useCalendarWidgetsContext } from '../../CalendarWidgetsContext/CalendarWidgetsContext';
+import { DraggablesProps, DraggableDays } from '../DraggableDay.types';
 
 /* Components */
 import { SingleDraggable, RowAsHour } from '../components';
@@ -47,7 +44,8 @@ const DraggableDayLayout: FC<DraggablesProps> = ({ startRow, endRow, initialDrag
     setDraggableHeight,
     dynamicRows
   );
-  const { draggableDays, setDraggableDays } = useCalendarWidgetsContext();
+  // const { draggableDays, setDraggableDays } = useCalendarWidgetsContext();
+  const [draggableDays, setDraggableDays] = useState<DraggableDays>([]);
 
   useEffect(() => {
     setDraggableDays(initialDraggables || [{ id: 1, position: { x: 0, y: 0 }, height: 1 }]);
@@ -64,7 +62,7 @@ const DraggableDayLayout: FC<DraggablesProps> = ({ startRow, endRow, initialDrag
 
   const addDraggable = () => {
     setDraggableDays([...draggableDays,
-      { id: nextId, position: { x: 0, y: 0 }, height: defaultHeight }]);
+    { id: nextId, position: { x: 0, y: 0 }, height: defaultHeight }]);
     setNextId(nextId + 1);
   };
 

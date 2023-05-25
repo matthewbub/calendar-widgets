@@ -4,9 +4,6 @@ import React, { FC } from 'react';
 /* Types */
 import { DraggablesProps } from './DraggableDay.types';
 
-/* Context */
-import { CalendarWidgetsProvider } from '../CalendarWidgetsContext/CalendarWidgetsContext';
-
 /* Components */
 import { DraggableDayLayout } from './components';
 
@@ -28,13 +25,11 @@ const DraggableDay: FC<DraggablesProps> = ({
   endRow,
   initialDraggables
 }) => (
-  <CalendarWidgetsProvider>
-    <DraggableDayLayout
-      startRow={startRow}
-      endRow={endRow}
-      initialDraggables={initialDraggables}
-    />
-  </CalendarWidgetsProvider>
+  <DraggableDayLayout
+    startRow={startRow}
+    endRow={endRow}
+    initialDraggables={initialDraggables}
+  />
 );
 
 export default DraggableDay;
