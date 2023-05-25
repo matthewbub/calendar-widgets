@@ -1,6 +1,6 @@
 {
   "name": "calendar-widgets",
-  "version": "0.0.13-alpha.1",
+  "version": "0.0.14",
   "description": "Craft beautifully robust date components in React.",
   "main": "./dist/bundle.js",
   "type": "module",
