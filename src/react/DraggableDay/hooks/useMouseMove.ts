@@ -1,6 +1,19 @@
 /* Dependencies */
 import { useCallback } from 'react';
 
+/**
+ * Custom hook for handling mouse move events.
+ *
+ * @param {boolean} dragging - Indicates if dragging is in progress.
+ * @param {boolean} draggingBottom - Indicates if dragging the bottom is in progress.
+ * @param {Object} currentPos - The current position of the draggable.
+ * @param {number} draggableHeight - The height of the draggable.
+ * @param {React.RefObject} containerRef - The reference to the container element.
+ * @param {Function} setCurrentPos - The state setter for currentPos.
+ * @param {Function} setDraggableHeight - The state setter for draggableHeight.
+ * @param {number} dynamicRows - The number of dynamic rows.
+ * @returns {Function} - The event handler for mouse move events.
+ */
 export const useMouseMove = (
   dragging: boolean,
   draggingBottom: boolean,

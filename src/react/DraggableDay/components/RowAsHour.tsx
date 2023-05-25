@@ -4,6 +4,16 @@ import React, { FC } from 'react';
 /* Types */
 import { RowProps } from '../DraggableDay.types';
 
+/**
+ * Renders a row as an hour component.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {number} props.index - The row index.
+ * @param {number} props.dynamicRows - The number of dynamic rows.
+ * @param {string} props.time - The time value.
+ * @returns {JSX.Element} - The rendered component.
+ */
 const RowAsHour: FC<RowProps> = ({ index, dynamicRows, time }) => (
   <div
     className="row"

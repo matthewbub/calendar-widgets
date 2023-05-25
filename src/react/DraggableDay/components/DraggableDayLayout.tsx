@@ -16,6 +16,16 @@ import { SingleDraggable, RowAsHour } from '../components';
 /* Hooks */
 import { useDraggable, useMouseMove } from '../hooks';
 
+/**
+ * Renders the layout for the draggable day component.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {number} props.startRow - The starting row index.
+ * @param {number} props.endRow - The ending row index.
+ * @param {Array} props.initialDraggables - The initial draggable items.
+ * @returns {JSX.Element} - The rendered component.
+ */
 const DraggableDayLayout: FC<DraggablesProps> = ({ startRow, endRow, initialDraggables }) => {
   const dynamicRows = calculateHoursBetween(startRow, endRow);
   const times = listHoursBetween(startRow, endRow);

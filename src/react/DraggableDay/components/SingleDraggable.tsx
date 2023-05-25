@@ -10,6 +10,19 @@ import { SingleDraggableProps } from '../DraggableDay.types';
 /* Hooks */
 import { useMouseMove, useDraggable } from '../hooks';
 
+/**
+ * Renders a single draggable component.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {Object} props.draggable - The draggable object.
+ * @param {boolean} props.dynamicRows - Indicates if dynamic rows are enabled.
+ * @param {React.RefObject} props.containerRef - The container reference.
+ * @param {Function} props.onDelete - The delete callback function.
+ * @param {Function} props.setDraggables - The setDraggables callback function.
+ * @param {Array} props.draggables - The array of draggable items.
+ * @returns {JSX.Element} - The rendered component.
+ */
 const SingleDraggable: FC<SingleDraggableProps> = ({
   draggable,
   dynamicRows,

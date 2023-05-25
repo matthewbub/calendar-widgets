@@ -4,6 +4,21 @@ import React, { FC } from 'react';
 /* Types */
 import { DraggableContentProps } from '../DraggableDay.types';
 
+/**
+ * Renders the content of a draggable component.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {Object} props.currentPos - The current position of the draggable.
+ * @param {number} props.draggableHeight - The height of the draggable.
+ * @param {Function} props.handleMouseDown - The mouse down event handler.
+ * @param {React.RefObject} props.resizeRef - The reference to the resize handle.
+ * @param {number} props.dynamicRows - The number of dynamic rows.
+ * @param {React.RefObject} props.draggableRef - The reference to the draggable element.
+ * @param {number} props.zIndex - The z-index of the draggable.
+ * @param {Function} props.onDelete - The delete callback function.
+ * @returns {JSX.Element} - The rendered component.
+ */
 const DraggableContent: FC<DraggableContentProps> = ({
   currentPos,
   draggableHeight,

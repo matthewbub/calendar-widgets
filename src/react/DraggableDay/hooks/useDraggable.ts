@@ -1,6 +1,12 @@
 /* Dependencies */
 import { useState, MouseEvent } from 'react';
 
+/**
+ * Custom hook for draggable behavior.
+ *
+ * @param {React.RefObject} resizeRef - The reference to the resize handle.
+ * @returns {Object} - The draggable state and event handlers.
+ */
 export const useDraggable = (resizeRef: React.RefObject<HTMLDivElement>) => {
   const [dragging, setDragging] = useState(false);
   const [draggingBottom, setDraggingBottom] = useState(false);
