@@ -62,7 +62,7 @@ const DraggableDayLayout: FC<DraggablesProps> = ({ startRow, endRow, initialDrag
 
   const addDraggable = () => {
     setDraggableDays([...draggableDays,
-    { id: nextId, position: { x: 0, y: 0 }, height: defaultHeight }]);
+      { id: nextId, position: { x: 0, y: 0 }, height: defaultHeight }]);
     setNextId(nextId + 1);
   };
 
