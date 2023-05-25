@@ -1,4 +1,7 @@
+/* Components */
 import React, { FC } from 'react';
+
+/* Types */
 import { DraggableContentProps } from '../DraggableDay.types';
 
 const DraggableContent: FC<DraggableContentProps> = ({
@@ -23,7 +26,7 @@ const DraggableContent: FC<DraggableContentProps> = ({
   >
     Drag Me
     <button onClick={(e) => {
-      e.stopPropagation(); onDelete();
+      e.stopPropagation();onDelete();
     }} className="delete-draggable-btn">Delete</button>
     <div ref={resizeRef} className="resize-handle" onMouseDown={handleMouseDown} />
   </div>

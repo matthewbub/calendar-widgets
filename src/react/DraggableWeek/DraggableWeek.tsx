@@ -98,7 +98,7 @@ const DraggableContent: FC<DraggableContentProps> = ({
   >
     Drag Me
     <button onClick={(e) => {
-      e.stopPropagation(); onDelete();
+      e.stopPropagation();onDelete();
     }} className="delete-draggable-btn">Delete</button>
     <div ref={resizeRef} className="resize-handle" onMouseDown={handleMouseDown} />
   </div>
@@ -216,7 +216,7 @@ const DraggableDayComponent: FC<DraggablesProps> = ({ startRow, endRow, initialD
 
   const addDraggable = () => {
     setDraggableDays([...draggableDays,
-    { id: nextId, position: { x: 0, y: 0 }, height: defaultHeight }]);
+      { id: nextId, position: { x: 0, y: 0 }, height: defaultHeight }]);
     setNextId(nextId + 1);
   };
 
