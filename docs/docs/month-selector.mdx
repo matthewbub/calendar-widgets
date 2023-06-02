@@ -1,0 +1,32 @@
+---
+title: MonthSelector
+slug: /month-selector
+---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import {ArgDescriptor} from '../src/components/ArgDescriptor';
+
+# MonthSelector
+
+Bare bones component to select a month.
+
+## Usage
+
+
+### `monthIndex`
+(number): The index of the month, where 1 corresponds to January and 12 corresponds to December.
+
+### `customField` (optional)
+(Function)
+This is a function that renders the content for each month. The function receives an object with the properties monthIndex and lang.
+
+### `lang` (optional)
+The language used for formatting the month name. It defaults to 'en' (English).
+
+### `style` (optional)
+This is an object containing custom styles to be applied to the component container. It defaults to an empty object ({}).
+
+### `className` (optional)
+This is a custom class name to be applied to the component container. It defaults to an empty string ('').

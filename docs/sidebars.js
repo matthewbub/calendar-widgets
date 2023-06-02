@@ -7,6 +7,11 @@ const sidebars = {
       id: 'calendar',
     },
     {
+      type: 'doc',
+      label: 'MonthSelector',
+      id: 'month-selector',
+    },
+    {
       type: 'category',
       label: 'Helpers',
       items: ['Helpers/listCalendarYear', 'Helpers/listDaysInMonths'],
