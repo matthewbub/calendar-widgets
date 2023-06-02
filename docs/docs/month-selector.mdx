@@ -10,23 +10,88 @@ import {ArgDescriptor} from '../src/components/ArgDescriptor';
 
 # MonthSelector
 
-Bare bones component to select a month.
+A static month selector built to compliment the `Calendar` component when building date picking components. This component is stateless and only provides an unstyled UI for selecting a month.
 
 ## Usage
 
+Since this component is stateless, you need to provide a stateful component to handle the selected month. You can use the `useState` hook to achieve this.
 
-### `monthIndex`
-(number): The index of the month, where 1 corresponds to January and 12 corresponds to December.
+```jsx
+import React from 'react';
+import { MonthSelector } from 'calendar-widgets';
+
+const CustomField = ({ monthIndex }) => (
+  <button
+    style={{
+      width: '100%',
+      marginBottom: '12px',
+      padding: '6px',
+    }}
+  >
+    {new Date(2000, monthIndex - 1).toLocaleDateString('en', { month: 'long' })}
+  </button>
+);
+
+const App = () => {
+  const [month, setMonth] = useState(1);
+  const userPreferredLang = 'en';
+
+  return (
+    <React.Fragment>
+      <span>Current selected index: {month}</span>
+
+      <MonthSelector
+        lang={userPreferredLang}
+        customField={CustomField}
+        style={{
+          width: '200px',
+          padding: '12px',
+          paddingBottom: '0',
+          maxHeight: '300px',
+          overflowY: 'auto'
+        }}
+      />
+    </React.Fragment>
+  );
+};
+```
 
 ### `customField` (optional)
-(Function)
-This is a function that renders the content for each month. The function receives an object with the properties monthIndex and lang.
+
+Used to extend the default month field. This is a function that renders the content for each month. The function receives an object with the properties `monthIndex` and `lang`.
+
+Default value: `JSX.Element`
+
+```ts
+type CustomFieldProps = (props: { monthIndex: number; lang: string; }) => React.ReactNode;
+```
 
 ### `lang` (optional)
-The language used for formatting the month name. It defaults to 'en' (English).
+
+The language used for formatting the month name. 
+
+Default value: `'en'`;
+
+```ts
+type lang: string;
+```
 
 ### `style` (optional)
-This is an object containing custom styles to be applied to the component container. It defaults to an empty object ({}).
+
+This is an object containing custom styles to be applied to the component container.
+
+Default value: `{}`
+
+```ts
+type style: React.CSSProperties;
+```
 
 ### `className` (optional)
-This is a custom class name to be applied to the component container. It defaults to an empty string ('').
+
+This is a custom class name to be applied to the component container. 
+
+Default value: `''`
+
+```ts
+type className: string;
+```
