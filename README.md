@@ -1,6 +1,10 @@
-# calendar-widgets
+# Calendar Widgets
 
 Craft beautifully robust **date** components in React.
+
+<p align="center">
+  <img src="./docs/static/branding-assets/CW-Logo-Large@2x.png"/>
+</p>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/9mbs/calendar-widgets/blob/v0.0.13/LICENSE)
 ![Current bundle size: 9.29 kB](https://img.shields.io/badge/Bundle_Size-9.29_kB-blue.svg)
