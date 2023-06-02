@@ -18,7 +18,7 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-
+  favicon: "branding-assets/favicon_io/favicon.ico",
   presets: [
     [
       "classic",
