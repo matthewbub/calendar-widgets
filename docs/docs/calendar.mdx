@@ -62,33 +62,109 @@ The date to display in the calendar. If an object is passed, it should have `yea
 
 Default value: `new Date()`. 
 
+<Tabs defaultValue="types">
+  <TabItem value="example" label="Example" default>
+  
+
+```ts
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+
+const App = () => {
+  const defaultDate = new Date(2021, 0, 1);
+  return (
+    <Calendar date={defaultDate} />
+  )
+}
+```
+
+
+  </TabItem>
+  <TabItem value="types" label="Types">
+
+
 ```ts
 type date = Date | {year: number, month: number, day: number};
 ```
 
-### `onChange` (optional) ⚠️
 
-> Coming soon. This prop is not yet implemented, but will be in a future release. For now, you can define your own onChange handler by using the `customDay` prop.
+  </TabItem>
+</Tabs>
 
 ### `showAdjacentDays` (optional)
 
-Whether to display days from the previous and next months that are adjacent to the displayed month. 
+If set to `true`, days from the previous and next months that are adjacent to the displayed month will be displayed. If set to `false`, only days from the displayed month will be displayed.
 
 Default value: `true`
+
+
+<Tabs defaultValue="types">
+  <TabItem value="example" label="Example" default>
+
+
+```ts
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+
+const App = () => {
+  return (
+    <Calendar showAdjacentDays={false} />
+  )
+}
+```
+
+
+  </TabItem>
+  <TabItem value="types" label="Types">
+
 
 ```ts
 type showAdjacentDays = boolean;
 ```
 
+
+  </TabItem>
+</Tabs>
+
+
 ### `dayNames` (optional)
 
-An array of strings that represent the names of the days of the week. The first element represents Sunday, the second represents Monday, and so on. 
+An array of strings that represent the names of the days of the week. The first element represents Sunday, the second represents Monday, and so on. If you need to localize the day names, you can do that here.
 
 Default value: `['S', 'M', 'T', 'W', 'T', 'F', 'S']`
+
+
+<Tabs defaultValue="types">
+  <TabItem value="example" label="Example" default>
+
+
+```ts
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+
+const App = () => {
+  const dayNames = ['Sun', 'Mon', 'Tues', 'Wed', 'Thu', 'Fri', 'Sat'];
+  return (
+    <Calendar dayNames={dayNames} />
+  )
+}
+```
+
+
+  </TabItem>
+  <TabItem value="types" label="Types">
+
 
 ```ts
 type dayNames = string[];
 ```
+
+
+  </TabItem>
+</Tabs>
 
 ### `dayNameToolTips` (optional)
 
@@ -96,9 +172,37 @@ An optional array of strings that represent the tooltips to display for each day
 
 Default value: `undefined`
 
+
+<Tabs defaultValue="types">
+  <TabItem value="example" label="Example" default>
+
+
+```ts
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+
+const App = () => {
+  const dayNameToolTips = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  return (
+    <Calendar dayNameToolTips={dayNameToolTips} />
+  )
+}
+```
+
+
+  </TabItem>
+  <TabItem value="types" label="Types">
+
+
 ```ts
 type dayNameToolTips = string[] | undefined;
 ```
+
+
+  </TabItem>
+</Tabs>
+
 
 ### `style` (optional)
 
@@ -142,6 +246,39 @@ A function that returns the custom header element for the calendar. It receives 
 
 Default value: `undefined`
 
+<Tabs defaultValue="types">
+  <TabItem value="example" label="Example" default>
+
+
+```ts
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+
+const CustomHeader = (props) => {
+  const { handleNextMonth, handlePrevMonth, nextMonth, prevMonth, selectedMonth, selectedYear, today } = props;
+  return (
+    <div>
+      <button onClick={handlePrevMonth}>Prev</button>
+      <button onClick={handleNextMonth}>Next</button>
+      <div>{selectedMonth} {selectedYear}</div>
+      <div>{today.toDateString()}</div>
+    </div>
+  )
+};
+
+const App = () => {
+  return (
+    <Calendar customHeader={CustomHeader} />
+  )
+}
+```
+
+
+  </TabItem>
+  <TabItem value="types" label="Types">
+
+
 ```ts
 type customHeader = (props: {
   handleNextMonth: () => void;
@@ -154,11 +291,51 @@ type customHeader = (props: {
 }) => React.ReactElement;
 ```
 
+
+  </TabItem>
+</Tabs>
+
+
 ### `customFooter` (optional)
 
-A function that returns the custom footer element for the calendar. It receives an object with the following properties: `handleNextMonth`, `handlePrevMonth`, `nextMonth`, `prevMonth`, `selectedMonth`, `selectedYear`, and `today`.
+A function that returns the custom footer element for the calendar. It receives an object with the following properties: `handleNextMonth`, `handlePrevMonth`, `nextMonth`, `prevMonth`, `selectedMonth`, `selectedYear`, and `today`. 
+
+Generally speaking, you wouldn't use both the `customFooter` and `customHeader` props at the same time as they are intended to serve the same purpose. However, you can use both if you want to.
 
 Default value: `undefined`
+
+<Tabs defaultValue="types">
+  <TabItem value="example" label="Example" default>
+
+
+```ts
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+
+const CustomFooter = (props) => {
+  const { handleNextMonth, handlePrevMonth, nextMonth, prevMonth, selectedMonth, selectedYear, today } = props;
+  return (
+    <div>
+      <button onClick={handlePrevMonth}>Prev</button>
+      <button onClick={handleNextMonth}>Next</button>
+      <div>{selectedMonth} {selectedYear}</div>
+      <div>{today.toDateString()}</div>
+    </div>
+  )
+};
+
+const App = () => {
+  return (
+    <Calendar customFooter={CustomFooter} />
+  )
+}
+```
+
+
+  </TabItem>
+  <TabItem value="types" label="Types">
+
 
 ```ts
 type customFooter = (props: {
@@ -172,11 +349,48 @@ type customFooter = (props: {
 }) => React.ReactElement;
 ```
 
+
+  </TabItem>
+</Tabs>
+
 ### `customDay` (optional)
 
 The component used to display each day in the calendar. 
 
 Default value: `BaseDayComponent`.
+
+<Tabs defaultValue="types">
+  <TabItem value="example" label="Example" default>
+
+
+```js
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+
+const CustomDay = (props) => {
+  const { date, isCurrentDay, inSelectedMonth } = props;
+  return (
+    <div style={{opacity: inSelectedMonth ? '50%' : ''}}>
+      <div>{date.getDate()}</div>
+      {isCurrentDay && (
+        <span>*</span>
+      )}
+    </div>
+  )
+};
+
+const App = () => {
+  return (
+    <Calendar customDay={CustomDay} />
+  )
+}
+```
+
+
+  </TabItem>
+  <TabItem value="types" label="Types">
+
 
 ```ts
 interface BaseDayComponentProps {
@@ -185,14 +399,49 @@ interface BaseDayComponentProps {
   inSelectedMonth: boolean;
 }
 
-type customDay = BaseDayComponentProps | ((props: BaseDayComponentProps) => React.ReactElement)
+type customDay = (props: BaseDayComponentProps) => React.ReactElement;
 ```
+
+
+  </TabItem>
+</Tabs>
+
 
 ### `customDayName` (optional)
 
 The component used to display each day name in the calendar. 
 
 Default value: `BaseDayNameComponent`
+
+<Tabs defaultValue="types">
+  <TabItem value="example" label="Example" default>
+
+
+```js
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+
+const CustomDayName = (props) => {
+  const { label, className, tooltip } = props;
+  return (
+    <div className={className} title={tooltip}>
+      {label}
+    </div>
+  )
+};
+
+const App = () => {
+  return (
+    <Calendar customDayName={CustomDayName} />
+  )
+}
+```
+
+
+  </TabItem>
+  <TabItem value="types" label="Types">
+
 
 ```ts
 export interface BaseDayNameComponentProps {
@@ -201,13 +450,51 @@ export interface BaseDayNameComponentProps {
   tooltip?: string;
 }
 
-type customDayName = (props: BaseDayNameComponentProps) => React.ReactElement
+type customDayName = (props: BaseDayNameComponentProps) => React.ReactElement;
 ```
+
+
+  </TabItem>
+</Tabs>
 
 ### `customDates` (optional)
 An array of custom dates to be displayed on the calendar. Each object in the array should have a `name`, `date`, and optionally a `className` and `tooltip` property. The date property should be a Date object. If there is a match, the user-defined custom date will be accesible it's corresponding day component via the `customDate` prop.
 
 Default value: `undefined`
+
+
+<Tabs defaultValue="types">
+  <TabItem value="example" label="Example" default>
+
+
+```js
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+
+const customDates = [
+  {
+    name: 'Custom Date',
+    date: new Date('2023-06-01'),
+    className: 'custom-date',
+    tooltip: 'This is a custom date',
+    meta: {
+      foo: 'bar'
+    }
+  }
+];
+
+const App = () => {
+  return (
+    <Calendar customDates={customDates} />
+  )
+}
+```
+
+
+  </TabItem>
+  <TabItem value="types" label="Types">
+
 
 ```ts
 export interface CustomDate {
@@ -222,3 +509,6 @@ export interface CustomDate {
 
 export type CustomDates = CustomDate[];
 ```
+
+  </TabItem>
+</Tabs>
