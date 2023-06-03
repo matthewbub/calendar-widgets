@@ -1,0 +1,52 @@
+name: 💅Feature Request / Proposal
+description: Submit a feature request or proposal to help us improve the library.
+labels: ['new feature or proposal', 'status: needs triage']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Thank you for taking the time to create a Feature Request!
+
+        Before you submit your report, please review the following checklist
+
+  - type: checkboxes
+    attributes:
+      label: Preflight Checklist
+      description: Have you verified the following?
+      options:
+        - label: I've reviewed the documentation and examples and have verified my feature request is new and in scope for the library
+        - label: I've reviewed existing [Feature Requests and Proposals](https://github.com/9mbs/calendar-widgets/labels/new%20feature%20or%20proposal) and have verified my request is new
+
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: new-feature
+    attributes:
+      label: What feature are you proposing?
+      description: Please describe the feature you're proposing in as much detail as possible.
+      placeholder: Describe the feature you're proposing
+      value: "I'd like to see..."
+    validations:
+      required: true
+  - type: dropdown
+    id: contribute
+    attributes:
+      label: Do you have any interest in taking this on yourself?
+      multiple: true
+      options:
+        - Yes, I'd like to contribute this feature
+        - No, I'm just submitting this as a feature request
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this feature request, you agree to follow our [Code of Conduct](https://www.calendar-widgets.com/code-of-conduct)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true

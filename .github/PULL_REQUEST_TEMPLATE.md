@@ -4,10 +4,6 @@
 - [ ] I have verified my code does what I expect it too.
 - [ ] **If this is a code change**: I have verified there are no linting errors, and there are no build errors.
 
-## Motivation
-
-_< Briefly describe the problems you code is solving. >_
-
 ## Related
 
 _<Include PRs, Issues, and any additional resources related to your code change here.>_
