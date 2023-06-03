@@ -6,5 +6,5 @@ export interface BaseDayComponentProps {
   isCurrentDay: boolean;
   inSelectedMonth: boolean;
   customDate?: CustomDate
-  baseStyles?: React.CSSProperties;
+  baseStyles: React.CSSProperties;
 }

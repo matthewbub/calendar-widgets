@@ -54,17 +54,16 @@ const CustomHeader = (props: CustomHeaderFooterRendererProps) => (
 const CustomDay = ({ date, isCurrentDay, baseStyles }: {
   date: Date,
   isCurrentDay: boolean,
-  baseStyles: React.CSSProperties
+  baseStyles: React.CSSProperties;
 }) => (
   <div style={{ ...baseStyles, height: '34px', textAlign: 'center' }}>
-    {console.log(baseStyles)}
     <p style={{ fontSize: '24px' }}>{date.getDate()}</p>
     {isCurrentDay && <span style={{ color: 'red' }}>*</span>}
   </div>
 );
 
 const BasicCalendarV2 = () => {
-  const {height} = useWindowSize();
+  const { height} = useWindowSize();
   return (
     <Calendar
       date={new Date()}
