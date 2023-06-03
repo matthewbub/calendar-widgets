@@ -5,7 +5,7 @@ import { newDate } from '../helpers/newDate';
 
 /** Styles */
 // import '../../styles/Calendar-grid.css';
-import {useWindowSize} from "./helpers";
+import { useWindowSize } from './helpers';
 
 const ButtonStyles = {
   backgroundColor: 'transparent',
@@ -72,7 +72,7 @@ const CustomDayName = ({ label, baseStyles }: {
 );
 
 const BasicCalendarV2 = () => {
-  const { height} = useWindowSize();
+  const { height } = useWindowSize();
   return (
     <Calendar
       date={new Date()}
@@ -81,6 +81,7 @@ const BasicCalendarV2 = () => {
       customHeader={CustomHeader}
       customDay={CustomDay}
       customDayName={CustomDayName}
+      layout={'flex'}
       customDates={[{
         name: 'Lisa\'s Birthday',
         date: newDate(2023, 5, 10),
@@ -89,7 +90,9 @@ const BasicCalendarV2 = () => {
       }]}
       style={{
         width: '95%',
-        height: height - 100 + 'px'
+        height: height - 100 + 'px',
+        display: 'flex',
+        flexWrap: 'wrap'
       }}
     />
   );

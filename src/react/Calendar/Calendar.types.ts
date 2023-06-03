@@ -63,4 +63,5 @@ export interface CalendarProps {
     emptyCell?: string;
   },
   customDates?: CustomDates;
+  layout?: 'flex' | 'grid';
 }

@@ -1,5 +1,5 @@
 /** Dependencies */
-import React, { FC, useState } from 'react';
+import React, { FC, useState, Fragment } from 'react';
 
 /** Types */
 import { CalendarProps } from './Calendar.types';
@@ -61,7 +61,8 @@ const Calendar: FC<CalendarProps> = ({
   customFooter,
   style,
   customClassNames = classNames,
-  customDates
+  customDates,
+  layout = 'grid'
 }) => {
   const [currentDate, setCurrentDate] = useState(date);
   const { year, month, day } = dateToNumbers(currentDate);
@@ -99,15 +100,15 @@ const Calendar: FC<CalendarProps> = ({
     const startWeekday = start.getDay();
     const totalDays = end.getDate();
 
-    for (let i = mN('1') - startWeekday;i <= totalDays + mN('6') - end.getDay();i += mN('1')) {
+    for (let i = 1 - startWeekday; i <= totalDays + 6 - end.getDay(); i += 1) {
       const currentDate = new Date(year, start.getMonth(), i);
       const isCurrentDay = i === day;
-      const inSelectedMonth = currentDate.getFullYear() === year && currentDate.getMonth() === month - mN('1');
+      const inSelectedMonth = currentDate.getFullYear() === year && currentDate.getMonth() === month - 1;
 
       const safeCustomDates = customDates || [];
       const customDate = safeCustomDates.find(({ date }) => isSameDay(date, currentDate));
 
-      const dayComponent: JSX.Element | null = showAdjacentDays || (i > mN('0') && i <= totalDays)
+      const dayComponent: JSX.Element | null = showAdjacentDays || (i > 0 && i <= totalDays)
         ? (
           <DayComponent
             isCurrentDay={isCurrentDay}
@@ -140,18 +141,17 @@ const Calendar: FC<CalendarProps> = ({
   const validTooltips = dayNameToolTips && dayNameToolTips.length === mN('7');
   const tooltips = validTooltips ? dayNameToolTips : dayNames;
 
+  const CalendarInterfaceRoot = layout === 'grid' ? 'div' : Fragment;
   return (
     <div
       className={className ? className : customClassNames.componentInterface}
       style={style}
     >
       {CustomHeader && (
-        <div className={customClassNames.customHeader}>
-          <CustomHeader {...customHeaderFooterProps} />
-        </div>
+        <CustomHeader {...customHeaderFooterProps} />
       )}
 
-      <div className={customClassNames.component}>
+      <CalendarInterfaceRoot>
         {dayNames.map((dayName, idx) => (
           <DayNameComponent
             key={idx}
@@ -165,12 +165,10 @@ const Calendar: FC<CalendarProps> = ({
         <React.Fragment>
           {weeks}
         </React.Fragment>
-      </div>
+      </CalendarInterfaceRoot>
 
       {CustomFooter && (
-        <div className={customClassNames.customFooter}>
-          <CustomFooter {...customHeaderFooterProps} />
-        </div>
+        <CustomFooter {...customHeaderFooterProps} />
       )}
     </div>
   );
