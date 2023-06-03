@@ -20,7 +20,10 @@ import {
 } from './components';
 
 /** Constants */
-import { classNames } from './Calendar.constants';
+import {
+  baseStylesForComponentInterface,
+  classNames
+} from './Calendar.constants';
 
 /**
  * A customizable calendar component that displays the days of a month in a grid format.
@@ -111,6 +114,7 @@ const Calendar: FC<CalendarProps> = ({
             date={currentDate}
             inSelectedMonth={inSelectedMonth}
             customDate={customDate}
+            baseStyles={baseStylesForComponentInterface}
           />
         ) : <div className={classNames.emptyCell} />;
 
@@ -154,6 +158,7 @@ const Calendar: FC<CalendarProps> = ({
             className={customClassNames.dayName}
             label={dayName}
             tooltip={tooltips[idx]}
+            baseStyles={baseStylesForComponentInterface}
           />
         ))}
 

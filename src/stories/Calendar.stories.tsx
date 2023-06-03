@@ -6,19 +6,12 @@ import BasicCalendarV2 from '../examples/BasicCalendarV2';
 const meta = {
   title: 'calendar-widgets/Calendar',
   component: BasicCalendarV2,
-  args: {
-    date: new Date()
+  parameters: {
+    options: { showPanel: false }
   }
 } satisfies Meta<typeof Calendar>;
 
-export const Basic: StoryObj<typeof Calendar> = {
-  args: {
-    date: new Date(),
-    customDay: ({ date }) =>
-      <div>
-        {date.getDate()}
-      </div>
-  }
-};
+export const Basic: StoryObj<typeof Calendar> = {};
+
 
 export default meta;

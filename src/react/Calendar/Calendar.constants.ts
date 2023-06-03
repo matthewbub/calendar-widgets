@@ -10,3 +10,8 @@ export const classNames = {
   customFooter: baseClassName + 'custom-footer',
   emptyCell: baseClassName + 'empty-cell'
 };
+
+export const baseStylesForComponentInterface = {
+  // 7 days in a week
+  width: 100 / 7 + '%'
+};

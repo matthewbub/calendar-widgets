@@ -1,11 +1,11 @@
-/* eslint-disable no-magic-numbers */
 import React from 'react';
 import { Calendar } from '../react';
 import { CustomHeaderFooterRendererProps } from '../react/Calendar/Calendar.types';
 import { newDate } from '../helpers/newDate';
 
 /** Styles */
-import '../../styles/Calendar-grid.css';
+// import '../../styles/Calendar-grid.css';
+import {useWindowSize} from "./helpers";
 
 const ButtonStyles = {
   backgroundColor: 'transparent',
@@ -14,7 +14,7 @@ const ButtonStyles = {
   padding: '4px 8px',
   cursor: 'pointer',
   outline: 'none',
-  fontSize: '.75em'
+  fontSize: '24px'
 } as React.CSSProperties;
 
 const CustomHeaderStyles = {
@@ -33,35 +33,55 @@ const RightArrow = () => (
   <div dangerouslySetInnerHTML={{ __html: '&rsaquo;' }}></div>
 );
 
+const CustomHeader = (props: CustomHeaderFooterRendererProps) => (
+  <div style={CustomHeaderStyles}>
+    <button
+      onClick={props.handlePrevMonth}
+      style={ButtonStyles}
+    >
+      <LeftArrow />
+    </button>
+    <div>{props.selectedMonth}/{props.selectedYear}</div>
+    <button
+      onClick={props.handleNextMonth}
+      style={ButtonStyles}
+    >
+      <RightArrow />
+    </button>
+  </div>
+);
+
+const CustomDay = ({ date, isCurrentDay, baseStyles }: {
+  date: Date,
+  isCurrentDay: boolean,
+  baseStyles: React.CSSProperties
+}) => (
+  <div style={{ ...baseStyles, height: '34px', textAlign: 'center' }}>
+    {console.log(baseStyles)}
+    <p style={{ fontSize: '24px' }}>{date.getDate()}</p>
+    {isCurrentDay && <span style={{ color: 'red' }}>*</span>}
+  </div>
+);
+
 const BasicCalendarV2 = () => {
+  const {height} = useWindowSize();
   return (
     <Calendar
       date={new Date()}
       showAdjacentDays
       dayNameToolTips={['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']}
-      customHeader={(props: CustomHeaderFooterRendererProps) => (
-        <div style={CustomHeaderStyles}>
-          <button
-            onClick={props.handlePrevMonth}
-            style={ButtonStyles}
-          >
-            <LeftArrow />
-          </button>
-          <div>{props.selectedMonth}/{props.selectedYear}</div>
-          <button
-            onClick={props.handleNextMonth}
-            style={ButtonStyles}
-          >
-            <RightArrow />
-          </button>
-        </div>
-      )}
+      customHeader={CustomHeader}
+      customDay={CustomDay}
       customDates={[{
         name: 'Lisa\'s Birthday',
         date: newDate(2023, 5, 10),
         className: 'birthday',
         tooltip: 'Lisa\'s Birthday'
       }]}
+      style={{
+        width: '95%',
+        height: height - 100 + 'px'
+      }}
     />
   );
 };
