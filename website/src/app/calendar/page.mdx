@@ -1,0 +1,46 @@
+# Calendar
+
+A simple calendar component with lift-able day cells making it easy to build custom interfaces.
+
+## Usage
+
+Get up and running quickly with React.
+
+```jsx
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+
+const App = () => {
+  return <Calendar />
+}
+```
+
+<details>
+<summary>Using with Next.js</summary>
+
+This particular component utilizes React State. You'll need to use dynamic imports to prevent server-side rendering errors.
+
+```jsx
+import dynamic from 'next/dynamic';
+import 'calendar-widgets/styles/Calendar-grid.css';
+
+const Calendar = dynamic(() => import('calendar-widgets').then((mod) => mod.Calendar), {
+  ssr: false
+});
+
+
+const App = () => {
+  return <Calendar />
+}
+```
+
+</details>
+
+
+## Props
+
+| Name   | Type                                                 | Default                                      | Description |
+|--------|------------------------------------------------------|----------------------------------------------| --- |
+| `date` | `Date \| {year: number, month: number, day: number}` | `new Date()` | Custom class name for the component |
+

@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-4xl font-bold mb-6;
+  }
+
+  h2 {
+      @apply text-3xl font-bold mb-4 mt-2.5;
+  }
+
+  h3 {
+      @apply text-2xl font-bold;
+  }
+
+  p {
+      @apply text-base;
+  }
+
+  pre {
+      @apply my-2;
+  }
+
+  table {
+    @apply table-fixed border border-collapse overflow-x-scroll;
+  }
+
+  th, td {
+    @apply px-4 py-2 text-start whitespace-nowrap;
+  }
+
+    code {
+        @apply text-sm font-mono bg-rose-600/50 rounded px-1.5 py-0.5;
+    }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -25,3 +59,5 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+
