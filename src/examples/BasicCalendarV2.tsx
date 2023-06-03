@@ -62,6 +62,15 @@ const CustomDay = ({ date, isCurrentDay, baseStyles }: {
   </div>
 );
 
+const CustomDayName = ({ label, baseStyles }: {
+  label: string,
+  baseStyles: React.CSSProperties
+}) => (
+  <div style={{ ...baseStyles, height: '34px', textAlign: 'center' }}>
+    <p style={{ fontSize: '24px' }}>{label}</p>
+  </div>
+);
+
 const BasicCalendarV2 = () => {
   const { height} = useWindowSize();
   return (
@@ -71,6 +80,7 @@ const BasicCalendarV2 = () => {
       dayNameToolTips={['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']}
       customHeader={CustomHeader}
       customDay={CustomDay}
+      customDayName={CustomDayName}
       customDates={[{
         name: 'Lisa\'s Birthday',
         date: newDate(2023, 5, 10),
