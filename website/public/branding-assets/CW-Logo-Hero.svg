@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        stroke-dasharray: 0 0;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-3, .cls-5 {
+        stroke-width: .5px;
+      }
+
+      .cls-3, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-2 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4, .cls-10 {
+        font-family: Rubik-Bold, Rubik;
+        font-size: 7.78px;
+        font-weight: 700;
+      }
+
+      .cls-11 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-12 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-13 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-14 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-6 {
+        fill: #fdca40;
+      }
+
+      .cls-7 {
+        fill: #d81159;
+      }
+
+      .cls-8 {
+        fill: #459bd6;
+      }
+
+      .cls-9 {
+        fill: #419d78;
+      }
+
+      .cls-2 {
+        stroke-width: 2px;
+      }
+
+      .cls-15 {
+        opacity: .3;
+      }
+
+      .cls-16 {
+        letter-spacing: 0em;
+      }
+
+      .cls-17 {
+        letter-spacing: -.02em;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect id="FRAME" class="cls-1" x="0" y="0" width="200" height="200" rx="12.35" ry="12.35"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <path class="cls-1" d="m63.46,116.46c1.51-5.02,4.51-9.44,5.36-11.64s2.62-9.17.42-11.59c-1.28-1.41-3.29-.78-5.53.2s-6.39.66-8.63-1.44c-5.18-4.85-2.67-15.76,5.12-17.71,5.27-1.32,5,1.61,8.29,4.58,2.38,2.15,4.7.33,5.77-1.82s5.56-25.07,5.88-27.08c.35-2.18,11.93-.57,13.75-.17,3.56.79,7.69,2.62,8.72,4.79,1.15,2.44-2.14,3.38-5.28,6.58-1.5,1.53-1.16,3.32-.48,4.31,1.16,1.68,3.26,4.66,10.91,4.57,3.85-.05,5.46-1.85,6.12-3.64.6-1.64.02-3.33-.88-4.83-1.09-1.8-1.99-3.1-1.19-4.95.68-1.58,2.21-3,4.06-3.27,3.69-.53,8.93.07,12.62,2.8s10.31,7.8,11.28,9.89c1.31,2.83-2.28,5.54-4.12,11.61-1.39,4.59-1.87,11.46-2.12,13.26-.35,2.61.45,5.58,4.79,5.34,3.57-.2,4.62-2.83,7.87-1.59,2.35.89,5.13,5.57,4.15,9.27-.97,3.64-4.18,6.47-7.65,6.53s-5.27-3.52-7.62-4.17c-1.69-.47-2.51-.53-3.98.53-.89.64-2.06,2.18-2.5,5.89-.3,2.56.08,11.05-.49,15.63-.17,1.39-.59,4.55-3.55,5.77-2.1.87-3.96-.67-5.9-1.9-1.5-.95-9.69-5.77-13.57-6.59-4.14-.87-7.72-.18-9.8,3.31-2.95,4.95.21,9.09.94,11.35,1.08,3.35.37,7.69-4.25,8.03-2.89.21-12.1.79-11.84-5.34.14-3.31,2.56-5.14,4.26-7.4,2.15-2.86,2.39-7.19-1.82-11.14-2.34-2.19-4.88-3.97-8.7-3.79s-4.15,4.23-8.21,3.14-2.22-7.34-2.22-7.34Z"/>
+    </clipPath>
+  </defs>
+  <g id="Secondary_logo" data-name="Secondary logo">
+    <g class="cls-11">
+      <g id="BG-DaySquares" class="cls-15">
+        <g id="DaySquareWithName">
+          <rect id="DaySquare" class="cls-5" x="88.99" y="66.59" width="64.87" height="64.87" transform="translate(-34.19 80.74) rotate(-32.5)"/>
+          <text class="cls-4" transform="translate(87.41 97.21) rotate(-32.5)"><tspan class="cls-12" x="0" y="0">T</tspan><tspan class="cls-16" x="4.52" y="0">uesd</tspan><tspan class="cls-17" x="23.35" y="0">a</tspan><tspan class="cls-13" x="27.81" y="0">y</tspan></text>
+        </g>
+        <rect id="DaySquare-2" data-name="DaySquare" class="cls-5" x="34.28" y="101.44" width="64.87" height="64.87" transform="translate(-61.48 56.81) rotate(-32.5)"/>
+        <rect id="DaySquare-3" data-name="DaySquare" class="cls-5" x="123.84" y="121.3" width="64.87" height="64.87" transform="translate(-58.13 108.03) rotate(-32.5)"/>
+        <rect id="DaySquare-4" data-name="DaySquare" class="cls-5" x="54.18" y="11.86" width="64.87" height="64.87" transform="translate(-10.24 53.47) rotate(-32.5)"/>
+        <rect id="DaySquare-5" data-name="DaySquare" class="cls-5" x="69.13" y="156.15" width="64.87" height="64.87" transform="translate(-85.42 84.1) rotate(-32.5)"/>
+        <rect id="DaySquare-6" data-name="DaySquare" class="cls-3" x="108.85" y="-22.97" width="64.87" height="64.87" transform="translate(17.04 77.39) rotate(-32.5)"/>
+        <rect id="DaySquare-7" data-name="DaySquare" class="cls-5" x="143.73" y="31.72" width="64.87" height="64.87" transform="translate(-6.88 104.69) rotate(-32.5)"/>
+        <rect id="DaySquare-8" data-name="DaySquare" class="cls-5" x="-.53" y="46.71" width="64.87" height="64.87" transform="translate(-37.53 29.53) rotate(-32.5)"/>
+        <rect id="DaySquare-9" data-name="DaySquare" class="cls-5" x="-55.28" y="81.58" width="64.87" height="64.87" transform="translate(-64.83 5.58) rotate(-32.5)"/>
+        <rect id="DaySquare-10" data-name="DaySquare" class="cls-5" x="178.58" y="86.43" width="64.87" height="64.87" transform="translate(-30.82 131.98) rotate(-32.5)"/>
+        <rect id="DaySquare-11" data-name="DaySquare" class="cls-5" x="-20.39" y="136.27" width="64.87" height="64.87" transform="translate(-88.75 32.89) rotate(-32.5)"/>
+        <rect id="DaySquare-12" data-name="DaySquare" class="cls-5" x="14.45" y="191.04" width="64.87" height="64.87" transform="translate(-112.72 60.18) rotate(-32.5)"/>
+        <rect id="DaySquare-13" data-name="DaySquare" class="cls-5" x="-35.41" y="-8.03" width="64.87" height="64.87" transform="translate(-13.57 2.22) rotate(-32.5)"/>
+        <rect id="DaySquare-14" data-name="DaySquare" class="cls-5" x="19.34" y="-42.91" width="64.87" height="64.87" transform="translate(13.73 26.18) rotate(-32.5)"/>
+        <rect id="DaySquare-15" data-name="DaySquare" class="cls-5" x="198.51" y="-3.18" width="64.87" height="64.87" transform="translate(20.44 128.66) rotate(-32.5)"/>
+        <rect id="DaySquare-16" data-name="DaySquare" class="cls-5" x="163.6" y="-57.99" width="64.87" height="64.87" transform="translate(44.43 101.32) rotate(-32.5)"/>
+        <rect id="DaySquare-17" data-name="DaySquare" class="cls-5" x="104.06" y="210.91" width="64.87" height="64.87" transform="translate(-109.37 111.44) rotate(-32.5)"/>
+        <rect id="DaySquare-18" data-name="DaySquare" class="cls-5" x="158.85" y="176.01" width="64.87" height="64.87" transform="translate(-82.04 135.41) rotate(-32.5)"/>
+      </g>
+      <g id="PrimaryIcon">
+        <g class="cls-14">
+          <g>
+            <g>
+              <rect class="cls-8" x="88.99" y="66.59" width="64.87" height="64.87" transform="translate(-34.19 80.74) rotate(-32.5)"/>
+              <text class="cls-10" transform="translate(87.41 97.21) rotate(-32.5)"><tspan class="cls-12" x="0" y="0">T</tspan><tspan class="cls-16" x="4.52" y="0">uesd</tspan><tspan class="cls-17" x="23.35" y="0">a</tspan><tspan class="cls-13" x="27.81" y="0">y</tspan></text>
+            </g>
+            <rect class="cls-6" x="34.28" y="101.44" width="64.87" height="64.87" transform="translate(-61.48 56.81) rotate(-32.5)"/>
+          </g>
+          <g>
+            <rect class="cls-9" x="54.18" y="11.86" width="64.87" height="64.87" transform="translate(-10.24 53.47) rotate(-32.5)"/>
+            <rect class="cls-7" x="-.53" y="46.71" width="64.87" height="64.87" transform="translate(-37.53 29.53) rotate(-32.5)"/>
+          </g>
+        </g>
+        <path class="cls-2" d="m63.46,116.46c1.51-5.02,4.51-9.44,5.36-11.64.85-2.2,2.62-9.17.42-11.59-1.28-1.41-3.29-.78-5.53.2s-6.39.66-8.63-1.44c-5.18-4.85-2.67-15.76,5.12-17.71,5.27-1.32,5,1.61,8.29,4.58,2.38,2.15,4.7.33,5.77-1.82s5.56-25.07,5.88-27.08c.35-2.18,11.93-.57,13.75-.17,3.56.79,7.69,2.62,8.72,4.79,1.15,2.44-2.14,3.38-5.28,6.58-1.5,1.53-1.16,3.32-.48,4.31,1.16,1.68,3.26,4.66,10.91,4.57,3.85-.05,5.46-1.85,6.12-3.64.6-1.64.02-3.33-.88-4.83-1.09-1.8-1.99-3.1-1.19-4.95.68-1.58,2.21-3,4.06-3.27,3.69-.53,8.93.07,12.62,2.8s10.31,7.8,11.28,9.89c1.31,2.83-2.28,5.54-4.12,11.61-1.39,4.59-1.87,11.46-2.12,13.26-.35,2.61.45,5.58,4.79,5.34,3.57-.2,4.62-2.83,7.87-1.59,2.35.89,5.13,5.57,4.15,9.27s-4.18,6.47-7.65,6.53-5.27-3.52-7.62-4.17c-1.69-.47-2.51-.53-3.98.53-.89.64-2.06,2.18-2.5,5.89-.3,2.56.08,11.05-.49,15.63-.17,1.39-.59,4.55-3.55,5.77-2.1.87-3.96-.67-5.9-1.9-1.5-.95-9.69-5.77-13.57-6.59-4.14-.87-7.72-.18-9.8,3.31-2.95,4.95.21,9.09.94,11.35,1.08,3.35.37,7.69-4.25,8.03-2.89.21-12.1.79-11.84-5.34.14-3.31,2.56-5.14,4.26-7.4,2.15-2.86,2.39-7.19-1.82-11.14-2.34-2.19-4.88-3.97-8.7-3.79s-4.15,4.23-8.21,3.14-2.22-7.34-2.22-7.34Z"/>
+      </g>
+    </g>
+  </g>
+</svg>
