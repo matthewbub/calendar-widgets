@@ -12,6 +12,11 @@ const sidebars = {
       id: 'month-selector',
     },
     {
+      type: 'doc',
+      label: 'YearSelector',
+      id: 'year-selector',
+    },
+    {
       type: 'category',
       label: 'Helpers',
       items: ['Helpers/listCalendarYear', 'Helpers/listDaysInMonths'],

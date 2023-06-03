@@ -6,7 +6,8 @@
 
 :root {
   /* fonts */
-  --ifm-font-family-base: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --cw-heading-font-family: 'Rubik', 'Barlow', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --ifm-font-family-base: 'Barlow', 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   --ifm-font-family-monospace: 'IBM Plex Mono', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   /* custom fields */
@@ -19,6 +20,9 @@
   --cw-secondary-active-bg: rgba(255, 255, 255, 0.95);
   --cw-article: #FFF;
   --ifm-link-color: #009DDC;
+
+  --cw-primary-color: #009DDC;
+  --cw-text-color: #9C9EA1;
 }
 
 [data-theme='dark'] {
@@ -31,6 +35,9 @@
   --cw-secondary-active-bg: rgb(60, 56, 58);
   --cw-article: #1B1A1D;
   --ifm-link-color: #009DDC;
+
+  --cw-primary-color: #009DDC;
+  --cw-text-color: #9C9EA1;
 }
 
 #__docusaurus {
@@ -56,6 +63,11 @@
 
 dd {
   margin-inline-start: 0;
+}
+
+h1,h2,h3 {
+  font-family: var(--cw-heading-font-family);
+  font-weight: 600;
 }
 
 h1 {
@@ -92,8 +104,16 @@ p,
 p>a,
 li,
 .footer__copyright {
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 1.5;
+}
+
+p, .use-text-color {
+  color: var(--cw-text-color);
+}
+
+.use-primary-color {
+  color: var(--cw-primary-color);
 }
 
 pre {

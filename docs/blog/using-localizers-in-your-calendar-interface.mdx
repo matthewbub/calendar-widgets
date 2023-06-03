@@ -1,0 +1,234 @@
+---
+slug: using-localizers-in-your-calendar-interface
+---
+
+import {Replit} from 'mdx-embed'
+
+
+# Using Localizers in your Calendar interface
+
+The ability to localize a third party library such as this, is a make-it-or-break-it for large scale applications. One of the key principles of Calendar Widgets was to be as un-opinionated as possible. It's certainly succeeded in the Localization front. 
+
+In this walk through, we'll demonstrate the gist of how you can extend the default day names in the `Calendar` component using your favorite localization library. 
+
+### Table of contents
+- Moment.js
+- Date-fns
+- date-fns-tz
+- luxon
+- globalize
+- polyglot
+- i18next
+- react-intl
+- intl.js
+
+## Moment.js
+
+Make sure you have the moment.js library installed (`npm install moment`) and that you've included it in your project before using it in your code.
+
+```jsx
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+import moment from 'moment';
+
+const App = () => {
+  // Set the desired language for localization
+  moment.locale('en'); // Replace 'en' with the desired language code
+
+  // Get the localized day names using moment.js
+  const dayNames = moment.weekdaysMin();
+
+  return (
+    <Calendar dayNames={dayNames} />
+  )
+}
+```
+
+**Repl.it example:**
+<Replit repl="@MatBub/Calendar-WidgetsLocalizer-ExamplesMomentjs" width="600" height="600" />
+
+In the code above, we imported the `moment` library, which is a popular choice for date and time manipulation in JavaScript. We then set the desired language for localization using the `moment.locale()` function. Replace `'en'` with the language code of your choice (e.g., `'fr'` for French, `'de'` for German, etc.).
+
+Next, we used `moment.weekdaysMin()` to retrieve an array of localized abbreviated day names based on the current locale. These localized day names are then passed to the `dayNames` prop of the `Calendar` component.
+
+## Date-fns
+In this example, we imported `format` and `setLocale` functions from the `date-fns` library. We set the desired locale using `setLocale('en-US')`, replacing `'en-US'` with the desired locale code. Then, we used `format` function to retrieve the localized abbreviated day names (`'EEE'` format) for each day of the week.
+```jsx
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+import { format, setLocale } from 'date-fns';
+
+const App = () => {
+  // Set the desired locale for localization
+  setLocale('en-US'); // Replace 'en-US' with the desired locale
+
+  // Get the localized day names using date-fns
+  const dayNames = [...Array(7)].map((_, index) =>
+    format(new Date(2023, 0, index + 1), 'EEE')
+  );
+
+  return (
+    <Calendar dayNames={dayNames} />
+  )
+}
+```
+
+## Luxon
+```jsx
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+import { DateTime } from 'luxon';
+
+const App = () => {
+  // Set the desired locale for localization
+  DateTime.local().setLocale('en'); // Replace 'en' with the desired locale
+
+  // Get the localized day names using luxon
+  const dayNames = [...Array(7)].map((_, index) =>
+    DateTime.fromObject({ weekday: index }).toFormat('ccc')
+  );
+
+  return (
+    <Calendar dayNames={dayNames} />
+  )
+}
+```
+
+In this example, we imported `DateTime` class from the `luxon` library. We set the desired locale using `DateTime.local().setLocale('en')`, replacing `'en'` with the desired locale code. Then, we used `DateTime.fromObject({ weekday: index }).toFormat('ccc')` to retrieve the localized abbreviated day names (`'ccc'` format) for each day of the week.
+
+## Date-fns-tz
+
+```jsx
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+import { format } from 'date-fns-tz';
+
+const App = () => {
+  // Set the desired time zone for localization
+  const timeZone = 'Europe/Paris'; // Replace with the desired time zone
+
+  // Get the localized day names using date-fns-tz
+  const dayNames = [...Array(7)].map((_, index) =>
+    format(new Date(2023, 0, index + 1), 'EEE', { timeZone })
+  );
+
+  return (
+    <Calendar dayNames={dayNames} />
+  )
+}
+
+```
+
+## globalize
+```jsx
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+import Globalize from 'globalize';
+
+const App = () => {
+  // Set the desired locale for localization
+  Globalize.locale('en'); // Replace 'en' with the desired locale code
+
+  // Get the localized day names using Globalize
+  const dayNames = Globalize.locale().calendar.days.short;
+
+  return (
+    <Calendar dayNames={dayNames} />
+  );
+};
+
+```
+
+
+## react-intl
+```jsx
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+import { FormattedDate, useIntl } from 'react-intl';
+
+const App = () => {
+  // Get the current locale from react-intl
+  const { locale } = useIntl();
+
+  // Get the localized day names using react-intl
+  const dayNames = [...Array(7)].map((_, index) =>
+    <FormattedDate value={new Date(2023, 0, index + 1)} weekday="short" />
+  );
+
+  return (
+    <Calendar dayNames={dayNames} />
+  );
+};
+
+```
+
+## i18next
+```jsx
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+import i18next from 'i18next';
+
+const App = () => {
+  // Set the desired locale for localization
+  const locale = 'en'; // Replace 'en' with the desired locale code
+
+  // Get the localized day names using i18next
+  const dayNames = [...Array(7)].map((_, index) =>
+    i18next.t(`calendar.day.${index}`, { lng: locale })
+  );
+
+  return (
+    <Calendar dayNames={dayNames} />
+  );
+};
+
+```
+
+## polyglot.js
+```jsx
+import React from 'react';
+import { Calendar } from 'calendar-widgets';
+import 'calendar-widgets/styles/Calendar-grid.css';
+import Polyglot from 'node-polyglot';
+
+const App = () => {
+  // Set the desired locale for localization
+  const locale = 'en'; // Replace 'en' with the desired locale code
+
+  // Configure Polyglot with the desired translations
+  const translations = {
+    en: {
+      calendar: {
+        day: {
+          0: 'Sun',
+          1: 'Mon',
+          2: 'Tue',
+          3: 'Wed',
+          4: 'Thu',
+          5: 'Fri',
+          6: 'Sat',
+        },
+      },
+    },
+    // Add translations for other locales as needed
+  };
+  const polyglot = new Polyglot({ phrases: translations[locale] });
+
+  // Get the localized day names using Polyglot.js
+  const dayNames = [...Array(7)].map((_, index) =>
+    polyglot.t(`calendar.day.${index}`)
+  );
+
+  return (
+    <Calendar dayNames={dayNames} />
+  );
+};
+
+```
