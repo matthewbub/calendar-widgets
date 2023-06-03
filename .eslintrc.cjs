@@ -19,5 +19,6 @@ module.exports = {
     'prefer-destructuring': 'off',
     'no-magic-numbers': 'off',
     'semi-spacing': 'off',
+    'array-bracket-newline': 'off',
   }
 };

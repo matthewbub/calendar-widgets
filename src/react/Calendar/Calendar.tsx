@@ -106,18 +106,24 @@ const Calendar: FC<CalendarProps> = ({
       const inSelectedMonth = currentDate.getFullYear() === year && currentDate.getMonth() === month - 1;
 
       const safeCustomDates = customDates || [];
-      const customDate = safeCustomDates.find(({ date }) => isSameDay(date, currentDate));
+      const filteredCustomDates = safeCustomDates.filter(({ date }) => isSameDay(date, currentDate));
 
       const dayComponent: JSX.Element | null = showAdjacentDays || (i > 0 && i <= totalDays)
         ? (
           <DayComponent
+            key={currentDate.toString()}
             isCurrentDay={isCurrentDay}
             date={currentDate}
             inSelectedMonth={inSelectedMonth}
-            customDate={customDate}
+            customDates={filteredCustomDates}
             baseStyles={baseStylesForComponentInterface}
           />
-        ) : <div className={classNames.emptyCell} />;
+        ) :(
+          <div
+            key={currentDate.toString()}
+            className={classNames.emptyCell}
+          />
+        );
 
       days.push(dayComponent);
     }

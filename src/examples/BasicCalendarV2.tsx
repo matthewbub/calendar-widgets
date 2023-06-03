@@ -50,24 +50,28 @@ const CustomHeader = (props: CustomHeaderFooterRendererProps) => (
   </div>
 );
 
-const CustomDay = ({ date, isCurrentDay, baseStyles, customDate, inSelectedMonth }: {
+const CustomDay = ({ date, isCurrentDay, baseStyles, customDates, inSelectedMonth }: {
   date: Date,
   isCurrentDay: boolean,
   baseStyles: React.CSSProperties;
-  customDate?: CustomDate;
+  customDates?: CustomDate[];
   inSelectedMonth: boolean;
 }) => (
   <div style={{ ...baseStyles, height: 'fit-content', textAlign: 'center' }}>
     <div style={{
       border: '1px solid #ccc',
-      position: 'relative',
-      '&:hover': {
-        'background': '#000'
-      }
+      position: 'relative'
     }}>
       <p style={{ fontSize: '24px', opacity: inSelectedMonth ? '100%' : '50%' }}>{date.getDate()}</p>
       {isCurrentDay && <span style={{ color: 'red', position: 'absolute', top: '4px', right: '4px' }}>*</span>}
-      {customDate && <span style={{ color: 'red', position: 'absolute', bottom: '4px', right: '4px' }}>Event</span>}
+      {customDates && customDates.map((customDate: CustomDate, idx: number) => (
+        <span
+          key={idx}
+          title={customDate?.tooltip || customDate.name}
+        >
+          {customDate.name}
+        </span>
+      ))}
     </div>
   </div>
 );
@@ -104,18 +108,26 @@ const BasicCalendarV2 = () => {
     <Calendar
       date={new Date()}
       showAdjacentDays
+      layout='flex'
       dayNames={dayNameFactory('short')}
       dayNameToolTips={dayNameFactory('long')}
       customHeader={CustomHeader}
       customDay={CustomDay}
       customDayName={CustomDayName}
-      layout='flex'
-      customDates={[{
-        name: 'Lisa\'s Birthday',
-        date: newDate(2023, 5, 10),
-        className: 'birthday',
-        tooltip: 'Lisa\'s Birthday'
-      }]}
+      customDates={[
+        {
+          name: 'Lisa\'s Birthday',
+          date: newDate(2023, 5, 10),
+          className: 'birthday',
+          tooltip: 'Lisa\'s Birthday'
+        },
+        {
+          name: 'Neji\'s Birthday',
+          date: newDate(2023, 5, 10),
+          className: 'birthday',
+          tooltip: 'Neji\'s Birthday'
+        }
+      ]}
       style={{
         width: '95%',
         display: 'flex',
