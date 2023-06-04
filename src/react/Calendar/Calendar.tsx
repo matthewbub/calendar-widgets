@@ -5,7 +5,7 @@ import React, { FC, useState, Fragment } from 'react';
 import { CalendarProps } from './Calendar.types';
 
 /** Helpers */
-import { magicNumber as mN, dateToNumbers } from '../../helpers';
+import { dateToNumbers } from '../../helpers';
 import {
   getNextMonth,
   getPreviousMonth,
@@ -64,13 +64,22 @@ const Calendar: FC<CalendarProps> = ({
   customDates,
   layout = 'grid'
 }) => {
+  // Stateful date value that will be used to render the calendar
   const [currentDate, setCurrentDate] = useState(date);
+
+  // Get the year, month, and day from the current date
+  // If the date prop is an object, use its values instead
+  // This is the first month that will display in the calendar
   const { year, month, day } = dateToNumbers(currentDate);
+
+  // Dynamic components that will be used to render the calendar
+  // These can be overridden as props to the Calendar component
   const DayComponent = customDay;
   const DayNameComponent = customDayName;
   const CustomHeader = customHeader || null;
   const CustomFooter = customFooter || null;
 
+  // Get the previous and next months
   const handleNextMonth = (stop?: null) => {
     if (stop === null) {
       return;
@@ -82,11 +91,12 @@ const Calendar: FC<CalendarProps> = ({
     if (stop === null) {
       return;
     }
-    setCurrentDate(new Date(year, month - mN('2'), day));
+    setCurrentDate(new Date(year, month - 2, day));
   };
 
-  const startDate = new Date(year, month - mN('1'), mN('1'));
-  const endDate = new Date(year, month, mN('0'));
+  // These values are used to determine the calendar's start and end dates
+  const startDate = new Date(year, month - 1, 1);
+  const endDate = new Date(year, month, 0);
 
   /**
    * Creates an array of JSX elements representing the days in the calendar grid.
@@ -102,7 +112,8 @@ const Calendar: FC<CalendarProps> = ({
 
     for (let i = 1 - startWeekday; i <= totalDays + 6 - end.getDay(); i += 1) {
       const currentDate = new Date(year, start.getMonth(), i);
-      const isCurrentDay = i === day;
+      const isCurrentDay = isSameDay(currentDate, new Date());
+
       const inSelectedMonth = currentDate.getFullYear() === year && currentDate.getMonth() === month - 1;
 
       const safeCustomDates = customDates || [];
@@ -144,9 +155,11 @@ const Calendar: FC<CalendarProps> = ({
     prevMonth: getPreviousMonth(month)
   };
 
-  const validTooltips = dayNameToolTips && dayNameToolTips.length === mN('7');
+  const validTooltips = dayNameToolTips && dayNameToolTips.length === 7;
   const tooltips = validTooltips ? dayNameToolTips : dayNames;
 
+  // If the layout is grid, wrap the calendar in a div element
+  // Otherwise, wrap the calendar in a React Fragment
   const CalendarInterfaceRoot = layout === 'grid' ? 'div' : Fragment;
   return (
     <div
