@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Calendar } from '../react';
-import BasicCalendarV2 from '../examples/BasicCalendarV2';
+import { CustomCalendar } from '../examples/CustomCalendar';
 
 const meta = {
   title: 'calendar-widgets/Calendar',
-  component: BasicCalendarV2,
+  component: CustomCalendar,
   parameters: {
     options: { showPanel: false }
   }

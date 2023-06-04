@@ -1,27 +1,53 @@
-import React from 'react';
-import { Calendar } from '../react';
-import {CustomDate, CustomHeaderFooterRendererProps} from '../react/Calendar/Calendar.types';
-import { newDate } from '../helpers/newDate';
+import React, { FC } from 'react';
+import { Calendar, MonthSelector, YearSelector } from '../../react';
+import { CustomDate, CustomHeaderFooterRendererProps } from '../../react/Calendar/Calendar.types';
+import { newDate } from '../../helpers/newDate';
 
 /** Styles */
 // import '../../styles/Calendar-grid.css';
+const monthYearButtonStyles = {
+  backgroundColor: 'transparent',
+  border: '0',
+  fontSize: '24px'
+};
 
-const ButtonStyles = {
+const monthButtonStyles = {
   backgroundColor: 'transparent',
   border: '1px solid #ccc',
   borderRadius: '4px',
   padding: '4px 8px',
   cursor: 'pointer',
   outline: 'none',
-  fontSize: '24px'
+
+  height: '40px',
+  minWidth: '40px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
 } as React.CSSProperties;
 
-const CustomHeaderStyles = {
+const buttonStyles = {
+  backgroundColor: 'transparent',
+  border: '1px solid #ccc',
+  borderRadius: '4px',
+  padding: '4px 8px',
+  cursor: 'pointer',
+  outline: 'none',
+  fontSize: '24px',
+  height: '40px',
+  minWidth: '40px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+} as React.CSSProperties;
+
+const customHeaderStyles = {
   width: '100%',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  boxSizing: 'border-box'
+  boxSizing: 'border-box',
+  padding: '0 4px'
 } as React.CSSProperties;
 
 // https://www.w3schools.com/charsets/ref_utf_punctuation.asp
@@ -32,18 +58,53 @@ const RightArrow = () => (
   <div dangerouslySetInnerHTML={{ __html: '&rsaquo;' }}></div>
 );
 
+const CustomMonthSelector: FC<{ month: number }> = ({ month }) => {
+  const [displayMonthSelector, setDisplayMonthSelector] = React.useState(false);
+  const handleMonthClick = () => {
+    setDisplayMonthSelector(!displayMonthSelector);
+  };
+  return (
+    <div>
+      <button onClick={handleMonthClick} style={monthYearButtonStyles}>
+        {month}
+      </button>
+      {displayMonthSelector && (
+        <MonthSelector />
+      )}
+    </div>
+  );
+};
+const CustomYearSelector: FC<{ year: number }> = ({ year }) => {
+  const [displayedYear, setDisplayedYear] = React.useState(false);
+  const handleYearClick = () => {
+    setDisplayedYear(!displayedYear);
+  };
+  return (
+    <div>
+      <button onClick={handleYearClick} style={monthYearButtonStyles}>
+        {year}
+      </button>
+      {displayedYear && (
+        <YearSelector startYear={1900} endYear={2100} />
+      )}
+    </div>
+  );
+};
 const CustomHeader = (props: CustomHeaderFooterRendererProps) => (
-  <div style={CustomHeaderStyles}>
+  <div style={customHeaderStyles}>
     <button
       onClick={props.handlePrevMonth}
-      style={ButtonStyles}
+      style={buttonStyles}
     >
       <LeftArrow />
     </button>
-    <div>{props.selectedMonth}/{props.selectedYear}</div>
+    <div style={monthButtonStyles}>
+      <CustomMonthSelector month={props.selectedMonth} />
+      <CustomYearSelector year={props.selectedYear} />
+    </div>
     <button
       onClick={props.handleNextMonth}
-      style={ButtonStyles}
+      style={buttonStyles}
     >
       <RightArrow />
     </button>
@@ -60,18 +121,16 @@ const CustomDay = ({ date, isCurrentDay, baseStyles, customDates, inSelectedMont
   <div style={{ ...baseStyles, height: 'fit-content', textAlign: 'center' }}>
     <div style={{
       border: '1px solid #ccc',
-      position: 'relative'
+      position: 'relative',
+      margin: '4px',
+      borderRadius: '4px'
     }}>
       <p style={{ fontSize: '24px', opacity: inSelectedMonth ? '100%' : '50%' }}>{date.getDate()}</p>
       {isCurrentDay && <span style={{ color: 'red', position: 'absolute', top: '4px', right: '4px' }}>*</span>}
-      {customDates && customDates.map((customDate: CustomDate, idx: number) => (
-        <span
-          key={idx}
-          title={customDate?.tooltip || customDate.name}
-        >
-          {customDate.name}
-        </span>
-      ))}
+
+      {customDates && customDates.length > 0 && (
+        <span style={{ position: 'absolute', bottom: '4px', left: '4px' }}>{customDates.length}</span>
+      )}
     </div>
   </div>
 );
@@ -86,7 +145,9 @@ const CustomDayName = ({ label, baseStyles, tooltip }: {
     title={tooltip ? tooltip : label}
   >
     <div style={{
-      border: '1px solid #ccc'
+      border: '1px solid #ccc',
+      margin: '4px',
+      borderRadius: '4px'
     }}>
       <p style={{ fontSize: '24px' }}>{label}</p>
     </div>
@@ -94,10 +155,10 @@ const CustomDayName = ({ label, baseStyles, tooltip }: {
   </div>
 );
 
-const BasicCalendarV2 = () => {
+const CustomCalendar = () => {
   function dayNameFactory(weekdayFormat: 'short' | 'long' | 'narrow' | undefined) {
     const daysOfWeek = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
-    const localizedDaysOfWeek = daysOfWeek.map(day => {
+    const localizedDaysOfWeek = daysOfWeek.map((day) => {
       const date = new Date(2023, 0, daysOfWeek.indexOf(day) + 1);
       return date.toLocaleDateString('en-US', { weekday: weekdayFormat || 'short' });
     });
@@ -137,4 +198,4 @@ const BasicCalendarV2 = () => {
   );
 };
 
-export default BasicCalendarV2;
+export default CustomCalendar;
