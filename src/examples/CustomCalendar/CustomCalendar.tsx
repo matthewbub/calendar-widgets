@@ -3,52 +3,9 @@ import { Calendar, MonthSelector, YearSelector } from '../../react';
 import { CustomDate, CustomHeaderFooterRendererProps } from '../../react/Calendar/Calendar.types';
 import { newDate } from '../../helpers/newDate';
 
-/** Styles */
-// import '../../styles/Calendar-grid.css';
-const monthYearButtonStyles = {
-  backgroundColor: 'transparent',
-  border: '0',
-  fontSize: '24px'
-};
-
-const monthButtonStyles = {
-  backgroundColor: 'transparent',
-  border: '1px solid #ccc',
-  borderRadius: '4px',
-  padding: '4px 8px',
-  cursor: 'pointer',
-  outline: 'none',
-
-  height: '40px',
-  minWidth: '40px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
-} as React.CSSProperties;
-
-const buttonStyles = {
-  backgroundColor: 'transparent',
-  border: '1px solid #ccc',
-  borderRadius: '4px',
-  padding: '4px 8px',
-  cursor: 'pointer',
-  outline: 'none',
-  fontSize: '24px',
-  height: '40px',
-  minWidth: '40px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
-} as React.CSSProperties;
-
-const customHeaderStyles = {
-  width: '100%',
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  boxSizing: 'border-box',
-  padding: '0 4px'
-} as React.CSSProperties;
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import styles from './CustomCalendar.module.css';
 
 // https://www.w3schools.com/charsets/ref_utf_punctuation.asp
 const LeftArrow = () => (
@@ -65,7 +22,7 @@ const CustomMonthSelector: FC<{ month: number }> = ({ month }) => {
   };
   return (
     <div>
-      <button onClick={handleMonthClick} style={monthYearButtonStyles}>
+      <button onClick={handleMonthClick} className={styles.monthYearButtonStyles}>
         {month}
       </button>
       {displayMonthSelector && (
@@ -79,9 +36,10 @@ const CustomYearSelector: FC<{ year: number }> = ({ year }) => {
   const handleYearClick = () => {
     setDisplayedYear(!displayedYear);
   };
+
   return (
     <div>
-      <button onClick={handleYearClick} style={monthYearButtonStyles}>
+      <button onClick={handleYearClick} className={styles.monthYearButtonStyles}>
         {year}
       </button>
       {displayedYear && (
@@ -90,21 +48,22 @@ const CustomYearSelector: FC<{ year: number }> = ({ year }) => {
     </div>
   );
 };
+
 const CustomHeader = (props: CustomHeaderFooterRendererProps) => (
-  <div style={customHeaderStyles}>
+  <div className={styles.customHeaderStyles}>
     <button
       onClick={props.handlePrevMonth}
-      style={buttonStyles}
+      className={styles.buttonStyles}
     >
       <LeftArrow />
     </button>
-    <div style={monthButtonStyles}>
+    <div className={styles.monthButtonStyles}>
       <CustomMonthSelector month={props.selectedMonth} />
       <CustomYearSelector year={props.selectedYear} />
     </div>
     <button
       onClick={props.handleNextMonth}
-      style={buttonStyles}
+      className={styles.buttonStyles}
     >
       <RightArrow />
     </button>
