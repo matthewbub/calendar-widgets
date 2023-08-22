@@ -97,6 +97,7 @@ const config = {
     }),
   
     plugins: [
+      ["@gracefullight/docusaurus-plugin-vercel-analytics"],
       async function myPlugin(context, options) {
         return {
           name: "docusaurus-tailwindcss",

@@ -1,9 +1,5 @@
 lockfileVersion: '6.0'
 
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
-
 dependencies:
   '@docusaurus/core':
     specifier: 2.4.0
@@ -14,6 +10,9 @@ dependencies:
   '@docusaurus/theme-common':
     specifier: ^2.4.0
     version: 2.4.0(@docusaurus/types@2.4.0)(react-dom@17.0.2)(react@17.0.2)(typescript@5.0.4)
+  '@gracefullight/docusaurus-plugin-vercel-analytics':
+    specifier: ^0.1.0
+    version: 0.1.0
   '@mdx-js/react':
     specifier: ^1.6.22
     version: 1.6.22(react@17.0.2)
@@ -2333,6 +2332,19 @@ packages:
       url-loader: 4.1.1(file-loader@6.2.0)(webpack@5.81.0)
       webpack: 5.81.0
     transitivePeerDependencies:
+      - '@swc/core'
+      - esbuild
+      - supports-color
+      - uglify-js
+      - webpack-cli
+    dev: false
+
+  /@gracefullight/docusaurus-plugin-vercel-analytics@0.1.0:
+    resolution: {integrity: sha512-3WjKrFtb2b67IHxgeBDTBBCsn6WgF5Rj0BwQKxL34bWgQRIuafQLoTMX1qu9u6naMvXodwv2Y5K3sWemsX9IQg==}
+    dependencies:
+      '@docusaurus/utils-validation': 2.4.0(@docusaurus/types@2.4.0)
+    transitivePeerDependencies:
+      - '@docusaurus/types'
       - '@swc/core'
       - esbuild
       - supports-color
@@ -8579,3 +8591,7 @@ packages:
   /zwitch@1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
     dev: false
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
