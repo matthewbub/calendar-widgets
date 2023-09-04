@@ -13,12 +13,6 @@ Craft beautifully robust **date** components in React.
 
 ## Getting Started
 
-:::caution
-
-This SDK is actively being worked on and improved. It's in the alpha stages of development and is not ready for public use just yet.
-
-:::
-
 To begin, you'll want to add the `calendar-widgets` package to a new or existing React project. 
 
 <Tabs defaultValue="pnpm">
