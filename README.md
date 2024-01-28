@@ -4,6 +4,8 @@
 
 # Calendar Widgets
 
+> Archived; this project has been archived and will no longer be actively maintained.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/9mbs/calendar-widgets/blob/v0.0.13/LICENSE)
 ![Current bundle size: 9.29 kB](https://img.shields.io/badge/Bundle_Size-9.29_kB-blue.svg)
 
@@ -88,6 +90,3 @@ This project requires [Node.js](https://nodejs.org/en) and [pnpm](https://pnpm.i
 - `pnpm run lint` Run ESLint to catch errors
 - `pnpm run lint:fix` Run ESLint to catch auto-fix errors
 
-### Who maintains this project?
-
-NineMbs Studio LLC. are the sole maintainers of this project. These components are being developed in parallel with more good things that will be announced at a later date.
