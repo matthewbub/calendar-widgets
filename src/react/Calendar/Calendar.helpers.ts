@@ -1,4 +1,4 @@
-import { dateToNumbers, magicNumber as mN } from '../../helpers';
+import { dateToNumbers } from '../../helpers';
 
 /**
  * Returns the next month given a current month.
@@ -6,7 +6,7 @@ import { dateToNumbers, magicNumber as mN } from '../../helpers';
  * @returns The next month as a number.
  */
 export const getNextMonth = (month: number) => {
-  return month === mN('12') ? mN('1') : month + mN('1');
+  return month === 12 ? 1 : month + 1;
 };
 
 /**
@@ -15,7 +15,7 @@ export const getNextMonth = (month: number) => {
  * @returns The previous month as a number.
  */
 export const getPreviousMonth = (month: number) => {
-  return month === mN('1') ? mN('12') : month - mN('1');
+  return month === 1 ? 12 : month - 1;
 };
 
 /**
@@ -29,8 +29,8 @@ export const getPreviousMonth = (month: number) => {
 export const createCalendarWeeks = (days: (JSX.Element | null)[]) => {
   const weeks: (JSX.Element | null)[][] = [];
 
-  for (let i = mN('0');i < days.length;i += mN('7')) {
-    weeks.push(days.slice(i, i + mN('7')));
+  for (let i = 0;i < days.length;i += 7) {
+    weeks.push(days.slice(i, i + 7));
   }
 
   return weeks;
