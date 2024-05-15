@@ -34,7 +34,7 @@
 }
 
 #__docusaurus {
-  background: var(--doc-sidebar-bg-color);
+  /* background: var(--doc-sidebar-bg-color); */
 }
 
 .sr-only {
@@ -107,7 +107,7 @@ pre {
 }
 
 .navbar {
-  background: var(--doc-sidebar-bg-color);
+  background: transparent;
   box-shadow: none;
 }
 
@@ -247,7 +247,7 @@ a[target="_blank"].footer__link-item svg {
 }
 
 article {
-  background: var(--cw-article);
+  /* background: var(--cw-article); */
   padding: 0.75rem 1rem;
 }
 
@@ -255,6 +255,17 @@ article {
 .footer {
   padding: 0 1rem 1rem 1rem;
 }
+
+.footer {
+	margin-bottom: 15px;
+}
+
+.main-wrapper {
+	.theme-doc-sidebar-container {
+		border-right: 0;
+	}
+}
+
 
 nav.thin-scrollbar {
   padding-top: 0;
