@@ -1,5 +1,3 @@
-import { magicNumber } from './magicNumber';
-
 export function convertTimeToHours(timeStr: string) {
   // regex pattern to match hours and minutes
   const pattern = /^(\d+)(h|m)$/;
@@ -9,11 +7,11 @@ export function convertTimeToHours(timeStr: string) {
 
   if (match) {
     // extract the numeric value from the match
-    const value = parseInt(match[magicNumber('1')]);
+    const value = parseInt(match[1]);
 
     // extract the unit (h or m) from the match
     // eslint-disable-next-line prefer-destructuring
-    const unit = match[magicNumber('2')];
+    const unit = match[2];
 
     let result;
     if (unit === 'h') {
@@ -21,11 +19,11 @@ export function convertTimeToHours(timeStr: string) {
       result = value;
     } else {
       // if it's minutes, convert to hours (by dividing by 60)
-      result = value / magicNumber('60');
+      result = value / 60;
     }
 
     // round the result to the nearest quarter
-    result = Math.round(result * magicNumber('4')) / magicNumber('4');
+    result = Math.round(result * 4) / 4;
 
     return result;
   }
