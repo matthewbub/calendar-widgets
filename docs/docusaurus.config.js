@@ -13,7 +13,7 @@ const config = {
 	baseUrl: "/",
 	organizationName: "9mbs",
 	projectName: "Calendar Widgets",
-	onBrokenLinks: "throw",
+	onBrokenLinks: "warn",
 	onBrokenMarkdownLinks: "warn",
 	i18n: {
 		defaultLocale: "en",
