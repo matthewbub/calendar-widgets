@@ -5,7 +5,7 @@ import React, { FC, useState } from 'react';
 import { CalendarProps } from './Calendar.types';
 
 /** Helpers */
-import { magicNumber as mN, dateToNumbers } from '../../helpers';
+import { dateToNumbers } from '../../helpers';
 import {
   getNextMonth,
   getPreviousMonth,
@@ -78,11 +78,11 @@ const Calendar: FC<CalendarProps> = ({
     if (stop === null) {
       return;
     }
-    setCurrentDate(new Date(year, month - mN('2'), day));
+    setCurrentDate(new Date(year, month - 2, day));
   };
 
-  const startDate = new Date(year, month - mN('1'), mN('1'));
-  const endDate = new Date(year, month, mN('0'));
+  const startDate = new Date(year, month - 1, 1);
+  const endDate = new Date(year, month, 0);
 
   /**
    * Creates an array of JSX elements representing the days in the calendar grid.
@@ -96,15 +96,15 @@ const Calendar: FC<CalendarProps> = ({
     const startWeekday = start.getDay();
     const totalDays = end.getDate();
 
-    for (let i = mN('1') - startWeekday;i <= totalDays + mN('6') - end.getDay();i += mN('1')) {
+    for (let i = 1 - startWeekday;i <= totalDays + 6 - end.getDay();i += 1) {
       const currentDate = new Date(year, start.getMonth(), i);
       const isCurrentDay = i === day;
-      const inSelectedMonth = currentDate.getFullYear() === year && currentDate.getMonth() === month - mN('1');
+      const inSelectedMonth = currentDate.getFullYear() === year && currentDate.getMonth() === month - 1;
 
       const safeCustomDates = customDates || [];
       const customDate = safeCustomDates.find(({ date }) => isSameDay(date, currentDate));
 
-      const dayComponent: JSX.Element | null = showAdjacentDays || (i > mN('0') && i <= totalDays)
+      const dayComponent: JSX.Element | null = showAdjacentDays || (i > 0 && i <= totalDays)
         ? (
           <DayComponent
             isCurrentDay={isCurrentDay}
@@ -133,7 +133,7 @@ const Calendar: FC<CalendarProps> = ({
     prevMonth: getPreviousMonth(month)
   };
 
-  const validTooltips = dayNameToolTips && dayNameToolTips.length === mN('7');
+  const validTooltips = dayNameToolTips && dayNameToolTips.length === 7;
   const tooltips = validTooltips ? dayNameToolTips : dayNames;
 
   return (

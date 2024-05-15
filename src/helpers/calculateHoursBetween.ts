@@ -1,5 +1,3 @@
-import { magicNumber } from './magicNumber';
-
 const parseTime = (timeString: string) => {
   const match = timeString.match(/(\d{1,2}):?(\d{2})?(am|pm)/i);
   if (!match) {
@@ -10,19 +8,19 @@ const parseTime = (timeString: string) => {
   const [_, hour, minute = '00', meridiem] = match;
 
   const hourNumber = parseInt(hour);
-  const minuteNumber = minute ? parseInt(minute) : magicNumber('0');
+  const minuteNumber = minute ? parseInt(minute) : 0;
   const isPM = meridiem.toLowerCase() === 'pm';
 
-  const hour24 = isPM && hourNumber !== magicNumber('12') ? hourNumber + magicNumber('12') : hourNumber === magicNumber('12') && !isPM ? magicNumber('0') : hourNumber;
+  const hour24 = isPM && hourNumber !== 12 ? hourNumber + 12 : hourNumber === 12 && !isPM ? 0 : hourNumber;
 
-  return new Date(magicNumber('0'), magicNumber('0'), magicNumber('0'), hour24, minuteNumber);
+  return new Date(0, 0, 0, hour24, minuteNumber);
 };
 
 const calculateHoursBetween = (startRow: string, endRow: string) => {
   const startRowTime = parseTime(startRow).getTime();
   const endRowTime = parseTime(endRow).getTime();
 
-  return (endRowTime - startRowTime) / (magicNumber('1000') * magicNumber('60') * magicNumber('60'));
+  return (endRowTime - startRowTime) / (1000 * 60 * 60);
 };
 
 export {

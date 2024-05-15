@@ -1,5 +1,3 @@
-import { magicNumber } from './magicNumber';
-
 const parseTime = (timeString: string) => {
   const match = timeString.match(/(\d{1,2}):?(\d{2})?(am|pm)/i);
   if (!match) {
@@ -12,18 +10,18 @@ const parseTime = (timeString: string) => {
   const minuteNumber = parseInt(minute);
   const isPM = meridiem.toLowerCase() === 'pm';
 
-  const hour24 = isPM && hourNumber !== magicNumber('12') ? hourNumber + magicNumber('12') : hourNumber === magicNumber('12') && !isPM ? magicNumber('0') : hourNumber;
+  const hour24 = isPM && hourNumber !== 12 ? hourNumber + 12 : hourNumber === 12 && !isPM ? 0 : hourNumber;
 
-  return new Date(magicNumber('0'), magicNumber('0'), magicNumber('0'), hour24, minuteNumber);
+  return new Date(0, 0, 0, hour24, minuteNumber);
 };
 
 const formatTime = (time: Date) => {
   const hour = time.getHours();
   const minute = time.getMinutes();
-  const meridiem = hour >= magicNumber('12') ? 'pm' : 'am';
-  const hour12 = hour % magicNumber('12') || magicNumber('12');
+  const meridiem = hour >= 12 ? 'pm' : 'am';
+  const hour12 = hour % 12 || 12;
 
-  return `${hour12}:${minute.toString().padStart(magicNumber('2'), '0')}${meridiem}`;
+  return `${hour12}:${minute.toString().padStart(2, '0')}${meridiem}`;
 };
 
 const listHoursBetween = (startRow: string, endRow: string) => {
@@ -39,7 +37,7 @@ const listHoursBetween = (startRow: string, endRow: string) => {
 
   while (currentHour <= endRowTime) {
     hoursBetween.push(formatTime(currentHour));
-    currentHour = new Date(currentHour.getTime() + magicNumber('60') * magicNumber('60') * magicNumber('1000'));
+    currentHour = new Date(currentHour.getTime() + 60 * 60 * 1000);
   }
 
   return hoursBetween;

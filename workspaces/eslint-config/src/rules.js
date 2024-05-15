@@ -1,9 +1,3 @@
-const magicNumbers = {
-  '1': 1,
-  '2': 2,
-  '340': 340
-};
-
 module.exports = {
   'no-console': ['error'],
   'no-dupe-keys': ['error'],
@@ -37,7 +31,7 @@ module.exports = {
   'no-inline-comments': ['error'],
   'no-invalid-this': ['error'],
   'no-iterator': ['error'],
-  'no-magic-numbers': ['error'],
+  'no-magic-numbers': ['off'],
   'no-param-reassign': ['error'],
   'no-plusplus': ['error'],
   'no-proto': ['error'],
@@ -69,13 +63,13 @@ module.exports = {
     'after': true
   }],
   'eol-last': ['error', 'always'],
-  'indent': ['error', magicNumbers['2']],
+  'indent': ['error', 2],
   'max-len': ['error', {
-    'code': magicNumbers['340']
+    'code': 340
   }],
   'no-multiple-empty-lines': ['error', {
-    'max': magicNumbers['1'],
-    'maxEOF': magicNumbers['1']
+    'max': 1,
+    'maxEOF': 1
   }],
   'no-trailing-spaces': ['error'],
   'object-curly-spacing': ['error', 'always'],
