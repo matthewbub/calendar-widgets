@@ -1,14 +1,18 @@
 {
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-jsx",
     "module": "ESNext",
-    "target": "ES2019",
-    "moduleResolution": "node",
+    "target": "es6",
+    "moduleResolution": "Bundler",
     "strict": true,
     "esModuleInterop": true,
     "declaration": true,
+		"declarationMap": true,
     "outDir": "dist",
-    "sourceMap": true
+    "sourceMap": true,
+		"noUnusedLocals": true,
+    "noUnusedParameters": true,
+		"preserveWatchOutput": true,
   },
   "include": [
     "src/**/*"
