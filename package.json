@@ -71,10 +71,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/9mbs/calendar-widgets"
+    "url": "https://github.com/matthewbub/calendar-widgets"
   },
   "bugs": {
-    "url": "https://github.com/9mbs/calendar-widgets/issues"
+    "url": "https://github.com/matthewbub/calendar-widgets/issues"
   },
   "homepage": "https://www.calendar-widgets.com/"
 }

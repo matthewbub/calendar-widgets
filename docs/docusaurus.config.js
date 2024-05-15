@@ -11,7 +11,7 @@ const config = {
 	tagline: "Craft beautifully robust date components in React.",
 	url: "https://calendar-widgets.com",
 	baseUrl: "/",
-	organizationName: "9mbs",
+	organizationName: "matthewbub",
 	projectName: "Calendar Widgets",
 	onBrokenLinks: "warn",
 	onBrokenMarkdownLinks: "warn",
@@ -30,13 +30,13 @@ const config = {
 					sidebarPath: require.resolve("./sidebars.js"),
 					// Please change this to your repo.
 					// Remove this to remove the "edit this page" links.
-					editUrl: "https://github.com/9mbs/calendar-widgets",
+					editUrl: "https://github.com/matthewbub/calendar-widgets",
 				},
 				blog: {
 					showReadingTime: true,
 					// Please change this to your repo.
 					// Remove this to remove the "edit this page" links.
-					editUrl: "https://github.com/9mbs/calendar-widgets",
+					editUrl: "https://github.com/matthewbub/calendar-widgets",
 				},
 				theme: {
 					customCss: [
@@ -61,7 +61,7 @@ const config = {
 						label: "Examples",
 					},
 					{
-						href: "https://github.com/9mbs/calendar-widgets",
+						href: "https://github.com/matthewbub/calendar-widgets",
 						label: "GitHub",
 						position: "right",
 					},
@@ -75,11 +75,11 @@ const config = {
 						items: [
 							{
 								label: "Report a bug",
-								href: "https://github.com/9mbs/calendar-widgets/issues/new/choose",
+								href: "https://github.com/matthewbub/calendar-widgets/issues/new/choose",
 							},
 							{
 								label: "Contributing",
-								href: "https://github.com/9mbs/calendar-widgets#contributing",
+								href: "https://github.com/matthewbub/calendar-widgets#contributing",
 							},
 							{
 								label: "Code of Conduct",

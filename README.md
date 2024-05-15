@@ -6,7 +6,7 @@
 
 > Archived; this project has been archived and will no longer be actively maintained.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/9mbs/calendar-widgets/blob/v0.0.13/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/matthewbub/calendar-widgets/blob/v0.0.13/LICENSE)
 ![Current bundle size: 9.29 kB](https://img.shields.io/badge/Bundle_Size-9.29_kB-blue.svg)
 
 Craft beautifully robust **date** components in React.
@@ -70,7 +70,7 @@ const App = () => {
 
 We'd be appreciative of bug reports/ fixes, and would gladly accept new proposals.
 
-If you'd like to contribute to an existing issue, kindly communicate through the designated ticket to avoid overlapping efforts. Check out the [Open Issues](https://github.com/9mbs/calendar/issues?q=is%3Aissue+is%3Aopen) and our [Contributing Guide](./CONTRIBUTING.md) for more information.
+If you'd like to contribute to an existing issue, kindly communicate through the designated ticket to avoid overlapping efforts. Check out the [Open Issues](https://github.com/matthewbub/calendar/issues?q=is%3Aissue+is%3Aopen) and our [Contributing Guide](./CONTRIBUTING.md) for more information.
 
 This project requires [Node.js](https://nodejs.org/en) and [pnpm](https://pnpm.io/) to be installed. If needed, you can install them from Node.js website and pnpm website.
 
@@ -80,7 +80,7 @@ This project requires [Node.js](https://nodejs.org/en) and [pnpm](https://pnpm.i
 2. Clone the forked repository to your local machine, or open a new Code Space
 3. Checkout to a clean branch. e.g `git checkout feature/addSomeCode` (Please be more descriptive)
 4. Install the dependencies via `pnpm install`
-5. You're all set up. Run `pnpm run build` to run the production build and ensure everything is working. If not, please open an issue in <https://github.com/9mbs/calendar-widgets/issues> 🙂
+5. You're all set up. Run `pnpm run build` to run the production build and ensure everything is working. If not, please open an issue in <https://github.com/matthewbub/calendar-widgets/issues> 🙂
 
 ### Scripts
 

@@ -35,7 +35,7 @@ Familiarize yourself with the project by reading the [README.md](./README.md) an
 
 If you come across a bug while using Calendar Widgets, please report it by following these steps:
 
-1. Check the [Issues](https://github.com/9mbs/calendar-widgets/issues) to see if the bug has already been reported. If it has, please add any additional relevant information in the comments.
+1. Check the [Issues](https://github.com/matthewbub/calendar-widgets/issues) to see if the bug has already been reported. If it has, please add any additional relevant information in the comments.
 2. If the bug hasn't been reported, create a new issue and provide the following information:
   - A clear and concise title
   - A detailed description of the bug
@@ -47,7 +47,7 @@ If you come across a bug while using Calendar Widgets, please report it by follo
 ## 4. Suggesting New Features
 If you have an idea for a new feature or improvement, please follow these steps:
 
-1. Check the [Issues](https://github.com/9mbs/calendar-widgets/issues) to see if a similar suggestion has already been made. If it has, please join the discussion and provide your feedback.
+1. Check the [Issues](https://github.com/matthewbub/calendar-widgets/issues) to see if a similar suggestion has already been made. If it has, please join the discussion and provide your feedback.
 2. If your suggestion is new, create a new issue and provide the following information:
   - A clear and concise title
   - A detailed description of the proposed feature
@@ -88,8 +88,8 @@ To help you get started and become more familiar with the project, you can check
 
 - [Documentation](https://www.calendar-widgets.com/)
 - [Project Road map](https://www.calendar-widgets.com/road-map)
-- [Discussions Board](https://github.com/9mbs/calendar-widgets/discussions)
+- [Discussions Board](https://github.com/matthewbub/calendar-widgets/discussions)
 
-If you have any questions or need assistance, feel free to reach out to the community on the project's [Discussion board](https://github.com/9mbs/calendar-widgets/discussions).
+If you have any questions or need assistance, feel free to reach out to the community on the project's [Discussion board](https://github.com/matthewbub/calendar-widgets/discussions).
 
 Thank you once again for your interest in contributing to Calendar Widgets. We look forward to working with you to improve and expand this project!
