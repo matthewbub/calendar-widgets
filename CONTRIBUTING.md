@@ -1,8 +1,9 @@
 # Contributing Guide for Calendar Widgets
 
-Welcome, and thank you for your interest in contributing to Calendar Widgets, an open source project developed by Ninembs Studio LLC. This guide outlines how you can contribute to this project, from reporting bugs and suggesting new features to making code changes yourself.
+Welcome, and thank you for your interest in contributing to Calendar Widgets. This guide outlines how you can contribute to this project, from reporting bugs and suggesting new features to making code changes yourself.
 
 ## Table of Contents
+
 1. [Code of Conduct](#1-code-of-conduct)
 2. [Prerequisites](#2-prerequisites)
 3. [Reporting Bugs](#3-reporting-bugs)
@@ -26,7 +27,7 @@ To get started with contributing, you will need to have the following installed 
 You can install the latest version of pnpm by running:
 
 ```shell
-npm install -g pnpm 
+npm install -g pnpm
 ```
 
 Familiarize yourself with the project by reading the [README.md](./README.md) and exploring the codebase. Make sure to follow the instructions in the README for setting up the project using pnpm.
@@ -37,22 +38,25 @@ If you come across a bug while using Calendar Widgets, please report it by follo
 
 1. Check the [Issues](https://github.com/matthewbub/calendar-widgets/issues) to see if the bug has already been reported. If it has, please add any additional relevant information in the comments.
 2. If the bug hasn't been reported, create a new issue and provide the following information:
-  - A clear and concise title
-  - A detailed description of the bug
-  - Steps to reproduce the bug
-  - The expected behavior
-  - Screenshots or GIFs, if applicable
-  - System information (e.g., OS, browser, and version)
+
+- A clear and concise title
+- A detailed description of the bug
+- Steps to reproduce the bug
+- The expected behavior
+- Screenshots or GIFs, if applicable
+- System information (e.g., OS, browser, and version)
 
 ## 4. Suggesting New Features
+
 If you have an idea for a new feature or improvement, please follow these steps:
 
 1. Check the [Issues](https://github.com/matthewbub/calendar-widgets/issues) to see if a similar suggestion has already been made. If it has, please join the discussion and provide your feedback.
 2. If your suggestion is new, create a new issue and provide the following information:
-  - A clear and concise title
-  - A detailed description of the proposed feature
-  - Any relevant context or examples, such as use cases or design mockups
-  - An explanation of how the feature will benefit Calendar Widgets users
+
+- A clear and concise title
+- A detailed description of the proposed feature
+- Any relevant context or examples, such as use cases or design mockups
+- An explanation of how the feature will benefit Calendar Widgets users
 
 ## 5. Contributing Code
 
