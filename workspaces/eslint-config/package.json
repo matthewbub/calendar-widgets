@@ -8,7 +8,6 @@
     "lint": "eslint . --ext .js",
     "lint:fix": "eslint . --ext .js --fix"
   },
-  "author": "NineMbs Studio LLC",
   "license": "MIT",
   "peerDependencies": {
     "eslint": "^8.38.0"
