@@ -1,6 +1,6 @@
 {
   "name": "@calendar-widgets/eslint-config",
-  "version": "0.0.14",
+  "version": "0.1.0",
   "description": "Common set of ESLint rules used throughout the workspaces in this project",
   "main": "index.js",
   "scripts": {
