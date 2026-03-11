@@ -4,7 +4,7 @@
 
 # Calendar Widgets
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/9mbs/calendar-widgets/blob/v0.0.13/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/matthewbub/calendar-widgets/blob/v0.0.13/LICENSE)
 ![Current bundle size: 9.29 kB](https://img.shields.io/badge/Bundle_Size-9.29_kB-blue.svg)
 
 Craft beautifully robust **date** components in React.
@@ -87,4 +87,3 @@ This project requires [Node.js](https://nodejs.org/en) and [pnpm](https://pnpm.i
 - `pnpm run storybook` Run Storybook for local development
 - `pnpm run lint` Run ESLint to catch errors
 - `pnpm run lint:fix` Run ESLint to catch auto-fix errors
-
