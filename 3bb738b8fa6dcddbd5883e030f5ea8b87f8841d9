@@ -1,0 +1,25 @@
+package.json
+  7c52735e2493cf2c 3,41
+workspaces/eslint-config/package.json
+  7c52735e2493cf2c 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.10",
+  "base_commit_sha": "3bb738b8fa6dcddbd5883e030f5ea8b87f8841d9",
+  "prompts": {
+    "7c52735e2493cf2c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c89e9929-f9d4-4a8e-8ac6-1b30e172a345",
+        "model": "claude-opus-4-6"
+      },
+      "human_author": "matéo! <6matbub@gmail.com>",
+      "messages": [],
+      "total_additions": 3,
+      "total_deletions": 3,
+      "accepted_lines": 3,
+      "overriden_lines": 0
+    }
+  }
+}
